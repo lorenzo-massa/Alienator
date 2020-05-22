@@ -3,4 +3,4 @@ project(Alienator)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Alienator main.cpp)
+add_executable(Alienator main.cpp GameCharacter.h)
