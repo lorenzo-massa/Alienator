@@ -4,4 +4,4 @@
 
 #include "GameState.h"
 
-GameState::GameState(TargetWindow targetWindow) : targetWindow(targetWindow) {}
+//GameState::GameState(TargetWindow targetWindow) : targetWindow(targetWindow) {}

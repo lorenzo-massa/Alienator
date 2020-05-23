@@ -6,13 +6,13 @@
 #define ALIENATOR_GAMESTATE_H
 
 #include <memory>
-#include "../SFML/include/SFML/Graphics.hpp"
+//#include "SFML/Graphics.hpp"
 
-typedef std::shared_ptr<sf::RenderWindow> TargetWindow;
+//typedef std::shared_ptr<sf::RenderWindow> TargetWindow;
 
 class GameState {
 public:
-    explicit GameState(TargetWindow targetWindow);
+    //explicit GameState(TargetWindow targetWindow);
 
     virtual void handleInput() = 0;
 
@@ -21,7 +21,7 @@ public:
     virtual void generateFrame() = 0;
 
 protected:
-    TargetWindow targetWindow;
+    //TargetWindow targetWindow;
 };
 
 
