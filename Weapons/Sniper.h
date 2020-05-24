@@ -11,7 +11,7 @@ class Sniper : virtual public Weapon{
 public:
     explicit Sniper(int direction,int d=30,float fR=0.5);
 
-    virtual void fire() override ;
+    void fire() override ;
 };
 
 #endif //ALIENATOR_SNIPER_H

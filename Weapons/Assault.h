@@ -11,7 +11,7 @@ class Assault : virtual public Weapon{
 public:
     explicit Assault(int direction,int d=15,float fR=1.5);
 
-    virtual void fire() override ;
+    void fire() override ;
 };
 
 #endif //ALIENATOR_ASSAULT_H

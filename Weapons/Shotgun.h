@@ -11,7 +11,7 @@ class Shotgun : virtual public Weapon{
 public:
     explicit Shotgun(int direction,int d=25,float fR=0.75);
 
-    virtual void fire() override ;
+    void fire() override ;
 
 };
 

@@ -11,7 +11,7 @@ class Minigun : virtual public Weapon{
 public:
     explicit Minigun(int direction,int d=15,float fR=2);
 
-    virtual void fire() override ;
+    void fire() override ;
 
 };
 
