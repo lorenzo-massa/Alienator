@@ -1,0 +1,5 @@
+"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "d:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
+-- Found SFML 2.5.1 in D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release

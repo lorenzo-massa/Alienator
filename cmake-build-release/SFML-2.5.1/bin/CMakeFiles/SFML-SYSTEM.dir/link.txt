@@ -1,0 +1,2 @@
+D:\Programmi\MinGW\bin\ar.exe qc libSFML-SYSTEM.a  
+D:\Programmi\MinGW\bin\ranlib.exe libSFML-SYSTEM.a

@@ -1,0 +1,2 @@
+D:\Programmi\MinGW\bin\ar.exe qc libSFML-NETWORK.a  
+D:\Programmi\MinGW\bin\ranlib.exe libSFML-NETWORK.a

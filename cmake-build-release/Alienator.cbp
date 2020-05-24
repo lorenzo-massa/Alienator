@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Alienator"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\SFML-2.5.1\;CMake Files\SFML-2.5.1\lib\;CMake Files\SFML-2.5.1\lib\cmake\;CMake Files\SFML-2.5.1\lib\cmake\SFML\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Alienator">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Alienator/fast">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator/fast"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter.h">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.h">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.h">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/main.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-debug.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

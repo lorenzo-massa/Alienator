@@ -1,0 +1,2 @@
+D:\Programmi\MinGW\bin\ar.exe qc libSFML-AUDIO.a  
+D:\Programmi\MinGW\bin\ranlib.exe libSFML-AUDIO.a
