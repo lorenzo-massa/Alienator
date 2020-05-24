@@ -5,9 +5,7 @@
 #ifndef ALIENATOR_GAMECHARACTER_H
 #define ALIENATOR_GAMECHARACTER_H
 
-#endif //ALIENATOR_GAMECHARACTER_H
-
-#include "Weapon.h"
+#include "../Weapons/Weapon.h"
 
 class GameCharacter{
 public:
@@ -21,6 +19,8 @@ public:
 
     virtual void jump(int x,int y);
 
+    virtual void shot(Weapon* weapon);
+
     int getPosX() const;
     void setPosX(int posX);
 
@@ -30,7 +30,7 @@ public:
     int getHealthPoint() const;
     void setHealthPoint(int healthPoint);
 
-    weapon* getWeapon();
+    Weapon* getWeapon();
     void setWeapon(Weapon* weapon);
 
 protected:
@@ -42,3 +42,5 @@ protected:
     int ammo;
     Weapon * weapon;
 };
+
+#endif //ALIENATOR_GAMECHARACTER_H
