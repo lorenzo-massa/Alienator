@@ -1,0 +1,12 @@
+message("-- Linking DLLs SFML")
+add_library(SFML-AUDIO ../../cmake-build-debug/sfml-audio-d-2.dll)
+add_library(SFML-GRAPHICS ../../cmake-build-debug/sfml-graphics-d-2.dll)
+add_library(SFML-SYSTEM ../../cmake-build-debug/sfml-system-d-2.dll)
+add_library(SFML-WINDOW ../../cmake-build-debug/sfml-window-d-2.dll)
+add_library(SFML-NETWORK sfml-network-d-2.dll)
+
+set_target_properties(SFML-AUDIO PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(SFML-GRAPHICS PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(SFML-SYSTEM PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(SFML-WINDOW PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(SFML-NETWORK PROPERTIES LINKER_LANGUAGE CXX)

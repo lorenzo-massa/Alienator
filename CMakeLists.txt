@@ -13,11 +13,26 @@ set(SOURCE_FILES
     States/GameState.cpp
     States/GameState.h)
 
-#SFML
-find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
-include_directories(${SFML_CLUDE_DIR})
 
-#Executable
-add_executable(Alienator main.cpp ${SOURCE_FILES})
+link_directories(SFML-2.5.1/bin)
+link_libraries(sfml-audio-d-2.dll
+        sfml-graphics-d-2.dll
+        sfml-window-d-2.dll
+        sfml-system-d-2.dll
+        )
 
-target_link_libraries(Alienator smfl-system smfl-window smfl-graphics -static)
+#Add DLLs
+#include_directories("${PROJECT_SOURCE_DIR}/SFML-2.5.1/bin")
+#add_subdirectory(SFML-2.5.1/bin)
+
+
+# Add directory containing FindSFML.cmake to module path
+set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
+# Find SFML
+find_package(SFML 2.5 COMPONENTS audio graphics window system)
+include_directories(SFML-2.5.1/include)
+
+add_executable(Alienator ${SOURCE_FILES})
+
+target_link_libraries(Alienator sfml-audio sfml-graphics sfml-window sfml-system)
+

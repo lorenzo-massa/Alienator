@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SFML" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/sfml" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/sfml" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
