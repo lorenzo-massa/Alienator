@@ -4,9 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/leoco/CLionProjects/Alienator/States/GameState.cpp" "C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
-  "C:/Users/leoco/CLionProjects/Alienator/States/StateHandler.cpp" "C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj"
-  "C:/Users/leoco/CLionProjects/Alienator/main.cpp" "C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/main.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Game.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/MainMenu.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/MenuState.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj"
+  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/main.cpp" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

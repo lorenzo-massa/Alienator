@@ -11,7 +11,7 @@ set(SOURCE_FILES
     States/StateHandler.cpp
     States/StateHandler.h
     States/GameState.cpp
-    States/GameState.h Weapons/Weapon.h Weapons/Bullet.h GameCharacter/Hero.h GameCharacter/Enemy.h Weapons/Gun.h Weapons/Assault.h Weapons/Shotgun.h Weapons/Minigun.h Weapons/Sniper.h)
+    States/GameState.h Weapons/Weapon.h Weapons/Bullet.h GameCharacter/Hero.h GameCharacter/Enemy.h Weapons/Gun.h Weapons/Assault.h Weapons/Shotgun.h Weapons/Minigun.h Weapons/Sniper.h Engine/Game.cpp Engine/Game.h States/MenuState.cpp States/MenuState.h MainMenu.cpp MainMenu.h)
 
 
 link_directories(SFML-2.5.1/bin)

@@ -19,6 +19,11 @@ int main() {
         window.draw(shape);
         window.display();
     }
+
+    /*auto game = Game::getGameEngine();
+    game->init();
+    game->start();*/
+
     std::cout << "Hello !"<<std::endl;
 
     return 0;
