@@ -11,6 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include "../States/StateHandler.h"
 #include "../Weapons/Bullet.h"
+#include "../GameCharacter/Hero.h"
 //#include <Timer.h>
 
 #define GAME_NAME "Alienator"
@@ -22,6 +23,7 @@ public:
     Game();
     ~Game();
 
+    static std::shared_ptr<Game> getGame();
 
     void init();
     void start();
@@ -29,21 +31,24 @@ public:
     void save();
     void end();
 
-    Timer timer;
+    //Timer timer;
 
-    static const std::shared_ptr<sf::RenderWindow> &getGameWindow() const;
+    static const std::shared_ptr<sf::RenderWindow> &getGameWindow() ;
 
 private:
-    std::shared_ptr<MapHandler> ptrMapHandler;
+    static std::shared_ptr<Game> myGame;
+
+    //std::shared_ptr<MapHandler> ptrMapHandler;
     std::shared_ptr<Hero> ptrHero;
     std::list<Bullet> bullets;
     std::shared_ptr<StateHandler> ptrStateHandler;
-    std::shared_ptr<EnemyBrain> ptrEnemyBrain;
+    //std::shared_ptr<EnemyBrain> ptrEnemyBrain;
 
-    std::shared_ptr<sf::RenderWindow> gameWindow;
+    static std::shared_ptr<sf::RenderWindow> gameWindow;
     sf::Clock gameClock;
 
 
+    const std::shared_ptr<sf::RenderWindow> &getWindow() const;
 };
 
 

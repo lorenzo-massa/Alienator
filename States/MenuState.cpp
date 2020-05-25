@@ -26,8 +26,8 @@ void MenuState::handleInput() {
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::START:
-                        Game::getGameEngine()->getStateHandler().addState(std::make_shared<PlayState>(targetWindow));
-                        Game::getGameEngine()->playGameOst();
+                        //Game::getGameEngine()->getStateHandler().addState(std::make_shared<PlayState>(targetWindow));
+                        //Game::getGameEngine()->playGameOst();
                         break;
                     case MainMenu::MenuItem::TYPE::EXIT:
                         targetWindow->close();
