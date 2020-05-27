@@ -98,24 +98,10 @@ CMakeFiles/Alienator.dir/States/GameState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/States/GameState.cpp.s"
 	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\GameState.cpp" -o CMakeFiles\Alienator.dir\States\GameState.cpp.s
 
-CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/flags.make
-CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
-CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: ../Engine/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Engine\Game.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp"
-
-CMakeFiles/Alienator.dir/Engine/Game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Engine/Game.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" > CMakeFiles\Alienator.dir\Engine\Game.cpp.i
-
-CMakeFiles/Alienator.dir/Engine/Game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Engine/Game.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" -o CMakeFiles\Alienator.dir\Engine\Game.cpp.s
-
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: ../States/MenuState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
 	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\MenuState.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\MenuState.cpp"
 
 CMakeFiles/Alienator.dir/States/MenuState.cpp.i: cmake_force
@@ -125,6 +111,20 @@ CMakeFiles/Alienator.dir/States/MenuState.cpp.i: cmake_force
 CMakeFiles/Alienator.dir/States/MenuState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/States/MenuState.cpp.s"
 	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\MenuState.cpp" -o CMakeFiles\Alienator.dir\States\MenuState.cpp.s
+
+CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: ../Engine/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
+	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Engine\Game.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp"
+
+CMakeFiles/Alienator.dir/Engine/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Engine/Game.cpp.i"
+	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" > CMakeFiles\Alienator.dir\Engine\Game.cpp.i
+
+CMakeFiles/Alienator.dir/Engine/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Engine/Game.cpp.s"
+	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" -o CMakeFiles\Alienator.dir\Engine\Game.cpp.s
 
 CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
@@ -145,8 +145,8 @@ Alienator_OBJECTS = \
 "CMakeFiles/Alienator.dir/main.cpp.obj" \
 "CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj" \
 "CMakeFiles/Alienator.dir/States/GameState.cpp.obj" \
-"CMakeFiles/Alienator.dir/Engine/Game.cpp.obj" \
 "CMakeFiles/Alienator.dir/States/MenuState.cpp.obj" \
+"CMakeFiles/Alienator.dir/Engine/Game.cpp.obj" \
 "CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
 
 # External object files for target Alienator
@@ -155,8 +155,8 @@ Alienator_EXTERNAL_OBJECTS =
 Alienator.exe: CMakeFiles/Alienator.dir/main.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/States/GameState.cpp.obj
-Alienator.exe: CMakeFiles/Alienator.dir/Engine/Game.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/States/MenuState.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Engine/Game.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/MainMenu.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/build.make
 Alienator.exe: ../SFML-2.5.1/lib/libsfml-audio.a
