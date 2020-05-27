@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
+CMAKE_SOURCE_DIR = C:\Users\leoco\CLionProjects\Alienator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release"
+CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienat
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,222 @@ Alienator/fast:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/build
 .PHONY : Alienator/fast
 
+Behavior/EnemyBehavior/EnemyBehavior.obj: Behavior/EnemyBehavior/EnemyBehavior.cpp.obj
+
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.obj
+
+# target to build an object file
+Behavior/EnemyBehavior/EnemyBehavior.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.cpp.obj
+
+Behavior/EnemyBehavior/EnemyBehavior.i: Behavior/EnemyBehavior/EnemyBehavior.cpp.i
+
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.i
+
+# target to preprocess a source file
+Behavior/EnemyBehavior/EnemyBehavior.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.i
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.cpp.i
+
+Behavior/EnemyBehavior/EnemyBehavior.s: Behavior/EnemyBehavior/EnemyBehavior.cpp.s
+
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.s
+
+# target to generate assembly for a file
+Behavior/EnemyBehavior/EnemyBehavior.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.s
+.PHONY : Behavior/EnemyBehavior/EnemyBehavior.cpp.s
+
+Behavior/EnemyBehavior/Guard.obj: Behavior/EnemyBehavior/Guard.cpp.obj
+
+.PHONY : Behavior/EnemyBehavior/Guard.obj
+
+# target to build an object file
+Behavior/EnemyBehavior/Guard.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj
+.PHONY : Behavior/EnemyBehavior/Guard.cpp.obj
+
+Behavior/EnemyBehavior/Guard.i: Behavior/EnemyBehavior/Guard.cpp.i
+
+.PHONY : Behavior/EnemyBehavior/Guard.i
+
+# target to preprocess a source file
+Behavior/EnemyBehavior/Guard.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.i
+.PHONY : Behavior/EnemyBehavior/Guard.cpp.i
+
+Behavior/EnemyBehavior/Guard.s: Behavior/EnemyBehavior/Guard.cpp.s
+
+.PHONY : Behavior/EnemyBehavior/Guard.s
+
+# target to generate assembly for a file
+Behavior/EnemyBehavior/Guard.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.s
+.PHONY : Behavior/EnemyBehavior/Guard.cpp.s
+
+Behavior/EnemyBehavior/Sentinel.obj: Behavior/EnemyBehavior/Sentinel.cpp.obj
+
+.PHONY : Behavior/EnemyBehavior/Sentinel.obj
+
+# target to build an object file
+Behavior/EnemyBehavior/Sentinel.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj
+.PHONY : Behavior/EnemyBehavior/Sentinel.cpp.obj
+
+Behavior/EnemyBehavior/Sentinel.i: Behavior/EnemyBehavior/Sentinel.cpp.i
+
+.PHONY : Behavior/EnemyBehavior/Sentinel.i
+
+# target to preprocess a source file
+Behavior/EnemyBehavior/Sentinel.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.i
+.PHONY : Behavior/EnemyBehavior/Sentinel.cpp.i
+
+Behavior/EnemyBehavior/Sentinel.s: Behavior/EnemyBehavior/Sentinel.cpp.s
+
+.PHONY : Behavior/EnemyBehavior/Sentinel.s
+
+# target to generate assembly for a file
+Behavior/EnemyBehavior/Sentinel.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.s
+.PHONY : Behavior/EnemyBehavior/Sentinel.cpp.s
+
+Behavior/EnemyBehavior/Wizard.obj: Behavior/EnemyBehavior/Wizard.cpp.obj
+
+.PHONY : Behavior/EnemyBehavior/Wizard.obj
+
+# target to build an object file
+Behavior/EnemyBehavior/Wizard.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj
+.PHONY : Behavior/EnemyBehavior/Wizard.cpp.obj
+
+Behavior/EnemyBehavior/Wizard.i: Behavior/EnemyBehavior/Wizard.cpp.i
+
+.PHONY : Behavior/EnemyBehavior/Wizard.i
+
+# target to preprocess a source file
+Behavior/EnemyBehavior/Wizard.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.i
+.PHONY : Behavior/EnemyBehavior/Wizard.cpp.i
+
+Behavior/EnemyBehavior/Wizard.s: Behavior/EnemyBehavior/Wizard.cpp.s
+
+.PHONY : Behavior/EnemyBehavior/Wizard.s
+
+# target to generate assembly for a file
+Behavior/EnemyBehavior/Wizard.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.s
+.PHONY : Behavior/EnemyBehavior/Wizard.cpp.s
+
+Behavior/HeroBehavior/Archer.obj: Behavior/HeroBehavior/Archer.cpp.obj
+
+.PHONY : Behavior/HeroBehavior/Archer.obj
+
+# target to build an object file
+Behavior/HeroBehavior/Archer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj
+.PHONY : Behavior/HeroBehavior/Archer.cpp.obj
+
+Behavior/HeroBehavior/Archer.i: Behavior/HeroBehavior/Archer.cpp.i
+
+.PHONY : Behavior/HeroBehavior/Archer.i
+
+# target to preprocess a source file
+Behavior/HeroBehavior/Archer.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.i
+.PHONY : Behavior/HeroBehavior/Archer.cpp.i
+
+Behavior/HeroBehavior/Archer.s: Behavior/HeroBehavior/Archer.cpp.s
+
+.PHONY : Behavior/HeroBehavior/Archer.s
+
+# target to generate assembly for a file
+Behavior/HeroBehavior/Archer.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.s
+.PHONY : Behavior/HeroBehavior/Archer.cpp.s
+
+Behavior/HeroBehavior/Boxer.obj: Behavior/HeroBehavior/Boxer.cpp.obj
+
+.PHONY : Behavior/HeroBehavior/Boxer.obj
+
+# target to build an object file
+Behavior/HeroBehavior/Boxer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj
+.PHONY : Behavior/HeroBehavior/Boxer.cpp.obj
+
+Behavior/HeroBehavior/Boxer.i: Behavior/HeroBehavior/Boxer.cpp.i
+
+.PHONY : Behavior/HeroBehavior/Boxer.i
+
+# target to preprocess a source file
+Behavior/HeroBehavior/Boxer.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.i
+.PHONY : Behavior/HeroBehavior/Boxer.cpp.i
+
+Behavior/HeroBehavior/Boxer.s: Behavior/HeroBehavior/Boxer.cpp.s
+
+.PHONY : Behavior/HeroBehavior/Boxer.s
+
+# target to generate assembly for a file
+Behavior/HeroBehavior/Boxer.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.s
+.PHONY : Behavior/HeroBehavior/Boxer.cpp.s
+
+Behavior/HeroBehavior/HeroBehavior.obj: Behavior/HeroBehavior/HeroBehavior.cpp.obj
+
+.PHONY : Behavior/HeroBehavior/HeroBehavior.obj
+
+# target to build an object file
+Behavior/HeroBehavior/HeroBehavior.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj
+.PHONY : Behavior/HeroBehavior/HeroBehavior.cpp.obj
+
+Behavior/HeroBehavior/HeroBehavior.i: Behavior/HeroBehavior/HeroBehavior.cpp.i
+
+.PHONY : Behavior/HeroBehavior/HeroBehavior.i
+
+# target to preprocess a source file
+Behavior/HeroBehavior/HeroBehavior.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.i
+.PHONY : Behavior/HeroBehavior/HeroBehavior.cpp.i
+
+Behavior/HeroBehavior/HeroBehavior.s: Behavior/HeroBehavior/HeroBehavior.cpp.s
+
+.PHONY : Behavior/HeroBehavior/HeroBehavior.s
+
+# target to generate assembly for a file
+Behavior/HeroBehavior/HeroBehavior.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.s
+.PHONY : Behavior/HeroBehavior/HeroBehavior.cpp.s
+
+Behavior/HeroBehavior/Mage.obj: Behavior/HeroBehavior/Mage.cpp.obj
+
+.PHONY : Behavior/HeroBehavior/Mage.obj
+
+# target to build an object file
+Behavior/HeroBehavior/Mage.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj
+.PHONY : Behavior/HeroBehavior/Mage.cpp.obj
+
+Behavior/HeroBehavior/Mage.i: Behavior/HeroBehavior/Mage.cpp.i
+
+.PHONY : Behavior/HeroBehavior/Mage.i
+
+# target to preprocess a source file
+Behavior/HeroBehavior/Mage.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.i
+.PHONY : Behavior/HeroBehavior/Mage.cpp.i
+
+Behavior/HeroBehavior/Mage.s: Behavior/HeroBehavior/Mage.cpp.s
+
+.PHONY : Behavior/HeroBehavior/Mage.s
+
+# target to generate assembly for a file
+Behavior/HeroBehavior/Mage.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.s
+.PHONY : Behavior/HeroBehavior/Mage.cpp.s
+
 Engine/Game.obj: Engine/Game.cpp.obj
 
 .PHONY : Engine/Game.obj
@@ -148,6 +364,87 @@ Engine/Game.s: Engine/Game.cpp.s
 Engine/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Game.cpp.s
 .PHONY : Engine/Game.cpp.s
+
+GameCharacter/Enemy.obj: GameCharacter/Enemy.cpp.obj
+
+.PHONY : GameCharacter/Enemy.obj
+
+# target to build an object file
+GameCharacter/Enemy.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj
+.PHONY : GameCharacter/Enemy.cpp.obj
+
+GameCharacter/Enemy.i: GameCharacter/Enemy.cpp.i
+
+.PHONY : GameCharacter/Enemy.i
+
+# target to preprocess a source file
+GameCharacter/Enemy.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.i
+.PHONY : GameCharacter/Enemy.cpp.i
+
+GameCharacter/Enemy.s: GameCharacter/Enemy.cpp.s
+
+.PHONY : GameCharacter/Enemy.s
+
+# target to generate assembly for a file
+GameCharacter/Enemy.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.s
+.PHONY : GameCharacter/Enemy.cpp.s
+
+GameCharacter/GameCharacter.obj: GameCharacter/GameCharacter.cpp.obj
+
+.PHONY : GameCharacter/GameCharacter.obj
+
+# target to build an object file
+GameCharacter/GameCharacter.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj
+.PHONY : GameCharacter/GameCharacter.cpp.obj
+
+GameCharacter/GameCharacter.i: GameCharacter/GameCharacter.cpp.i
+
+.PHONY : GameCharacter/GameCharacter.i
+
+# target to preprocess a source file
+GameCharacter/GameCharacter.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.i
+.PHONY : GameCharacter/GameCharacter.cpp.i
+
+GameCharacter/GameCharacter.s: GameCharacter/GameCharacter.cpp.s
+
+.PHONY : GameCharacter/GameCharacter.s
+
+# target to generate assembly for a file
+GameCharacter/GameCharacter.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.s
+.PHONY : GameCharacter/GameCharacter.cpp.s
+
+GameCharacter/Hero.obj: GameCharacter/Hero.cpp.obj
+
+.PHONY : GameCharacter/Hero.obj
+
+# target to build an object file
+GameCharacter/Hero.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj
+.PHONY : GameCharacter/Hero.cpp.obj
+
+GameCharacter/Hero.i: GameCharacter/Hero.cpp.i
+
+.PHONY : GameCharacter/Hero.i
+
+# target to preprocess a source file
+GameCharacter/Hero.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.i
+.PHONY : GameCharacter/Hero.cpp.i
+
+GameCharacter/Hero.s: GameCharacter/Hero.cpp.s
+
+.PHONY : GameCharacter/Hero.s
+
+# target to generate assembly for a file
+GameCharacter/Hero.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.s
+.PHONY : GameCharacter/Hero.cpp.s
 
 MainMenu.obj: MainMenu.cpp.obj
 
@@ -257,6 +554,195 @@ States/StateHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/StateHandler.cpp.s
 .PHONY : States/StateHandler.cpp.s
 
+Weapons/Assault.obj: Weapons/Assault.cpp.obj
+
+.PHONY : Weapons/Assault.obj
+
+# target to build an object file
+Weapons/Assault.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj
+.PHONY : Weapons/Assault.cpp.obj
+
+Weapons/Assault.i: Weapons/Assault.cpp.i
+
+.PHONY : Weapons/Assault.i
+
+# target to preprocess a source file
+Weapons/Assault.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Assault.cpp.i
+.PHONY : Weapons/Assault.cpp.i
+
+Weapons/Assault.s: Weapons/Assault.cpp.s
+
+.PHONY : Weapons/Assault.s
+
+# target to generate assembly for a file
+Weapons/Assault.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Assault.cpp.s
+.PHONY : Weapons/Assault.cpp.s
+
+Weapons/Bullet.obj: Weapons/Bullet.cpp.obj
+
+.PHONY : Weapons/Bullet.obj
+
+# target to build an object file
+Weapons/Bullet.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj
+.PHONY : Weapons/Bullet.cpp.obj
+
+Weapons/Bullet.i: Weapons/Bullet.cpp.i
+
+.PHONY : Weapons/Bullet.i
+
+# target to preprocess a source file
+Weapons/Bullet.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.i
+.PHONY : Weapons/Bullet.cpp.i
+
+Weapons/Bullet.s: Weapons/Bullet.cpp.s
+
+.PHONY : Weapons/Bullet.s
+
+# target to generate assembly for a file
+Weapons/Bullet.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.s
+.PHONY : Weapons/Bullet.cpp.s
+
+Weapons/Gun.obj: Weapons/Gun.cpp.obj
+
+.PHONY : Weapons/Gun.obj
+
+# target to build an object file
+Weapons/Gun.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj
+.PHONY : Weapons/Gun.cpp.obj
+
+Weapons/Gun.i: Weapons/Gun.cpp.i
+
+.PHONY : Weapons/Gun.i
+
+# target to preprocess a source file
+Weapons/Gun.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Gun.cpp.i
+.PHONY : Weapons/Gun.cpp.i
+
+Weapons/Gun.s: Weapons/Gun.cpp.s
+
+.PHONY : Weapons/Gun.s
+
+# target to generate assembly for a file
+Weapons/Gun.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Gun.cpp.s
+.PHONY : Weapons/Gun.cpp.s
+
+Weapons/Minigun.obj: Weapons/Minigun.cpp.obj
+
+.PHONY : Weapons/Minigun.obj
+
+# target to build an object file
+Weapons/Minigun.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj
+.PHONY : Weapons/Minigun.cpp.obj
+
+Weapons/Minigun.i: Weapons/Minigun.cpp.i
+
+.PHONY : Weapons/Minigun.i
+
+# target to preprocess a source file
+Weapons/Minigun.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.i
+.PHONY : Weapons/Minigun.cpp.i
+
+Weapons/Minigun.s: Weapons/Minigun.cpp.s
+
+.PHONY : Weapons/Minigun.s
+
+# target to generate assembly for a file
+Weapons/Minigun.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.s
+.PHONY : Weapons/Minigun.cpp.s
+
+Weapons/Shotgun.obj: Weapons/Shotgun.cpp.obj
+
+.PHONY : Weapons/Shotgun.obj
+
+# target to build an object file
+Weapons/Shotgun.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj
+.PHONY : Weapons/Shotgun.cpp.obj
+
+Weapons/Shotgun.i: Weapons/Shotgun.cpp.i
+
+.PHONY : Weapons/Shotgun.i
+
+# target to preprocess a source file
+Weapons/Shotgun.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.i
+.PHONY : Weapons/Shotgun.cpp.i
+
+Weapons/Shotgun.s: Weapons/Shotgun.cpp.s
+
+.PHONY : Weapons/Shotgun.s
+
+# target to generate assembly for a file
+Weapons/Shotgun.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.s
+.PHONY : Weapons/Shotgun.cpp.s
+
+Weapons/Sniper.obj: Weapons/Sniper.cpp.obj
+
+.PHONY : Weapons/Sniper.obj
+
+# target to build an object file
+Weapons/Sniper.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj
+.PHONY : Weapons/Sniper.cpp.obj
+
+Weapons/Sniper.i: Weapons/Sniper.cpp.i
+
+.PHONY : Weapons/Sniper.i
+
+# target to preprocess a source file
+Weapons/Sniper.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.i
+.PHONY : Weapons/Sniper.cpp.i
+
+Weapons/Sniper.s: Weapons/Sniper.cpp.s
+
+.PHONY : Weapons/Sniper.s
+
+# target to generate assembly for a file
+Weapons/Sniper.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.s
+.PHONY : Weapons/Sniper.cpp.s
+
+Weapons/Weapon.obj: Weapons/Weapon.cpp.obj
+
+.PHONY : Weapons/Weapon.obj
+
+# target to build an object file
+Weapons/Weapon.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj
+.PHONY : Weapons/Weapon.cpp.obj
+
+Weapons/Weapon.i: Weapons/Weapon.cpp.i
+
+.PHONY : Weapons/Weapon.i
+
+# target to preprocess a source file
+Weapons/Weapon.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.i
+.PHONY : Weapons/Weapon.cpp.i
+
+Weapons/Weapon.s: Weapons/Weapon.cpp.s
+
+.PHONY : Weapons/Weapon.s
+
+# target to generate assembly for a file
+Weapons/Weapon.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.s
+.PHONY : Weapons/Weapon.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -293,9 +779,42 @@ help:
 	@echo ... edit_cache
 	@echo ... Alienator
 	@echo ... rebuild_cache
+	@echo ... Behavior/EnemyBehavior/EnemyBehavior.obj
+	@echo ... Behavior/EnemyBehavior/EnemyBehavior.i
+	@echo ... Behavior/EnemyBehavior/EnemyBehavior.s
+	@echo ... Behavior/EnemyBehavior/Guard.obj
+	@echo ... Behavior/EnemyBehavior/Guard.i
+	@echo ... Behavior/EnemyBehavior/Guard.s
+	@echo ... Behavior/EnemyBehavior/Sentinel.obj
+	@echo ... Behavior/EnemyBehavior/Sentinel.i
+	@echo ... Behavior/EnemyBehavior/Sentinel.s
+	@echo ... Behavior/EnemyBehavior/Wizard.obj
+	@echo ... Behavior/EnemyBehavior/Wizard.i
+	@echo ... Behavior/EnemyBehavior/Wizard.s
+	@echo ... Behavior/HeroBehavior/Archer.obj
+	@echo ... Behavior/HeroBehavior/Archer.i
+	@echo ... Behavior/HeroBehavior/Archer.s
+	@echo ... Behavior/HeroBehavior/Boxer.obj
+	@echo ... Behavior/HeroBehavior/Boxer.i
+	@echo ... Behavior/HeroBehavior/Boxer.s
+	@echo ... Behavior/HeroBehavior/HeroBehavior.obj
+	@echo ... Behavior/HeroBehavior/HeroBehavior.i
+	@echo ... Behavior/HeroBehavior/HeroBehavior.s
+	@echo ... Behavior/HeroBehavior/Mage.obj
+	@echo ... Behavior/HeroBehavior/Mage.i
+	@echo ... Behavior/HeroBehavior/Mage.s
 	@echo ... Engine/Game.obj
 	@echo ... Engine/Game.i
 	@echo ... Engine/Game.s
+	@echo ... GameCharacter/Enemy.obj
+	@echo ... GameCharacter/Enemy.i
+	@echo ... GameCharacter/Enemy.s
+	@echo ... GameCharacter/GameCharacter.obj
+	@echo ... GameCharacter/GameCharacter.i
+	@echo ... GameCharacter/GameCharacter.s
+	@echo ... GameCharacter/Hero.obj
+	@echo ... GameCharacter/Hero.i
+	@echo ... GameCharacter/Hero.s
 	@echo ... MainMenu.obj
 	@echo ... MainMenu.i
 	@echo ... MainMenu.s
@@ -308,6 +827,27 @@ help:
 	@echo ... States/StateHandler.obj
 	@echo ... States/StateHandler.i
 	@echo ... States/StateHandler.s
+	@echo ... Weapons/Assault.obj
+	@echo ... Weapons/Assault.i
+	@echo ... Weapons/Assault.s
+	@echo ... Weapons/Bullet.obj
+	@echo ... Weapons/Bullet.i
+	@echo ... Weapons/Bullet.s
+	@echo ... Weapons/Gun.obj
+	@echo ... Weapons/Gun.i
+	@echo ... Weapons/Gun.s
+	@echo ... Weapons/Minigun.obj
+	@echo ... Weapons/Minigun.i
+	@echo ... Weapons/Minigun.s
+	@echo ... Weapons/Shotgun.obj
+	@echo ... Weapons/Shotgun.i
+	@echo ... Weapons/Shotgun.s
+	@echo ... Weapons/Sniper.obj
+	@echo ... Weapons/Sniper.i
+	@echo ... Weapons/Sniper.s
+	@echo ... Weapons/Weapon.obj
+	@echo ... Weapons/Weapon.i
+	@echo ... Weapons/Weapon.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

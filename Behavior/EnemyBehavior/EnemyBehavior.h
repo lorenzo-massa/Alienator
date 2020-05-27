@@ -1,0 +1,8 @@
+//
+// Created by leoco on 27/05/2020.
+//
+
+#ifndef ALIENATOR_ENEMYBEHAVIOR_H
+#define ALIENATOR_ENEMYBEHAVIOR_H
+
+#endif //ALIENATOR_ENEMYBEHAVIOR_H

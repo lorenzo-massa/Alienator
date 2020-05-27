@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
+CMAKE_SOURCE_DIR = C:\Users\leoco\CLionProjects\Alienator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release"
+CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Alienator.dir/depend.make
@@ -59,86 +59,338 @@ include CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/main.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/main.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Alienator.dir/main.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\main.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Alienator.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\main.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\main.cpp
 
 CMakeFiles/Alienator.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/main.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\main.cpp" > CMakeFiles\Alienator.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\main.cpp > CMakeFiles\Alienator.dir\main.cpp.i
 
 CMakeFiles/Alienator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/main.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\main.cpp" -o CMakeFiles\Alienator.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\main.cpp -o CMakeFiles\Alienator.dir\main.cpp.s
 
 CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj: ../States/StateHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\StateHandler.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\StateHandler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\StateHandler.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\States\StateHandler.cpp
 
 CMakeFiles/Alienator.dir/States/StateHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/States/StateHandler.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\StateHandler.cpp" > CMakeFiles\Alienator.dir\States\StateHandler.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\States\StateHandler.cpp > CMakeFiles\Alienator.dir\States\StateHandler.cpp.i
 
 CMakeFiles/Alienator.dir/States/StateHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/States/StateHandler.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\StateHandler.cpp" -o CMakeFiles\Alienator.dir\States\StateHandler.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\States\StateHandler.cpp -o CMakeFiles\Alienator.dir\States\StateHandler.cpp.s
 
 CMakeFiles/Alienator.dir/States/GameState.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/States/GameState.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/States/GameState.cpp.obj: ../States/GameState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\GameState.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\GameState.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\GameState.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\States\GameState.cpp
 
 CMakeFiles/Alienator.dir/States/GameState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/States/GameState.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\GameState.cpp" > CMakeFiles\Alienator.dir\States\GameState.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\States\GameState.cpp > CMakeFiles\Alienator.dir\States\GameState.cpp.i
 
 CMakeFiles/Alienator.dir/States/GameState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/States/GameState.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\GameState.cpp" -o CMakeFiles\Alienator.dir\States\GameState.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\States\GameState.cpp -o CMakeFiles\Alienator.dir\States\GameState.cpp.s
 
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/States/MenuState.cpp.obj: ../States/MenuState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\MenuState.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\MenuState.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\States\MenuState.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\States\MenuState.cpp
 
 CMakeFiles/Alienator.dir/States/MenuState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/States/MenuState.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\MenuState.cpp" > CMakeFiles\Alienator.dir\States\MenuState.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\States\MenuState.cpp > CMakeFiles\Alienator.dir\States\MenuState.cpp.i
 
 CMakeFiles/Alienator.dir/States/MenuState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/States/MenuState.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\States\MenuState.cpp" -o CMakeFiles\Alienator.dir\States\MenuState.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\States\MenuState.cpp -o CMakeFiles\Alienator.dir\States\MenuState.cpp.s
 
 CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/Engine/Game.cpp.obj: ../Engine/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Engine\Game.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Engine\Game.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Engine\Game.cpp
 
 CMakeFiles/Alienator.dir/Engine/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Engine/Game.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" > CMakeFiles\Alienator.dir\Engine\Game.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Engine\Game.cpp > CMakeFiles\Alienator.dir\Engine\Game.cpp.i
 
 CMakeFiles/Alienator.dir/Engine/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Engine/Game.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Engine\Game.cpp" -o CMakeFiles\Alienator.dir\Engine\Game.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Engine\Game.cpp -o CMakeFiles\Alienator.dir\Engine\Game.cpp.s
 
 CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
 CMakeFiles/Alienator.dir/MainMenu.cpp.obj: ../MainMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\MainMenu.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\MainMenu.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\MainMenu.cpp
 
 CMakeFiles/Alienator.dir/MainMenu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/MainMenu.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp" > CMakeFiles\Alienator.dir\MainMenu.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\MainMenu.cpp > CMakeFiles\Alienator.dir\MainMenu.cpp.i
 
 CMakeFiles/Alienator.dir/MainMenu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/MainMenu.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp" -o CMakeFiles\Alienator.dir\MainMenu.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\MainMenu.cpp -o CMakeFiles\Alienator.dir\MainMenu.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj: ../Weapons/Assault.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Assault.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Assault.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Assault.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Assault.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Assault.cpp > CMakeFiles\Alienator.dir\Weapons\Assault.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Assault.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Assault.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Assault.cpp -o CMakeFiles\Alienator.dir\Weapons\Assault.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj: ../Weapons/Bullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Bullet.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Bullet.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Bullet.cpp > CMakeFiles\Alienator.dir\Weapons\Bullet.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Bullet.cpp -o CMakeFiles\Alienator.dir\Weapons\Bullet.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj: ../Weapons/Gun.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Gun.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Gun.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Gun.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Gun.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Gun.cpp > CMakeFiles\Alienator.dir\Weapons\Gun.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Gun.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Gun.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Gun.cpp -o CMakeFiles\Alienator.dir\Weapons\Gun.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj: ../Weapons/Minigun.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Minigun.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Minigun.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Minigun.cpp > CMakeFiles\Alienator.dir\Weapons\Minigun.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Minigun.cpp -o CMakeFiles\Alienator.dir\Weapons\Minigun.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj: ../Weapons/Shotgun.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Shotgun.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Shotgun.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Shotgun.cpp > CMakeFiles\Alienator.dir\Weapons\Shotgun.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Shotgun.cpp -o CMakeFiles\Alienator.dir\Weapons\Shotgun.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj: ../Weapons/Sniper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Sniper.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Sniper.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Sniper.cpp > CMakeFiles\Alienator.dir\Weapons\Sniper.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Sniper.cpp -o CMakeFiles\Alienator.dir\Weapons\Sniper.cpp.s
+
+CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj: ../Weapons/Weapon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Weapons\Weapon.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Weapons\Weapon.cpp
+
+CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Weapons\Weapon.cpp > CMakeFiles\Alienator.dir\Weapons\Weapon.cpp.i
+
+CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Weapons\Weapon.cpp -o CMakeFiles\Alienator.dir\Weapons\Weapon.cpp.s
+
+CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj: ../GameCharacter/Enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\GameCharacter\Enemy.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Enemy.cpp
+
+CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Enemy.cpp > CMakeFiles\Alienator.dir\GameCharacter\Enemy.cpp.i
+
+CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Enemy.cpp -o CMakeFiles\Alienator.dir\GameCharacter\Enemy.cpp.s
+
+CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj: ../GameCharacter/GameCharacter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\GameCharacter\GameCharacter.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\GameCharacter\GameCharacter.cpp
+
+CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\GameCharacter\GameCharacter.cpp > CMakeFiles\Alienator.dir\GameCharacter\GameCharacter.cpp.i
+
+CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\GameCharacter\GameCharacter.cpp -o CMakeFiles\Alienator.dir\GameCharacter\GameCharacter.cpp.s
+
+CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj: ../GameCharacter/Hero.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\GameCharacter\Hero.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Hero.cpp
+
+CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Hero.cpp > CMakeFiles\Alienator.dir\GameCharacter\Hero.cpp.i
+
+CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\GameCharacter\Hero.cpp -o CMakeFiles\Alienator.dir\GameCharacter\Hero.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj: ../Behavior/HeroBehavior/HeroBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\HeroBehavior.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\HeroBehavior.cpp
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\HeroBehavior.cpp > CMakeFiles\Alienator.dir\Behavior\HeroBehavior\HeroBehavior.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\HeroBehavior.cpp -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\HeroBehavior.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj: ../Behavior/EnemyBehavior/EnemyBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\EnemyBehavior.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\EnemyBehavior.cpp
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\EnemyBehavior.cpp > CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\EnemyBehavior.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\EnemyBehavior.cpp -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\EnemyBehavior.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj: ../Behavior/EnemyBehavior/Sentinel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Sentinel.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Sentinel.cpp
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Sentinel.cpp > CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Sentinel.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Sentinel.cpp -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Sentinel.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj: ../Behavior/EnemyBehavior/Guard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Guard.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Guard.cpp
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Guard.cpp > CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Guard.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Guard.cpp -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Guard.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj: ../Behavior/EnemyBehavior/Wizard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Wizard.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Wizard.cpp
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Wizard.cpp > CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Wizard.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\EnemyBehavior\Wizard.cpp -o CMakeFiles\Alienator.dir\Behavior\EnemyBehavior\Wizard.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj: ../Behavior/HeroBehavior/Archer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Archer.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Archer.cpp
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Archer.cpp > CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Archer.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Archer.cpp -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Archer.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj: ../Behavior/HeroBehavior/Boxer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Boxer.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Boxer.cpp
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Boxer.cpp > CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Boxer.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Boxer.cpp -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Boxer.cpp.s
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj: ../Behavior/HeroBehavior/Mage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Mage.cpp.obj -c C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Mage.cpp
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Mage.cpp > CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Mage.cpp.i
+
+CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\leoco\CLionProjects\Alienator\Behavior\HeroBehavior\Mage.cpp -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Mage.cpp.s
 
 # Object files for target Alienator
 Alienator_OBJECTS = \
@@ -147,7 +399,25 @@ Alienator_OBJECTS = \
 "CMakeFiles/Alienator.dir/States/GameState.cpp.obj" \
 "CMakeFiles/Alienator.dir/States/MenuState.cpp.obj" \
 "CMakeFiles/Alienator.dir/Engine/Game.cpp.obj" \
-"CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
+"CMakeFiles/Alienator.dir/MainMenu.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj" \
+"CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj" \
+"CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj" \
+"CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj" \
+"CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj" \
+"CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj"
 
 # External object files for target Alienator
 Alienator_EXTERNAL_OBJECTS =
@@ -158,6 +428,24 @@ Alienator.exe: CMakeFiles/Alienator.dir/States/GameState.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/States/MenuState.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Engine/Game.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/MainMenu.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Gun.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Minigun.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Shotgun.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Sniper.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Weapons/Weapon.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/EnemyBehavior.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Sentinel.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Guard.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/build.make
 Alienator.exe: ../SFML-2.5.1/lib/libsfml-audio.a
 Alienator.exe: ../SFML-2.5.1/lib/libsfml-graphics.a
@@ -166,7 +454,7 @@ Alienator.exe: ../SFML-2.5.1/lib/libsfml-system.a
 Alienator.exe: CMakeFiles/Alienator.dir/linklibs.rsp
 Alienator.exe: CMakeFiles/Alienator.dir/objects1.rsp
 Alienator.exe: CMakeFiles/Alienator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Alienator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable Alienator.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Alienator.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -179,6 +467,6 @@ CMakeFiles/Alienator.dir/clean:
 .PHONY : CMakeFiles/Alienator.dir/clean
 
 CMakeFiles/Alienator.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles\Alienator.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\leoco\CLionProjects\Alienator C:\Users\leoco\CLionProjects\Alienator C:\Users\leoco\CLionProjects\Alienator\cmake-build-release C:\Users\leoco\CLionProjects\Alienator\cmake-build-release C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles\Alienator.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Alienator.dir/depend
 

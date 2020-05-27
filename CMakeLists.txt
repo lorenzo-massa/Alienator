@@ -29,7 +29,7 @@ set(SOURCE_FILES
         Engine/Game.cpp
 
         MainMenu.cpp
-        MainMenu.h)
+        MainMenu.h Weapons/Assault.cpp Weapons/Bullet.cpp Weapons/Gun.cpp Weapons/Minigun.cpp Weapons/Shotgun.cpp Weapons/Sniper.cpp Weapons/Weapon.cpp GameCharacter/Enemy.cpp GameCharacter/GameCharacter.cpp GameCharacter/Hero.cpp Behavior/HeroBehavior/HeroBehavior.h Behavior/EnemyBehavior/EnemyBehavior.h Behavior/HeroBehavior/HeroBehavior.cpp Behavior/EnemyBehavior/EnemyBehavior.cpp Behavior/EnemyBehavior/Sentinel.h Behavior/EnemyBehavior/Sentinel.cpp Behavior/EnemyBehavior/Guard.h Behavior/EnemyBehavior/Guard.cpp Behavior/EnemyBehavior/Wizard.cpp Behavior/EnemyBehavior/Wizard.h Behavior/HeroBehavior/Archer.h Behavior/HeroBehavior/Archer.cpp Behavior/HeroBehavior/Boxer.h Behavior/HeroBehavior/Boxer.cpp Behavior/HeroBehavior/Mage.h Behavior/HeroBehavior/Mage.cpp)
 
 
 link_directories(SFML-2.5.1/bin)
