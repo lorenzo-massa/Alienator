@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\leoco\CLionProjects\Alienator
+CMAKE_SOURCE_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
+CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -365,6 +365,33 @@ Engine/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Game.cpp.s
 .PHONY : Engine/Game.cpp.s
 
+Engine/Timer.obj: Engine/Timer.cpp.obj
+
+.PHONY : Engine/Timer.obj
+
+# target to build an object file
+Engine/Timer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Timer.cpp.obj
+.PHONY : Engine/Timer.cpp.obj
+
+Engine/Timer.i: Engine/Timer.cpp.i
+
+.PHONY : Engine/Timer.i
+
+# target to preprocess a source file
+Engine/Timer.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Timer.cpp.i
+.PHONY : Engine/Timer.cpp.i
+
+Engine/Timer.s: Engine/Timer.cpp.s
+
+.PHONY : Engine/Timer.s
+
+# target to generate assembly for a file
+Engine/Timer.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Timer.cpp.s
+.PHONY : Engine/Timer.cpp.s
+
 GameCharacter/Enemy.obj: GameCharacter/Enemy.cpp.obj
 
 .PHONY : GameCharacter/Enemy.obj
@@ -472,6 +499,60 @@ MainMenu.s: MainMenu.cpp.s
 MainMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/MainMenu.cpp.s
 .PHONY : MainMenu.cpp.s
+
+Maps/Map.obj: Maps/Map.cpp.obj
+
+.PHONY : Maps/Map.obj
+
+# target to build an object file
+Maps/Map.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/Map.cpp.obj
+.PHONY : Maps/Map.cpp.obj
+
+Maps/Map.i: Maps/Map.cpp.i
+
+.PHONY : Maps/Map.i
+
+# target to preprocess a source file
+Maps/Map.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/Map.cpp.i
+.PHONY : Maps/Map.cpp.i
+
+Maps/Map.s: Maps/Map.cpp.s
+
+.PHONY : Maps/Map.s
+
+# target to generate assembly for a file
+Maps/Map.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/Map.cpp.s
+.PHONY : Maps/Map.cpp.s
+
+Maps/MapHandler.obj: Maps/MapHandler.cpp.obj
+
+.PHONY : Maps/MapHandler.obj
+
+# target to build an object file
+Maps/MapHandler.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj
+.PHONY : Maps/MapHandler.cpp.obj
+
+Maps/MapHandler.i: Maps/MapHandler.cpp.i
+
+.PHONY : Maps/MapHandler.i
+
+# target to preprocess a source file
+Maps/MapHandler.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.i
+.PHONY : Maps/MapHandler.cpp.i
+
+Maps/MapHandler.s: Maps/MapHandler.cpp.s
+
+.PHONY : Maps/MapHandler.s
+
+# target to generate assembly for a file
+Maps/MapHandler.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.s
+.PHONY : Maps/MapHandler.cpp.s
 
 States/GameState.obj: States/GameState.cpp.obj
 
@@ -806,6 +887,9 @@ help:
 	@echo ... Engine/Game.obj
 	@echo ... Engine/Game.i
 	@echo ... Engine/Game.s
+	@echo ... Engine/Timer.obj
+	@echo ... Engine/Timer.i
+	@echo ... Engine/Timer.s
 	@echo ... GameCharacter/Enemy.obj
 	@echo ... GameCharacter/Enemy.i
 	@echo ... GameCharacter/Enemy.s
@@ -818,6 +902,12 @@ help:
 	@echo ... MainMenu.obj
 	@echo ... MainMenu.i
 	@echo ... MainMenu.s
+	@echo ... Maps/Map.obj
+	@echo ... Maps/Map.i
+	@echo ... Maps/Map.s
+	@echo ... Maps/MapHandler.obj
+	@echo ... Maps/MapHandler.i
+	@echo ... Maps/MapHandler.s
 	@echo ... States/GameState.obj
 	@echo ... States/GameState.i
 	@echo ... States/GameState.s

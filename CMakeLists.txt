@@ -4,19 +4,20 @@ project(Alienator)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCE_FILES
-        main.cpp
-
+        Engine/Game.h
+        Engine/Game.cpp
         GameCharacter/GameCharacter.h
         GameCharacter/Hero.h
         GameCharacter/Enemy.h
-
+        GameCharacter/Enemy.cpp
+        GameCharacter/GameCharacter.cpp
+        GameCharacter/Hero.cpp
         States/StateHandler.cpp
         States/StateHandler.h
         States/GameState.cpp
         States/GameState.h
         States/MenuState.cpp
         States/MenuState.h
-
         Weapons/Weapon.h
         Weapons/Bullet.h
         Weapons/Gun.h
@@ -24,12 +25,32 @@ set(SOURCE_FILES
         Weapons/Shotgun.h
         Weapons/Minigun.h
         Weapons/Sniper.h
-
-        Engine/Game.h
-        Engine/Game.cpp
-
+        Weapons/Assault.cpp
+        Weapons/Bullet.cpp
+        Weapons/Gun.cpp
+        Weapons/Minigun.cpp
+        Weapons/Shotgun.cpp
+        Weapons/Sniper.cpp
+        Weapons/Weapon.cpp
+        Behavior/HeroBehavior/HeroBehavior.h
+        Behavior/EnemyBehavior/EnemyBehavior.h
+        Behavior/HeroBehavior/HeroBehavior.cpp
+        Behavior/EnemyBehavior/EnemyBehavior.cpp
+        Behavior/EnemyBehavior/Sentinel.h
+        Behavior/EnemyBehavior/Sentinel.cpp
+        Behavior/EnemyBehavior/Guard.h
+        Behavior/EnemyBehavior/Guard.cpp
+        Behavior/EnemyBehavior/Wizard.cpp
+        Behavior/EnemyBehavior/Wizard.h
+        Behavior/HeroBehavior/Archer.h
+        Behavior/HeroBehavior/Archer.cpp
+        Behavior/HeroBehavior/Boxer.h
+        Behavior/HeroBehavior/Boxer.cpp
+        Behavior/HeroBehavior/Mage.h
+        Behavior/HeroBehavior/Mage.cpp
         MainMenu.cpp
-        MainMenu.h Weapons/Assault.cpp Weapons/Bullet.cpp Weapons/Gun.cpp Weapons/Minigun.cpp Weapons/Shotgun.cpp Weapons/Sniper.cpp Weapons/Weapon.cpp GameCharacter/Enemy.cpp GameCharacter/GameCharacter.cpp GameCharacter/Hero.cpp Behavior/HeroBehavior/HeroBehavior.h Behavior/EnemyBehavior/EnemyBehavior.h Behavior/HeroBehavior/HeroBehavior.cpp Behavior/EnemyBehavior/EnemyBehavior.cpp Behavior/EnemyBehavior/Sentinel.h Behavior/EnemyBehavior/Sentinel.cpp Behavior/EnemyBehavior/Guard.h Behavior/EnemyBehavior/Guard.cpp Behavior/EnemyBehavior/Wizard.cpp Behavior/EnemyBehavior/Wizard.h Behavior/HeroBehavior/Archer.h Behavior/HeroBehavior/Archer.cpp Behavior/HeroBehavior/Boxer.h Behavior/HeroBehavior/Boxer.cpp Behavior/HeroBehavior/Mage.h Behavior/HeroBehavior/Mage.cpp)
+        MainMenu.h
+        Engine/Observer.h Engine/Subject.h Engine/Timer.cpp Engine/Timer.h Maps/MapHandler.cpp Maps/MapHandler.h Maps/Map.cpp Maps/Map.h)
 
 
 link_directories(SFML-2.5.1/bin)
@@ -48,7 +69,7 @@ set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
 find_package(SFML 2.5 COMPONENTS audio graphics window system)
 include_directories(SFML-2.5.1/include)
 
-add_executable(Alienator ${SOURCE_FILES})
+add_executable(Alienator main.cpp ${SOURCE_FILES})
 
 target_link_libraries(Alienator sfml-audio sfml-graphics sfml-window sfml-system)
 
