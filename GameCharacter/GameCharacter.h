@@ -11,9 +11,9 @@ class GameCharacter{
 public:
     GameCharacter(int hp,int ar,int am,int s);
 
-    virtual int reciveDamage(int points);
+    ~GameCharacter();
 
-    virtual ~GameCharacter();
+    virtual int reciveDamage(int points);
 
     virtual void move(int x,int y);
 

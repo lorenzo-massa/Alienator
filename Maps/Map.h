@@ -21,7 +21,7 @@ public:
 
 private:
     std::list<Enemy> enemies;
-    std::list<Collectable> collectables;
+    //std::list<Collectable> collectables;
     std::shared_ptr<MapType> matrixMap;
 };
 

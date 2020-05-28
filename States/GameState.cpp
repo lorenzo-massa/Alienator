@@ -4,4 +4,4 @@
 
 #include "GameState.h"
 
-GameState::GameState() : targetWindow(targetWindow) {}
+GameState::GameState(std::shared_ptr<sf::RenderWindow> targetWindow) : targetWindow(targetWindow) {}

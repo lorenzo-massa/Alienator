@@ -61,13 +61,13 @@ link_libraries(
         sfml-system-d-2.dll
 )
 
-
 # Add directory containing FindSFML.cmake to module path
 set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
 
 # Find SFML
 find_package(SFML 2.5 COMPONENTS audio graphics window system)
 include_directories(SFML-2.5.1/include)
+include_directories(Assets)
 
 add_executable(Alienator main.cpp ${SOURCE_FILES})
 

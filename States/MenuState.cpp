@@ -6,7 +6,7 @@
 #include "MenuState.h"
 #include "../Engine/Game.h"
 
-MenuState::MenuState() : GameState(), mainMenu(MainMenu(MainMenu::STYLE::MAIN)) {
+MenuState::MenuState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::MAIN)) {
 }
 
 void MenuState::handleInput() {
@@ -26,8 +26,9 @@ void MenuState::handleInput() {
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::START:
-                        //Game::getGameEngine()->getStateHandler().addState(std::make_shared<PlayState>(targetWindow));
-                        //Game::getGameEngine()->playGameOst();
+                        //doSomething
+                        //Game::getGame()->getStateHandler().addState(std::make_shared<PlayState>(targetWindow));
+                        //Game::getGame()->playGameOst();
                         break;
                     case MainMenu::MenuItem::TYPE::EXIT:
                         targetWindow->close();
@@ -41,8 +42,8 @@ void MenuState::handleInput() {
 }
 
 void MenuState::frameCalculator() {
-    float center = Game::getGameWindow()->getView().getCenter().x;
-    float offset = Game::getGameWindow()->getView().getSize().x / 2;
+    float center = Game::getGame()->getWindow()->getView().getCenter().x;
+    float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
 }
 
 void MenuState::generateFrame() {

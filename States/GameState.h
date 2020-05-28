@@ -11,7 +11,7 @@
 
 class GameState {
 public:
-    explicit GameState();
+    explicit GameState(std::shared_ptr<sf::RenderWindow> targetWindow);
 
     virtual void handleInput() = 0;
 

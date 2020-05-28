@@ -31,16 +31,19 @@ const MainMenu::MenuItem::TYPE& MainMenu::MenuItem::getType() const {
 }
 
 MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
-    if(!font.loadFromFile("./Assets/Font/mainFont.otf"))
+    if(!font.loadFromFile("arial.ttf"))
         std::cerr << "Font not found" << std::endl;
     if(style == MainMenu::STYLE::MAIN) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::START));
-        itemList[1]->setFont(font);
+        itemList[0]->setFont(font);
+        printf("Hi");
+
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::EXIT));
-        itemList[2]->setFont(font);
+        itemList[1]->setFont(font);
         itemList[active]->setFont(font);
         itemList[active]->setFillColor(sf::Color::Red);
         count = itemList.size();
+
     } else if (style == MainMenu::STYLE::CENTERED) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::RESUME));
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::QUIT));
@@ -55,6 +58,8 @@ MainMenu::~MainMenu() {
 }
 
 void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
+    printf("MainMenu::draw");
+
     sf::View actualView = window->getView();
     sf::Vector2f origin, dim, pos;
     dim = actualView.getSize();
@@ -63,6 +68,8 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
     origin.y -= dim.y / 2;
 
     if (style == STYLE::MAIN) {
+        printf("STYLE::MAIN");
+
         int height = count * (64 + 8);
         pos = actualView.getCenter();
         pos.y -= height / 2;

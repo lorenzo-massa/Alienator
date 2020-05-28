@@ -34,6 +34,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Assets"/>
 					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
 					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
 					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
@@ -56,6 +57,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Assets"/>
 					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
 					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
 					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>

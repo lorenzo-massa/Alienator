@@ -7,10 +7,14 @@
 
 std::shared_ptr<Game> Game::myGame = nullptr;
 
-Game::Game() {}
+Game::Game(){
+    ptrStateHandler = std::make_shared<StateHandler>();
+    gameWindow = nullptr;
+}
+Game::~Game() = default;
 
 std::shared_ptr<Game> Game::getGame() {
-    if(myGame == nullptr)
+    if(Game::myGame == nullptr)
         myGame = std::make_shared<Game>();
     return myGame;
 }
@@ -23,7 +27,7 @@ void Game::init() {
     if(gameWindow == nullptr) {
         gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME);
         gameWindow->setFramerateLimit(FPS);
-        ptrStateHandler->addState(std::make_shared<MenuState>());
+        ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
     }
 }
 
@@ -33,6 +37,7 @@ void Game::start() {
             //timer.check();
 
             ptrStateHandler->getState()->handleInput();
+
             ptrStateHandler->getState()->frameCalculator();
             ptrStateHandler->getState()->generateFrame();
 
@@ -43,6 +48,4 @@ void Game::start() {
     }
 }
 
-const std::shared_ptr<sf::RenderWindow> &Game::getGameWindow(){
-    return gameWindow;
-}
+
