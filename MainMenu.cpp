@@ -17,9 +17,28 @@ MainMenu::MenuItem::MenuItem(MainMenu::MenuItem::TYPE type) : type(type){
         case MenuItem::TYPE::QUIT:
             btnText = "Quit";
             break;
+        case MenuItem::TYPE::BACK:
+            btnText = "Back";
+            break;
         case MenuItem::TYPE::RESUME:
             btnText = "Resume";
             break;
+        case MenuItem::TYPE::LEVEL_1:
+            btnText = "Level 1";
+            break;
+        case MenuItem::TYPE::LEVEL_2:
+            btnText = "Level 2";
+            break;
+        case MenuItem::TYPE::LEVEL_3:
+            btnText = "Level 3";
+            break;
+        case MenuItem::TYPE::LEVEL_4:
+            btnText = "Level 4";
+            break;
+        case MenuItem::TYPE::LEVEL_5:
+            btnText = "Level 5";
+            break;
+
         default:
             std::cerr << "Object error!";
     }
@@ -48,6 +67,15 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::QUIT));
         itemList[active]->setFillColor(sf::Color::Red);
         count = itemList.size();
+    } else if (style == MainMenu::STYLE::LEVELS) {
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_1));
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_2));
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_3));
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_4));
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_5));
+        itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::BACK));
+        itemList[active]->setFillColor(sf::Color::Red);
+        count = itemList.size();
     } else std::cerr << "Error: Menu not found";
 
 }
@@ -65,7 +93,20 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
     origin.x -= dim.x / 2;
     origin.y -= dim.y / 2;
 
-    if (style == STYLE::MAIN) {
+    int height = count * (64 + 8);
+    pos = actualView.getCenter();
+    pos.y -= height / 2;
+    for (auto i : itemList) {
+        i->setCharacterSize(64);
+        i->setFont(font);
+        sf::FloatRect s = i->getGlobalBounds();
+        i->setPosition(pos.x, pos.y);
+        i->setOrigin(s.width / 2, s.height / 2);
+        pos.y += 72;
+        window->draw(*i);
+    }
+
+    /*if (style == STYLE::MAIN) {
         int height = count * (64 + 8);
         pos = actualView.getCenter();
         pos.y -= height / 2;
@@ -90,7 +131,21 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
             pos.y += 72;
             window->draw(*i);
         }
-    }
+    } else if (style == STYLE::LEVELS){
+        int height = count * (64 + 8);
+        pos = actualView.getCenter();
+        pos.y -= height / 2;
+        for (auto i : itemList) {
+            i->setCharacterSize(64);
+            i->setFont(font);
+            sf::FloatRect s = i->getGlobalBounds();
+            i->setPosition(pos.x, pos.y);
+            i->setOrigin(s.width / 2 , s.height / 2);
+            pos.y += 72;
+            window->draw(*i);
+        }
+    }*/
+
 }
 
 void MainMenu::forward() {

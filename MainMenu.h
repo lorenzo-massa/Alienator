@@ -17,7 +17,13 @@ public:
             START,
             EXIT,
             RESUME,
+            BACK,
             QUIT,
+            LEVEL_1,
+            LEVEL_2,
+            LEVEL_3,
+            LEVEL_4,
+            LEVEL_5
         };
         explicit MenuItem(MenuItem::TYPE type);
         const TYPE& getType() const;
@@ -28,7 +34,8 @@ public:
 
     enum STYLE {
         CENTERED,
-        MAIN
+        MAIN,
+        LEVELS
     };
     explicit MainMenu(STYLE style);
     ~MainMenu();

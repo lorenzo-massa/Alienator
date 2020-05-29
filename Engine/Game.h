@@ -38,6 +38,8 @@ public:
     std::shared_ptr<StateHandler> getStateHandler();
     const std::shared_ptr<sf::RenderWindow> &getWindow() const;
 
+    static void setMyGame(const std::shared_ptr<Game> &myGame);
+
 private:
 
     std::shared_ptr<MapHandler> ptrMapHandler;

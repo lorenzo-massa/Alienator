@@ -192,6 +192,12 @@
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.h">
 			<Option target="Alienator"/>
 		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/LevelSelectState.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/LevelSelectState.h">
+			<Option target="Alienator"/>
+		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/MenuState.cpp">
 			<Option target="Alienator"/>
 		</Unit>
