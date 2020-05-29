@@ -4,7 +4,6 @@
 
 #include "Game.h"
 
-
 std::shared_ptr<Game> Game::myGame = nullptr;
 
 Game::Game(){
@@ -46,6 +45,14 @@ void Game::start() {
             gameClock.restart();
         }
     }
+}
+
+std::shared_ptr<StateHandler> Game::getStateHandler() {
+    return Game::ptrStateHandler;
+}
+
+void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
+    Game::myGame = myGame;
 }
 
 

@@ -50,7 +50,7 @@ set(SOURCE_FILES
         Behavior/HeroBehavior/Mage.cpp
         MainMenu.cpp
         MainMenu.h
-        Engine/Observer.h Engine/Subject.h Engine/Timer.cpp Engine/Timer.h Maps/MapHandler.cpp Maps/MapHandler.h Maps/Map.cpp Maps/Map.h)
+        Engine/Observer.h Engine/Subject.h Engine/Timer.cpp Engine/Timer.h Maps/MapHandler.cpp Maps/MapHandler.h Maps/Map.cpp Maps/Map.h States/LevelSelectState.cpp States/LevelSelectState.h)
 
 
 link_directories(SFML-2.5.1/bin)

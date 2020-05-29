@@ -1,16 +1,15 @@
 //
-// Created by th3lo on 25/05/2020.
+// Created by Lorenzo Massa on 29/05/2020.
 //
 
 #include <iostream>
-#include "MenuState.h"
-#include "../Engine/Game.h"
 #include "LevelSelectState.h"
+#include "../Engine/Game.h"
 
-MenuState::MenuState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::MAIN)) {
+LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::LEVELS)) {
 }
 
-void MenuState::handleInput() {
+void LevelSelectState::handleInput() {
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -26,39 +25,38 @@ void MenuState::handleInput() {
                 mainMenu.forward();
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
-                    case MainMenu::MenuItem::TYPE::START:
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<LevelSelectState>(targetWindow));
-                        //Game::getGame()->playGameOst();
+                    case MainMenu::MenuItem::TYPE::LEVEL_1:
+
                         break;
-                    case MainMenu::MenuItem::TYPE::EXIT:
-                        targetWindow->close();
+                    case MainMenu::MenuItem::TYPE::LEVEL_2:
+
+                        break;
+                    case MainMenu::MenuItem::TYPE::LEVEL_3:
+
+                        break;
+                    case MainMenu::MenuItem::TYPE::LEVEL_4:
+
+                        break;
+                    case MainMenu::MenuItem::TYPE::LEVEL_5:
+
+                        break;
+                    case MainMenu::MenuItem::TYPE::BACK:
+                        Game::getGame()->getStateHandler()->removeState();
                         break;
                     default:
                         std::cerr << "Error handling input" << std::endl;
                 }
             }
-        } else if (event.type == sf::Event::MouseButtonPressed){
-            switch  (event.key.code)
-            {
-                case sf::Mouse::Left:
-                    std::cout<<"LEFT CLICK ";
-                    break;
-            }
         }
     }
-    /*if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-        std::cout<<"LEFT CLICK ";
-        std::cout<< "X: " << sf::Mouse::getPosition(targetWindow).x;
-        std::cout<< "Y: " << sf::Mouse::getPosition().y <<std::endl;
-    }*/
 }
 
-void MenuState::frameCalculator() {
+void LevelSelectState::frameCalculator() {
     float center = Game::getGame()->getWindow()->getView().getCenter().x;
     float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
 }
 
-void MenuState::generateFrame() {
+void LevelSelectState::generateFrame() {
     targetWindow->clear(sf::Color(19, 24, 98));
     mainMenu.draw(targetWindow);
 

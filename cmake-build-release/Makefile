@@ -581,6 +581,33 @@ States/GameState.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/GameState.cpp.s
 .PHONY : States/GameState.cpp.s
 
+States/LevelSelectState.obj: States/LevelSelectState.cpp.obj
+
+.PHONY : States/LevelSelectState.obj
+
+# target to build an object file
+States/LevelSelectState.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/LevelSelectState.cpp.obj
+.PHONY : States/LevelSelectState.cpp.obj
+
+States/LevelSelectState.i: States/LevelSelectState.cpp.i
+
+.PHONY : States/LevelSelectState.i
+
+# target to preprocess a source file
+States/LevelSelectState.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/LevelSelectState.cpp.i
+.PHONY : States/LevelSelectState.cpp.i
+
+States/LevelSelectState.s: States/LevelSelectState.cpp.s
+
+.PHONY : States/LevelSelectState.s
+
+# target to generate assembly for a file
+States/LevelSelectState.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/LevelSelectState.cpp.s
+.PHONY : States/LevelSelectState.cpp.s
+
 States/MenuState.obj: States/MenuState.cpp.obj
 
 .PHONY : States/MenuState.obj
@@ -911,6 +938,9 @@ help:
 	@echo ... States/GameState.obj
 	@echo ... States/GameState.i
 	@echo ... States/GameState.s
+	@echo ... States/LevelSelectState.obj
+	@echo ... States/LevelSelectState.i
+	@echo ... States/LevelSelectState.s
 	@echo ... States/MenuState.obj
 	@echo ... States/MenuState.i
 	@echo ... States/MenuState.s
