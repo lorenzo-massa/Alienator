@@ -36,11 +36,15 @@ public:
     void forward();
     void backward();
     const MenuItem::TYPE& getAction() const;
+
+
 private:
     int active {0};
     int count {0};
     sf::Font font;
     std::vector<std::shared_ptr<MenuItem>> itemList;
     STYLE style;
+
+
 };
 #endif //ALIENATOR_MAINMENU_H

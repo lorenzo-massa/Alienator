@@ -37,8 +37,20 @@ void MenuState::handleInput() {
                         std::cerr << "Error handling input" << std::endl;
                 }
             }
+        } else if (event.type == sf::Event::MouseButtonPressed){
+            switch  (event.key.code)
+            {
+                case sf::Mouse::Left:
+                    std::cout<<"LEFT CLICK ";
+                    break;
+            }
         }
     }
+    /*if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+        std::cout<<"LEFT CLICK ";
+        std::cout<< "X: " << sf::Mouse::getPosition(targetWindow).x;
+        std::cout<< "Y: " << sf::Mouse::getPosition().y <<std::endl;
+    }*/
 }
 
 void MenuState::frameCalculator() {

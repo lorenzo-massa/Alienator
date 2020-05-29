@@ -36,7 +36,6 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
     if(style == MainMenu::STYLE::MAIN) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::START));
         itemList[0]->setFont(font);
-        printf("Hi");
 
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::EXIT));
         itemList[1]->setFont(font);
@@ -58,7 +57,6 @@ MainMenu::~MainMenu() {
 }
 
 void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
-    printf("MainMenu::draw");
 
     sf::View actualView = window->getView();
     sf::Vector2f origin, dim, pos;
@@ -68,8 +66,6 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
     origin.y -= dim.y / 2;
 
     if (style == STYLE::MAIN) {
-        printf("STYLE::MAIN");
-
         int height = count * (64 + 8);
         pos = actualView.getCenter();
         pos.y -= height / 2;
