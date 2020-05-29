@@ -9,13 +9,18 @@ Weapon::Weapon(int direction, int d, float fR) {
 }
 
 void Weapon::fire() {
-
+    Bullet* bullet = nullptr;
+    //bullet = Factory::makeBullet()
+    bullet->setPosX(Weapon::getPosX());
+    bullet->setPosY(Weapon::getPosY());
+    bullet->setDamage(Weapon::getDamage());
+    //bullet->move();
 }
 
 void Weapon::setDamage(int d) {
     Weapon::damage = d;
 }
-int Weapon::getDamage() const {
+int Weapon::getDamage()const{
     return Weapon::damage;
 }
 

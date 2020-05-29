@@ -12,6 +12,8 @@ public:
     Enemy();
     ~Enemy();
 
+private:
+
 };
 
 #endif //ALIENATOR_ENEMY_H

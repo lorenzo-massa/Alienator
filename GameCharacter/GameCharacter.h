@@ -7,13 +7,14 @@
 
 #include "../Weapons/Weapon.h"
 
+
 class GameCharacter{
 public:
     GameCharacter(int hp,int ar,int am,int s);
 
     ~GameCharacter();
 
-    virtual int reciveDamage(int points);
+    virtual int receiveDamage(int points);
 
     virtual void move(int x,int y);
 
@@ -32,6 +33,18 @@ public:
 
     Weapon* getWeapon();
     void setWeapon(Weapon* weapon);
+
+    int getArmor() const;
+
+    void setArmor(int armor);
+
+    int getSpeed() const;
+
+    void setSpeed(int speed);
+
+    int getAmmo() const;
+
+    void setAmmo(int ammo);
 
 protected:
     int posX;

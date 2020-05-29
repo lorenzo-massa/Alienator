@@ -12,6 +12,9 @@ public:
     Hero();
     ~Hero();
 
+private:
+    int coins;
+
 };
 
 #endif //ALIENATOR_HERO_H

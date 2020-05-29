@@ -8,7 +8,7 @@ GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
 
 }
 
-int GameCharacter::reciveDamage(int points) {
+int GameCharacter::receiveDamage(int points) {
     return 0;
 }
 
@@ -51,5 +51,26 @@ Weapon *GameCharacter::getWeapon() {
 }
 void GameCharacter::setWeapon(Weapon* weapon) {
     this->weapon=weapon;
+}
+
+int GameCharacter::getArmor() const {
+    return armor;
+}
+void GameCharacter::setArmor(int armor) {
+    GameCharacter::armor = armor;
+}
+
+int GameCharacter::getSpeed() const {
+    return speed;
+}
+void GameCharacter::setSpeed(int speed) {
+    GameCharacter::speed = speed;
+}
+
+int GameCharacter::getAmmo() const {
+    return ammo;
+}
+void GameCharacter::setAmmo(int ammo) {
+    GameCharacter::ammo = ammo;
 }
 

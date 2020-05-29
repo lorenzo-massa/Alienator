@@ -5,4 +5,10 @@
 #ifndef ALIENATOR_BOXER_H
 #define ALIENATOR_BOXER_H
 
+#include "HeroBehavior.h"
+
+class Boxer: public HeroBehavior{
+public:
+    virtual void doSpecial();
+};
 #endif //ALIENATOR_BOXER_H

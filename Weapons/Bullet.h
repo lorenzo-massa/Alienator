@@ -6,11 +6,11 @@
 #define ALIENATOR_BULLET_H
 
 
-#include "Weapon.h"
+
 
 class Bullet{
 public:
-    explicit Bullet();//TODO direction? posX,posY di weapon?
+    Bullet(int dam,int d,int x,int y);//TODO direction? posX,posY di weapon?
     ~Bullet(){}
 
     void move(int x,int y);
@@ -24,11 +24,14 @@ public:
     void setDirection();
     int getDirection(int d);
 
+    int getDamage() const;
+    void setDamage(int damage);
+
 private:
     int posX;
     int posY;
+    int damage;
     int direction;
-    Weapon * weapon;
 };
 
-#endif //ALIENATOR_BULLET_H
+#endif //ALIENATOR_BULLE{}T_H

@@ -5,6 +5,8 @@
 #ifndef ALIENATOR_WEAPON_H
 #define ALIENATOR_WEAPON_H
 
+#include "Bullet.h"
+
 class Weapon {
 public:
     Weapon();

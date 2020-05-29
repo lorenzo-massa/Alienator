@@ -4,5 +4,10 @@
 
 #ifndef ALIENATOR_MAGE_H
 #define ALIENATOR_MAGE_H
+#include "HeroBehavior.h"
 
+class Mage: public HeroBehavior{
+public:
+    void doSpecial() override ;
+};
 #endif //ALIENATOR_MAGE_H

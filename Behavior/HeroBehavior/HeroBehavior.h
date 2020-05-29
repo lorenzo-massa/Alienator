@@ -5,4 +5,9 @@
 #ifndef ALIENATOR_HEROBEHAVIOR_H
 #define ALIENATOR_HEROBEHAVIOR_H
 
+class HeroBehavior{
+
+public:
+    virtual void doSpecial();
+};
 #endif //ALIENATOR_HEROBEHAVIOR_H

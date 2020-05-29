@@ -4,5 +4,9 @@
 
 #ifndef ALIENATOR_ENEMYBEHAVIOR_H
 #define ALIENATOR_ENEMYBEHAVIOR_H
-
+class EnemyBehavior {
+public:
+    virtual void patrol();
+    virtual void fight();
+};
 #endif //ALIENATOR_ENEMYBEHAVIOR_H
