@@ -50,7 +50,7 @@ const MainMenu::MenuItem::TYPE& MainMenu::MenuItem::getType() const {
 }
 
 MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
-    if(!font.loadFromFile("arial.ttf"))
+    if(!font.loadFromFile("Font/arial.ttf"))
         std::cerr << "Font not found" << std::endl;
     if(style == MainMenu::STYLE::MAIN) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::START));

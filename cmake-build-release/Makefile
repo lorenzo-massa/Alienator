@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\leoco\CLionProjects\Alienator
+CMAKE_SOURCE_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
+CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -527,6 +527,33 @@ Maps/Map.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/Map.cpp.s
 .PHONY : Maps/Map.cpp.s
 
+Maps/MapFactory.obj: Maps/MapFactory.cpp.obj
+
+.PHONY : Maps/MapFactory.obj
+
+# target to build an object file
+Maps/MapFactory.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.obj
+.PHONY : Maps/MapFactory.cpp.obj
+
+Maps/MapFactory.i: Maps/MapFactory.cpp.i
+
+.PHONY : Maps/MapFactory.i
+
+# target to preprocess a source file
+Maps/MapFactory.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.i
+.PHONY : Maps/MapFactory.cpp.i
+
+Maps/MapFactory.s: Maps/MapFactory.cpp.s
+
+.PHONY : Maps/MapFactory.s
+
+# target to generate assembly for a file
+Maps/MapFactory.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.s
+.PHONY : Maps/MapFactory.cpp.s
+
 Maps/MapHandler.obj: Maps/MapHandler.cpp.obj
 
 .PHONY : Maps/MapHandler.obj
@@ -932,6 +959,9 @@ help:
 	@echo ... Maps/Map.obj
 	@echo ... Maps/Map.i
 	@echo ... Maps/Map.s
+	@echo ... Maps/MapFactory.obj
+	@echo ... Maps/MapFactory.i
+	@echo ... Maps/MapFactory.s
 	@echo ... Maps/MapHandler.obj
 	@echo ... Maps/MapHandler.i
 	@echo ... Maps/MapHandler.s

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "LevelSelectState.h"
 #include "../Engine/Game.h"
+#include "../Maps/MapFactory.h"
 
 LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::LEVELS)) {
 }
@@ -26,7 +27,8 @@ void LevelSelectState::handleInput() {
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::LEVEL_1:
-
+                        Game::getGame()->getMapHandler()->loadLevel(1);
+                        //Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_2:
 

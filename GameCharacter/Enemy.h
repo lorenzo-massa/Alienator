@@ -9,8 +9,8 @@
 
 class Enemy :virtual public GameCharacter{
 public:
-    Enemy();
-    ~Enemy();
+    //Enemy();
+    //~Enemy();
 
 private:
 

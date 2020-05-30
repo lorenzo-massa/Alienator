@@ -1,5 +1,5 @@
 //
-// Created by Lorenzo Massa on 27/05/2020.
+// Created by Lorenzo Massa on 30/05/2020.
 //
 
 #ifndef ALIENATOR_MAP_H
@@ -8,21 +8,33 @@
 
 #include <list>
 #include <memory>
-#include "../GameCharacter/Enemy.h"
+#include <vector>
 
-enum class MapType {
-    Empty, Block
-};
+#include "../GameCharacter/Enemy.h"
 
 class Map {
 public:
-    Map();
-    ~Map();
+    explicit Map(int n, int m);
+    //~Map();
+
+    void addToMatrix(char& x);
+    void removeFromMatrix(int i);
+    char getFromMatrix(int i);
+
+    void addEnemy(Enemy& e);
+    void removeEnemy(int t);
+    Enemy getEnemy(int i);
+
+    std::string matrixtoString();
+
+
 
 private:
-    std::list<Enemy> enemies;
+    std::vector<Enemy> enemies;
     //std::list<Collectable> collectables;
-    std::shared_ptr<MapType> matrixMap;
+    std::vector<char> mapMatrix;
+    int n;
+    int m;
 };
 
 

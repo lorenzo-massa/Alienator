@@ -9,6 +9,7 @@ std::shared_ptr<Game> Game::myGame = nullptr;
 Game::Game(){
     ptrStateHandler = std::make_shared<StateHandler>();
     gameWindow = nullptr;
+    ptrMapHandler = std::make_shared<MapHandler>();
 }
 Game::~Game() = default;
 
@@ -49,6 +50,10 @@ void Game::start() {
 
 std::shared_ptr<StateHandler> Game::getStateHandler() {
     return Game::ptrStateHandler;
+}
+
+std::shared_ptr<MapHandler> Game::getMapHandler() {
+    return Game::ptrMapHandler;
 }
 
 void Game::setMyGame(const std::shared_ptr<Game> &myGame) {

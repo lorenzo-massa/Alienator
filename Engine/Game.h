@@ -36,6 +36,7 @@ public:
     //Timer timer;
 
     std::shared_ptr<StateHandler> getStateHandler();
+    std::shared_ptr<MapHandler> getMapHandler();
     const std::shared_ptr<sf::RenderWindow> &getWindow() const;
 
     static void setMyGame(const std::shared_ptr<Game> &myGame);
@@ -51,6 +52,7 @@ private:
     static std::shared_ptr<Game> myGame;
     std::shared_ptr<sf::RenderWindow> gameWindow;
     sf::Clock gameClock;
+
 
 
 };

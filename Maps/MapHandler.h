@@ -6,8 +6,19 @@
 #define ALIENATOR_MAPHANDLER_H
 
 
-class MapHandler {
+#include "Map.h"
+#include "MapFactory.h"
+#include <memory>
 
+
+class MapHandler {
+public:
+    MapHandler();
+    //~MapHandler();
+
+    void loadLevel(int i);
+private:
+    std::shared_ptr<Map> map;
 };
 
 

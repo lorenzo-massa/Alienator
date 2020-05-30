@@ -17,6 +17,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.obj"
   "CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
   "CMakeFiles/Alienator.dir/Maps/Map.cpp.obj"
+  "CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.obj"
   "CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj"
   "CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
   "CMakeFiles/Alienator.dir/States/LevelSelectState.cpp.obj"

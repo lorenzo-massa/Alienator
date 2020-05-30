@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/leoco/CLionProjects/Alienator
+# Install script for directory: D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

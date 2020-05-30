@@ -180,6 +180,12 @@
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/Map.h">
 			<Option target="Alienator"/>
 		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapFactory.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapFactory.h">
+			<Option target="Alienator"/>
+		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapHandler.cpp">
 			<Option target="Alienator"/>
 		</Unit>

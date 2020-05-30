@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 14)
 set(SOURCE_FILES
         Engine/Game.h
         Engine/Game.cpp
+        Engine/Observer.h
+        Engine/Subject.h
+        Engine/Timer.cpp
+        Engine/Timer.h
         GameCharacter/GameCharacter.h
         GameCharacter/Hero.h
         GameCharacter/Enemy.h
@@ -18,6 +22,8 @@ set(SOURCE_FILES
         States/GameState.h
         States/MenuState.cpp
         States/MenuState.h
+        States/LevelSelectState.cpp
+        States/LevelSelectState.h
         Weapons/Weapon.h
         Weapons/Bullet.h
         Weapons/Gun.h
@@ -50,7 +56,12 @@ set(SOURCE_FILES
         Behavior/HeroBehavior/Mage.cpp
         MainMenu.cpp
         MainMenu.h
-        Engine/Observer.h Engine/Subject.h Engine/Timer.cpp Engine/Timer.h Maps/MapHandler.cpp Maps/MapHandler.h Maps/Map.cpp Maps/Map.h States/LevelSelectState.cpp States/LevelSelectState.h)
+        Maps/MapHandler.cpp
+        Maps/MapHandler.h
+        Maps/Map.cpp
+        Maps/Map.h
+        Maps/MapFactory.cpp
+        Maps/MapFactory.h)
 
 
 link_directories(SFML-2.5.1/bin)

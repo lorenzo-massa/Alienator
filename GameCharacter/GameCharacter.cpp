@@ -74,3 +74,7 @@ void GameCharacter::setAmmo(int ammo) {
     GameCharacter::ammo = ammo;
 }
 
+GameCharacter::~GameCharacter() {
+
+}
+

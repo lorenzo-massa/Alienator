@@ -28,7 +28,6 @@ void MenuState::handleInput() {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::START:
                         Game::getGame()->getStateHandler()->addState(std::make_shared<LevelSelectState>(targetWindow));
-                        //Game::getGame()->playGameOst();
                         break;
                     case MainMenu::MenuItem::TYPE::EXIT:
                         targetWindow->close();
