@@ -22,6 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
   "CMakeFiles/Alienator.dir/States/LevelSelectState.cpp.obj"
   "CMakeFiles/Alienator.dir/States/MenuState.cpp.obj"
+  "CMakeFiles/Alienator.dir/States/PlayState.cpp.obj"
   "CMakeFiles/Alienator.dir/States/StateHandler.cpp.obj"
   "CMakeFiles/Alienator.dir/Weapons/Assault.cpp.obj"
   "CMakeFiles/Alienator.dir/Weapons/Bullet.cpp.obj"

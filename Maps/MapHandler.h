@@ -17,6 +17,8 @@ public:
     //~MapHandler();
 
     void loadLevel(int i);
+    std::shared_ptr<Map> getMap();
+
 private:
     std::shared_ptr<Map> map;
 };

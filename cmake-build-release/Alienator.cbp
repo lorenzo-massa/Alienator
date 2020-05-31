@@ -210,6 +210,12 @@
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/MenuState.h">
 			<Option target="Alienator"/>
 		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/PlayState.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/PlayState.h">
+			<Option target="Alienator"/>
+		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.cpp">
 			<Option target="Alienator"/>
 		</Unit>

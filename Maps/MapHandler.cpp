@@ -22,8 +22,15 @@ void MapHandler::loadLevel(int i) {
     for(int i = 0; i < n*m ; i++)
     {
         file.get(c);
-        map->addToMatrix(c);
+        if(c != '\n')
+            map->addToMatrix(c);
     }
 
+    std::cout<<map->matrixtoString();
 
+
+}
+
+std::shared_ptr<Map> MapHandler::getMap() {
+    return map;
 }

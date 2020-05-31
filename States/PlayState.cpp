@@ -1,17 +1,15 @@
 //
-// Created by Lorenzo Massa on 29/05/2020.
+// Created by th3lo on 31/05/2020.
 //
 
-#include <iostream>
-#include "LevelSelectState.h"
-#include "../Engine/Game.h"
-#include "../Maps/MapFactory.h"
 #include "PlayState.h"
+#include "../Engine/Game.h"
 
-LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::LEVELS)) {
+
+PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
 }
 
-void LevelSelectState::handleInput() {
+void PlayState::handleInput() {
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -22,11 +20,11 @@ void LevelSelectState::handleInput() {
         }
         else if(event.type == sf::Event::KeyPressed) {
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
-                mainMenu.backward();
+                //mainMenu.backward();
             if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
-                mainMenu.forward();
+                //mainMenu.forward();
             if(event.key.code == sf::Keyboard::Enter) {
-                switch (mainMenu.getAction()) {
+                /*switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::LEVEL_1:
                         Game::getGame()->getMapHandler()->loadLevel(1);
                         Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow));
@@ -48,19 +46,41 @@ void LevelSelectState::handleInput() {
                         break;
                     default:
                         std::cerr << "Error handling input" << std::endl;
-                }
+                }*/
             }
         }
     }
 }
 
-void LevelSelectState::frameCalculator() {
+void PlayState::frameCalculator() {
     float center = Game::getGame()->getWindow()->getView().getCenter().x;
     float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
 }
 
-void LevelSelectState::generateFrame() {
+void PlayState::generateFrame() {
     targetWindow->clear(sf::Color(19, 24, 98));
-    mainMenu.draw(targetWindow);
+
+    sf::Texture tileTexture;
+    sf::Sprite tile;
+
+    tileTexture.loadFromFile("src/Tiles/2.png");
+    tile.setTexture(tileTexture);
+
+    int m = Game::getGame()->getMapHandler()->getMap()->getM();
+    int n = Game::getGame()->getMapHandler()->getMap()->getN();
+
+    for(int i = 0; i < n ; i++)
+    {
+        for(int j = 0; j < m; j++){
+
+            if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'B'){
+                tile.setPosition(j*32,i*32);
+                tile.setTextureRect(sf::IntRect(0,0,32,32));
+                targetWindow->draw(tile);
+            }
+
+        }
+    }
+
 
 }

@@ -27,6 +27,9 @@ public:
 
     std::string matrixtoString();
 
+    int getN() const;
+
+    int getM() const;
 
 
 private:

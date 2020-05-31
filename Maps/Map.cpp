@@ -2,6 +2,7 @@
 // Created by Lorenzo Massa on 30/05/2020.
 //
 
+#include <iostream>
 #include "Map.h"
 
 Map::Map(int n, int m) : n(n), m(m) {
@@ -17,7 +18,7 @@ void Map::removeFromMatrix(int i) {
 }
 
 char Map::getFromMatrix(int i) {
-    return mapMatrix.at(i);
+    return mapMatrix[i];
 }
 
 void Map::addEnemy(Enemy &e) {
@@ -38,10 +39,23 @@ std::string Map::matrixtoString() {
     for(int i = 0; i < n ; i++)
     {
         for(int j=0; j < m; j++){
-            string+=mapMatrix.at(i*m+j);
+            //std::cout<<mapMatrix[i*m+j]<<"  ";
+            string.push_back(mapMatrix[i*m+j]);
         }
         string+="\n";
     }
 
+    /*for (auto &a : mapMatrix){
+        string+=a;
+    }*/
+
     return string;
+}
+
+int Map::getN() const {
+    return n;
+}
+
+int Map::getM() const {
+    return m;
 }

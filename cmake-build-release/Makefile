@@ -662,6 +662,33 @@ States/MenuState.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/MenuState.cpp.s
 .PHONY : States/MenuState.cpp.s
 
+States/PlayState.obj: States/PlayState.cpp.obj
+
+.PHONY : States/PlayState.obj
+
+# target to build an object file
+States/PlayState.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/PlayState.cpp.obj
+.PHONY : States/PlayState.cpp.obj
+
+States/PlayState.i: States/PlayState.cpp.i
+
+.PHONY : States/PlayState.i
+
+# target to preprocess a source file
+States/PlayState.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/PlayState.cpp.i
+.PHONY : States/PlayState.cpp.i
+
+States/PlayState.s: States/PlayState.cpp.s
+
+.PHONY : States/PlayState.s
+
+# target to generate assembly for a file
+States/PlayState.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/States/PlayState.cpp.s
+.PHONY : States/PlayState.cpp.s
+
 States/StateHandler.obj: States/StateHandler.cpp.obj
 
 .PHONY : States/StateHandler.obj
@@ -974,6 +1001,9 @@ help:
 	@echo ... States/MenuState.obj
 	@echo ... States/MenuState.i
 	@echo ... States/MenuState.s
+	@echo ... States/PlayState.obj
+	@echo ... States/PlayState.i
+	@echo ... States/PlayState.s
 	@echo ... States/StateHandler.obj
 	@echo ... States/StateHandler.i
 	@echo ... States/StateHandler.s
