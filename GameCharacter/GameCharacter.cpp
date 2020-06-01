@@ -8,16 +8,18 @@ GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
 
 }
 
-int GameCharacter::receiveDamage(int points) {
-    return 0;
+int GameCharacter::receiveDamage(int points ) {
+    if (healthPoint>points)
+        return healthPoint -= points;
+    //else
 }
 
-void GameCharacter::move(int x, int y) {
-
+void GameCharacter::move(int x,int direction) {
+    x+=10*direction;
 }
 
-void GameCharacter::jump(int x, int y) {
-
+void GameCharacter::jump(int y) {
+    y+=50;
 }
 
 void GameCharacter::shot(Weapon *weapon) {

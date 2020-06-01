@@ -11,9 +11,7 @@ Weapon::Weapon(int direction, int d, float fR) {
 void Weapon::fire() {
     Bullet* bullet = nullptr;
     //bullet = Factory::makeBullet()
-    bullet->setPosX(Weapon::getPosX());
-    bullet->setPosY(Weapon::getPosY());
-    bullet->setDamage(Weapon::getDamage());
+    //Bullet(Weapon::damage, Weapon::direction, Weapon::posX, Weapon::posY);
     //bullet->move();
 }
 

@@ -1,5 +1,19 @@
-"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
--- Found SFML 2.5.1 in D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML
+"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" C:\Users\leoco\CLionProjects\Alienator
+-- The C compiler identification is GNU 8.2.0
+-- The CXX compiler identification is GNU 8.2.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe
+-- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found SFML 2.5.1 in C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release
+-- Build files have been written to: C:/Users/leoco/CLionProjects/Alienator/cmake-build-release

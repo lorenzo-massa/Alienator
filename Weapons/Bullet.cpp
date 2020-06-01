@@ -3,10 +3,9 @@
 //
 
 #include "Bullet.h"
+#include "Weapon.h"
 
-Bullet::Bullet(int dam, int d, int x, int y){
-
-}
+Bullet::Bullet(int dam, int d, int x, int y):damage(dam),direction(d),posX(x),posY(y){}
 
 int Bullet::getDirection(int d) {
     return 0;

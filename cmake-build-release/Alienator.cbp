@@ -8,206 +8,206 @@
 		<Option virtualFolders="CMake Files\;CMake Files\SFML-2.5.1\;CMake Files\SFML-2.5.1\lib\;CMake Files\SFML-2.5.1\lib\cmake\;CMake Files\SFML-2.5.1\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option working_dir="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option working_dir="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Alienator">
-				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option output="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Assets"/>
-					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/Users/leoco/CLionProjects/Alienator/Assets"/>
+					<Add directory="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator"/>
-					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Alienator/fast">
-				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option output="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Alienator.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Assets"/>
-					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
-					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/Users/leoco/CLionProjects/Alienator/Assets"/>
+					<Add directory="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator/fast"/>
-					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release"/>
+				<Option working_dir="C:/Users/leoco/CLionProjects/Alienator/cmake-build-release"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/EnemyBehavior.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/EnemyBehavior.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/EnemyBehavior.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/EnemyBehavior.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Guard.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Guard.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Guard.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Guard.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Sentinel.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Sentinel.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Sentinel.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Sentinel.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Wizard.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Wizard.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/EnemyBehavior/Wizard.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/EnemyBehavior/Wizard.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Archer.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Archer.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Archer.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Archer.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Boxer.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Boxer.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Boxer.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Boxer.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/HeroBehavior.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/HeroBehavior.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/HeroBehavior.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/HeroBehavior.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Mage.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Mage.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Behavior/HeroBehavior/Mage.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Behavior/HeroBehavior/Mage.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Game.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Game.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Game.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Game.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Observer.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Observer.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Subject.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Subject.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Timer.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Timer.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Timer.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Engine/Timer.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/Enemy.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/Enemy.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/Enemy.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/Enemy.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/GameCharacter.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/GameCharacter.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/GameCharacter.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/GameCharacter.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/Hero.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/Hero.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/Hero.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/GameCharacter/Hero.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/MainMenu.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/MainMenu.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/MainMenu.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/MainMenu.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/Map.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/Map.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/Map.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/Map.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapFactory.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/MapFactory.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapFactory.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/MapFactory.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapHandler.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/MapHandler.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapHandler.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Maps/MapHandler.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/GameState.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/GameState.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/GameState.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/LevelSelectState.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/LevelSelectState.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/LevelSelectState.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/LevelSelectState.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/MenuState.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/MenuState.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/MenuState.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/MenuState.h">
 			<Option target="Alienator"/>
 		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/PlayState.cpp">
@@ -217,75 +217,76 @@
 			<Option target="Alienator"/>
 		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/StateHandler.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/StateHandler.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Assault.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Assault.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Assault.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Assault.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Bullet.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Bullet.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Bullet.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Bullet.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Gun.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Gun.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Gun.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Gun.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Minigun.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Minigun.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Minigun.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Minigun.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Shotgun.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Shotgun.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Shotgun.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Shotgun.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Sniper.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Sniper.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Sniper.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Sniper.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Weapon.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Weapon.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Weapons/Weapon.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/Weapons/Weapon.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/main.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/main.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/CMakeLists.txt">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-debug.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-debug.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets.cmake">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets.cmake">
 			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
 	</Project>

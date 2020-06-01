@@ -16,9 +16,9 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual void move(int x,int y);
+    virtual void move(int x,int direction);
 
-    virtual void jump(int x,int y);
+    virtual void jump(int y);
 
     virtual void shot(Weapon* weapon);
 
