@@ -3,39 +3,39 @@
 //
 
 #include "Bullet.h"
-#include "Weapon.h"
+
 
 Bullet::Bullet(int dam, int d, int x, int y):damage(dam),direction(d),posX(x),posY(y){}
 
-int Bullet::getDirection(int d) {
-    return 0;
-}
-void Bullet::setDirection() {
+void Bullet::move(int x, int y/*,float dir,int v*/) {
+   /* x+=v*10;
+    y=dir*x;*/
+}//TODO retta su cui si muove bullet
 
+int Bullet::getDirection()const {
+    return direction;
+}
+void Bullet::setDirection(int d) {
+    direction=d;
 }
 
 int Bullet::getPosY() const {
-    return 0;
+    return posY;
 }
 void Bullet::setPosY(int y) {
-
+    posY=y;
 }
 
 int Bullet::getPosX() const {
-    return 0;
+    return posX;
 }
 void Bullet::setPosX(int x) {
-
-}
-
-void Bullet::move(int x, int y) {
-
+    posX=x;
 }
 
 int Bullet::getDamage() const {
     return damage;
 }
-
 void Bullet::setDamage(int damage) {
     Bullet::damage = damage;
 }

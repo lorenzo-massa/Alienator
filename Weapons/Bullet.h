@@ -13,7 +13,7 @@ public:
     Bullet(int dam,int d,int x,int y);//TODO direction? posX,posY di weapon?
     ~Bullet(){}
 
-    void move(int x,int y);
+    void move(int x,int y/*,float dir,int v*/);
 
     void setPosX(int x);
     int getPosX() const;
@@ -21,8 +21,8 @@ public:
     void setPosY(int y);
     int getPosY() const;
 
-    void setDirection();
-    int getDirection(int d);
+    void setDirection(int d);
+    int getDirection()const;
 
     int getDamage() const;
     void setDamage(int damage);

@@ -210,13 +210,12 @@
 		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/MenuState.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/PlayState.cpp">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/PlayState.cpp">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/PlayState.h">
+		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/PlayState.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/States/StateHandler.cpp">
 		<Unit filename="C:/Users/leoco/CLionProjects/Alienator/States/StateHandler.cpp">
 			<Option target="Alienator"/>
 		</Unit>
