@@ -8,7 +8,10 @@
 
 #include "Map.h"
 #include "MapFactory.h"
+//#include "../Engine/Game.h"
 #include <memory>
+#include <SFML/Graphics/RenderWindow.hpp>
+
 
 
 class MapHandler {

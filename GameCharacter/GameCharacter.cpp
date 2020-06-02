@@ -5,7 +5,7 @@
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
-
+    rect = std::make_shared<sf::RectangleShape>();
 }
 
 int GameCharacter::receiveDamage(int points ) {
@@ -79,4 +79,6 @@ void GameCharacter::setAmmo(int ammo) {
 GameCharacter::~GameCharacter() {
 
 }
+
+
 

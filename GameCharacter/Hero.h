@@ -9,7 +9,7 @@
 
 class Hero :virtual public GameCharacter{
 public:
-    Hero();
+    Hero(int hp, int ar, int am, int s);
     ~Hero();
 
 private:

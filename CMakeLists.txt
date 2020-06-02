@@ -61,7 +61,9 @@ set(SOURCE_FILES
         Maps/Map.cpp
         Maps/Map.h
         Maps/MapFactory.cpp
-        Maps/MapFactory.h States/PlayState.cpp States/PlayState.h)
+        Maps/MapFactory.h
+        States/PlayState.cpp
+        States/PlayState.h)
 
 
 link_directories(SFML-2.5.1/bin)

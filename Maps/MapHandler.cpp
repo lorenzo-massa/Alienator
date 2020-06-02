@@ -2,6 +2,7 @@
 // Created by Lorenzo Massa on 27/05/2020.
 //
 
+#include <SFML/Graphics.hpp>
 #include "MapHandler.h"
 
 MapHandler::MapHandler(){

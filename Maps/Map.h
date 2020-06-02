@@ -20,6 +20,7 @@ public:
     void addToMatrix(char& x);
     void removeFromMatrix(int i);
     char getFromMatrix(int i);
+    void setMatrixValue(int i, char value);
 
     void addEnemy(Enemy& e);
     void removeEnemy(int t);

@@ -59,3 +59,7 @@ int Map::getN() const {
 int Map::getM() const {
     return m;
 }
+
+void Map::setMatrixValue(int i, char value) {
+    mapMatrix[i] = value;
+}

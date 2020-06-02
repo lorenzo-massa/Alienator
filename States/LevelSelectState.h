@@ -17,6 +17,7 @@ public:
     void generateFrame() override;
 private:
     MainMenu mainMenu;
+
 };
 
 

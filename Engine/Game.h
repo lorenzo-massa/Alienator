@@ -37,7 +37,11 @@ public:
 
     std::shared_ptr<StateHandler> getStateHandler();
     std::shared_ptr<MapHandler> getMapHandler();
+    std::shared_ptr<Hero> getHero();
+
     const std::shared_ptr<sf::RenderWindow> &getWindow() const;
+
+    void createHero(int x, int y);
 
     static void setMyGame(const std::shared_ptr<Game> &myGame);
 

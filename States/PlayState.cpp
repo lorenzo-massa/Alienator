@@ -19,34 +19,22 @@ void PlayState::handleInput() {
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
         }
         else if(event.type == sf::Event::KeyPressed) {
-            if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
-                //mainMenu.backward();
-            if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
-                //mainMenu.forward();
-            if(event.key.code == sf::Keyboard::Enter) {
-                /*switch (mainMenu.getAction()) {
-                    case MainMenu::MenuItem::TYPE::LEVEL_1:
-                        Game::getGame()->getMapHandler()->loadLevel(1);
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow));
-                        break;
-                    case MainMenu::MenuItem::TYPE::LEVEL_2:
-
-                        break;
-                    case MainMenu::MenuItem::TYPE::LEVEL_3:
-
-                        break;
-                    case MainMenu::MenuItem::TYPE::LEVEL_4:
-
-                        break;
-                    case MainMenu::MenuItem::TYPE::LEVEL_5:
-
-                        break;
-                    case MainMenu::MenuItem::TYPE::BACK:
-                        Game::getGame()->getStateHandler()->removeState();
-                        break;
-                    default:
-                        std::cerr << "Error handling input" << std::endl;
-                }*/
+            if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
+                std::cout << "\nKeyPressed::Up";
+                //Game::getGame()->getHero()->getRect().setPosition(Game::getGame()->getHero()->getRect().getPosition().x, Game::getGame()->getHero()->getRect().getPosition().y+1);
+                Game::getGame()->getHero()->getRect()->move(0, -1.0f);
+            }
+            if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down) {
+                std::cout << "\nKeyPressed::Down";
+                Game::getGame()->getHero()->getRect()->move(0, 1.0f);
+            }
+            if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
+                std::cout << "\nKeyPressed::Left";
+                Game::getGame()->getHero()->getRect()->move(-1.0f, 0);
+            }
+            if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
+                std::cout << "\nKeyPressed::Right";
+                Game::getGame()->getHero()->getRect()->move(1.0f, 0);
             }
         }
     }
@@ -66,8 +54,9 @@ void PlayState::generateFrame() {
     tileTexture.loadFromFile("src/Tiles/2.png");
     tile.setTexture(tileTexture);
 
-    int m = Game::getGame()->getMapHandler()->getMap()->getM();
     int n = Game::getGame()->getMapHandler()->getMap()->getN();
+    int m = Game::getGame()->getMapHandler()->getMap()->getM();
+
 
     for(int i = 0; i < n ; i++)
     {
@@ -77,10 +66,22 @@ void PlayState::generateFrame() {
                 tile.setPosition(j*32,i*32);
                 tile.setTextureRect(sf::IntRect(0,0,32,32));
                 targetWindow->draw(tile);
+            } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
+                Game::getGame()->createHero(j*32,i*32);
+                Game::getGame()->getHero()->init(sf::Vector2f(j*32,i*32),sf::Vector2f(20,30), sf::Color::Red);
+                Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
+                //targetWindow->draw(Game::getGame()->getHero());
             }
 
         }
     }
 
+    //Game::getGame()->getHero()->getRect().setPosition(Game::getGame()->getHero()->getRect().getPosition().x+1,Game::getGame()->getHero()->getRect().getPosition().y-1);
+
+    targetWindow->draw(*Game::getGame()->getHero()->getRect());
+
+    //std::cout<<Game::getGame()->getHero()->getRect().getPosition().x;
+
 
 }
+

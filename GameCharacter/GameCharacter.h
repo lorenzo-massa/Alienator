@@ -5,6 +5,8 @@
 #ifndef ALIENATOR_GAMECHARACTER_H
 #define ALIENATOR_GAMECHARACTER_H
 
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <memory>
 #include "../Weapons/Weapon.h"
 
 
@@ -13,6 +15,7 @@ public:
     GameCharacter(int hp,int ar,int am,int s);
 
     ~GameCharacter();
+
 
     virtual int receiveDamage(int points);
 
@@ -46,6 +49,17 @@ public:
 
     void setAmmo(int ammo);
 
+    void init(sf::Vector2f position, sf::Vector2f size, sf::Color color){
+        rect->setPosition(position);
+        rect->setSize(size);
+        rect->setFillColor(color);
+    }
+
+    std::shared_ptr<sf::RectangleShape> getRect(){
+        return rect;
+    }
+
+
 protected:
     int posX;
     int posY;
@@ -54,6 +68,8 @@ protected:
     int speed;
     int ammo;
     Weapon * weapon;
+
+    std::shared_ptr<sf::RectangleShape> rect;
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H
