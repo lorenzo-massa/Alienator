@@ -19,7 +19,7 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual bool isLegalMovement(int posX,int direction,int posX,int posY);
+    virtual bool isLegalMovement(int posX,int direction,int posY);
 
     virtual void move(int posX, int posY,int speed,int direction);
 
