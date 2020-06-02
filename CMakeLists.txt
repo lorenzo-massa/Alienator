@@ -11,10 +11,10 @@ set(SOURCE_FILES
         Engine/Timer.cpp
         Engine/Timer.h
         GameCharacter/GameCharacter.h
+        GameCharacter/GameCharacter.cpp
         GameCharacter/Hero.h
         GameCharacter/Enemy.h
         GameCharacter/Enemy.cpp
-        GameCharacter/GameCharacter.cpp
         GameCharacter/Hero.cpp
         States/StateHandler.cpp
         States/StateHandler.h
@@ -63,7 +63,9 @@ set(SOURCE_FILES
         Maps/MapFactory.cpp
         Maps/MapFactory.h
         States/PlayState.cpp
-        States/PlayState.h)
+        States/PlayState.h
+        States/PauseState.cpp
+        States/PauseState.h)
 
 
 link_directories(SFML-2.5.1/bin)

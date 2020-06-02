@@ -62,7 +62,7 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         itemList[active]->setFillColor(sf::Color::Red);
         count = itemList.size();
 
-    } else if (style == MainMenu::STYLE::CENTERED) {
+    } else if (style == MainMenu::STYLE::PAUSE) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::RESUME));
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::QUIT));
         itemList[active]->setFillColor(sf::Color::Red);

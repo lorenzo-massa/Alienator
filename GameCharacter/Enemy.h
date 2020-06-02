@@ -7,7 +7,7 @@
 
 #include "GameCharacter.h"
 
-class Enemy :virtual public GameCharacter{
+class Enemy : virtual public GameCharacter{
 public:
     //Enemy();
     //~Enemy();

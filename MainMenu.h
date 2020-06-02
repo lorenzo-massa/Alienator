@@ -33,7 +33,7 @@ public:
     };
 
     enum STYLE {
-        CENTERED,
+        PAUSE,
         MAIN,
         LEVELS
     };
