@@ -9,13 +9,25 @@ GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
 }
 
 int GameCharacter::receiveDamage(int points ) {
-    if (healthPoint>points)
+ //   if (healthPoint>points)
         return healthPoint -= points;
     //else
 }
-
-void GameCharacter::move(int x,int direction) {
-    x+=10*direction;
+bool GameCharacter::isLegalMovement(int speed,int direction,int posX,int posY){
+    std::shared_ptr<Map> i;
+    i=Game::getGame()->getMapHandler()->getMap();
+    char comparison=i->getFromMatrix( posY + posX  + direction * speed);
+    char target='B';
+    if(comparison == target)
+        return false;
+    else
+        return true;
+}
+void GameCharacter::move(int posX,int posY,int speed,int direction) {
+    if (isLegalMovement(speed, direction, posX, posY)){
+        posX+=speed*direction;
+        
+    }
 }
 
 void GameCharacter::jump(int y) {
@@ -72,6 +84,14 @@ void GameCharacter::setSpeed(int speed) {
 int GameCharacter::getAmmo() const {
     return ammo;
 }
+
+int GameCharacter::getDirection() const {
+    return direction;
+}
+void GameCharacter::setDirection(int direction) {
+    GameCharacter::direction = direction;
+}
+
 void GameCharacter::setAmmo(int ammo) {
     GameCharacter::ammo = ammo;
 }
@@ -79,6 +99,7 @@ void GameCharacter::setAmmo(int ammo) {
 GameCharacter::~GameCharacter() {
 
 }
+
 
 
 

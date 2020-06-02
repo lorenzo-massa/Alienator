@@ -30,7 +30,10 @@ void PlayState::handleInput() {
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 std::cout << "\nKeyPressed::Left";
-                Game::getGame()->getHero()->getRect()->move(-1.0f, 0);
+                //Game::getGame()->getHero()->getRect()->move(-1.0f, 0);
+                Game::getGame()->getHero()->setDirection(-1);
+                Game::getGame()->getHero()->getRect();
+                Game::getGame()->getHero()->move(Game::getGame()->getHero()->getPosX(),Game::getGame()->getHero()->getPosY(),Game::getGame()->getHero()->getSpeed(),Game::getGame()->getHero()->getDirection());
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                 std::cout << "\nKeyPressed::Right";

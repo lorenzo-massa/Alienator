@@ -1,6 +1,6 @@
 "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" C:\Users\leoco\CLionProjects\Alienator
--- The C compiler identification is GNU 8.2.0
--- The CXX compiler identification is GNU 8.2.0
+-- The C compiler identification is GNU 9.2.0
+-- The CXX compiler identification is GNU 9.2.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
 -- Detecting C compiler ABI info

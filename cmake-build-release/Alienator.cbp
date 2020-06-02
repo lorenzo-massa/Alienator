@@ -36,12 +36,12 @@
 				<Compiler>
 					<Add directory="C:/Users/leoco/CLionProjects/Alienator/Assets"/>
 					<Add directory="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator"/>
@@ -59,12 +59,12 @@
 				<Compiler>
 					<Add directory="C:/Users/leoco/CLionProjects/Alienator/Assets"/>
 					<Add directory="C:/Users/leoco/CLionProjects/Alienator/SFML-2.5.1/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/8.2.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/leoco/CLionProjects/Alienator/cmake-build-release/Makefile&quot;  VERBOSE=1 Alienator/fast"/>

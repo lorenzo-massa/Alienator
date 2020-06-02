@@ -12,3 +12,10 @@ Hero::~Hero() {
 
 }
 
+int Hero::getCoins() const {
+    return coins;
+}
+void Hero::setCoins(int coins) {
+    Hero::coins = coins;
+}
+

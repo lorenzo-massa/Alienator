@@ -9,8 +9,13 @@
 
 class Hero :virtual public GameCharacter{
 public:
-    Hero(int hp, int ar, int am, int s);
+    Hero(int hp, int ar, int am, int s=1);
     ~Hero();
+
+    int getCoins() const;
+    void setCoins(int coins);
+
+
 
 private:
     int coins;
