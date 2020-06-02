@@ -8,7 +8,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <memory>
 #include "../Weapons/Weapon.h"
-#include "../Engine/Game.h"
+//#include "../Engine/Game.h"
 
 class GameCharacter{
 public:
@@ -19,7 +19,7 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual bool isLegalMovement(int posX,int direction,int posY);
+    virtual bool isLegalMovement(int posX,int posY,int direction);
 
     virtual void move(int posX, int posY,int speed,int direction);
 

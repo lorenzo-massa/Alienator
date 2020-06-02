@@ -13,7 +13,7 @@ int GameCharacter::receiveDamage(int points ) {
         return healthPoint -= points;
     //else
 }
-bool GameCharacter::isLegalMovement(int speed,int direction,int posY){
+/*bool GameCharacter::isLegalMovement(int posX,int posY,int direction){
     std::shared_ptr<Map> i;
     i=Game::getGame()->getMapHandler()->getMap();
     char comparison=i->getFromMatrix( posY + posX  + direction * speed);
@@ -28,7 +28,7 @@ void GameCharacter::move(int posX,int posY,int speed,int direction) {
         posX+=speed*direction;
         
     }
-}
+}*/
 
 void GameCharacter::jump(int y) {
     y+=50;
