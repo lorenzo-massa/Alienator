@@ -10,6 +10,7 @@ Game::Game(){
     ptrStateHandler = std::make_shared<StateHandler>();
     gameWindow = nullptr;
     ptrMapHandler = std::make_shared<MapHandler>();
+    clock = std::make_shared<sf::Clock>();
 }
 Game::~Game() = default;
 
@@ -33,17 +34,18 @@ void Game::init() {
 
 void Game::start() {
     while (gameWindow->isOpen()) {
-        if(gameClock.getElapsedTime().asSeconds() >= SLEEP_TIME) {
+        if(clock->getElapsedTime().asSeconds() >= SLEEP_TIME) {
             //timer.check();
 
             ptrStateHandler->getState()->handleInput();
 
             ptrStateHandler->getState()->frameCalculator();
+
             ptrStateHandler->getState()->generateFrame();
 
             gameWindow->display();
 
-            gameClock.restart();
+            clock->restart();
         }
     }
 }
@@ -62,10 +64,16 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 
 void Game::createHero(int x, int y) {
     ptrHero = std::make_shared<Hero>(10,10,10,10);
+    ptrHero->setPosX(x);
+    ptrHero->setPosY(y);
 }
 
 std::shared_ptr<Hero> Game::getHero() {
     return Game::ptrHero;
+}
+
+std::shared_ptr<sf::Clock> Game::getClock() {
+    return clock;
 }
 
 

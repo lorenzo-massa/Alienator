@@ -7,8 +7,10 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <memory>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Texture.hpp>
 #include "../Weapons/Weapon.h"
-#include "../Engine/Game.h"
+//#include "../Engine/Game.h"
 
 class GameCharacter{
 public:
@@ -19,7 +21,7 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual bool isLegalMovement(int posX,int direction,int posY);
+    //virtual bool isLegalMovement(int posX,int direction,int posY);
 
     virtual void move(int posX, int posY,int speed,int direction);
 
@@ -55,14 +57,10 @@ public:
 
     void setDirection(int direction);
 
-    void init(sf::Vector2f position, sf::Vector2f size, sf::Color color){
-        rect->setPosition(position);
-        rect->setSize(size);
-        rect->setFillColor(color);
-    }
+    void init(sf::Vector2f position, sf::Vector2f size);
 
-    std::shared_ptr<sf::RectangleShape> getRect(){
-        return rect;
+    std::shared_ptr<sf::Sprite> getSprite(){
+        return sprite;
     }
 
 
@@ -76,7 +74,10 @@ protected:
     int ammo;
     Weapon * weapon;
 
-    std::shared_ptr<sf::RectangleShape> rect;
+
+    std::shared_ptr<sf::Sprite> sprite;
+    std::shared_ptr<sf::Texture> skin;
+
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

@@ -10,7 +10,7 @@
 PauseState::PauseState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::PAUSE)) {
 }
 
-void MenuState::handleInput() {
+void PauseState::handleInput() {
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -20,6 +20,9 @@ void MenuState::handleInput() {
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
         }
         else if(event.type == sf::Event::KeyPressed) {
+            if(event.key.code == sf::Keyboard::Escape) {
+                Game::getGame()->getStateHandler()->removeState();
+            }
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
                 mainMenu.backward();
             if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
@@ -30,6 +33,7 @@ void MenuState::handleInput() {
                         Game::getGame()->getStateHandler()->removeState();
                         break;
                     case MainMenu::MenuItem::TYPE::QUIT:
+                        Game::getGame()->getStateHandler()->removeState();
                         Game::getGame()->getStateHandler()->removeState();
                         Game::getGame()->getStateHandler()->removeState();
                         break;
@@ -46,7 +50,16 @@ void PauseState::frameCalculator() {
 }
 
 void PauseState::generateFrame() {
-    targetWindow->clear(sf::Color(19, 24, 98));
+    targetWindow->clear();
+
+    sf::Texture texture;
+    if (!texture.loadFromFile("src/BG/bg.jpg"))
+    {
+        std::cerr<<"Error loading background!"<<std::endl;
+    }
+    sf::Sprite background(texture);
+    targetWindow->draw(background);
+
     mainMenu.draw(targetWindow);
 }
 

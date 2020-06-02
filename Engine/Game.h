@@ -38,6 +38,7 @@ public:
     std::shared_ptr<StateHandler> getStateHandler();
     std::shared_ptr<MapHandler> getMapHandler();
     std::shared_ptr<Hero> getHero();
+    std::shared_ptr<sf::Clock> getClock();
 
     const std::shared_ptr<sf::RenderWindow> &getWindow() const;
 
@@ -46,6 +47,7 @@ public:
     static void setMyGame(const std::shared_ptr<Game> &myGame);
 
 private:
+    std::shared_ptr<sf::Clock> clock;
 
     std::shared_ptr<MapHandler> ptrMapHandler;
     std::shared_ptr<Hero> ptrHero;
@@ -55,7 +57,6 @@ private:
 
     static std::shared_ptr<Game> myGame;
     std::shared_ptr<sf::RenderWindow> gameWindow;
-    sf::Clock gameClock;
 
 
 
