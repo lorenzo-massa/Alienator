@@ -19,6 +19,10 @@ void PlayState::handleInput() {
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
         }
         else if(event.type == sf::Event::KeyPressed) {
+            if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Escape) {
+                std::cout << "\nKeyPressed::Esc";
+                Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
+            }
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
                 std::cout << "\nKeyPressed::Up";
                 //Game::getGame()->getHero()->getRect().setPosition(Game::getGame()->getHero()->getRect().getPosition().x, Game::getGame()->getHero()->getRect().getPosition().y+1);

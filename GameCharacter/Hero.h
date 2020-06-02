@@ -5,6 +5,7 @@
 #ifndef ALIENATOR_HERO_H
 #define ALIENATOR_HERO_H
 
+
 #include "GameCharacter.h"
 
 class Hero: virtual public GameCharacter{
