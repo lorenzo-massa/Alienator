@@ -19,7 +19,7 @@ public:
     static Enemy* makeEnemy();
     //static Collectable* makeCollectable();
 
-    static std::basic_ifstream<char> openFile(std::string filename);
+    static std::shared_ptr<std::basic_ifstream<char>>  openFile(std::string filename);
     static void closeFile(std::string filename);
 
 };
