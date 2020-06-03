@@ -50,7 +50,7 @@ const MainMenu::MenuItem::TYPE& MainMenu::MenuItem::getType() const {
 }
 
 MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
-    if(!font.loadFromFile("Font/arial.ttf"))
+    if(!font.loadFromFile("Font/youre gone.ttf"))
         std::cerr << "Font not found" << std::endl;
     if(style == MainMenu::STYLE::MAIN) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::START));
@@ -59,13 +59,13 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::EXIT));
         itemList[1]->setFont(font);
         itemList[active]->setFont(font);
-        itemList[active]->setFillColor(sf::Color::Red);
+        itemList[active]->setFillColor(sf::Color::Green);
         count = itemList.size();
 
     } else if (style == MainMenu::STYLE::PAUSE) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::RESUME));
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::QUIT));
-        itemList[active]->setFillColor(sf::Color::Red);
+        itemList[active]->setFillColor(sf::Color::Green);
         count = itemList.size();
     } else if (style == MainMenu::STYLE::LEVELS) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_1));
@@ -74,7 +74,7 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_4));
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_5));
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::BACK));
-        itemList[active]->setFillColor(sf::Color::Red);
+        itemList[active]->setFillColor(sf::Color::Green);
         count = itemList.size();
     } else std::cerr << "Error: Menu not found";
 
@@ -106,46 +106,6 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
         window->draw(*i);
     }
 
-    /*if (style == STYLE::MAIN) {
-        int height = count * (64 + 8);
-        pos = actualView.getCenter();
-        pos.y -= height / 2;
-        for (auto i : itemList) {
-            i->setCharacterSize(64);
-            sf::FloatRect s = i->getGlobalBounds();
-            i->setPosition(pos.x, pos.y);
-            i->setOrigin(s.width / 2 , s.height / 2);
-            pos.y += 72;
-            window->draw(*i);
-        }
-    } else if (style == STYLE::CENTERED) {
-        int height = count * (64 + 8);
-        pos = actualView.getCenter();
-        pos.y -= height / 2;
-        for (auto i : itemList) {
-            i->setCharacterSize(64);
-            i->setFont(font);
-            sf::FloatRect s = i->getGlobalBounds();
-            i->setPosition(pos.x, pos.y);
-            i->setOrigin(s.width / 2 , s.height / 2);
-            pos.y += 72;
-            window->draw(*i);
-        }
-    } else if (style == STYLE::LEVELS){
-        int height = count * (64 + 8);
-        pos = actualView.getCenter();
-        pos.y -= height / 2;
-        for (auto i : itemList) {
-            i->setCharacterSize(64);
-            i->setFont(font);
-            sf::FloatRect s = i->getGlobalBounds();
-            i->setPosition(pos.x, pos.y);
-            i->setOrigin(s.width / 2 , s.height / 2);
-            pos.y += 72;
-            window->draw(*i);
-        }
-    }*/
-
 }
 
 void MainMenu::forward() {
@@ -153,14 +113,14 @@ void MainMenu::forward() {
     if (active >= count - 1)
         active = 0;
     else active++;
-    itemList[active]->setFillColor(sf::Color::Red);
+    itemList[active]->setFillColor(sf::Color::Green);
 }
 void MainMenu::backward() {
     itemList[active]->setFillColor(sf::Color::White);
     if (active == 0)
         active = count - 1;
     else active--;
-    itemList[active]->setFillColor(sf::Color::Red);
+    itemList[active]->setFillColor(sf::Color::Green);
 }
 
 const MainMenu::MenuItem::TYPE& MainMenu::getAction() const {

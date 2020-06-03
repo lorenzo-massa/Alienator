@@ -60,7 +60,16 @@ void LevelSelectState::frameCalculator() {
 }
 
 void LevelSelectState::generateFrame() {
-    targetWindow->clear(sf::Color(19, 24, 98));
+    targetWindow->clear();
+
+    sf::Texture texture;
+    if (!texture.loadFromFile("src/BG/bg.jpg"))
+    {
+        std::cerr<<"Error loading background!"<<std::endl;
+    }
+    sf::Sprite background(texture);
+    targetWindow->draw(background);
+
     mainMenu.draw(targetWindow);
 
 }

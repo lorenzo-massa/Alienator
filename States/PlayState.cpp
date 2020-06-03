@@ -4,6 +4,7 @@
 
 #include "PlayState.h"
 #include "../Engine/Game.h"
+#include "PauseState.h"
 
 
 PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
@@ -19,42 +20,52 @@ void PlayState::handleInput() {
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
         }
         else if(event.type == sf::Event::KeyPressed) {
-            if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Escape) {
-                std::cout << "\nKeyPressed::Esc";
+            if(event.key.code == sf::Keyboard::Escape) {
                 Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
             }
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
-                std::cout << "\nKeyPressed::Up";
-                //Game::getGame()->getHero()->getRect().setPosition(Game::getGame()->getHero()->getRect().getPosition().x, Game::getGame()->getHero()->getRect().getPosition().y+1);
-                Game::getGame()->getHero()->getRect()->move(0, -1.0f);
+                Game::getGame()->getHero()->getSprite()->move(0, -1.0f);
             }
             if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down) {
-                std::cout << "\nKeyPressed::Down";
-                Game::getGame()->getHero()->getRect()->move(0, 1.0f);
+                Game::getGame()->getHero()->getSprite()->move(0, 1.0f);
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                std::cout << "\nKeyPressed::Left";
-                //Game::getGame()->getHero()->getRect()->move(-1.0f, 0);
-                /*Game::getGame()->getHero()->setDirection(-1);
-                Game::getGame()->getHero()->getRect();
-                Game::getGame()->getHero()->move(Game::getGame()->getHero()->getPosX(),Game::getGame()->getHero()->getPosY(),Game::getGame()->getHero()->getSpeed(),Game::getGame()->getHero()->getDirection());*/
+                Game::getGame()->getHero()->setDirection(-1);
+                Game::getGame()->getHero()->move(Game::getGame()->getHero()->getPosX(),Game::getGame()->getHero()->getPosY(),Game::getGame()->getHero()->getSpeed(),Game::getGame()->getHero()->getDirection());
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                std::cout << "\nKeyPressed::Right";
-                Game::getGame()->getHero()->getRect()->move(1.0f, 0);
+                Game::getGame()->getHero()->getSprite()->move(1.3f, 0);
             }
         }
     }
 }
 
 void PlayState::frameCalculator() {
-    float center = Game::getGame()->getWindow()->getView().getCenter().x;
-    float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
+    /* Moving the view
+    sf::Vector2f pos = targetWindow->mapPixelToCoords(sf::Vector2i(0, 0));
+    sf::View tempView = targetWindow->getView();
+    tempView.move(-1.0f, 0);
+    targetWindow->setView(tempView);*/
 }
 
 void PlayState::generateFrame() {
-    targetWindow->clear(sf::Color(19, 24, 98));
+    targetWindow->clear();
 
+    sf::Texture texture;
+    if (!texture.loadFromFile("src/BG/bg.jpg"))
+    {
+        std::cerr<<"Error loading background!"<<std::endl;
+    }
+    sf::Sprite background(texture);
+    targetWindow->draw(background);
+
+    generateMap();
+
+    targetWindow->draw(*Game::getGame()->getHero()->getSprite());
+
+}
+
+void PlayState::generateMap(){
     sf::Texture tileTexture;
     sf::Sprite tile;
 
@@ -75,20 +86,11 @@ void PlayState::generateFrame() {
                 targetWindow->draw(tile);
             } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
                 Game::getGame()->createHero(j*32,i*32);
-                Game::getGame()->getHero()->init(sf::Vector2f(j*32,i*32),sf::Vector2f(20,30), sf::Color::Red);
+                Game::getGame()->getHero()->init(sf::Vector2f(j*32,i*32),sf::Vector2f(20,30));
                 Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
-                //targetWindow->draw(Game::getGame()->getHero());
             }
 
         }
     }
-
-    //Game::getGame()->getHero()->getRect().setPosition(Game::getGame()->getHero()->getRect().getPosition().x+1,Game::getGame()->getHero()->getRect().getPosition().y-1);
-
-    targetWindow->draw(*Game::getGame()->getHero()->getRect());
-
-    //std::cout<<Game::getGame()->getHero()->getRect().getPosition().x;
-
-
 }
 

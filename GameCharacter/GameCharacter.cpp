@@ -2,10 +2,13 @@
 // Created by leoco on 27/05/2020.
 //
 
+#include <iostream>
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
-    rect = std::make_shared<sf::RectangleShape>();
+    sprite = std::make_shared<sf::Sprite>();
+    skin = std::make_shared<sf::Texture>();
+
 }
 
 int GameCharacter::receiveDamage(int points ) {
@@ -13,7 +16,8 @@ int GameCharacter::receiveDamage(int points ) {
         return healthPoint -= points;
     //else
 }
-/*bool GameCharacter::isLegalMovement(int posX,int posY,int direction){
+/*
+bool GameCharacter::isLegalMovement(int speed,int direction,int posY){
     std::shared_ptr<Map> i;
     i=Game::getGame()->getMapHandler()->getMap();
     char comparison=i->getFromMatrix( posY + posX  + direction * speed);
@@ -22,13 +26,14 @@ int GameCharacter::receiveDamage(int points ) {
         return false;
     else
         return true;
-}
+}*/
 void GameCharacter::move(int posX,int posY,int speed,int direction) {
-    if (isLegalMovement(speed, direction, posY)){
+    /*if (isLegalMovement(speed, direction, posY)){
         posX+=speed*direction;
         
-    }
-}*/
+    }*/
+}
+
 
 void GameCharacter::jump(int y) {
     y+=50;
@@ -97,6 +102,20 @@ void GameCharacter::setAmmo(int ammo) {
 }
 
 GameCharacter::~GameCharacter() {
+
+}
+
+
+void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
+
+    if(!skin->loadFromFile("src/Object/Hero.png"))
+        std::cerr<<"Error loading Hero skin"<<std::endl;
+    else{
+        sprite->setTexture(*skin);
+        sprite->setPosition(position);
+        sprite->setTextureRect(sf::IntRect(0,0,32,64));
+    }
+
 
 }
 
