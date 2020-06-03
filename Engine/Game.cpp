@@ -11,6 +11,8 @@ Game::Game(){
     gameWindow = nullptr;
     ptrMapHandler = std::make_shared<MapHandler>();
     clock = std::make_shared<sf::Clock>();
+
+
 }
 Game::~Game() = default;
 

@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\leoco\CLionProjects\Alienator
+CMAKE_SOURCE_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
+CMAKE_BINARY_DIR = "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\leoco\CLionProjects\Alienator\cmake-build-release
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\Programmi\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\leoco\CLionProjects\Alienator\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -121,6 +121,33 @@ Alienator: cmake_check_build_system
 Alienator/fast:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/build
 .PHONY : Alienator/fast
+
+Assets/AssetsManager.obj: Assets/AssetsManager.cpp.obj
+
+.PHONY : Assets/AssetsManager.obj
+
+# target to build an object file
+Assets/AssetsManager.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Assets/AssetsManager.cpp.obj
+.PHONY : Assets/AssetsManager.cpp.obj
+
+Assets/AssetsManager.i: Assets/AssetsManager.cpp.i
+
+.PHONY : Assets/AssetsManager.i
+
+# target to preprocess a source file
+Assets/AssetsManager.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Assets/AssetsManager.cpp.i
+.PHONY : Assets/AssetsManager.cpp.i
+
+Assets/AssetsManager.s: Assets/AssetsManager.cpp.s
+
+.PHONY : Assets/AssetsManager.s
+
+# target to generate assembly for a file
+Assets/AssetsManager.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Assets/AssetsManager.cpp.s
+.PHONY : Assets/AssetsManager.cpp.s
 
 Behavior/EnemyBehavior/EnemyBehavior.obj: Behavior/EnemyBehavior/EnemyBehavior.cpp.obj
 
@@ -581,6 +608,60 @@ Maps/MapHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.s
 .PHONY : Maps/MapHandler.cpp.s
 
+Objects/Collectable.obj: Objects/Collectable.cpp.obj
+
+.PHONY : Objects/Collectable.obj
+
+# target to build an object file
+Objects/Collectable.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Collectable.cpp.obj
+.PHONY : Objects/Collectable.cpp.obj
+
+Objects/Collectable.i: Objects/Collectable.cpp.i
+
+.PHONY : Objects/Collectable.i
+
+# target to preprocess a source file
+Objects/Collectable.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Collectable.cpp.i
+.PHONY : Objects/Collectable.cpp.i
+
+Objects/Collectable.s: Objects/Collectable.cpp.s
+
+.PHONY : Objects/Collectable.s
+
+# target to generate assembly for a file
+Objects/Collectable.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Collectable.cpp.s
+.PHONY : Objects/Collectable.cpp.s
+
+Objects/PowerUp.obj: Objects/PowerUp.cpp.obj
+
+.PHONY : Objects/PowerUp.obj
+
+# target to build an object file
+Objects/PowerUp.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.obj
+.PHONY : Objects/PowerUp.cpp.obj
+
+Objects/PowerUp.i: Objects/PowerUp.cpp.i
+
+.PHONY : Objects/PowerUp.i
+
+# target to preprocess a source file
+Objects/PowerUp.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.i
+.PHONY : Objects/PowerUp.cpp.i
+
+Objects/PowerUp.s: Objects/PowerUp.cpp.s
+
+.PHONY : Objects/PowerUp.s
+
+# target to generate assembly for a file
+Objects/PowerUp.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.s
+.PHONY : Objects/PowerUp.cpp.s
+
 States/GameState.obj: States/GameState.cpp.obj
 
 .PHONY : States/GameState.obj
@@ -968,6 +1049,9 @@ help:
 	@echo ... edit_cache
 	@echo ... Alienator
 	@echo ... rebuild_cache
+	@echo ... Assets/AssetsManager.obj
+	@echo ... Assets/AssetsManager.i
+	@echo ... Assets/AssetsManager.s
 	@echo ... Behavior/EnemyBehavior/EnemyBehavior.obj
 	@echo ... Behavior/EnemyBehavior/EnemyBehavior.i
 	@echo ... Behavior/EnemyBehavior/EnemyBehavior.s
@@ -1019,6 +1103,12 @@ help:
 	@echo ... Maps/MapHandler.obj
 	@echo ... Maps/MapHandler.i
 	@echo ... Maps/MapHandler.s
+	@echo ... Objects/Collectable.obj
+	@echo ... Objects/Collectable.i
+	@echo ... Objects/Collectable.s
+	@echo ... Objects/PowerUp.obj
+	@echo ... Objects/PowerUp.i
+	@echo ... Objects/PowerUp.s
 	@echo ... States/GameState.obj
 	@echo ... States/GameState.i
 	@echo ... States/GameState.s
