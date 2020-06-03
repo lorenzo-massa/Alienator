@@ -21,7 +21,7 @@ public:
 
     virtual int receiveDamage(int points);
 
-    //virtual bool isLegalMovement(int posX,int direction,int posY);
+    virtual bool isLegalMovement(char comparison);
 
     virtual void move(int posX, int posY,int speed,int direction);
 
@@ -29,11 +29,8 @@ public:
 
     virtual void shot(Weapon* weapon);
 
-    int getPosX() const;
-    void setPosX(int posX);
-
-    int getPosY() const;
-    void setPosY(int posY);
+    int getPos() const;
+    void setPos(int posX);
 
     int getHealthPoint() const;
     void setHealthPoint(int healthPoint);
@@ -65,8 +62,7 @@ public:
 
 
 protected:
-    int posX;
-    int posY;
+    int pos;
     int direction;
     int healthPoint;
     int armor;

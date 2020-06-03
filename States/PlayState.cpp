@@ -30,11 +30,19 @@ void PlayState::handleInput() {
                 Game::getGame()->getHero()->getSprite()->move(0, 1.0f);
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(-1);
-                Game::getGame()->getHero()->move(Game::getGame()->getHero()->getPosX(),Game::getGame()->getHero()->getPosY(),Game::getGame()->getHero()->getSpeed(),Game::getGame()->getHero()->getDirection());
+                /*int nextPos=Game::getGame()->getHero()->getPos()-1;
+                if(Game::getGame()->getHero()->isLegalMovement(Game::getGame()->getMapHandler()->getMap()->getFromMatrix(nextPos))) {
+                    Game::getGame()->getHero()->getSprite()->move(-15.0f, 0);
+                    Game::getGame()->getHero()->setPos(nextPos);
+                }*/
+                Game::getGame()->getHero()->getSprite()->move(-10.0f,0);
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->getSprite()->move(1.3f, 0);
+
+                /*if (Game::getGame()->getHero()->getSprite()->getLocalBounds()
+                    notDetected=false;*/
+                Game::getGame()->getHero()->getSprite()->move(1.0f,0);
+
             }
         }
     }
@@ -85,7 +93,8 @@ void PlayState::generateMap(){
                 tile.setTextureRect(sf::IntRect(0,0,32,32));
                 targetWindow->draw(tile);
             } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
-                Game::getGame()->createHero(j*32,i*32);
+                Game::getGame()->createHero(i*32+j);
+                Game::getGame()->getHero()->setPos(i*32+j);
                 Game::getGame()->getHero()->init(sf::Vector2f(j*32,i*32),sf::Vector2f(20,30));
                 Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
             }

@@ -13,6 +13,16 @@ public:
     Hero(int hp, int ar, int am, int s=1);
     ~Hero();
 
+    int receiveDamage(int points) override ;
+
+    bool isLegalMovement(char comparison) override;
+
+    void move(int posX, int posY,int speed,int direction) override;
+
+    void jump(int y) override;
+
+    void shot(Weapon* weapon) override;
+
     int getCoins() const;
     void setCoins(int coins);
 

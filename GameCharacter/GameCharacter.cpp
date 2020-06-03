@@ -16,17 +16,15 @@ int GameCharacter::receiveDamage(int points ) {
         return healthPoint -= points;
     //else
 }
-/*
-bool GameCharacter::isLegalMovement(int speed,int direction,int posY){
-    std::shared_ptr<Map> i;
-    i=Game::getGame()->getMapHandler()->getMap();
-    char comparison=i->getFromMatrix( posY + posX  + direction * speed);
-    char target='B';
+
+bool GameCharacter::isLegalMovement(char comparison){
+
+    char target = 'B';
     if(comparison == target)
-        return false;
-    else
         return true;
-}*/
+    else
+        return false;
+}
 void GameCharacter::move(int posX,int posY,int speed,int direction) {
     /*if (isLegalMovement(speed, direction, posY)){
         posX+=speed*direction;
@@ -43,19 +41,11 @@ void GameCharacter::shot(Weapon *weapon) {
     weapon->fire();
 }
 
-int GameCharacter::getPosX() const {
-    return GameCharacter::posX;
+int GameCharacter::getPos() const {
+    return GameCharacter::pos;
 }
-void GameCharacter::setPosX(int posX) {
-    GameCharacter::posX = posX;
-}
-
-int GameCharacter::getPosY() const {
-    return GameCharacter::posY;
-}
-
-void GameCharacter::setPosY(int posY) {
-    GameCharacter::posY = posY;
+void GameCharacter::setPos(int pos) {
+    GameCharacter::pos = pos;
 }
 
 int GameCharacter::getHealthPoint() const {
