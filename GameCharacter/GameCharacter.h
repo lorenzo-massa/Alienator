@@ -23,7 +23,7 @@ public:
 
     virtual bool isLegalMovement(char comparison);
 
-    virtual void move(int posX, int posY,int speed,int direction);
+    virtual void move(sf::Vector2f direction);
 
     virtual void jump(int y);
 
@@ -69,8 +69,6 @@ protected:
     int speed;
     int ammo;
     Weapon * weapon;
-
-
     std::shared_ptr<sf::Sprite> sprite;
     std::shared_ptr<sf::Texture> skin;
 

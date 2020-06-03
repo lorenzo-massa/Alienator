@@ -11,6 +11,7 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState
 }
 
 void PlayState::handleInput() {
+    float direction=0;
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -35,15 +36,16 @@ void PlayState::handleInput() {
                     Game::getGame()->getHero()->getSprite()->move(-15.0f, 0);
                     Game::getGame()->getHero()->setPos(nextPos);
                 }*/
-                Game::getGame()->getHero()->getSprite()->move(-10.0f,0);
+                direction=-1;
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
 
                 /*if (Game::getGame()->getHero()->getSprite()->getLocalBounds()
                     notDetected=false;*/
-                Game::getGame()->getHero()->getSprite()->move(1.0f,0);
+               direction=1;
 
             }
+            Game::getGame()->getHero()->move(sf::Vector2f(direction,0));
         }
     }
 }

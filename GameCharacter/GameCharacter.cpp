@@ -25,11 +25,10 @@ bool GameCharacter::isLegalMovement(char comparison){
     else
         return false;
 }
-void GameCharacter::move(int posX,int posY,int speed,int direction) {
-    /*if (isLegalMovement(speed, direction, posY)){
-        posX+=speed*direction;
-        
-    }*/
+void GameCharacter::move(sf::Vector2f direction) {
+
+    GameCharacter::getSprite()->move(direction.x * 10,direction.y * 10);
+
 }
 
 

@@ -23,8 +23,8 @@ void Hero::shot(Weapon *weapon) {
     GameCharacter::shot(weapon);
 }
 
-void Hero::move(int posX, int posY, int speed, int direction) {
-    GameCharacter::move(posX, posY, speed, direction);
+void Hero::move(sf:: Vector2f direction) {
+    GameCharacter::move(direction);
 }
 
 void Hero::jump(int y) {

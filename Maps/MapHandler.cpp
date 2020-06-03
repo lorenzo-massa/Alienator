@@ -27,7 +27,7 @@ void MapHandler::loadLevel(int i) {
             map->addToMatrix(c);
     }
 
-    std::cout<<map->matrixtoString();
+   // std::cout<<map->matrixtoString();
 
 
 }

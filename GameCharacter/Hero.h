@@ -17,7 +17,7 @@ public:
 
     bool isLegalMovement(char comparison) override;
 
-    void move(int posX, int posY,int speed,int direction) override;
+    void move(sf::Vector2f direction) override;
 
     void jump(int y) override;
 
