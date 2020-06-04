@@ -7,7 +7,7 @@
 
 
 #include "GameState.h"
-#include "../MainMenu.h"
+#include "../Menu/MainMenu.h"
 
 class MenuState : public GameState {
 public:

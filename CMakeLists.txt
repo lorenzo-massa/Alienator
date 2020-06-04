@@ -54,8 +54,8 @@ set(SOURCE_FILES
         Behavior/HeroBehavior/Boxer.cpp
         Behavior/HeroBehavior/Mage.h
         Behavior/HeroBehavior/Mage.cpp
-        MainMenu.cpp
-        MainMenu.h
+        Menu/MainMenu.cpp
+        Menu/MainMenu.h
         Maps/MapHandler.cpp
         Maps/MapHandler.h
         Maps/Map.cpp

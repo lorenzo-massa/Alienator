@@ -406,19 +406,19 @@ CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.s"
 	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Behavior\HeroBehavior\Mage.cpp" -o CMakeFiles\Alienator.dir\Behavior\HeroBehavior\Mage.cpp.s
 
-CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/flags.make
-CMakeFiles/Alienator.dir/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
-CMakeFiles/Alienator.dir/MainMenu.cpp.obj: ../MainMenu.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Alienator.dir/MainMenu.cpp.obj"
-	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\MainMenu.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp"
+CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
+CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj: ../Menu/MainMenu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\cmake-build-release\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj"
+	D:\Programmi\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Alienator.dir\Menu\MainMenu.cpp.obj -c "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Menu\MainMenu.cpp"
 
-CMakeFiles/Alienator.dir/MainMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/MainMenu.cpp.i"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp" > CMakeFiles\Alienator.dir\MainMenu.cpp.i
+CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.i"
+	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Menu\MainMenu.cpp" > CMakeFiles\Alienator.dir\Menu\MainMenu.cpp.i
 
-CMakeFiles/Alienator.dir/MainMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/MainMenu.cpp.s"
-	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\MainMenu.cpp" -o CMakeFiles\Alienator.dir\MainMenu.cpp.s
+CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.s"
+	D:\Programmi\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Documenti\UniFi\2019-20 2 semestre\Programmazione\Alienator\Menu\MainMenu.cpp" -o CMakeFiles\Alienator.dir\Menu\MainMenu.cpp.s
 
 CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj: CMakeFiles/Alienator.dir/includes_CXX.rsp
@@ -559,7 +559,7 @@ Alienator_OBJECTS = \
 "CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj" \
 "CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj" \
 "CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj" \
-"CMakeFiles/Alienator.dir/MainMenu.cpp.obj" \
+"CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj" \
 "CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj" \
 "CMakeFiles/Alienator.dir/Maps/Map.cpp.obj" \
 "CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.obj" \
@@ -597,7 +597,7 @@ Alienator.exe: CMakeFiles/Alienator.dir/Behavior/EnemyBehavior/Wizard.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Archer.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Boxer.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj
-Alienator.exe: CMakeFiles/Alienator.dir/MainMenu.cpp.obj
+Alienator.exe: CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Maps/Map.cpp.obj
 Alienator.exe: CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.obj

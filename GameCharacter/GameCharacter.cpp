@@ -97,7 +97,7 @@ GameCharacter::~GameCharacter() {
 
 void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
 
-    if(!skin->loadFromFile("src/Object/Hero.png"))
+    if(!skin->loadFromFile("Assets/Images/Object/Hero.png"))
         std::cerr<<"Error loading Hero skin"<<std::endl;
     else{
         sprite->setTexture(*skin);

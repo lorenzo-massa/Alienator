@@ -500,33 +500,6 @@ GameCharacter/Hero.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/GameCharacter/Hero.cpp.s
 .PHONY : GameCharacter/Hero.cpp.s
 
-MainMenu.obj: MainMenu.cpp.obj
-
-.PHONY : MainMenu.obj
-
-# target to build an object file
-MainMenu.cpp.obj:
-	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/MainMenu.cpp.obj
-.PHONY : MainMenu.cpp.obj
-
-MainMenu.i: MainMenu.cpp.i
-
-.PHONY : MainMenu.i
-
-# target to preprocess a source file
-MainMenu.cpp.i:
-	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/MainMenu.cpp.i
-.PHONY : MainMenu.cpp.i
-
-MainMenu.s: MainMenu.cpp.s
-
-.PHONY : MainMenu.s
-
-# target to generate assembly for a file
-MainMenu.cpp.s:
-	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/MainMenu.cpp.s
-.PHONY : MainMenu.cpp.s
-
 Maps/Map.obj: Maps/Map.cpp.obj
 
 .PHONY : Maps/Map.obj
@@ -607,6 +580,33 @@ Maps/MapHandler.s: Maps/MapHandler.cpp.s
 Maps/MapHandler.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.s
 .PHONY : Maps/MapHandler.cpp.s
+
+Menu/MainMenu.obj: Menu/MainMenu.cpp.obj
+
+.PHONY : Menu/MainMenu.obj
+
+# target to build an object file
+Menu/MainMenu.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj
+.PHONY : Menu/MainMenu.cpp.obj
+
+Menu/MainMenu.i: Menu/MainMenu.cpp.i
+
+.PHONY : Menu/MainMenu.i
+
+# target to preprocess a source file
+Menu/MainMenu.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.i
+.PHONY : Menu/MainMenu.cpp.i
+
+Menu/MainMenu.s: Menu/MainMenu.cpp.s
+
+.PHONY : Menu/MainMenu.s
+
+# target to generate assembly for a file
+Menu/MainMenu.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.s
+.PHONY : Menu/MainMenu.cpp.s
 
 Objects/Collectable.obj: Objects/Collectable.cpp.obj
 
@@ -1091,9 +1091,6 @@ help:
 	@echo ... GameCharacter/Hero.obj
 	@echo ... GameCharacter/Hero.i
 	@echo ... GameCharacter/Hero.s
-	@echo ... MainMenu.obj
-	@echo ... MainMenu.i
-	@echo ... MainMenu.s
 	@echo ... Maps/Map.obj
 	@echo ... Maps/Map.i
 	@echo ... Maps/Map.s
@@ -1103,6 +1100,9 @@ help:
 	@echo ... Maps/MapHandler.obj
 	@echo ... Maps/MapHandler.i
 	@echo ... Maps/MapHandler.s
+	@echo ... Menu/MainMenu.obj
+	@echo ... Menu/MainMenu.i
+	@echo ... Menu/MainMenu.s
 	@echo ... Objects/Collectable.obj
 	@echo ... Objects/Collectable.i
 	@echo ... Objects/Collectable.s

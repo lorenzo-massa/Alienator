@@ -174,12 +174,6 @@
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GameCharacter/Hero.h">
 			<Option target="Alienator"/>
 		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/MainMenu.cpp">
-			<Option target="Alienator"/>
-		</Unit>
-		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/MainMenu.h">
-			<Option target="Alienator"/>
-		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/Map.cpp">
 			<Option target="Alienator"/>
 		</Unit>
@@ -196,6 +190,12 @@
 			<Option target="Alienator"/>
 		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Maps/MapHandler.h">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Menu/MainMenu.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Menu/MainMenu.h">
 			<Option target="Alienator"/>
 		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Objects/Collectable.cpp">

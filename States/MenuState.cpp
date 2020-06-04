@@ -61,7 +61,7 @@ void MenuState::generateFrame() {
     targetWindow->clear();
 
     sf::Texture texture;
-    if (!texture.loadFromFile("src/BG/bg.jpg"))
+    if (!texture.loadFromFile("Assets/Images/BG/bg.jpg"))
     {
         std::cerr<<"Error loading background!"<<std::endl;
     }
