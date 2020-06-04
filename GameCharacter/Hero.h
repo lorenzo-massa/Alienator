@@ -10,7 +10,8 @@
 
 class Hero: virtual public GameCharacter{
 public:
-    Hero(int hp, int ar, int am, int s=1);
+    Hero(int hp, int ar, int am, sf::Vector2f s);
+    Hero(sf::Vector2f pos);
     ~Hero();
 
     int receiveDamage(int points) override ;

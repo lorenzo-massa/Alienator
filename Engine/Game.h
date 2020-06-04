@@ -44,7 +44,7 @@ public:
 
     const std::shared_ptr<sf::RenderWindow> &getWindow() const;
 
-    void createHero(int x/*, int y*/);
+    void createHero(int x, int y);
 
     static void setMyGame(const std::shared_ptr<Game> &myGame);
 

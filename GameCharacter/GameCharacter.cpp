@@ -6,11 +6,12 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s) :healthPoint(hp),armor(ar),ammo(am),speed(s){
     sprite = std::make_shared<sf::Sprite>();
     skin = std::make_shared<sf::Texture>();
 
 }
+GameCharacter::GameCharacter(sf::Vector2f pos) :pos(pos){}
 
 int GameCharacter::receiveDamage(int points ) {
  //   if (healthPoint>points)
@@ -43,10 +44,10 @@ void GameCharacter::shot(Weapon *weapon) {
     weapon->fire();
 }
 
-int GameCharacter::getPos() const {
+sf::Vector2f GameCharacter::getPos() const {
     return GameCharacter::pos;
 }
-void GameCharacter::setPos(int pos) {
+void GameCharacter::setPos(sf::Vector2f pos) {
     GameCharacter::pos = pos;
 }
 
@@ -71,22 +72,15 @@ void GameCharacter::setArmor(int armor) {
     GameCharacter::armor = armor;
 }
 
-int GameCharacter::getSpeed() const {
+sf::Vector2f GameCharacter::getSpeed() const {
     return speed;
 }
-void GameCharacter::setSpeed(int speed) {
+void GameCharacter::setSpeed(sf::Vector2f speed) {
     GameCharacter::speed = speed;
 }
 
 int GameCharacter::getAmmo() const {
     return ammo;
-}
-
-int GameCharacter::getDirection() const {
-    return direction;
-}
-void GameCharacter::setDirection(int direction) {
-    GameCharacter::direction = direction;
 }
 
 void GameCharacter::setAmmo(int ammo) {

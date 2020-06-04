@@ -4,13 +4,9 @@
 
 #include "Hero.h"
 
-Hero::Hero(int hp, int ar, int am, int s) : GameCharacter(hp, ar, am, s) {
-
-}
-
-Hero::~Hero() {
-
-}
+Hero::Hero(int hp, int ar, int am, sf::Vector2f s) : GameCharacter(hp, ar, am, s) {}
+Hero::Hero(sf::Vector2f pos) :GameCharacter(pos){}
+Hero::~Hero() {}
 
 int Hero::getCoins() const {
     return coins;

@@ -14,7 +14,9 @@
 
 class GameCharacter{
 public:
-    GameCharacter(int hp,int ar,int am,int s);
+    GameCharacter(int hp,int ar,int am,sf::Vector2f s);
+
+    GameCharacter(sf::Vector2f pos);
 
     ~GameCharacter();
 
@@ -29,8 +31,8 @@ public:
 
     virtual void shot(Weapon* weapon);
 
-    int getPos() const;
-    void setPos(int posX);
+    sf::Vector2f getPos() const;
+    void setPos(sf::Vector2f pos);
 
     int getHealthPoint() const;
     void setHealthPoint(int healthPoint);
@@ -42,17 +44,13 @@ public:
 
     void setArmor(int armor);
 
-    int getSpeed() const;
+    sf::Vector2f getSpeed() const;
 
-    void setSpeed(int speed);
+    void setSpeed(sf::Vector2f speed);
 
     int getAmmo() const;
 
     void setAmmo(int ammo);
-
-    int getDirection() const;
-
-    void setDirection(int direction);
 
     void init(sf::Vector2f position, sf::Vector2f size);
 
@@ -62,11 +60,10 @@ public:
 
 
 protected:
-    int pos;
-    int direction;
+    sf::Vector2f pos;
     int healthPoint;
     int armor;
-    int speed;
+    sf::Vector2f speed;
     int ammo;
     Weapon * weapon;
     std::shared_ptr<sf::Sprite> sprite;

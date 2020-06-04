@@ -83,7 +83,7 @@ void PlayState::generateMap(){
 
                 targetWindow->draw(tile);
             } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
-                Game::getGame()->createHero(i*64+j);
+                Game::getGame()->createHero(i*64,j*64);
 
                 Game::getGame()->getHero()->init(sf::Vector2f(j*64,i*64),sf::Vector2f(2,2));
                 Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
