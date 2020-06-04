@@ -21,11 +21,11 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual bool isLegalMovement(char comparison);
+    //virtual bool isLegalMovement(char comparison);
 
     virtual void move(sf::Vector2f direction);
 
-    virtual void jump(int y);
+    virtual float jump();
 
     virtual void shot(Weapon* weapon);
 

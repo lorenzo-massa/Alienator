@@ -27,15 +27,15 @@ void Hero::move(sf:: Vector2f direction) {
     GameCharacter::move(direction);
 }
 
-void Hero::jump(int y) {
-    GameCharacter::jump(y);
+float Hero::jump() {
+    return GameCharacter::jump();
 }
 
 int Hero::receiveDamage(int points) {
     return GameCharacter::receiveDamage(points);
 }
 
-bool Hero::isLegalMovement(char comparison) {
+/*bool Hero::isLegalMovement(char comparison) {
     return GameCharacter::isLegalMovement(comparison);
-}
+}*/
 

@@ -14,6 +14,7 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState
 
 void PlayState::handleInput() {
     float direction=0;
+    float j=0;
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -27,27 +28,15 @@ void PlayState::handleInput() {
                 Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
             }
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
-                Game::getGame()->getHero()->getSprite()->move(0, -1.0f);
-            }
-            if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down) {
-                Game::getGame()->getHero()->getSprite()->move(0, 1.0f);
+                j=Game::getGame()->getHero()->jump();
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                /*int nextPos=Game::getGame()->getHero()->getPos()-1;
-                if(Game::getGame()->getHero()->isLegalMovement(Game::getGame()->getMapHandler()->getMap()->getFromMatrix(nextPos))) {
-                    Game::getGame()->getHero()->getSprite()->move(-15.0f, 0);
-                    Game::getGame()->getHero()->setPos(nextPos);
-                }*/
                 direction=-1;
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-
-                /*if (Game::getGame()->getHero()->getSprite()->getLocalBounds()
-                    notDetected=false;*/
-               direction=1;
-
+                direction=1;
             }
-            Game::getGame()->getHero()->move(sf::Vector2f(direction,0));
+            Game::getGame()->getHero()->move(sf::Vector2f(direction,j));
         }
     }
 }

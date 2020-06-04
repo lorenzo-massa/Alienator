@@ -15,11 +15,11 @@ public:
 
     int receiveDamage(int points) override ;
 
-    bool isLegalMovement(char comparison) override;
+    //bool isLegalMovement(char comparison) override;
 
     void move(sf::Vector2f direction) override;
 
-    void jump(int y) override;
+    float jump() override;
 
     void shot(Weapon* weapon) override;
 

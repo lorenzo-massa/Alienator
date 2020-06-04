@@ -18,23 +18,25 @@ int GameCharacter::receiveDamage(int points ) {
     //else
 }
 
-bool GameCharacter::isLegalMovement(char comparison){
+/*bool GameCharacter::isLegalMovement(char comparison){
 
     char target = 'B';
     if(comparison == target)
         return true;
     else
         return false;
-}
+}*/
 void GameCharacter::move(sf::Vector2f direction) {
 
-    GameCharacter::getSprite()->move(direction.x * 10,direction.y * 10);
+    GameCharacter::getSprite()->move(direction.x *5.0f,direction.y*1.0f );
 
 }
 
 
-void GameCharacter::jump(int y) {
-    y+=50;
+float GameCharacter::jump() {
+    float j;
+    j-=50;
+    return j;
 }
 
 void GameCharacter::shot(Weapon *weapon) {
