@@ -22,6 +22,8 @@ public:
 
     virtual ~AssetManager() = 0;
 
+    static void setBackground (std::shared_ptr<sf::RenderWindow> targetWindow);
+
 
 };
 

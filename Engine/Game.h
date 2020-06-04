@@ -14,6 +14,8 @@
 #include "../GameCharacter/Hero.h"
 #include "../Maps/MapHandler.h"
 #include "../Weapons/Bullet.h"
+#include <AssetsManager.h>
+
 //#include <Timer.h>
 
 #define GAME_NAME "Alienator"

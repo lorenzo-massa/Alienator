@@ -11,8 +11,6 @@ Game::Game(){
     gameWindow = nullptr;
     ptrMapHandler = std::make_shared<MapHandler>();
     clock = std::make_shared<sf::Clock>();
-
-
 }
 Game::~Game() = default;
 
@@ -33,6 +31,8 @@ void Game::init() {
         gameWindow->setVerticalSyncEnabled(true);
         gameWindow->setFramerateLimit(FPS);
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
+        AssetManager::load();
+        AssetManager::setFrames();
     }
 }
 

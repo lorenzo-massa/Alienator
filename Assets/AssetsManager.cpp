@@ -16,52 +16,29 @@ void AssetManager::load() {
 
         sf::Texture texture;
         sf::SoundBuffer sound;
-        texture.loadFromFile("./Assets/Images/isAnimatedFull.png");
+
+        texture.loadFromFile("Assets/Images/Object/Hero.png");
         textures.insert(std::make_pair("HERO", texture));
-        texture.loadFromFile("./Assets/Images/archer.png");
-        textures.insert(std::make_pair("ARCHER", texture));
-        texture.loadFromFile("./Assets/Images/Background.png");
+
+        texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
-        texture.loadFromFile("./Assets/Images/coconut.png");
-        textures.insert(std::make_pair("BULLET", texture));
-        texture.loadFromFile("./Assets/Images/dinoWalk.png");
-        textures.insert(std::make_pair("WATCHER", texture));
-        texture.loadFromFile("./Assets/Images/heart.png");
-        textures.insert(std::make_pair("HEART", texture));
-        texture.loadFromFile("./Assets/Images/Lantern.png");
-        textures.insert(std::make_pair("BRAWLER", texture));
-        texture.loadFromFile("./Assets/Images/lolly.png");
-        textures.insert(std::make_pair("CANDY", texture));
-        texture.loadFromFile("./Assets/Images/platform.png");
-        textures.insert(std::make_pair("PLATFORM", texture));
-        texture.loadFromFile("./Assets/Images/BOSS.png");
-        textures.insert(std::make_pair("BOSS", texture));
+
+        const int nTiles = 18;
+        for (int i = 1; i < nTiles+1; ++i) {
+            texture.loadFromFile("Assets/Images/Tiles/"+std::to_string(i)+".png");
+            textures.insert(std::make_pair(std::to_string(i), texture));
+        }
+
 
         font = std::make_unique<sf::Font>();
-        font->loadFromFile("./Assets/Font/mainFont.otf");
+        font->loadFromFile("Assets/Font/youre gone.ttf");
 
 
 
+        /*
         sound.loadFromFile("./Assets/Audio/heroJump.wav");
         sounds.insert(std::make_pair("HERO_JUMP", sound));
-        sound.loadFromFile("./Assets/Audio/heroDamage.wav");
-        sounds.insert(std::make_pair("HERO_DAMAGE", sound));
-        sound.loadFromFile("./Assets/Audio/heroShoot.wav");
-        sounds.insert(std::make_pair("HERO_SHOOT", sound));
-        sound.loadFromFile("./Assets/Audio/enemyShoot.wav");
-        sounds.insert(std::make_pair("ENEMY_SHOOT", sound));
-        sound.loadFromFile("./Assets/Audio/archerDamage.wav");
-        sounds.insert(std::make_pair("ARCHER_DAMAGE", sound));
-        sound.loadFromFile("./Assets/Audio/watcherDamage.wav");
-        sounds.insert(std::make_pair("WATCHER_DAMAGE", sound));
-        sound.loadFromFile("./Assets/Audio/brawlerDamage.wav");
-        sounds.insert(std::make_pair("BRAWLER_DAMAGE", sound));
-        sound.loadFromFile("./Assets/Audio/bossDamage.wav");
-        sounds.insert(std::make_pair("BOSS_DAMAGE", sound));
-        sound.loadFromFile("./Assets/Audio/powerUp.wav");
-        sounds.insert(std::make_pair("POWER_UP", sound));
-        sound.loadFromFile("./Assets/Audio/reload.wav");
-        sounds.insert(std::make_pair("RELOAD", sound));
+        */
 
     } catch (const std::exception& exception) {
         std::cerr << exception.what() << std::endl;
@@ -70,6 +47,7 @@ void AssetManager::load() {
 }
 
 void AssetManager::setFrames() {
+    /*
     //HERO
     std::vector<sf::IntRect> frame;
     for(int i = 0; i < 10; i++)
@@ -96,4 +74,10 @@ void AssetManager::setFrames() {
         frame.emplace_back(sf::IntRect(0 +  i  * 835, 0,  835, 554));
     frames.insert(std::make_pair("BOSS_FRAMES", frame));
     frame.clear();
+     */
+}
+
+void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow) {
+    sf::Sprite background(textures.at("BACKGROUND"));
+    targetWindow->draw(background);
 }

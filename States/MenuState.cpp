@@ -59,14 +59,9 @@ void MenuState::frameCalculator() {
 
 void MenuState::generateFrame() {
     targetWindow->clear();
+    AssetManager::setBackground(targetWindow);
 
-    sf::Texture texture;
-    if (!texture.loadFromFile("Assets/Images/BG/bg.jpg"))
-    {
-        std::cerr<<"Error loading background!"<<std::endl;
-    }
-    sf::Sprite background(texture);
-    targetWindow->draw(background);
+
 
     mainMenu.draw(targetWindow);
 

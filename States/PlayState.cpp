@@ -61,13 +61,7 @@ void PlayState::frameCalculator() {
 void PlayState::generateFrame() {
     targetWindow->clear();
 
-    sf::Texture texture;
-    if (!texture.loadFromFile("Assets/Images/BG/bg.jpg"))
-    {
-        std::cerr<<"Error loading background!"<<std::endl;
-    }
-    sf::Sprite background(texture);
-    targetWindow->draw(background);
+    AssetManager::setBackground(targetWindow);
 
     generateMap();
 
@@ -79,8 +73,7 @@ void PlayState::generateMap(){
     sf::Texture tileTexture;
     sf::Sprite tile;
 
-    tileTexture.loadFromFile("Assets/Images/Tiles/2.png");
-    tile.setTexture(tileTexture);
+    tile.setTexture(AssetManager::textures.at("2"));
 
     int n = Game::getGame()->getMapHandler()->getMap()->getN();
     int m = Game::getGame()->getMapHandler()->getMap()->getM();

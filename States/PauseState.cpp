@@ -51,14 +51,7 @@ void PauseState::frameCalculator() {
 
 void PauseState::generateFrame() {
     targetWindow->clear();
-
-    sf::Texture texture;
-    if (!texture.loadFromFile("Assets/Images/BG/bg.jpg"))
-    {
-        std::cerr<<"Error loading background!"<<std::endl;
-    }
-    sf::Sprite background(texture);
-    targetWindow->draw(background);
+    AssetManager::setBackground(targetWindow);
 
     mainMenu.draw(targetWindow);
 }
