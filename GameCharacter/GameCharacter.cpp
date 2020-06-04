@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <AssetsManager.h>
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am, int s) {
@@ -97,14 +98,11 @@ GameCharacter::~GameCharacter() {
 
 void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
 
-    if(!skin->loadFromFile("Assets/Images/Object/Hero.png"))
-        std::cerr<<"Error loading Hero skin"<<std::endl;
-    else{
-        sprite->setTexture(*skin);
-        sprite->setPosition(position);
-        sprite->setTextureRect(sf::IntRect(0,0,32,64));
-    }
 
+    sprite->setTexture(AssetManager::textures.at("HERO"));
+    sprite->setPosition(position);
+    sprite->setTextureRect(sf::IntRect(0,0,32,64));
+    sprite->setScale(size);
 
 }
 

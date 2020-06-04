@@ -16,7 +16,7 @@ public:
     void generateFrame() override;
 private:
 
-
+    int action;
     void generateMap();
 };
 

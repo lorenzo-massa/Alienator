@@ -1,5 +1,5 @@
 //
-// Created by th3lo on 31/05/2020.
+// Created by Lorenzo Massa on 31/05/2020.
 //
 
 #include "PlayState.h"
@@ -7,7 +7,9 @@
 #include "PauseState.h"
 
 
+
 PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
+    action = 0;
 }
 
 void PlayState::handleInput() {
@@ -65,11 +67,14 @@ void PlayState::generateFrame() {
 
     generateMap();
 
+    std::cout<<Game::getGame()->getClock()->getElapsedTime().asMilliseconds()<<std::endl;
+
     targetWindow->draw(*Game::getGame()->getHero()->getSprite());
 
 }
 
 void PlayState::generateMap(){
+
     sf::Texture tileTexture;
     sf::Sprite tile;
 
@@ -84,13 +89,14 @@ void PlayState::generateMap(){
         for(int j = 0; j < m; j++){
 
             if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'B'){
-                tile.setPosition(j*32,i*32);
-                tile.setTextureRect(sf::IntRect(0,0,32,32));
+                tile.setPosition(j*64,i*64);
+                tile.setTextureRect(sf::IntRect(0,0,64,64));
+
                 targetWindow->draw(tile);
             } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
-                Game::getGame()->createHero(i*32+j);
-                Game::getGame()->getHero()->setPos(i*32+j);
-                Game::getGame()->getHero()->init(sf::Vector2f(j*32,i*32),sf::Vector2f(20,30));
+                Game::getGame()->createHero(i*64+j);
+
+                Game::getGame()->getHero()->init(sf::Vector2f(j*64,i*64),sf::Vector2f(2,2));
                 Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
             }
 

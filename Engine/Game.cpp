@@ -68,7 +68,7 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 
 void Game::createHero(int x/*int y*/) {
     ptrHero = std::make_shared<Hero>(10,10,10,10);
-    ptrHero->setPos(x);
+    //ptrHero->setPos(x);
    // ptrHero->setPosY(y);
 }
 
