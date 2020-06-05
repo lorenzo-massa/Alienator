@@ -56,40 +56,12 @@ void PlayState::generateFrame() {
 
     generateMap();
 
-    std::cout<<Game::getGame()->getClock()->getElapsedTime().asMilliseconds()<<std::endl;
-
-    targetWindow->draw(*Game::getGame()->getHero()->getSprite());
+    targetWindow->draw(*Game::getGame()->getHero());
 
 }
 
 void PlayState::generateMap(){
-
-    sf::Texture tileTexture;
-    sf::Sprite tile;
-
-    tile.setTexture(AssetManager::textures.at("2"));
-
-    int n = Game::getGame()->getMapHandler()->getMap()->getN();
-    int m = Game::getGame()->getMapHandler()->getMap()->getM();
-
-
-    for(int i = 0; i < n ; i++)
-    {
-        for(int j = 0; j < m; j++){
-
-            if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'B'){
-                tile.setPosition(j*64,i*64);
-                tile.setTextureRect(sf::IntRect(0,0,64,64));
-
-                targetWindow->draw(tile);
-            } else if (Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i*m+j) == 'P'){
-                Game::getGame()->createHero(i*64,j*64);
-
-                Game::getGame()->getHero()->init(sf::Vector2f(j*64,i*64),sf::Vector2f(2,2));
-                Game::getGame()->getMapHandler()->getMap()->setMatrixValue(i*m+j, '.');
-            }
-
-        }
-    }
+    for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix())
+        targetWindow->draw(*blocks);
 }
 

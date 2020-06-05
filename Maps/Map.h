@@ -17,26 +17,23 @@ public:
     explicit Map(int n, int m);
     //~Map();
 
-    void addToMatrix(char& x);
+    void addToMatrix(std::shared_ptr<sf::Sprite> x);
     void removeFromMatrix(int i);
-    char getFromMatrix(int i);
-    void setMatrixValue(int i, char value);
+    std::shared_ptr<sf::Sprite> getFromMatrix(int i);
+    std::vector<std::shared_ptr<sf::Sprite>> getMatrix();
 
     void addEnemy(Enemy& e);
     void removeEnemy(int t);
     Enemy getEnemy(int i);
 
-    std::string matrixtoString();
-
     int getN() const;
-
     int getM() const;
 
 
 private:
     std::vector<Enemy> enemies;
     //std::list<Collectable> collectables;
-    std::vector<char> mapMatrix;
+    std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
     int n;
     int m;
 };

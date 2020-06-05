@@ -12,7 +12,7 @@
 #include "../Weapons/Weapon.h"
 //#include "../Engine/Game.h"
 
-class GameCharacter{
+class GameCharacter : public sf::Sprite{
 public:
     GameCharacter(int hp,int ar,int am,sf::Vector2f s);
 
@@ -52,11 +52,6 @@ public:
 
     void setAmmo(int ammo);
 
-    void init(sf::Vector2f position, sf::Vector2f size);
-
-    std::shared_ptr<sf::Sprite> getSprite(){
-        return sprite;
-    }
 
 
 protected:
@@ -66,9 +61,8 @@ protected:
     sf::Vector2f speed;
     int ammo;
     Weapon * weapon;
-    std::shared_ptr<sf::Sprite> sprite;
-    std::shared_ptr<sf::Texture> skin;
 
+    void init(sf::Vector2f position, sf::Vector2f size);
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

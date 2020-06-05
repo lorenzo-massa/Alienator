@@ -608,6 +608,33 @@ Menu/MainMenu.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.s
 .PHONY : Menu/MainMenu.cpp.s
 
+Objects/Block.obj: Objects/Block.cpp.obj
+
+.PHONY : Objects/Block.obj
+
+# target to build an object file
+Objects/Block.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Block.cpp.obj
+.PHONY : Objects/Block.cpp.obj
+
+Objects/Block.i: Objects/Block.cpp.i
+
+.PHONY : Objects/Block.i
+
+# target to preprocess a source file
+Objects/Block.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Block.cpp.i
+.PHONY : Objects/Block.cpp.i
+
+Objects/Block.s: Objects/Block.cpp.s
+
+.PHONY : Objects/Block.s
+
+# target to generate assembly for a file
+Objects/Block.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Objects/Block.cpp.s
+.PHONY : Objects/Block.cpp.s
+
 Objects/Collectable.obj: Objects/Collectable.cpp.obj
 
 .PHONY : Objects/Collectable.obj
@@ -1103,6 +1130,9 @@ help:
 	@echo ... Menu/MainMenu.obj
 	@echo ... Menu/MainMenu.i
 	@echo ... Menu/MainMenu.s
+	@echo ... Objects/Block.obj
+	@echo ... Objects/Block.i
+	@echo ... Objects/Block.s
 	@echo ... Objects/Collectable.obj
 	@echo ... Objects/Collectable.i
 	@echo ... Objects/Collectable.s

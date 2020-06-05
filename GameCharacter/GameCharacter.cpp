@@ -1,16 +1,16 @@
 //
-// Created by leoco on 27/05/2020.
+// Created by Leonardo Corsini on 27/05/2020.
 //
 
 #include <iostream>
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s) :healthPoint(hp),armor(ar),ammo(am),speed(s){
-    sprite = std::make_shared<sf::Sprite>();
-    skin = std::make_shared<sf::Texture>();
-
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s){
+    setTextureRect(sf::IntRect(0,0,64,128));
+    init(s,s);
 }
+
 GameCharacter::GameCharacter(sf::Vector2f pos) :pos(pos){}
 
 int GameCharacter::receiveDamage(int points ) {
@@ -29,7 +29,7 @@ int GameCharacter::receiveDamage(int points ) {
 }*/
 void GameCharacter::move(sf::Vector2f direction) {
 
-    GameCharacter::getSprite()->move(direction.x *5.0f,direction.y*1.0f );
+    sf::Sprite::move(direction.x *5.0f,direction.y*1.0f );
 
 }
 
@@ -94,11 +94,10 @@ GameCharacter::~GameCharacter() {
 
 void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
 
-
-    sprite->setTexture(AssetManager::textures.at("HERO"));
-    sprite->setPosition(position);
-    sprite->setTextureRect(sf::IntRect(0,0,32,64));
-    sprite->setScale(size);
+    setTexture(AssetManager::textures.at("HERO"));
+    setPosition(position);
+    setTextureRect(sf::IntRect(0,0,32,64));
+    setScale(size);
 
 }
 

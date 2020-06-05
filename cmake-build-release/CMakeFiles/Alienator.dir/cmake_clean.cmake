@@ -20,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Alienator.dir/Maps/MapFactory.cpp.obj"
   "CMakeFiles/Alienator.dir/Maps/MapHandler.cpp.obj"
   "CMakeFiles/Alienator.dir/Menu/MainMenu.cpp.obj"
+  "CMakeFiles/Alienator.dir/Objects/Block.cpp.obj"
   "CMakeFiles/Alienator.dir/Objects/Collectable.cpp.obj"
   "CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.obj"
   "CMakeFiles/Alienator.dir/States/GameState.cpp.obj"
