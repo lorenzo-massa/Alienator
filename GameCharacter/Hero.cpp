@@ -4,8 +4,8 @@
 
 #include "Hero.h"
 
-Hero::Hero(int hp, int ar, int am, sf::Vector2f s) : GameCharacter(hp, ar, am, s) {}
-Hero::Hero(sf::Vector2f pos) :GameCharacter(pos){}
+Hero::Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos) : GameCharacter(hp, ar, am, s,pos) {}
+
 Hero::~Hero() {}
 
 int Hero::getCoins() const {
@@ -19,12 +19,12 @@ void Hero::shot(Weapon *weapon) {
     GameCharacter::shot(weapon);
 }
 
-void Hero::move(sf:: Vector2f direction) {
-    GameCharacter::move(direction);
+void Hero::move(sf:: Vector2f direction,float deltaT) {
+    GameCharacter::move(direction,deltaT);
 }
 
-float Hero::jump() {
-    return GameCharacter::jump();
+void Hero::jump() {
+    GameCharacter::jump();
 }
 
 int Hero::receiveDamage(int points) {

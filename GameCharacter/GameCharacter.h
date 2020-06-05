@@ -14,9 +14,11 @@
 
 class GameCharacter : public sf::Sprite{
 public:
-    GameCharacter(int hp,int ar,int am,sf::Vector2f s);
+    GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos);
 
-    GameCharacter(sf::Vector2f pos);
+
+
+
 
     ~GameCharacter();
 
@@ -25,9 +27,9 @@ public:
 
     //virtual bool isLegalMovement(char comparison);
 
-    virtual void move(sf::Vector2f direction);
+    virtual void move(sf::Vector2f direction,float deltaT);
 
-    virtual float jump();
+    virtual void jump();
 
     virtual void shot(Weapon* weapon);
 

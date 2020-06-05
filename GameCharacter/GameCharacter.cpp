@@ -6,12 +6,13 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s){
-    setTextureRect(sf::IntRect(0,0,64,128));
-    init(s,s);
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos){
+    setTextureRect(sf::IntRect(0,0,16,128));
+    init(pos,sf::Vector2f(2,2));
 }
 
-GameCharacter::GameCharacter(sf::Vector2f pos) :pos(pos){}
+
+
 
 int GameCharacter::receiveDamage(int points ) {
  //   if (healthPoint>points)
@@ -27,17 +28,21 @@ int GameCharacter::receiveDamage(int points ) {
     else
         return false;
 }*/
-void GameCharacter::move(sf::Vector2f direction) {
-
-    sf::Sprite::move(direction.x *5.0f,direction.y*1.0f );
+void GameCharacter::move(sf::Vector2f direction,float deltaT) {
+    float yT;
+    float xT;
+    speed.y=speed.y+98.0*64*deltaT;
+    speed.x=8*64;
+    xT=direction.x*speed.x*deltaT;
+    yT=speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
+    sf::Sprite::move(xT,direction.y*yT);
 
 }
 
 
-float GameCharacter::jump() {
-    float j;
-    j-=50;
-    return j;
+void GameCharacter::jump() {
+    speed.y-=50.0*64.0;
+
 }
 
 void GameCharacter::shot(Weapon *weapon) {

@@ -14,7 +14,7 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState
 
 void PlayState::handleInput() {
     float direction=0;
-    float j=0;
+
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
         if(event.type == sf::Event::Closed)
@@ -28,7 +28,7 @@ void PlayState::handleInput() {
                 Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
             }
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
-                j=Game::getGame()->getHero()->jump();
+                Game::getGame()->getHero()->jump();
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 direction=-1;
@@ -36,9 +36,9 @@ void PlayState::handleInput() {
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                 direction=1;
             }
-            Game::getGame()->getHero()->move(sf::Vector2f(direction,j));
         }
     }
+    Game::getGame()->getHero()->move(sf::Vector2f(direction,1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds());
 }
 
 void PlayState::frameCalculator() {
