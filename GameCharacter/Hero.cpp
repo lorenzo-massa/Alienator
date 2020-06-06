@@ -4,7 +4,7 @@
 
 #include "Hero.h"
 
-Hero::Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos) : GameCharacter(hp, ar, am, s,pos) {}
+Hero::Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir) : GameCharacter(hp, ar, am, s,pos,dir) {}
 
 Hero::~Hero() {}
 

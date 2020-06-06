@@ -6,7 +6,7 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos){
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){
     setTextureRect(sf::IntRect(0,0,16,128));
     init(pos,sf::Vector2f(2,2));
 }
@@ -34,18 +34,18 @@ void GameCharacter::move(sf::Vector2f direction,float deltaT) {
     speed.y=speed.y+98.0*64*deltaT;
     if(direction.x==0) {
         if (speed.x > 0)
-            speed.x -= 12 * 64 * deltaT;
+            speed.x -= 30 * 64 * deltaT;
         else if (speed.x<0)
-            speed.x += 12 * 64 * deltaT;
+            speed.x += 30 * 64 * deltaT;
     }
-   if(speed.x>-5&&speed.x<5)
+   if(speed.x>-5 && speed.x<5)
        speed.x=0;
 
     if(direction.x!=0)
-        speed.x=speed.x*direction.x-3*64*deltaT*direction.x;
+        speed.x=8*64*direction.x;
 
     xT=speed.x*deltaT;
-    yT=0;//speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
+    yT=speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
     sf::Sprite::move(xT,direction.y*yT);
 
 }
@@ -103,6 +103,13 @@ void GameCharacter::setAmmo(int ammo) {
     GameCharacter::ammo = ammo;
 }
 
+float GameCharacter::getDirection() const {
+    return direction;
+}
+
+void GameCharacter::setDirection(float direction) {
+    GameCharacter::direction = direction;
+}
 GameCharacter::~GameCharacter() {
 
 }
@@ -116,6 +123,8 @@ void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
     setScale(size);
 
 }
+
+
 
 
 

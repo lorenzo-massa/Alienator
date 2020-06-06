@@ -67,7 +67,7 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 }
 
 void Game::createHero(int x ,int y) {
-    ptrHero = std::make_shared<Hero>(10,10,10,sf::Vector2f(0,0),sf::Vector2f(x,y));
+    ptrHero = std::make_shared<Hero>(10,10,10,sf::Vector2f(0,0),sf::Vector2f(x,y),0);
 }
 
 std::shared_ptr<Hero> Game::getHero() {

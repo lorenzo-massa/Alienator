@@ -14,7 +14,7 @@
 
 class GameCharacter : public sf::Sprite{
 public:
-    GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos);
+    GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos,float dir);
 
 
 
@@ -54,7 +54,9 @@ public:
 
     void setAmmo(int ammo);
 
+    float getDirection() const;
 
+    void setDirection(float direction);
 
 protected:
     sf::Vector2f pos;
@@ -63,6 +65,7 @@ protected:
     sf::Vector2f speed;
     int ammo;
     Weapon * weapon;
+    float direction;
 
     void init(sf::Vector2f position, sf::Vector2f size);
 };

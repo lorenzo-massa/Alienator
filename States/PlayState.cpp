@@ -13,7 +13,7 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState
 }
 
 void PlayState::handleInput() {
-    float direction=0;
+    sf::Vector2f speed;
 
     sf::Event event;
     while(targetWindow->pollEvent(event)) {
@@ -22,6 +22,7 @@ void PlayState::handleInput() {
         else if (event.type == sf::Event::Resized) {
             sf::Vector2u size = targetWindow->getSize();
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
+
         }
         else if(event.type == sf::Event::KeyPressed) {
             if(event.key.code == sf::Keyboard::Escape) {
@@ -30,21 +31,36 @@ void PlayState::handleInput() {
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
                 Game::getGame()->getHero()->jump();
             }
-            if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                direction=-1;
-                sf::Vector2f speed;
-                speed=Game::getGame()->getHero()->getSpeed();
-                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8*64,speed.y));
+            if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
+                Game::getGame()->getHero()->setDirection(-1);
+                speed = Game::getGame()->getHero()->getSpeed();
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
             }
-            if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                direction=1;
-                sf::Vector2f speed;
-                speed=Game::getGame()->getHero()->getSpeed();
-                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8*64,speed.y));
+            if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
+                Game::getGame()->getHero()->setDirection(1);
+                speed = Game::getGame()->getHero()->getSpeed();
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
             }
         }
+        else if (event.type == sf::Event::KeyReleased)
+        {
+            if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
+                Game::getGame()->getHero()->setDirection(0);
+                //speed = Game::getGame()->getHero()->getSpeed();
+                //Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
+            }
+            if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
+                Game::getGame()->getHero()->setDirection(0);
+                //speed = Game::getGame()->getHero()->getSpeed();
+                //Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
+            }
+
+        }
+        //td::cout<<event.key.code<<" ";
     }
-    Game::getGame()->getHero()->move(sf::Vector2f(direction,1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds());
+
+    //std::cout<<Game::getGame()->getClock()->getElapsedTime().asSeconds()<<"\n";
+    Game::getGame()->getHero()->move(sf::Vector2f( Game::getGame()->getHero()->getDirection(),1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds());
 }
 
 void PlayState::frameCalculator() {
