@@ -32,9 +32,20 @@ void GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
     float xT;
     speed.y=speed.y+98.0*64*deltaT;
-    speed.x=8*64;
-    xT=direction.x*speed.x*deltaT;
-    yT=speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
+    if(direction.x==0) {
+        if (speed.x > 0)
+            speed.x -= 12 * 64 * deltaT;
+        else if (speed.x<0)
+            speed.x += 12 * 64 * deltaT;
+    }
+   if(speed.x>-5&&speed.x<5)
+       speed.x=0;
+
+    if(direction.x!=0)
+        speed.x=speed.x*direction.x-3*64*deltaT*direction.x;
+
+    xT=speed.x*deltaT;
+    yT=0;//speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
     sf::Sprite::move(xT,direction.y*yT);
 
 }

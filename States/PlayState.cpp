@@ -32,9 +32,15 @@ void PlayState::handleInput() {
             }
             if(event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 direction=-1;
+                sf::Vector2f speed;
+                speed=Game::getGame()->getHero()->getSpeed();
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8*64,speed.y));
             }
             if(event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                 direction=1;
+                sf::Vector2f speed;
+                speed=Game::getGame()->getHero()->getSpeed();
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8*64,speed.y));
             }
         }
     }
