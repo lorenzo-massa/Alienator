@@ -46,20 +46,12 @@ void PlayState::handleInput() {
         {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 Game::getGame()->getHero()->setDirection(0);
-                //speed = Game::getGame()->getHero()->getSpeed();
-                //Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                 Game::getGame()->getHero()->setDirection(0);
-                //speed = Game::getGame()->getHero()->getSpeed();
-                //Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
             }
-
         }
-        //td::cout<<event.key.code<<" ";
     }
-
-    //std::cout<<Game::getGame()->getClock()->getElapsedTime().asSeconds()<<"\n";
     Game::getGame()->getHero()->move(sf::Vector2f( Game::getGame()->getHero()->getDirection(),1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds());
 }
 
@@ -87,3 +79,9 @@ void PlayState::generateMap(){
         targetWindow->draw(*blocks);
 }
 
+/*bool isLegalMovement(){
+    float heroPosY=Game::getGame()->getHero()->getPosition().y+Game::getGame()->getHero()->getGlobalBounds().height;
+    float blockPosY=Game::getGame()->getMapHandler()->
+    if(heroPosY+8*64*direction==)
+
+}*/

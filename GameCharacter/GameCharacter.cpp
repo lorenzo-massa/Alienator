@@ -2,7 +2,6 @@
 // Created by Leonardo Corsini on 27/05/2020.
 //
 
-#include <iostream>
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
@@ -11,9 +10,6 @@ GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f 
     init(pos,sf::Vector2f(2,2));
 }
 
-
-
-
 int GameCharacter::receiveDamage(int points ) {
  //   if (healthPoint>points)
         return healthPoint -= points;
@@ -21,28 +17,24 @@ int GameCharacter::receiveDamage(int points ) {
 }
 
 /*bool GameCharacter::isLegalMovement(char comparison){
-
-    char target = 'B';
-    if(comparison == target)
-        return true;
-    else
-        return false;
+    if(GameCharacter::getGlobalBounds().height+GameCharacter::getPosition().y+8*64*direction==)
 }*/
+
 void GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
     float xT;
-    speed.y=speed.y+98.0*64*deltaT;
-    if(direction.x==0) {
+    speed.y=speed.y+98.0*64*deltaT;//gravità
+    if(direction.x==0) {   //attrito
         if (speed.x > 0)
             speed.x -= 30 * 64 * deltaT;
         else if (speed.x<0)
             speed.x += 30 * 64 * deltaT;
     }
-   if(speed.x>-5 && speed.x<5)
+   if(speed.x>-5 && speed.x<5)//settaggio velocità
        speed.x=0;
 
     if(direction.x!=0)
-        speed.x=8*64*direction.x;
+        speed.x=8*64*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
     yT=speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
@@ -53,13 +45,13 @@ void GameCharacter::move(sf::Vector2f direction,float deltaT) {
 
 void GameCharacter::jump() {
     speed.y-=50.0*64.0;
-
 }
 
 void GameCharacter::shot(Weapon *weapon) {
     weapon->fire();
 }
 
+//Getter e Setter
 sf::Vector2f GameCharacter::getPos() const {
     return GameCharacter::pos;
 }

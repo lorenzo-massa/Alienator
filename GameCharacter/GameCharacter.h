@@ -10,18 +10,13 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "../Weapons/Weapon.h"
-//#include "../Engine/Game.h"
+
 
 class GameCharacter : public sf::Sprite{
 public:
     GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos,float dir);
 
-
-
-
-
     ~GameCharacter();
-
 
     virtual int receiveDamage(int points);
 

@@ -14,10 +14,12 @@ public:
     void handleInput() override;
     void frameCalculator() override;
     void generateFrame() override;
+    bool isLegalMovement();
 private:
 
     int action;
     void generateMap();
+
 };
 
 
