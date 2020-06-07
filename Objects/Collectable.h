@@ -10,27 +10,21 @@
 #include <SFML/Graphics.hpp>
 #include "PowerUp.h"
 
-class Collectable {
+class Collectable : public sf::Sprite {
 public:
-    Collectable();
-    explicit Collectable(std::string type);
+    explicit Collectable(sf::Vector2f position);
+    Collectable(sf::Vector2f position, std::string type);
     ~Collectable();
 
-    const std::shared_ptr<sf::Sprite> &getSprite() const;
-
-    void setSprite(const std::shared_ptr<sf::Sprite> &sprite);
-
-    const std::shared_ptr<sf::Texture> &getSkin() const;
-
-    void setSkin(const std::shared_ptr<sf::Texture> &skin);
 
     const PowerUp &getPowerUp() const;
 
     void setPowerUp(const PowerUp &powerUp);
 
 private:
-    std::shared_ptr<sf::Sprite> sprite;
-    std::shared_ptr<sf::Texture> skin;
+    const float height {512};
+    const float width {512};
+
     PowerUp powerUp;
 };
 

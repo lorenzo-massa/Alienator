@@ -23,7 +23,7 @@ public:
     explicit PowerUp (std::string typeString);
     PowerUp();
     ~PowerUp();
-    const TYPE& getType() const;
+    const std::string getType() const;
 
 
 private:

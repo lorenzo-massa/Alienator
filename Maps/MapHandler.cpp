@@ -36,14 +36,106 @@ void MapHandler::loadLevel(int x) {
             if (c != '\n') {
 
                 std::shared_ptr<Block> b;
+                std::shared_ptr<Collectable> coll;
+
                 switch (c) {
-                    case 'B':
+                    case '1':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("1"));
+                        map->addToMatrix(b);
+                        break;
+                    case '2':
                         b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
                         b->setTexture(AssetManager::textures.at("2"));
                         map->addToMatrix(b);
                         break;
+                    case '3':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("3"));
+                        map->addToMatrix(b);
+                        break;
+                    case '4':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("4"));
+                        map->addToMatrix(b);
+                        break;
+                    case '5':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("5"));
+                        map->addToMatrix(b);
+                        break;
+                    case '6':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("6"));
+                        map->addToMatrix(b);
+                        break;
+                    case '7':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("7"));
+                        map->addToMatrix(b);
+                        break;
+                    case '8':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("8"));
+                        map->addToMatrix(b);
+                        break;
+                    case '9':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("9"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'A':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("10"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'B':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("11"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'C':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("12"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'D':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("13"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'E':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("14"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'F':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("15"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'G':
+                        b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                        b->setTexture(AssetManager::textures.at("16"));
+                        map->addToMatrix(b);
+                        break;
+                    case 'X':
+                        coll = std::make_shared<Collectable>(sf::Vector2f(j * 64, i * 64), "COINS");
+                        coll->setTexture(AssetManager::textures.at("COINS"));
+                        map->addToMatrix(coll);
+                        break;
+                    case 'Y':
+                        coll = std::make_shared<Collectable>(sf::Vector2f(j * 64, i * 64), "MUNITIONS");
+                        coll->setTexture(AssetManager::textures.at("MUNITIONS"));
+                        map->addToMatrix(coll);
+                        break;
+                    case 'Z':
+                        coll = std::make_shared<Collectable>(sf::Vector2f(j * 64, i * 64));
+                        coll->setTexture(AssetManager::textures.at(coll->getPowerUp().getType()));
+                        map->addToMatrix(coll);
+                        break;
                     case 'P':
-                        Game::getGame()->createHero(i*64,j*64);
+                        Game::getGame()->createHero(j*64,i*64);
                         break;
                     default:
                         break;
@@ -60,3 +152,4 @@ void MapHandler::loadLevel(int x) {
 std::shared_ptr<Map> MapHandler::getMap() {
     return map;
 }
+

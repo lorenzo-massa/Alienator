@@ -7,8 +7,9 @@
 
 
 Block::Block(sf::Vector2f position): left(0), right(width), top(0) {
-    setTextureRect(sf::IntRect(0,0,width,height));
+    setTextureRect(sf::IntRect(0,0,width*2,height*2));
     //setTextureRect(sf::IntRect(0,0,width,height));
+    setScale(sf::Vector2f(0.5,0.5));
     sf::Sprite::setPosition(position);
 }
 

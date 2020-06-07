@@ -8,6 +8,7 @@
 
 #include "Map.h"
 #include "MapFactory.h"
+#include "../Objects/Collectable.h"
 //#include "../Engine/Game.h"
 #include <memory>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -24,6 +25,7 @@ public:
 
 private:
     std::shared_ptr<Map> map;
+
 };
 
 

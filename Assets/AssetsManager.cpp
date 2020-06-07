@@ -23,7 +23,26 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
 
-        const int nTiles = 18;
+        texture.loadFromFile("Assets/Images//Object/coin.png");
+        textures.insert(std::make_pair("COINS", texture));
+
+        texture.loadFromFile("Assets/Images//Object/munitions.png");
+        textures.insert(std::make_pair("MUNITIONS", texture));
+
+        texture.loadFromFile("Assets/Images//Object/firerate.png");
+        textures.insert(std::make_pair("FIRE_RATE", texture));
+
+        texture.loadFromFile("Assets/Images//Object/speed.png");
+        textures.insert(std::make_pair("SPEED", texture));
+
+        texture.loadFromFile("Assets/Images//Object/damageboost.png");
+        textures.insert(std::make_pair("DAMAGE_BOOST", texture));
+
+        texture.loadFromFile("Assets/Images//Object/invincibility.png");
+        textures.insert(std::make_pair("INVICIBILITY", texture));
+
+
+        const int nTiles = 16;
         for (int i = 1; i < nTiles+1; ++i) {
             texture.loadFromFile("Assets/Images/Tiles/"+std::to_string(i)+".png");
             textures.insert(std::make_pair(std::to_string(i), texture));

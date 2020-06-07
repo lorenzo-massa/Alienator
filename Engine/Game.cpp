@@ -32,7 +32,10 @@ void Game::init() {
         gameWindow->setFramerateLimit(FPS);
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
         AssetManager::load();
-        AssetManager::setFrames();
+        //AssetManager::setFrames();
+
+        srand (time(NULL));
+
     }
 }
 

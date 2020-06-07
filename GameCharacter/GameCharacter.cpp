@@ -5,8 +5,8 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){
-    setTextureRect(sf::IntRect(0,0,16,128));
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
+sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){
     init(pos,sf::Vector2f(2,2));
 }
 
@@ -37,7 +37,7 @@ void GameCharacter::move(sf::Vector2f direction,float deltaT) {
         speed.x=8*64*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
-    yT=speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
+    yT=0;//speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
     sf::Sprite::move(xT,direction.y*yT);
 
 }
@@ -110,7 +110,7 @@ GameCharacter::~GameCharacter() {
 void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
 
     setTexture(AssetManager::textures.at("HERO"));
-    setPosition(position);
+    setPosition(pos);
     setTextureRect(sf::IntRect(0,0,32,64));
     setScale(size);
 

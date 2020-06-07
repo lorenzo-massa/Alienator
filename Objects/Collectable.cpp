@@ -4,38 +4,42 @@
 
 #include "Collectable.h"
 
-Collectable::Collectable(){
-    sprite = std::make_shared<sf::Sprite>();
-    skin = std::make_shared<sf::Texture>();
-
+Collectable::Collectable(sf::Vector2f position){
     powerUp = PowerUp();
+
+    if(powerUp.getType() == "COINS"){
+        setScale(sf::Vector2f(0.075,0.075));
+    } else if(powerUp.getType() == "MUNITIONS"){
+        setScale(sf::Vector2f(0.075,0.075));
+    }else if(powerUp.getType() == "FIRE_RATE"){
+        setScale(sf::Vector2f(0.2,0.2));
+    }else if(powerUp.getType() == "SPEED"){
+        setScale(sf::Vector2f(0.1,0.1));
+    }    else if(powerUp.getType() == "DAMAGE_BOOST"){
+        setScale(sf::Vector2f(0.075,0.075));
+    }    else if(powerUp.getType() == "INVICIBILITY"){
+        setScale(sf::Vector2f(0.075,0.075));
+    }
+
+    setTextureRect(sf::IntRect(0,0,width,height));
+    sf::Sprite::setPosition(position);
+
+
 }
 
-Collectable::Collectable(std::string type){
-    sprite = std::make_shared<sf::Sprite>();
-    skin = std::make_shared<sf::Texture>();
+Collectable::Collectable(sf::Vector2f position, std::string type){
+
+    setTextureRect(sf::IntRect(0,0,width,height));
+    setScale(sf::Vector2f(0.075,0.075));
+    sf::Sprite::setPosition(position);
 
     powerUp = PowerUp(type);
+
 }
 
 Collectable::~Collectable(){
 }
 
-const std::shared_ptr<sf::Sprite> &Collectable::getSprite() const {
-    return sprite;
-}
-
-void Collectable::setSprite(const std::shared_ptr<sf::Sprite> &sprite) {
-    Collectable::sprite = sprite;
-}
-
-const std::shared_ptr<sf::Texture> &Collectable::getSkin() const {
-    return skin;
-}
-
-void Collectable::setSkin(const std::shared_ptr<sf::Texture> &skin) {
-    Collectable::skin = skin;
-}
 
 const PowerUp &Collectable::getPowerUp() const {
     return powerUp;
