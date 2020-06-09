@@ -20,7 +20,7 @@ int GameCharacter::receiveDamage(int points ) {
     if(GameCharacter::getGlobalBounds().height+GameCharacter::getPosition().y+8*64*direction==)
 }*/
 
-float GameCharacter::move(sf::Vector2f direction,float deltaT) {
+sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
     float xT;
     speed.y=speed.y+98.0*64*deltaT;//gravità
@@ -37,9 +37,10 @@ float GameCharacter::move(sf::Vector2f direction,float deltaT) {
         speed.x=8*64*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
-    yT=0;//speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT;
+    yT=(speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT)*direction.y;
+
     sf::Sprite::move(xT,direction.y*yT);
-    return xT;
+    return sf::Vector2f(xT,yT);
 }
 
 

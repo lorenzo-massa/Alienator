@@ -5,6 +5,7 @@
 #include "PlayState.h"
 #include "../Engine/Game.h"
 #include "PauseState.h"
+//#include <cmath>
 
 
 
@@ -58,25 +59,26 @@ void PlayState::frameCalculator() {
 
 void PlayState::generateFrame() {
 
-    float xT = Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),
+    sf::Vector2f move = Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),
                                                 Game::getGame()->getClock()->getElapsedTime().asSeconds());
 
     sf::View tempView = targetWindow->getView();
     //
+   // if(isLegalMovement()
     if ((Game::getGame()->getHero()->getPosition().x  - AssetManager::getXBackground() < 500 && Game::getGame()->getHero()->getDirection() == -1) ||
         (AssetManager::getXBackground() + targetWindow->getSize().x - 500 < Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
-        tempView.move(xT, 0);
+        tempView.move(move.x, 0);
         targetWindow->setView(tempView);
     } else
-        xT = 0;
+        move.x = 0;
 
     targetWindow->clear();
 
-    AssetManager::setBackground(targetWindow, xT);
+    AssetManager::setBackground(targetWindow, move.x);
 
     generateMap();
 
-    generateGUI(xT);
+    generateGUI(move.x);
 
     targetWindow->draw(*Game::getGame()->getHero());
 
@@ -121,9 +123,35 @@ void PlayState::generateGUI(float& xT){
 }
 
 
-/*bool isLegalMovement(){
-    float heroPosY=Game::getGame()->getHero()->getPosition().y+Game::getGame()->getHero()->getGlobalBounds().height;
-    float blockPosY=Game::getGame()->getMapHandler()->
-    if(heroPosY+8*64*direction==)
+/*bool isLegalMovement(GameCharacter& entity,sf::Vector2f move){
 
+    sf::Vector2f entityPos;
+    entityPos.x=entity.getPosition().x+move.x;
+    entityPos.y=entity.getPosition().y+move.y;
+    sf::Vector2f entitySize=entity.getScale()/2.0f;
+    sf::Vector2f blockPos;
+    sf::Vector2f blockSize;
+
+    float deltaX;
+    float deltaY;
+
+    float intersectionX;
+    float intersectionY;
+
+    for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix()) {
+        blockPos=blocks->getPosition();
+        blockSize=blocks->getScale()/2.0f;
+
+        deltaX=blockPos.x-entityPos.x;
+        deltaY= blockPos.y-entityPos.y;
+
+        intersectionX=abs(deltaX)-(blockSize.x+entitySize.x);
+        intersectionY=abs(deltaY)-(blockSize.y+entitySize.y);
+
+        if(intersectionX<0.0f && intersectionY<0.0f)
+            return true;
+        else
+            return false;
+
+    }
 }*/

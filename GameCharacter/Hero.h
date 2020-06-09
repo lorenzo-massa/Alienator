@@ -18,7 +18,7 @@ public:
 
     //bool isLegalMovement(char comparison) override;
 
-    float move(sf::Vector2f direction, float delatT) override;
+    sf::Vector2f move(sf::Vector2f direction, float delatT) override;
 
     void jump() override;
 

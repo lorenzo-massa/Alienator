@@ -22,7 +22,7 @@ public:
 
     //virtual bool isLegalMovement(char comparison);
 
-    virtual float move(sf::Vector2f direction,float deltaT);
+    virtual sf::Vector2f move(sf::Vector2f direction,float deltaT);
 
     virtual void jump();
 
