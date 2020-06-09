@@ -10,9 +10,13 @@ std::map<std::string, sf::SoundBuffer> AssetManager::sounds = std::map<std::stri
 
 std::unique_ptr<sf::Font> AssetManager::font = nullptr;
 
+float AssetManager::xBackground = 0;
 
 void AssetManager::load() {
+
+
     try {
+
 
         sf::Texture texture;
         sf::SoundBuffer sound;
@@ -96,7 +100,13 @@ void AssetManager::setFrames() {
      */
 }
 
-void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow) {
+void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow, float xT) {
     sf::Sprite background(textures.at("BACKGROUND"));
+    xBackground += xT;
+    background.setPosition(xBackground, 0);
     targetWindow->draw(background);
+}
+
+float AssetManager::getXBackground() {
+    return xBackground;
 }

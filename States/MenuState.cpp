@@ -59,7 +59,7 @@ void MenuState::frameCalculator() {
 
 void MenuState::generateFrame() {
     targetWindow->clear();
-    AssetManager::setBackground(targetWindow);
+    AssetManager::setBackground(targetWindow,0);
 
 
 

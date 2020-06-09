@@ -61,7 +61,7 @@ void LevelSelectState::frameCalculator() {
 
 void LevelSelectState::generateFrame() {
     targetWindow->clear();
-    AssetManager::setBackground(targetWindow);
+    AssetManager::setBackground(targetWindow,0);
 
     mainMenu.draw(targetWindow);
 

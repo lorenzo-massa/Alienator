@@ -19,8 +19,8 @@ void Hero::shot(Weapon *weapon) {
     GameCharacter::shot(weapon);
 }
 
-void Hero::move(sf:: Vector2f direction,float deltaT) {
-    GameCharacter::move(direction,deltaT);
+float Hero::move(sf:: Vector2f direction, float deltaT) {
+    return GameCharacter::move(direction,deltaT);
 }
 
 void Hero::jump() {

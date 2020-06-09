@@ -20,6 +20,7 @@ private:
     int action;
     void generateMap();
 
+    void generateGUI(float& xT);
 };
 
 
