@@ -7,7 +7,7 @@
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
 sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){
-    init(pos,sf::Vector2f(2,2));
+    init(pos,sf::Vector2f(2.0f,2.0f));
 }
 
 int GameCharacter::receiveDamage(int points ) {
@@ -26,7 +26,7 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
     speed.y=speed.y+98.0*64*deltaT;//gravità
     if(direction.x==0) {   //attrito
         if (speed.x > 0)
-            speed.x -= 30 * 64 * deltaT;
+            speed.x -= 30.0f * 64.0f * deltaT;
         else if (speed.x<0)
             speed.x += 30 * 64 * deltaT;
     }
@@ -37,13 +37,14 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
         speed.x=8*64*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
-    yT=(speed.y*deltaT+0.5*98.0*64.0*deltaT*deltaT)*direction.y;
+    yT=(speed.y*deltaT+0.5f*98.0f*64.0f*deltaT*deltaT)*direction.y;
 
-    sf::Sprite::move(xT,direction.y*yT);
     return sf::Vector2f(xT,yT);
 }
 
-
+void GameCharacter::moveSfml(float x,float y){
+    sf::Sprite::move(x,y);
+}
 void GameCharacter::jump() {
     speed.y-=50.0*64.0;
 }
@@ -116,6 +117,7 @@ void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
     setScale(size);
 
 }
+
 
 
 

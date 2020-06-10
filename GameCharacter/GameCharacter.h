@@ -53,6 +53,8 @@ public:
 
     void setDirection(float direction);
 
+    virtual void moveSfml(float x,float y);
+
 protected:
     sf::Vector2f pos;
     int healthPoint;

@@ -20,6 +20,8 @@ public:
 
     sf::Vector2f move(sf::Vector2f direction, float delatT) override;
 
+    void moveSfml(float x,float y) override;
+
     void jump() override;
 
     void shot(Weapon* weapon) override;

@@ -7,7 +7,7 @@
 
 
 #include "GameState.h"
-#include "../GameCharacter/GameCharacter.h"
+#include "../GameCharacter/Hero.h"
 
 class PlayState : public GameState{
 public:
@@ -15,7 +15,7 @@ public:
     void handleInput() override;
     void frameCalculator() override;
     void generateFrame() override;
-    bool isLegalMovement(GameCharacter& entity,sf::Vector2f move);
+   // sf::Vector2f isLegalMovement(Hero entity,sf::Vector2f move);
 private:
 
     int action;

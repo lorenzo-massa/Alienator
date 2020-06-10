@@ -2,6 +2,7 @@
 // Created by Lorenzo Massa on 31/05/2020.
 //
 
+#include <cmath>
 #include "PlayState.h"
 #include "../Engine/Game.h"
 #include "PauseState.h"
@@ -64,23 +65,26 @@ void PlayState::generateFrame() {
 
     sf::View tempView = targetWindow->getView();
     //
-   // if(isLegalMovement()
-    if ((Game::getGame()->getHero()->getPosition().x  - AssetManager::getXBackground() < 500 && Game::getGame()->getHero()->getDirection() == -1) ||
-        (AssetManager::getXBackground() + targetWindow->getSize().x - 500 < Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
-        tempView.move(move.x, 0);
-        targetWindow->setView(tempView);
-    } else
-        move.x = 0;
+   //isLegalMovement(*(Game::getGame()->getHero()),move);
+       Game::getGame()->getHero()->sf::Sprite::move(move);
+       if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 500 &&
+            Game::getGame()->getHero()->getDirection() == -1) ||
+           (AssetManager::getXBackground() + targetWindow->getSize().x - 500 <
+            Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
+           tempView.move(move.x, 0);
+           targetWindow->setView(tempView);
+       } else
+           move.x = 0;
 
-    targetWindow->clear();
+       targetWindow->clear();
 
-    AssetManager::setBackground(targetWindow, move.x);
+       AssetManager::setBackground(targetWindow, move.x);
 
-    generateMap();
+       generateMap();
 
-    generateGUI(move.x);
+       generateGUI(move.x);
 
-    targetWindow->draw(*Game::getGame()->getHero());
+       targetWindow->draw(*Game::getGame()->getHero());
 
 }
 
@@ -123,14 +127,18 @@ void PlayState::generateGUI(float& xT){
 }
 
 
-/*bool isLegalMovement(GameCharacter& entity,sf::Vector2f move){
+/*sf::Vector2f PlayState::isLegalMovement(Hero entity,sf::Vector2f move){
 
     sf::Vector2f entityPos;
     entityPos.x=entity.getPosition().x+move.x;
     entityPos.y=entity.getPosition().y+move.y;
-    sf::Vector2f entitySize=entity.getScale()/2.0f;
+    sf::Vector2f entitySize;
+    entitySize.x=entity.getScale().x/2.0f;
+    entitySize.y=entity.getScale().y/2.0f;
     sf::Vector2f blockPos;
     sf::Vector2f blockSize;
+
+    bool found=false;
 
     float deltaX;
     float deltaY;
@@ -139,19 +147,30 @@ void PlayState::generateGUI(float& xT){
     float intersectionY;
 
     for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix()) {
-        blockPos=blocks->getPosition();
-        blockSize=blocks->getScale()/2.0f;
+        blockPos = blocks->getPosition();
+        blockSize.x = blocks->getScale().x / 2.0f;
+        blockSize.y= blocks->getScale().y/2.0f;
 
-        deltaX=blockPos.x-entityPos.x;
-        deltaY= blockPos.y-entityPos.y;
+        deltaX = blockPos.x - entityPos.x;
+        deltaY = blockPos.y - entityPos.y;
 
-        intersectionX=abs(deltaX)-(blockSize.x+entitySize.x);
-        intersectionY=abs(deltaY)-(blockSize.y+entitySize.y);
+        intersectionX = abs(deltaX) - (blockSize.x + entitySize.x);
+        intersectionY = abs(deltaY) - (blockSize.y + entitySize.y);
 
-        if(intersectionX<0.0f && intersectionY<0.0f)
-            return true;
-        else
-            return false;
+        if (intersectionX < 0.0f){
+            Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x-move.x,Game::getGame()->getHero()->getSpeed().y));
+            move.x = 0;
+            found=true;
+        }
+        if(intersectionY<0.0f){
+            Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,Game::getGame()->getHero()->getSpeed().y-move.y));
+            move.y=0;
+            found=true;
+        }
+        if(found)
+            return sf::Vector2f(move.x,move.y);
+        //std::cout<<"intersectionX"<<intersectionX<<"\n";
+        //std::cout<<"deltaX"<<deltaX<<"\n";
 
     }
 }*/
