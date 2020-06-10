@@ -13,7 +13,6 @@
 class AssetManager {
 public:
     static void load();
-    static void setFrames();
 
     static std::map<std::string, sf::Texture> textures;
     static std::map<std::string, std::vector<sf::IntRect>> frames;

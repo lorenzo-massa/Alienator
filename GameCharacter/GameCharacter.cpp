@@ -6,9 +6,7 @@
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
-sf::Sprite(AssetManager::textures.at("HERO")),healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){
-    init(pos,sf::Vector2f(2.0f,2.0f));
-}
+healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){}
 
 int GameCharacter::receiveDamage(int points ) {
  //   if (healthPoint>points)
@@ -108,18 +106,16 @@ GameCharacter::~GameCharacter() {
 
 }
 
-
-void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
-
-    setTexture(AssetManager::textures.at("HERO"));
-    setPosition(pos);
-    setTextureRect(sf::IntRect(0,0,32,64));
-    setScale(size);
+GameCharacter::GameCharacter() {
 
 }
 
-GameCharacter::GameCharacter() {
+const std::string &GameCharacter::getStrTexture() const {
+    return strTexture;
+}
 
+void GameCharacter::setStrTexture(const std::string &strTexture) {
+    GameCharacter::strTexture = strTexture;
 }
 
 

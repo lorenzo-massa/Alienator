@@ -22,6 +22,8 @@ private:
     void generateMap();
 
     void generateGUI(float& xT);
+
+    void animationHero(int direction, sf::Vector2f speed);
 };
 
 

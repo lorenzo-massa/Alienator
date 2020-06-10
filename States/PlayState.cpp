@@ -53,6 +53,8 @@ void PlayState::handleInput() {
         }
     }
 
+    animationHero(Game::getGame()->getHero()->getDirection(), speed);
+
 }
 
 void PlayState::frameCalculator() {
@@ -141,6 +143,18 @@ void PlayState::generateGUI(float& xT){
     targetWindow->draw(nCoins);
 }
 
+void PlayState::animationHero(int direction, sf::Vector2f speed){
+    if(Game::getGame()->getHero()->getStrTexture() == "Idle_1"){
+        Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_2"));
+        Game::getGame()->getHero()->setStrTexture("Idle_2");
+    }else if (Game::getGame()->getHero()->getStrTexture() == "Idle_2"){
+        Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_3"));
+        Game::getGame()->getHero()->setStrTexture("Idle_3");
+    }else if (Game::getGame()->getHero()->getStrTexture() == "Idle_3"){
+        Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_1"));
+        Game::getGame()->getHero()->setStrTexture("Idle_1");
+    }
+}
 
 /*sf::Vector2f PlayState::isLegalMovement(Hero entity,sf::Vector2f move){
 

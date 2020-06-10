@@ -56,6 +56,10 @@ public:
 
     virtual void moveSfml(float x,float y);
 
+    const std::string &getStrTexture() const;
+
+    void setStrTexture(const std::string &strTexture);
+
 protected:
     sf::Vector2f pos;
     int healthPoint;
@@ -64,8 +68,8 @@ protected:
     int ammo;
     Weapon * weapon;
     float direction;
+    std::string strTexture;
 
-    void init(sf::Vector2f position, sf::Vector2f size);
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

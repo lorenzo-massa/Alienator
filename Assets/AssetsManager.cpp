@@ -52,6 +52,15 @@ void AssetManager::load() {
             textures.insert(std::make_pair(std::to_string(i), texture));
         }
 
+        for (int i = 1; i < 4; ++i) {
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Idle_"+std::to_string(i)+".png");
+            textures.insert(std::make_pair("Idle_"+std::to_string(i), texture));
+        }
+        for (int i = 1; i < 7; ++i) {
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Walk_"+std::to_string(i)+".png");
+            textures.insert(std::make_pair("Walk_"+std::to_string(i), texture));
+        }
+
 
         font = std::make_unique<sf::Font>();
         font->loadFromFile("Assets/Font/youre gone.ttf");
@@ -67,37 +76,6 @@ void AssetManager::load() {
         std::cerr << exception.what() << std::endl;
     }
 
-}
-
-void AssetManager::setFrames() {
-    /*
-    //HERO
-    std::vector<sf::IntRect> frame;
-    for(int i = 0; i < 10; i++)
-        frame.emplace_back(sf::IntRect(0 + i * 80, 0, 80, 65));
-    frames.insert(std::make_pair("HERO_FRAMES", frame));
-    frame.clear();
-    //ARCHER
-    for(int i = 0; i < 16; i++)
-        frame.emplace_back(sf::IntRect(0 + i * 80, 0, 80, 83));
-    frames.insert(std::make_pair("ARCHER_FRAMES", frame));
-    frame.clear();
-    //BRAWLER
-    for(int i = 0; i < 20; i++)
-        frame.emplace_back(sf::IntRect(0 + i * 579, 0, 579, 763));
-    frames.insert(std::make_pair("BRAWLER_FRAMES", frame));
-    frame.clear();
-    //WATCHER
-    for(int i = 0; i < 20; i++)
-        frame.emplace_back(sf::IntRect(0 + i * 680, 0, 680, 472));
-    frames.insert(std::make_pair("WATCHER_FRAMES", frame));
-    frame.clear();
-    //BOSS
-    for(int i = 0; i < 14; i++)
-        frame.emplace_back(sf::IntRect(0 +  i  * 835, 0,  835, 554));
-    frames.insert(std::make_pair("BOSS_FRAMES", frame));
-    frame.clear();
-     */
 }
 
 void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow, float xT) {
