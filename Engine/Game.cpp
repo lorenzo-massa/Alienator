@@ -3,6 +3,7 @@
 //
 
 #include "Game.h"
+#include "Loader.h"
 
 std::shared_ptr<Game> Game::myGame = nullptr;
 
@@ -27,14 +28,13 @@ const std::shared_ptr<sf::RenderWindow>& Game::getWindow() const {
 void Game::init() {
     if(gameWindow == nullptr) {
         gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME, sf::Style::Fullscreen);
-        //gameWindow->setFramerateLimit(FPS);
         gameWindow->setVerticalSyncEnabled(true);
         gameWindow->setFramerateLimit(FPS);
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
         AssetManager::load();
-        //AssetManager::setFrames();
 
         srand (time(NULL));
+
 
     }
 }
@@ -70,7 +70,12 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 }
 
 void Game::createHero(int x ,int y) {
-    ptrHero = std::make_shared<Hero>(100,10,10,sf::Vector2f(0,0),sf::Vector2f(x,y),0);
+    ptrHero = std::make_shared<Hero>(100,50,50,sf::Vector2f(0,0),sf::Vector2f(x,y),0,0);
+    Loader::loadHero();
+}
+
+void Game::setPtrHero(std::shared_ptr<Hero> ptr){
+    ptrHero = ptr;
 }
 
 std::shared_ptr<Hero> Game::getHero() {
@@ -79,6 +84,10 @@ std::shared_ptr<Hero> Game::getHero() {
 
 std::shared_ptr<sf::Clock> Game::getClock() {
     return clock;
+}
+
+void Game::save() {
+    Loader::saveHero(ptrHero->getCoins(), ptrHero->getAmmo(), ptrHero->getArmor());
 }
 
 

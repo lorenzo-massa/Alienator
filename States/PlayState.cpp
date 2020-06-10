@@ -27,6 +27,7 @@ void PlayState::handleInput() {
             AssetManager::setBackground(targetWindow, 0);
         } else if (event.type == sf::Event::KeyPressed) {
             if (event.key.code == sf::Keyboard::Escape) {
+                Game::getGame()->save();
                 Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
             }
             if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up) {
@@ -118,12 +119,26 @@ void PlayState::generateGUI(float& xT){
     nMunitions.setCharacterSize(20);
     nMunitions.setPosition(currentAmmoSprite.getPosition().x + 35, currentAmmoSprite.getPosition().y);
 
+    //Coins
+    sf::Sprite currentCoinsSprite;
+    currentCoinsSprite.setTexture(AssetManager::textures.at("COINS"));
+    currentCoinsSprite.setPosition(currentAmmoSprite.getPosition().x + 80, currentAmmoSprite.getPosition().y - 3);
+    currentCoinsSprite.setScale(0.06,0.06);
+
+    sf::Text nCoins;
+    nCoins.setFont(*AssetManager::font);
+    nCoins.setString(std::to_string(Game::getGame()->getHero()->getCoins()));
+    nCoins.setCharacterSize(20);
+    nCoins.setPosition(currentCoinsSprite.getPosition().x + 35, currentCoinsSprite.getPosition().y + 3);
+
 
 
     targetWindow->draw(line);
     targetWindow->draw(health);
     targetWindow->draw(currentAmmoSprite);
     targetWindow->draw(nMunitions);
+    targetWindow->draw(currentCoinsSprite);
+    targetWindow->draw(nCoins);
 }
 
 

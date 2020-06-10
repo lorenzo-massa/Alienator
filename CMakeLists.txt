@@ -65,7 +65,7 @@ set(SOURCE_FILES
         States/PlayState.cpp
         States/PlayState.h
         States/PauseState.cpp
-        States/PauseState.h Objects/Collectable.cpp Objects/Collectable.h Objects/PowerUp.cpp Objects/PowerUp.h Assets/AssetsManager.cpp Assets/AssetsManager.h Objects/Block.cpp Objects/Block.h)
+        States/PauseState.h Objects/Collectable.cpp Objects/Collectable.h Objects/PowerUp.cpp Objects/PowerUp.h Assets/AssetsManager.cpp Assets/AssetsManager.h Objects/Block.cpp Objects/Block.h Engine/Loader.cpp Engine/Loader.h)
 
 
 link_directories(SFML-2.5.1/bin)

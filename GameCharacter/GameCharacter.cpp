@@ -118,6 +118,10 @@ void GameCharacter::init(sf::Vector2f position, sf::Vector2f size){
 
 }
 
+GameCharacter::GameCharacter() {
+
+}
+
 
 
 

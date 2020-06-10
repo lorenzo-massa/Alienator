@@ -10,7 +10,8 @@
 
 class Hero: virtual public GameCharacter{
 public:
-    Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir);
+    Hero();
+    Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir, int coins);
 
     ~Hero();
 

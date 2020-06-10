@@ -392,6 +392,33 @@ Engine/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Game.cpp.s
 .PHONY : Engine/Game.cpp.s
 
+Engine/Loader.obj: Engine/Loader.cpp.obj
+
+.PHONY : Engine/Loader.obj
+
+# target to build an object file
+Engine/Loader.cpp.obj:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Loader.cpp.obj
+.PHONY : Engine/Loader.cpp.obj
+
+Engine/Loader.i: Engine/Loader.cpp.i
+
+.PHONY : Engine/Loader.i
+
+# target to preprocess a source file
+Engine/Loader.cpp.i:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Loader.cpp.i
+.PHONY : Engine/Loader.cpp.i
+
+Engine/Loader.s: Engine/Loader.cpp.s
+
+.PHONY : Engine/Loader.s
+
+# target to generate assembly for a file
+Engine/Loader.cpp.s:
+	$(MAKE) -f CMakeFiles\Alienator.dir\build.make CMakeFiles/Alienator.dir/Engine/Loader.cpp.s
+.PHONY : Engine/Loader.cpp.s
+
 Engine/Timer.obj: Engine/Timer.cpp.obj
 
 .PHONY : Engine/Timer.obj
@@ -1106,6 +1133,9 @@ help:
 	@echo ... Engine/Game.obj
 	@echo ... Engine/Game.i
 	@echo ... Engine/Game.s
+	@echo ... Engine/Loader.obj
+	@echo ... Engine/Loader.i
+	@echo ... Engine/Loader.s
 	@echo ... Engine/Timer.obj
 	@echo ... Engine/Timer.i
 	@echo ... Engine/Timer.s

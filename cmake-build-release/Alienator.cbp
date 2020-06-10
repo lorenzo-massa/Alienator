@@ -144,6 +144,12 @@
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Game.h">
 			<Option target="Alienator"/>
 		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Loader.cpp">
+			<Option target="Alienator"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Loader.h">
+			<Option target="Alienator"/>
+		</Unit>
 		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/Engine/Observer.h">
 			<Option target="Alienator"/>
 		</Unit>

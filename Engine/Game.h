@@ -31,7 +31,6 @@ public:
 
     void init();
     void start();
-    void play();
     void save();
     void end();
 
@@ -47,6 +46,8 @@ public:
     void createHero(int x, int y);
 
     static void setMyGame(const std::shared_ptr<Game> &myGame);
+    void setPtrHero(std::shared_ptr<Hero> ptr);
+
 
 private:
     std::shared_ptr<sf::Clock> clock;
@@ -59,7 +60,6 @@ private:
 
     static std::shared_ptr<Game> myGame;
     std::shared_ptr<sf::RenderWindow> gameWindow;
-
 
 
 };

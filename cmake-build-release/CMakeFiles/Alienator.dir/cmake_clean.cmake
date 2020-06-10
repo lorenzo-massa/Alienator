@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Alienator.dir/Behavior/HeroBehavior/HeroBehavior.cpp.obj"
   "CMakeFiles/Alienator.dir/Behavior/HeroBehavior/Mage.cpp.obj"
   "CMakeFiles/Alienator.dir/Engine/Game.cpp.obj"
+  "CMakeFiles/Alienator.dir/Engine/Loader.cpp.obj"
   "CMakeFiles/Alienator.dir/Engine/Timer.cpp.obj"
   "CMakeFiles/Alienator.dir/GameCharacter/Enemy.cpp.obj"
   "CMakeFiles/Alienator.dir/GameCharacter/GameCharacter.cpp.obj"
