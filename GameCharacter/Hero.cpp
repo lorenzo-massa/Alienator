@@ -9,7 +9,7 @@ Hero::Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir, in
     setTexture(AssetManager::textures.at("Idle_1"));
     strTexture = "Idle_1";
     setPosition(pos);
-    setTextureRect(sf::IntRect(0,0,213,428));
+    setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f,0.25f));
 }
 Hero::~Hero() {}

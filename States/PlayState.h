@@ -15,7 +15,7 @@ public:
     void handleInput() override;
     void frameCalculator() override;
     void generateFrame() override;
-   // sf::Vector2f isLegalMovement(Hero entity,sf::Vector2f move);
+    void isLegalMovement(Hero entity,sf::Vector2f move);
 private:
 
     int action;

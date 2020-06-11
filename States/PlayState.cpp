@@ -34,21 +34,21 @@ void PlayState::handleInput() {
                 Game::getGame()->getHero()->jump();
             }
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(-1);
+                Game::getGame()->getHero()->setDirection(-1.0f);
                 speed = Game::getGame()->getHero()->getSpeed();
-                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8.0f * 64.0f, speed.y));
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(1);
+                Game::getGame()->getHero()->setDirection(1.0f);
                 speed = Game::getGame()->getHero()->getSpeed();
-                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8 * 64, speed.y));
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(8.0f * 64.0f, speed.y));
             }
         } else if (event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(0);
+                Game::getGame()->getHero()->setDirection(0.0f);
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(0);
+                Game::getGame()->getHero()->setDirection(0.0f);
             }
         }
     }
@@ -65,11 +65,12 @@ void PlayState::generateFrame() {
 
     sf::Vector2f move = Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),
                                                 Game::getGame()->getClock()->getElapsedTime().asSeconds());
+    Game::getGame()->getHero()->sf::Sprite::move(move);
+    //isLegalMovement(*(Game::getGame()->getHero()),move);
 
     sf::View tempView = targetWindow->getView();
     //
-   //isLegalMovement(*(Game::getGame()->getHero()),move);
-       Game::getGame()->getHero()->sf::Sprite::move(move);
+
        if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 500 &&
             Game::getGame()->getHero()->getDirection() == -1) ||
            (AssetManager::getXBackground() + targetWindow->getSize().x - 500 <
@@ -156,14 +157,14 @@ void PlayState::animationHero(int direction, sf::Vector2f speed){
     }
 }
 
-/*sf::Vector2f PlayState::isLegalMovement(Hero entity,sf::Vector2f move){
+/*void PlayState::isLegalMovement(Hero entity,sf::Vector2f move){
 
     sf::Vector2f entityPos;
-    entityPos.x=entity.getPosition().x+move.x;
-    entityPos.y=entity.getPosition().y+move.y;
+    entityPos.x=(entity.getPosition().x)+move.x;
+    entityPos.y=(entity.getPosition().y)+move.y;
     sf::Vector2f entitySize;
-    entitySize.x=entity.getScale().x/2.0f;
-    entitySize.y=entity.getScale().y/2.0f;
+    entitySize.x=(entity.getTextureRect().width)/ 2.0f;
+    entitySize.y=(entity.getTextureRect().height)/2.0f;
     sf::Vector2f blockPos;
     sf::Vector2f blockSize;
 
@@ -176,9 +177,11 @@ void PlayState::animationHero(int direction, sf::Vector2f speed){
     float intersectionY;
 
     for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix()) {
-        blockPos = blocks->getPosition();
-        blockSize.x = blocks->getScale().x / 2.0f;
-        blockSize.y= blocks->getScale().y/2.0f;
+        blockPos.x = blocks->getPosition().x;
+        blockPos.y = blocks->getPosition().y;
+
+        blockSize.x = (blocks->getTextureRect().width )/ 2.0f;
+        blockSize.y= (blocks->getTextureRect().height)/2.0f;
 
         deltaX = blockPos.x - entityPos.x;
         deltaY = blockPos.y - entityPos.y;
@@ -186,20 +189,33 @@ void PlayState::animationHero(int direction, sf::Vector2f speed){
         intersectionX = abs(deltaX) - (blockSize.x + entitySize.x);
         intersectionY = abs(deltaY) - (blockSize.y + entitySize.y);
 
-        if (intersectionX < 0.0f){
-            Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x-move.x,Game::getGame()->getHero()->getSpeed().y));
-            move.x = 0;
-            found=true;
-        }
-        if(intersectionY<0.0f){
-            Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,Game::getGame()->getHero()->getSpeed().y-move.y));
-            move.y=0;
-            found=true;
-        }
-        if(found)
-            return sf::Vector2f(move.x,move.y);
-        //std::cout<<"intersectionX"<<intersectionX<<"\n";
-        //std::cout<<"deltaX"<<deltaX<<"\n";
+        if (intersectionX < 0.0f && intersectionY<0.0f)
+        {
+            if(intersectionX>intersectionY)
+            {
+                if(deltaX>0.0f)
+                {
+                    entity.sf::Sprite::move(intersectionX+abs(move.x),0.0f);
+                }
+                else
+                {
+                    entity.sf::Sprite::move(-intersectionX-abs(move.x),0.0f);
+                }
+            }
+            else
+            {
+                if(deltaY>0.0f){
+                    entity.sf::Sprite::move(0.0f,intersectionY+abs(move.y));
+                }
+                else
+                {
+                    entity.sf::Sprite::move(0.0f,-intersectionY-abs(move.y));
+                }
+            }
 
+        }
+
+        std::cout<<intersectionY<<"   ||    ";
+        std::cout<<intersectionX<<"\n";
     }
 }*/
