@@ -21,30 +21,30 @@ int GameCharacter::receiveDamage(int points ) {
 sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
     float xT;
-    speed.y=speed.y+98.0f*64.0f*deltaT;//gravità
-    if(direction.x==0.0f) {   //attrito
+
+   if(direction.x==0.0f) {   //attrito
         if (speed.x > 0)
             speed.x -= 30.0f * 64.0f * deltaT;
         else if (speed.x<0)
             speed.x += 30.0f * 64.0f * deltaT;
-    }
-   if(speed.x>-5.0f && speed.x<5.0f)//settaggio velocità
-       speed.x=0;
 
+        if(speed.x>-5 && speed.x<5)//settaggio velocità
+            speed.x=0;
+    }
     if(direction.x!=0)
-        speed.x=8.0f*64.0f*direction.x;//velocità costante se tengo premuto
+        speed.x=10.0f*64.0f*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
+
+    speed.y=speed.y+98.0f*64.0f*deltaT; //gravità
     yT=(speed.y*deltaT+0.5f*98.0f*64.0f*deltaT*deltaT)*direction.y;
 
     return sf::Vector2f(xT,yT);
 }
 
-void GameCharacter::moveSfml(float x,float y){
-    sf::Sprite::move(x,y);
-}
+
 void GameCharacter::jump() {
-    speed.y-=50.0f*64.0f;
+    speed.y-=25.0f*64.0f;
 }
 
 void GameCharacter::shot(Weapon *weapon) {

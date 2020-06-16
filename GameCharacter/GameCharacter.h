@@ -54,7 +54,7 @@ public:
 
     void setDirection(float direction);
 
-    virtual void moveSfml(float x,float y);
+
 
     const std::string &getStrTexture() const;
 

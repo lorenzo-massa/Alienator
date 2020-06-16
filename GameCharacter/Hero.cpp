@@ -37,9 +37,6 @@ int Hero::receiveDamage(int points) {
     return GameCharacter::receiveDamage(points);
 }
 
-void Hero::moveSfml(float x,float y){
-    GameCharacter::moveSfml(x,y);
-}
 
 Hero::Hero() {
 
