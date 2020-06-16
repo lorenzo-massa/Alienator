@@ -56,7 +56,7 @@ void PlayState::handleInput() {
         }
     }
 
-    animationHero(Game::getGame()->getHero()->getDirection(), speed);
+    //animationHero(Game::getGame()->getHero()->getDirection(), speed);
 
 }
 
