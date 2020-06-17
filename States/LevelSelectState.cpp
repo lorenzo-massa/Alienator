@@ -5,7 +5,6 @@
 #include <iostream>
 #include "LevelSelectState.h"
 #include "../Engine/Game.h"
-#include "../Maps/MapFactory.h"
 #include "PlayState.h"
 
 LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::LEVELS)) {
@@ -54,10 +53,6 @@ void LevelSelectState::handleInput() {
     }
 }
 
-void LevelSelectState::frameCalculator() {
-    float center = Game::getGame()->getWindow()->getView().getCenter().x;
-    float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
-}
 
 void LevelSelectState::generateFrame() {
     targetWindow->clear();

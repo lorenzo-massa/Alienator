@@ -46,8 +46,6 @@ void Game::start() {
 
             ptrStateHandler->getState()->handleInput();
 
-            ptrStateHandler->getState()->frameCalculator();
-
             ptrStateHandler->getState()->generateFrame();
 
             gameWindow->display();
@@ -70,7 +68,7 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 }
 
 void Game::createHero(int x ,int y) {
-    ptrHero = std::make_shared<Hero>(100,50,50,sf::Vector2f(0,0),sf::Vector2f(x,y),0,0);
+    ptrHero = std::make_shared<Hero>(1,100,50,50,sf::Vector2f(0,0),sf::Vector2f(x,y),0,0);
     Loader::loadHero();
 }
 

@@ -26,42 +26,22 @@ set(SOURCE_FILES
         States/LevelSelectState.h
         Weapons/Weapon.h
         Weapons/Bullet.h
-        Weapons/Gun.h
-        Weapons/Assault.h
-        Weapons/Shotgun.h
-        Weapons/Minigun.h
-        Weapons/Sniper.h
-        Weapons/Assault.cpp
         Weapons/Bullet.cpp
-        Weapons/Gun.cpp
-        Weapons/Minigun.cpp
-        Weapons/Shotgun.cpp
-        Weapons/Sniper.cpp
         Weapons/Weapon.cpp
-        Behavior/HeroBehavior/HeroBehavior.h
-        Behavior/EnemyBehavior/EnemyBehavior.h
-        Behavior/HeroBehavior/HeroBehavior.cpp
-        Behavior/EnemyBehavior/EnemyBehavior.cpp
-        Behavior/EnemyBehavior/Sentinel.h
-        Behavior/EnemyBehavior/Sentinel.cpp
-        Behavior/EnemyBehavior/Guard.h
-        Behavior/EnemyBehavior/Guard.cpp
-        Behavior/EnemyBehavior/Wizard.cpp
-        Behavior/EnemyBehavior/Wizard.h
-        Behavior/HeroBehavior/Archer.h
-        Behavior/HeroBehavior/Archer.cpp
-        Behavior/HeroBehavior/Boxer.h
-        Behavior/HeroBehavior/Boxer.cpp
-        Behavior/HeroBehavior/Mage.h
-        Behavior/HeroBehavior/Mage.cpp
+        GameCharacter/EnemyBehavior/EnemyBehavior.h
+        GameCharacter/EnemyBehavior/EnemyBehavior.cpp
+        GameCharacter/EnemyBehavior/Sentinel.h
+        GameCharacter/EnemyBehavior/Sentinel.cpp
+        GameCharacter/EnemyBehavior/Guard.h
+        GameCharacter/EnemyBehavior/Guard.cpp
+        GameCharacter/EnemyBehavior/Wizard.cpp
+        GameCharacter/EnemyBehavior/Wizard.h
         Menu/MainMenu.cpp
         Menu/MainMenu.h
         Maps/MapHandler.cpp
         Maps/MapHandler.h
         Maps/Map.cpp
         Maps/Map.h
-        Maps/MapFactory.cpp
-        Maps/MapFactory.h
         States/PlayState.cpp
         States/PlayState.h
         States/PauseState.cpp

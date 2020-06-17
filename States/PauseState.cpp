@@ -45,10 +45,6 @@ void PauseState::handleInput() {
     }
 }
 
-void PauseState::frameCalculator() {
-
-}
-
 void PauseState::generateFrame() {
     targetWindow->clear();
     AssetManager::setBackground(targetWindow,0);

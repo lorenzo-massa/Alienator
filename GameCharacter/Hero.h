@@ -11,7 +11,7 @@
 class Hero: virtual public GameCharacter{
 public:
     Hero();
-    Hero(int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir, int coins);
+    Hero(int type, int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir, int coins);
 
     ~Hero();
 
@@ -30,7 +30,7 @@ public:
 
 private:
     int coins;
-
+    int type; //enum? Archer, Boxer, Mage...
 };
 
 #endif //ALIENATOR_HERO_H

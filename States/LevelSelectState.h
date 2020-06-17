@@ -13,7 +13,6 @@ class LevelSelectState : public GameState{
 public:
     LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow);
     void handleInput() override;
-    void frameCalculator() override;
     void generateFrame() override;
 private:
     MainMenu mainMenu;

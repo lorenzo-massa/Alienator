@@ -52,11 +52,6 @@ void MenuState::handleInput() {
     }*/
 }
 
-void MenuState::frameCalculator() {
-    float center = Game::getGame()->getWindow()->getView().getCenter().x;
-    float offset = Game::getGame()->getWindow()->getView().getSize().x / 2;
-}
-
 void MenuState::generateFrame() {
     targetWindow->clear();
     AssetManager::setBackground(targetWindow,0);

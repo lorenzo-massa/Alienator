@@ -13,7 +13,6 @@ class MenuState : public GameState {
 public:
     MenuState(std::shared_ptr<sf::RenderWindow> targetWindow);
     void handleInput() override;
-    void frameCalculator() override;
     void generateFrame() override;
 private:
     MainMenu mainMenu;

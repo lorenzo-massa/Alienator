@@ -13,7 +13,6 @@ class PlayState : public GameState{
 public:
     PlayState(std::shared_ptr<sf::RenderWindow> targetWindow);
     void handleInput() override;
-    void frameCalculator() override;
     void generateFrame() override;
     sf::Vector2f isLegalMovement(sf::Sprite entity,sf::Vector2f move);
 private:

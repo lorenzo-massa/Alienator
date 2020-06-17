@@ -15,8 +15,6 @@ public:
 
     virtual void handleInput() = 0;
 
-    virtual void frameCalculator() = 0;
-
     virtual void generateFrame() = 0;
 
 protected:

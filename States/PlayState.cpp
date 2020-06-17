@@ -60,10 +60,6 @@ void PlayState::handleInput() {
 
 }
 
-void PlayState::frameCalculator() {
-
-}
-
 void PlayState::generateFrame() {
 
     sf::Vector2f move = Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),

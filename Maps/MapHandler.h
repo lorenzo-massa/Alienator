@@ -5,20 +5,24 @@
 #ifndef ALIENATOR_MAPHANDLER_H
 #define ALIENATOR_MAPHANDLER_H
 
-
-#include "Map.h"
-#include "MapFactory.h"
-#include "../Objects/Collectable.h"
-//#include "../Engine/Game.h"
+#include <fstream>
 #include <memory>
+
+#include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
+
+#include "Map.h"
+#include <AssetsManager.h>
+
+#include "../Objects/Block.h"
+#include "../Objects/Collectable.h"
 
 
 class MapHandler {
 public:
     MapHandler();
-    //~MapHandler();
+    ~MapHandler();
 
     void loadLevel(int i);
     std::shared_ptr<Map> getMap();
