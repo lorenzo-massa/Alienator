@@ -22,16 +22,18 @@ public:
     std::shared_ptr<sf::Sprite> getFromMatrix(int i);
     std::vector<std::shared_ptr<sf::Sprite>> getMatrix();
 
-    void addEnemy(Enemy& e);
+    void addEnemy(std::shared_ptr<Enemy> e);
     void removeEnemy(int t);
-    Enemy getEnemy(int i);
+    std::shared_ptr<Enemy> getEnemy(int i);
+    std::vector<std::shared_ptr<Enemy>> getEnemies();
+
 
     int getN() const;
     int getM() const;
 
 
 private:
-    std::vector<Enemy> enemies;
+    std::vector<std::shared_ptr<Enemy>> enemies;
     //std::list<Collectable> collectables;
     std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
     int n;

@@ -96,6 +96,8 @@ void PlayState::generateFrame() {
 void PlayState::generateMap(){
     for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix())
         targetWindow->draw(*blocks);
+    for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies())
+        targetWindow->draw(*enemy);
 }
 
 

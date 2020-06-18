@@ -21,7 +21,7 @@ std::shared_ptr<sf::Sprite> Map::getFromMatrix(int i) {
     return mapMatrix[i];
 }
 
-void Map::addEnemy(Enemy &e) {
+void Map::addEnemy(std::shared_ptr<Enemy> e) {
     enemies.push_back(e);
 }
 
@@ -29,8 +29,8 @@ void Map::removeEnemy(int i) {
     enemies.erase(enemies.begin()+i);
 }
 
-Enemy Map::getEnemy(int i) {
-    return enemies.at(i);
+std::shared_ptr<Enemy> Map::getEnemy(int i) {
+    return enemies[i];
 }
 
 int Map::getN() const {
@@ -43,4 +43,8 @@ int Map::getM() const {
 
 std::vector<std::shared_ptr<sf::Sprite>> Map::getMatrix() {
     return mapMatrix;
+}
+
+std::vector<std::shared_ptr<Enemy>> Map::getEnemies() {
+    return enemies;
 }

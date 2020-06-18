@@ -17,7 +17,7 @@ public:
     GameCharacter();
     GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos,float dir);
 
-    ~GameCharacter();
+    virtual ~GameCharacter();
 
     virtual int receiveDamage(int points);
 

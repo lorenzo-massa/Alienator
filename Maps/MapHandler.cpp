@@ -36,6 +36,8 @@ void MapHandler::loadLevel(int x) {
 
                     std::shared_ptr<Block> b;
                     std::shared_ptr<Collectable> coll;
+                    std::shared_ptr<Enemy> enemy;
+
 
                     switch (c) {
                         case '1':
@@ -117,6 +119,18 @@ void MapHandler::loadLevel(int x) {
                             b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
                             b->setTexture(AssetManager::textures.at("16"));
                             map->addToMatrix(b);
+                            break;
+                        case 'M':
+                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            map->addEnemy(enemy);
+                            break;
+                        case 'N':
+                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            map->addEnemy(enemy);
+                            break;
+                        case 'O':
+                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            map->addEnemy(enemy);
                             break;
                         case 'X':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "COINS");

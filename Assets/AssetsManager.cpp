@@ -61,6 +61,9 @@ void AssetManager::load() {
             textures.insert(std::make_pair("Walk_"+std::to_string(i), texture));
         }
 
+        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_1.png");
+        textures.insert(std::make_pair("Blue_Idle_1", texture));
+
 
         font = std::make_unique<sf::Font>();
         font->loadFromFile("Assets/Font/youre gone.ttf");
