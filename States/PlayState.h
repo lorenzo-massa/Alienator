@@ -14,7 +14,7 @@ public:
     PlayState(std::shared_ptr<sf::RenderWindow> targetWindow);
     void handleInput() override;
     void generateFrame() override;
-    sf::Vector2f isLegalMovement(sf::Sprite entity,sf::Vector2f move);
+    sf::Vector2f isLegalMovement(sf::Vector2f move);
 private:
 
     int action;

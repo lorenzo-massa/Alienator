@@ -63,14 +63,11 @@ void PlayState::handleInput() {
 
 void PlayState::generateFrame() {
 
-    sf::Vector2f move = Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),
-                                                Game::getGame()->getClock()->getElapsedTime().asSeconds());
-
-    move=isLegalMovement(*(Game::getGame()->getHero()),move);
-    Game::getGame()->getHero()->sf::Sprite::move(move);
+    sf::Vector2f move = isLegalMovement(Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(), 1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+    if(move.x != 0 || move.y != 0)
+        Game::getGame()->getHero()->sf::Sprite::move(move);
 
     sf::View tempView = targetWindow->getView();
-    //
 
        if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 500 &&
             Game::getGame()->getHero()->getDirection() == -1) ||
@@ -164,14 +161,49 @@ void PlayState::animationHero(int direction, sf::Vector2f speed){
     }
 }
 
-sf::Vector2f PlayState::isLegalMovement(sf::Sprite entity,sf::Vector2f move){
+sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
+    bool collision = false;
 
+    sf::Vector2f moving = move;
+    sf::Vector2f entityPos = Game::getGame()->getHero()->getPosition() + move;
+    sf::Vector2u entitySize = Game::getGame()->getHero()->getTexture()->getSize();
+    sf::Vector2f entityScale = Game::getGame()->getHero()->getScale();
+    float deltaX;
+    float deltaY;
+    float intersectionX;
+    float intersectionY;
+
+    for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
+        deltaX  = entityPos.x - block->getPosition().x;
+        intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2));
+        deltaY  = entityPos.y - block->getPosition().y;
+        intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2));
+        if(intersectionY < 0.0f && intersectionX < 0.0f){
+            collision = true;
+            moving.y = 0;
+            if(Game::getGame()->getHero()->getDirection() == 1.0f) //right
+            {
+                moving.x = 0;
+            }else if(Game::getGame()->getHero()->getDirection() == -1.0f) //left
+            {
+                moving.x = 0;
+            }
+        }
+    }
+
+    if(collision)
+        Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,0));
+
+
+    return moving;
+
+/*
     sf::Vector2f entityPos;
     entityPos.x=(entity.getPosition().x)+move.x;
     entityPos.y=(entity.getPosition().y)+move.y;
    // sf::Vector2u entitySize=entity.getTexture()->getSize();
 
-    /*sf::Vector2f blockPos;
+    sf::Vector2f blockPos;
     sf::Vector2f blockSize;
 
     float deltaX;
@@ -194,7 +226,7 @@ sf::Vector2f PlayState::isLegalMovement(sf::Sprite entity,sf::Vector2f move){
         {
 
         }
-    }*/
+    }
 
     if(entityPos.y>500.0f)
    {
@@ -203,4 +235,5 @@ sf::Vector2f PlayState::isLegalMovement(sf::Sprite entity,sf::Vector2f move){
        move.y=0;
    }
     return move;
+    */
 }

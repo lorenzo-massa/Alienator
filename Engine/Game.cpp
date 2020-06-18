@@ -27,7 +27,8 @@ const std::shared_ptr<sf::RenderWindow>& Game::getWindow() const {
 
 void Game::init() {
     if(gameWindow == nullptr) {
-        gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME, sf::Style::Fullscreen);
+        //gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME, sf::Style::Fullscreen);
+        gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME);
         gameWindow->setVerticalSyncEnabled(true);
         gameWindow->setFramerateLimit(FPS);
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
