@@ -18,6 +18,8 @@ public:
 private:
 
     int action;
+    std::shared_ptr<sf::Clock> clock;
+
     void generateMap();
 
     void generateGUI(float& xT);

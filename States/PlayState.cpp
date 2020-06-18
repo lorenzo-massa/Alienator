@@ -12,6 +12,7 @@
 
 PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
     action = 0;
+    clock = std::make_shared<sf::Clock>();
 }
 
 void PlayState::handleInput() {
@@ -56,7 +57,7 @@ void PlayState::handleInput() {
         }
     }
 
-    //animationHero(Game::getGame()->getHero()->getDirection(), speed);
+    animationHero(Game::getGame()->getHero()->getDirection(), speed);
 
 }
 
@@ -145,15 +146,19 @@ void PlayState::generateGUI(float& xT){
 }
 
 void PlayState::animationHero(int direction, sf::Vector2f speed){
-    if(Game::getGame()->getHero()->getStrTexture() == "Idle_1"){
+    if(clock->getElapsedTime().asSeconds()>2 && Game::getGame()->getHero()->getStrTexture() == "Idle_1") {
         Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_2"));
         Game::getGame()->getHero()->setStrTexture("Idle_2");
-    }else if (Game::getGame()->getHero()->getStrTexture() == "Idle_2"){
+        clock->restart();
+    }
+    else if (clock->getElapsedTime().asSeconds()>0.05 && Game::getGame()->getHero()->getStrTexture() == "Idle_2") {
         Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_3"));
         Game::getGame()->getHero()->setStrTexture("Idle_3");
-    }else if (Game::getGame()->getHero()->getStrTexture() == "Idle_3"){
+        clock->restart();
+    } else if (clock->getElapsedTime().asSeconds()>0.05 && Game::getGame()->getHero()->getStrTexture() == "Idle_3") {
         Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_1"));
         Game::getGame()->getHero()->setStrTexture("Idle_1");
+        clock->restart();
     }
 }
 
