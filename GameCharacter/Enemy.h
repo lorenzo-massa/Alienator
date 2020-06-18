@@ -7,10 +7,14 @@
 
 #include "GameCharacter.h"
 #include "EnemyBehavior/EnemyBehavior.h"
+#include "EnemyBehavior/Wizard.h"
+#include "EnemyBehavior/Sentinel.h"
+#include "EnemyBehavior/Guard.h"
+#include <AssetsManager.h>
 
 class Enemy : virtual public GameCharacter{
 public:
-    Enemy(EnemyBehavior behavior, sf::Vector2f pos,  int hp);
+    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp);
     ~Enemy();
 
 private:

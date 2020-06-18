@@ -21,9 +21,6 @@ void AssetManager::load() {
         sf::Texture texture;
         sf::SoundBuffer sound;
 
-        texture.loadFromFile("Assets/Images/Object/Hero.png");
-        textures.insert(std::make_pair("HERO", texture));
-
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
 
@@ -45,6 +42,9 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images//Object/invincibility.png");
         textures.insert(std::make_pair("INVICIBILITY", texture));
 
+        texture.loadFromFile("Assets/Images//Object/mystery.png");
+        textures.insert(std::make_pair("MYSTERY", texture));
+
 
         const int nTiles = 16;
         for (int i = 1; i < nTiles+1; ++i) {
@@ -63,6 +63,10 @@ void AssetManager::load() {
 
         texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_1.png");
         textures.insert(std::make_pair("Blue_Idle_1", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_gray/Gray_Idle_1.png");
+        textures.insert(std::make_pair("Gray_Idle_1", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_red/Red_Idle_1.png");
+        textures.insert(std::make_pair("Red_Idle_1", texture));
 
 
         font = std::make_unique<sf::Font>();

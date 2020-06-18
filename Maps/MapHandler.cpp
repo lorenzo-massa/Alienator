@@ -121,15 +121,15 @@ void MapHandler::loadLevel(int x) {
                             map->addToMatrix(b);
                             break;
                         case 'M':
-                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            enemy = std::make_shared<Enemy>("Guard",sf::Vector2f(j * 64.0f, i * 64.0f), 50);
                             map->addEnemy(enemy);
                             break;
                         case 'N':
-                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            enemy = std::make_shared<Enemy>("Sentinel",sf::Vector2f(j * 64.0f, i * 64.0f), 50);
                             map->addEnemy(enemy);
                             break;
                         case 'O':
-                            enemy = std::make_shared<Enemy>(EnemyBehavior(),sf::Vector2f(j * 64.0f, i * 64.0f), 50);
+                            enemy = std::make_shared<Enemy>("Wizard",sf::Vector2f(j * 64.0f, i * 64.0f), 50);
                             map->addEnemy(enemy);
                             break;
                         case 'X':
@@ -144,7 +144,7 @@ void MapHandler::loadLevel(int x) {
                             break;
                         case 'Z':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f));
-                            coll->setTexture(AssetManager::textures.at(coll->getPowerUp().getType()));
+                            coll->setTexture(AssetManager::textures.at("MYSTERY"));
                             map->addToMatrix(coll);
                             break;
                         case 'P':

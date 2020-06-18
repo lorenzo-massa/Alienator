@@ -6,7 +6,7 @@
 
 Collectable::Collectable(sf::Vector2f position){
     powerUp = PowerUp();
-
+    /*
     if(powerUp.getType() == "COINS"){
         setScale(sf::Vector2f(0.075,0.075));
     } else if(powerUp.getType() == "MUNITIONS"){
@@ -20,8 +20,9 @@ Collectable::Collectable(sf::Vector2f position){
     }    else if(powerUp.getType() == "INVICIBILITY"){
         setScale(sf::Vector2f(0.075,0.075));
     }
-
-    setTextureRect(sf::IntRect(0,0,width,height));
+    */
+    setScale(sf::Vector2f(0.05,0.05));
+    setTextureRect(sf::IntRect(0,0,1184,1184));
     sf::Sprite::setPosition(position);
 
 
