@@ -13,6 +13,7 @@
 PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
     action = 0;
     clock = std::make_shared<sf::Clock>();
+    clockEnemies = std::make_shared<sf::Clock>();
 }
 
 void PlayState::handleInput() {
@@ -58,6 +59,7 @@ void PlayState::handleInput() {
     }
 
     animationHero(Game::getGame()->getHero()->getDirection(), speed);
+    animationEnemies();
 
 }
 
@@ -95,6 +97,8 @@ void PlayState::generateMap(){
         targetWindow->draw(*blocks);
     for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies())
         targetWindow->draw(*enemy);
+    for(const auto& collectable : Game::getGame()->getMapHandler()->getMap()->getCollectables())
+        targetWindow->draw(*collectable);
 }
 
 
@@ -161,9 +165,36 @@ void PlayState::animationHero(int direction, sf::Vector2f speed){
     }
 }
 
+void PlayState::animationEnemies(){
+    std::string texture = "";
+    int i = 0;
+    for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()){
+        i++;
+        texture = enemy->getStrTexture();
+        if(clockEnemies->getElapsedTime().asSeconds()>2 && texture.back() == '1') {
+            texture.replace(texture.size() - 1, 1 , "2");
+            enemy->setTexture(AssetManager::textures.at(texture));
+            enemy->setStrTexture(texture);
+            if(i == Game::getGame()->getMapHandler()->getMap()->getEnemies().size())
+                clockEnemies->restart();
+        }else if (clockEnemies->getElapsedTime().asSeconds()>0.05 && texture.back() == '2') {
+            texture.replace(texture.size() - 1, 1 , "3");
+            enemy->setTexture(AssetManager::textures.at(texture));
+            enemy->setStrTexture(texture);
+            if(i == Game::getGame()->getMapHandler()->getMap()->getEnemies().size())
+                clockEnemies->restart();
+        }else if (clockEnemies->getElapsedTime().asSeconds()>0.05 && texture.back() == '3') {
+            texture.replace(texture.size() - 1, 1 , "1");
+            enemy->setTexture(AssetManager::textures.at(texture));
+            enemy->setStrTexture(texture);
+            if(i == Game::getGame()->getMapHandler()->getMap()->getEnemies().size() )
+                clockEnemies->restart();
+        }
+    }
+}
+
 sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     bool collision = false;
-
     sf::Vector2f moving = move;
     sf::Vector2f entityPos = Game::getGame()->getHero()->getPosition() + move;
     sf::Vector2u entitySize = Game::getGame()->getHero()->getTexture()->getSize();
@@ -175,18 +206,26 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
 
     for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
         deltaX  = entityPos.x - block->getPosition().x;
-        intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2));
+        intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
         deltaY  = entityPos.y - block->getPosition().y;
-        intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2));
+        intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
         if(intersectionY < 0.0f && intersectionX < 0.0f){
-            collision = true;
             moving.y = 0;
-            if(Game::getGame()->getHero()->getDirection() == 1.0f) //right
-            {
+            collision = true;
+        if(intersectionX > intersectionY){
                 moving.x = 0;
-            }else if(Game::getGame()->getHero()->getDirection() == -1.0f) //left
-            {
-                moving.x = 0;
+                if(deltaX > 0.0f){
+                    std::cout<<"\nLeft Collision!";
+                }else{
+                    std::cout<<"\nRight Collision!";
+                }
+            }else{
+                moving.y = 0;
+                if(deltaY > 0.0f){
+                    std::cout<<"\nTop Collision!";
+                }else{
+                    std::cout<<"\nBottom Collision!";
+                }
             }
         }
     }
@@ -194,46 +233,5 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     if(collision)
         Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,0));
 
-
     return moving;
-
-/*
-    sf::Vector2f entityPos;
-    entityPos.x=(entity.getPosition().x)+move.x;
-    entityPos.y=(entity.getPosition().y)+move.y;
-   // sf::Vector2u entitySize=entity.getTexture()->getSize();
-
-    sf::Vector2f blockPos;
-    sf::Vector2f blockSize;
-
-    float deltaX;
-    float deltaY;
-
-    float intersectionX;
-    float intersectionY;
-
-   for(const auto& blocks : Game::getGame()->getMapHandler()->getMap()->getMatrix()) {
-        blockPos.x = blocks->getPosition().x;
-        blockPos.y = blocks->getPosition().y;
-
-        blockSize.x = (float) (blocks->getTextureRect().width)*blocks->getScale().x;
-        blockSize.y= (float) (blocks->getTextureRect().height)*blocks->getScale().x;
-
-        deltaX = blockPos.x - entityPos.x;
-        deltaY = blockPos.y - entityPos.y;
-
-        if(deltaX<(blockSize.x+entitySize.x)/2 && deltaY<(blockSize.y+entitySize.y)/2)
-        {
-
-        }
-    }
-
-    if(entityPos.y>500.0f)
-   {
-       Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0.0f));
-       entity.setPosition(entity.getPosition().x,500.0f);
-       move.y=0;
-   }
-    return move;
-    */
 }

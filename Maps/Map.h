@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "../GameCharacter/Enemy.h"
+#include "../Objects/Collectable.h"
 
 class Map {
 public:
@@ -27,6 +28,11 @@ public:
     std::shared_ptr<Enemy> getEnemy(int i);
     std::vector<std::shared_ptr<Enemy>> getEnemies();
 
+    void addCollectable(std::shared_ptr<Collectable> c);
+    void removeCollectable(int i);
+    std::shared_ptr<Collectable> getCollectable(int i);
+    std::vector<std::shared_ptr<Collectable>> getCollectables();
+
 
     int getN() const;
     int getM() const;
@@ -34,7 +40,7 @@ public:
 
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;
-    //std::list<Collectable> collectables;
+    std::vector<std::shared_ptr<Collectable>> collectables;
     std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
     int n;
     int m;

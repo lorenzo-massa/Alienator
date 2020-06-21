@@ -19,12 +19,15 @@ private:
 
     int action;
     std::shared_ptr<sf::Clock> clock;
+    std::shared_ptr<sf::Clock> clockEnemies;
 
     void generateMap();
 
     void generateGUI(float& xT);
 
     void animationHero(int direction, sf::Vector2f speed);
+
+    void animationEnemies();
 };
 
 

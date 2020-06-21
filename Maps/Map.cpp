@@ -2,7 +2,6 @@
 // Created by Lorenzo Massa on 30/05/2020.
 //
 
-#include <iostream>
 #include "Map.h"
 
 Map::Map(int n, int m) : n(n), m(m) {
@@ -47,4 +46,20 @@ std::vector<std::shared_ptr<sf::Sprite>> Map::getMatrix() {
 
 std::vector<std::shared_ptr<Enemy>> Map::getEnemies() {
     return enemies;
+}
+
+void Map::addCollectable(std::shared_ptr<Collectable> c) {
+    collectables.push_back(c);
+}
+
+void Map::removeCollectable(int i) {
+    collectables.erase(collectables.begin()+i);
+}
+
+std::shared_ptr<Collectable> Map::getCollectable(int i) {
+    return collectables[i];
+}
+
+std::vector<std::shared_ptr<Collectable>> Map::getCollectables() {
+    return collectables;
 }

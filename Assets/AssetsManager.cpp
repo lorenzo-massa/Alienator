@@ -63,10 +63,24 @@ void AssetManager::load() {
 
         texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_1.png");
         textures.insert(std::make_pair("Blue_Idle_1", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_2.png");
+        textures.insert(std::make_pair("Blue_Idle_2", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_3.png");
+        textures.insert(std::make_pair("Blue_Idle_3", texture));
+
         texture.loadFromFile("Assets/Images/Alien/alien_gray/Gray_Idle_1.png");
         textures.insert(std::make_pair("Gray_Idle_1", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_gray/Gray_Idle_2.png");
+        textures.insert(std::make_pair("Gray_Idle_2", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_gray/Gray_Idle_3.png");
+        textures.insert(std::make_pair("Gray_Idle_3", texture));
+
         texture.loadFromFile("Assets/Images/Alien/alien_red/Red_Idle_1.png");
         textures.insert(std::make_pair("Red_Idle_1", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_red/Red_Idle_2.png");
+        textures.insert(std::make_pair("Red_Idle_2", texture));
+        texture.loadFromFile("Assets/Images/Alien/alien_red/Red_Idle_3.png");
+        textures.insert(std::make_pair("Red_Idle_3", texture));
 
 
         font = std::make_unique<sf::Font>();

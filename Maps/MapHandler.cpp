@@ -135,17 +135,17 @@ void MapHandler::loadLevel(int x) {
                         case 'X':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "COINS");
                             coll->setTexture(AssetManager::textures.at("COINS"));
-                            map->addToMatrix(coll);
+                            map->addCollectable(coll);
                             break;
                         case 'Y':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "MUNITIONS");
                             coll->setTexture(AssetManager::textures.at("MUNITIONS"));
-                            map->addToMatrix(coll);
+                            map->addCollectable(coll);
                             break;
                         case 'Z':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f));
                             coll->setTexture(AssetManager::textures.at("MYSTERY"));
-                            map->addToMatrix(coll);
+                            map->addCollectable(coll);
                             break;
                         case 'P':
                             Game::getGame()->createHero(j * 64.0f, i * 64.0f);
