@@ -1,5 +1,5 @@
 //
-// Created by leoco on 27/05/2020.
+// Created by Leonardo Corsini on 27/05/2020.
 //
 
 #include <AssetsManager.h>
@@ -11,6 +11,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,flo
     setPosition(pos);
     //setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f,0.25f));
+
 }
 Hero::~Hero() {}
 

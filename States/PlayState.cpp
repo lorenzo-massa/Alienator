@@ -88,7 +88,7 @@ void PlayState::generateFrame() {
 
        generateGUI(move.x);
 
-       targetWindow->draw(*Game::getGame()->getHero());
+    targetWindow->draw(*Game::getGame()->getHero());
 
 }
 
@@ -199,20 +199,24 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     sf::Vector2f entityPos = Game::getGame()->getHero()->getPosition() + move;
     sf::Vector2u entitySize = Game::getGame()->getHero()->getTexture()->getSize();
     sf::Vector2f entityScale = Game::getGame()->getHero()->getScale();
+
+    //Posizione nel centro della texture
+    entityPos.x += entitySize.x*entityScale.x/2.0f;
+    entityPos.y += entitySize.y*entityScale.y/2.0f;
+
     float deltaX;
     float deltaY;
     float intersectionX;
     float intersectionY;
 
     for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
-        deltaX  = entityPos.x - block->getPosition().x;
+        deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
         intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
-        deltaY  = entityPos.y - block->getPosition().y;
+        deltaY  = entityPos.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
         intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
         if(intersectionY < 0.0f && intersectionX < 0.0f){
-            moving.y = 0;
             collision = true;
-        if(intersectionX > intersectionY){
+            if(intersectionX > intersectionY){
                 moving.x = 0;
                 if(deltaX > 0.0f){
                     std::cout<<"\nLeft Collision!";
