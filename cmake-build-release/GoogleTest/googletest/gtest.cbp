@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="gtest"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\SFML-2.5.1\;CMake Files\SFML-2.5.1\lib\;CMake Files\SFML-2.5.1\lib\cmake\;CMake Files\SFML-2.5.1\lib\cmake\SFML\;CMake Files\GoogleTest\;CMake Files\GoogleTest\googlemock\;CMake Files\GoogleTest\googlemock\cmake\;CMake Files\GoogleTest\googletest\;CMake Files\GoogleTest\googletest\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/include"/>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/include"/>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/include"/>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/include"/>
+					<Add directory="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="d:\programmi\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Programmi/MinGW/bin/mingw32-make.exe -f &quot;D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/GoogleTest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-debug.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/SFML-2.5.1/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GoogleTest\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GoogleTest\googlemock\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\GoogleTest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\GoogleTest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GoogleTest\googletest\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\GoogleTest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\GoogleTest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\GoogleTest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/GoogleTest/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\GoogleTest\googletest\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
