@@ -26,3 +26,7 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp): behavior(behav
 }
 
 Enemy::~Enemy() {}
+
+sf::Vector2f Enemy::move(sf::Vector2f direction, float delatT) {
+    return GameCharacter::move(direction, delatT);
+}

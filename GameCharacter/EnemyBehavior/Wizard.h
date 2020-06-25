@@ -9,7 +9,7 @@
 
 class Wizard: public EnemyBehavior {
 public:
-    void patrol() override;
+    bool patrol(sf::Sprite hero,sf::Sprite enemy ,float deltaT, float directionX) override;
     void fight() override ;
 };
 

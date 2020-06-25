@@ -2,14 +2,18 @@
 // Created by leoco on 27/05/2020.
 //
 
+#include <SFML/Graphics/Sprite.hpp>
 #include "Bullet.h"
 
 
 Bullet::Bullet(int dam, int d, int x, int y):damage(dam),direction(d),posX(x),posY(y){}
 
-void Bullet::move(int x, int y/*,float dir,int v*/) {
-   /* x+=v*10;
-    y=dir*x;*/
+void Bullet::move(float dir,float coeffAng,float dT) {
+    float moveX=5.0f*64.0f*dT;
+    float moveY;
+    moveY=coeffAng*moveX*dT;
+
+    //sf::Sprite move(moveX,moveY);
 }//TODO retta su cui si muove bullet
 
 int Bullet::getDirection()const {

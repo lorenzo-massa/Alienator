@@ -223,7 +223,9 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
                 }else{
                     std::cout<<"\nRight Collision!";
                 }
-            }else{
+            }
+        else
+            {
                 moving.y = 0;
                 if(deltaY > 0.0f){
                     std::cout<<"\nTop Collision!";

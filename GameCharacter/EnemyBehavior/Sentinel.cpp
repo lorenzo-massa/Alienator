@@ -5,10 +5,12 @@
 #include "Sentinel.h"
 //#include "../Weapons/Sniper.h"
 
-void Sentinel::patrol() {
 
-}
 
 void Sentinel::fight() {
 
+}
+
+bool Sentinel::patrol(sf::Sprite hero, sf::Sprite enemy, float deltaT, float directionX) {
+    return EnemyBehavior::patrol(hero, enemy, deltaT, directionX);
 }

@@ -4,11 +4,13 @@
 
 #include "Wizard.h"
 
-void Wizard::patrol() {
 
-}
 
 void Wizard::fight() {
 
+}
+
+bool Wizard::patrol(sf::Sprite hero, sf::Sprite enemy, float deltaT, float directionX) {
+    return EnemyBehavior::patrol(hero, enemy, deltaT, directionX);
 }
 

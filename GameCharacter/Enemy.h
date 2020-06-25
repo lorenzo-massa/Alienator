@@ -17,6 +17,8 @@ public:
     Enemy(std::string strBehavior, sf::Vector2f pos,  int hp);
     ~Enemy();
 
+    sf::Vector2f move(sf::Vector2f direction, float delatT) override;
+
 private:
     EnemyBehavior behavior;
 };
