@@ -28,7 +28,7 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
         else if (speed.x<0)
             speed.x += 30.0f * 64.0f * deltaT;
 
-        if(speed.x>-5 && speed.x<5)//settaggio velocità
+        if(speed.x>-3 && speed.x<3)//settaggio velocità
             speed.x=0;
     }
     if(direction.x!=0)

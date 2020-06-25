@@ -209,6 +209,51 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     float intersectionX;
     float intersectionY;
 
+    /* Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
+     * Mi da un errore di memoria quando cùtiro fuori i blocchi dalla matrice, se vuoi dare un occhiata... se no riguardo io
+    int x = int(entityPos.x/64);
+    int y = int(entityPos.y/64);
+
+    std::cout<<x<<std::endl;
+    std::cout<<y<<std::endl;
+
+
+    sf::Sprite block;
+
+    for(int i = x - 2; i++; i < x + 3){
+        for(int j = y - 2; j++; i < y + 3){
+            block = *(Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i * Game::getGame()->getMapHandler()->getMap()->getM() * j));
+            deltaX  = entityPos.x - (block.getPosition().x + block.getTexture()->getSize().x * block.getScale().x /2.0f);
+            intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block.getTexture()->getSize().x*block.getScale().x/2.0f));
+            deltaY  = entityPos.y - (block.getPosition().y + block.getTexture()->getSize().y * block.getScale().y /2.0f);
+            intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block.getTexture()->getSize().y*block.getScale().y/2.0f));
+            if(intersectionY < 0.0f && intersectionX < 0.0f){
+                collision = true;
+                std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
+                std::cout<<"Collision with: X: "<< block.getPosition().x/64 << " Y: "<<block.getPosition().y/64 << std::endl;
+                if(intersectionX > intersectionY){
+                    moving.x = 0;
+                    if(deltaX > 0.0f){
+                        std::cout<<"Left Collision!";
+                    }else{
+                        std::cout<<"Right Collision!";
+                    }
+                }
+                else
+                {
+                    moving.y = 0;
+                    if(deltaY > 0.0f){
+                        std::cout<<"Top Collision!";
+                    }else{
+                        std::cout<<"Bottom Collision!";
+                    }
+                }
+            }
+        }
+    }
+    */
+
+
     for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
         deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
         intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
@@ -216,28 +261,35 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
         intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
         if(intersectionY < 0.0f && intersectionX < 0.0f){
             collision = true;
+            std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
+            std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
             if(intersectionX > intersectionY){
                 moving.x = 0;
                 if(deltaX > 0.0f){
-                    std::cout<<"\nLeft Collision!";
+                    std::cout<<"Left Collision!";
                 }else{
-                    std::cout<<"\nRight Collision!";
+                    std::cout<<"Right Collision!";
                 }
             }
         else
             {
                 moving.y = 0;
                 if(deltaY > 0.0f){
-                    std::cout<<"\nTop Collision!";
+                    std::cout<<"Top Collision!";
                 }else{
-                    std::cout<<"\nBottom Collision!";
+                    std::cout<<"Bottom Collision!";
                 }
             }
         }
     }
 
-    if(collision)
+
+    if(collision){
         Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,0));
+        std::cout<<"Moving X: "<<moving.x<<" Y: "<<moving.y<<std::endl;
+    }
+
+
 
     return moving;
 }
