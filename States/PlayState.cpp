@@ -265,6 +265,7 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
             std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
             if(intersectionX > intersectionY){
                 moving.x = 0;
+
                 if(deltaX > 0.0f){
                     std::cout<<"Left Collision!";
                 }else{
@@ -272,13 +273,19 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
                 }
             }
         else
-            {
-                moving.y = 0;
-                if(deltaY > 0.0f){
-                    std::cout<<"Top Collision!";
-                }else{
-                    std::cout<<"Bottom Collision!";
-                }
+            {//saltino = differenza fra intersezione e gravità
+             if(deltaY < 0.0f){//cambia se la collisione avviene sopra o sotto il personaggio
+                 Game::getGame()->getHero()->sf::Sprite::move(0,moving.y+intersectionY);
+                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,-98.0f*64.0f*Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+                 std::cout<<"Bottom Collision!";
+             }
+             else if(deltaY > 0.0f){
+                 Game::getGame()->getHero()->sf::Sprite::move(0,moving.y-intersectionY);
+                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,-98.0f*64.0f*Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+                 std::cout<<"Top Collision!";
+             }
+             moving.y = 0;
+
             }
         }
     }
