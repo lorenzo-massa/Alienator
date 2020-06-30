@@ -5,14 +5,14 @@ set(GTEST_SOURCE_DIR, ./lib/googletest)
 include_directories(${GTEST_SOURCE_DIR}/include ${GTEST_SOURCE_DIR})
 
 set(SOURCE_FILES
-        mainTestPhotoMakerApp.cpp
+        mainTests.cpp
         TestImageProcessor.cpp
         TestExecutionTime.cpp
-        TestPixelConversion.cpp TestCollision.cpp TestCollision.h)
+        TestPixelConversion.cpp
+        TestCollision.cpp
+        TestHero.cpp)
 
-add_executable(runTestPhotoMakerApp ${SOURCE_FILES})
-target_link_libraries(runTestPhotoMakerApp
+add_executable(runTests ${SOURCE_FILES})
+target_link_libraries(runTests
         gtest gtest_main
-        photomakerapp_model_lib
-        photomakerapp_core_lib
-        photomakerapp_utils_lib)
+        )

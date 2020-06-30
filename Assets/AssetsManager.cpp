@@ -17,7 +17,6 @@ void AssetManager::load() {
 
     try {
 
-
         sf::Texture texture;
         sf::SoundBuffer sound;
 
