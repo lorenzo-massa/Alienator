@@ -194,7 +194,6 @@ void PlayState::animationEnemies(){
 }
 
 sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
-    bool collision = false;
     sf::Vector2f moving = move;
     sf::Vector2f entityPos = Game::getGame()->getHero()->getPosition() + move;
     sf::Vector2u entitySize = Game::getGame()->getHero()->getTexture()->getSize();
@@ -210,7 +209,7 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     float intersectionY;
 
 
-    /*
+/*
     // Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
     // Mi da un errore di memoria quando cùtiro fuori i blocchi dalla matrice, se vuoi dare un occhiata... se no riguardo io
     int x = int(entityPos.x/64);
@@ -219,17 +218,17 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
     //std::cout<<x<<std::endl;
     //std::cout<<y<<std::endl;
 
-    if(y < 3)
-        y = 3;
-    if(x < 3)
-        x = 3;
+    if(y < 8)
+        y = 8;
+    if(x < 8)
+        x = 8;
 
 
     sf::Sprite block;
 
 
-    for(int i = x - 3; i < x + 4; i++){
-        for(int j = y - 3; j < y + 4; j++){
+    for(int i = x - 8; i < x + 9; i++){
+        for(int j = y - 8; j < y + 9; j++){
 
             std::cout<<i * Game::getGame()->getMapHandler()->getMap()->getN() + j<<std::endl;
 
@@ -272,45 +271,106 @@ sf::Vector2f PlayState::isLegalMovement(sf::Vector2f move){
 
 */
 
+    int rightCollision = 0;
+    int leftCollision = 0;
+    int bottomtCollision = 0;
+    int topCollision = 0;
+
     for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
         deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
         intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
         deltaY  = entityPos.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
         intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
-        if(intersectionY < 0.0f && intersectionX < 0.0f){
-            collision = true;
+
+
+        if(intersectionY < 0.0f && intersectionX < 0.0f){ //se entra qui collide con un blocco
             std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
             std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
-            if(intersectionX > intersectionY){
-                moving.x = 0;
 
+            if(intersectionX > intersectionY){ //se entra qui collide o a destra o a sinistra
+                /*moving.x = 0;
+                if(nCollisions != 1){
+                    Game::getGame()->getHero()->sf::Sprite::move(moving.x+intersectionX,0);
+                }
+                Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
+                */
                 if(deltaX > 0.0f){
+                    leftCollision++;
                     std::cout<<"Left Collision!";
                 }else{
+                    rightCollision++;
                     std::cout<<"Right Collision!";
                 }
             }
-        else
-            {//saltino = differenza fra intersezione e gravità
-             if(deltaY < 0.0f){//cambia se la collisione avviene sopra o sotto il personaggio
-                 Game::getGame()->getHero()->sf::Sprite::move(0,moving.y+intersectionY);
-                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,-98.0f*64.0f*Game::getGame()->getClock()->getElapsedTime().asSeconds()));
-                 std::cout<<"Bottom Collision!";
-             }
-             else if(deltaY > 0.0f){
-                 Game::getGame()->getHero()->sf::Sprite::move(0,moving.y-intersectionY);
-                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,-98.0f*64.0f*Game::getGame()->getClock()->getElapsedTime().asSeconds()));
-                 std::cout<<"Top Collision!";
-             }
-             moving.y = 0;
+            else // se entra qui collide o sotto o sopra
+                {//saltino = differenza fra intersezione e gravità
+                 if(deltaY < 0.0f){//cambia se la collisione avviene sopra o sotto il personaggio
+                     bottomtCollision++;
+                     std::cout<<"Bottom Collision!";
+                     /*if(nCollisions == 1)
+                        Game::getGame()->getHero()->sf::Sprite::move(0,moving.y+intersectionY);
+                     Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
+                 */
+                 }else{
+                     topCollision++;
+                     //Game::getGame()->getHero()->sf::Sprite::move(0,moving.y-intersectionY);
+                     //Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,-98.0f*64.0f*Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+                     std::cout<<"Top Collision!";
+                 }
+                 //moving.y = 0;
+
+                }
+
+                if(leftCollision >= 1){
+                    if(leftCollision == 1)
+                        moving.x -= intersectionX;
+                    else
+                        moving.x = 0;
+                        //Game::getGame()->getHero()->sf::Sprite::move(moving.x-intersectionX,0);
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
+                }
+
+                if(rightCollision >= 1){
+                    if(rightCollision == 1)
+                        moving.x += intersectionX;
+                    else
+                        moving.x = 0;
+                        //Game::getGame()->getHero()->sf::Sprite::move(moving.x+intersectionX,0);
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
+                }
+
+                if(topCollision >= 1){
+                    if(topCollision == 1)
+                        moving.y -= intersectionY;
+                    else
+                        moving.y = 0;
+                        //Game::getGame()->getHero()->sf::Sprite::move(0,moving.y-intersectionY);
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
+                }
+
+                if(bottomtCollision >= 1){
+                    if(bottomtCollision == 1)
+                        moving.y += intersectionY;
+                    else
+                        moving.y = 0;
+                    //Game::getGame()->getHero()->sf::Sprite::move(0,moving.y+intersectionY);
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
+                }
 
             }
-        }
+
+
+
+
+
     }
 
-    if(collision){
-        Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,0));
+
+    if(leftCollision > 0 || rightCollision > 0 || topCollision > 0 || bottomtCollision > 0){
+        std::cout<<"\nnCollisions: " << leftCollision + rightCollision + topCollision + bottomtCollision<<std::endl;
+        //Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,0));
         std::cout<<"Moving X: "<<moving.x<<" Y: "<<moving.y<<std::endl;
+
     }
 
 
