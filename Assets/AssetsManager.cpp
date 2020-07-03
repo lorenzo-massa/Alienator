@@ -20,6 +20,8 @@ void AssetManager::load() {
         sf::Texture texture;
         sf::SoundBuffer sound;
 
+
+
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
 

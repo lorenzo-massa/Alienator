@@ -3,9 +3,32 @@
 //
 
 #include "gtest/gtest.h"
-#include "simplemath.h"
+#include "../Engine/Game.h"
+#include "../States/LevelSelectState.h"
+#include "../States/PlayState.h"
 
-TEST(testCollision, collisionTest)
+/*
+
+class TestCollision : public ::testing::Test {
+protected:
+    std::shared_ptr<Game> game;
+
+
+    virtual void SetUp() {
+        game = Game::getGame();
+        game->init();
+        game->getStateHandler()->addState(std::make_shared<LevelSelectState>(game->getWindow()));
+        game->getMapHandler()->loadLevel(1);
+        game->getStateHandler()->addState(std::make_shared<PlayState>(game->getWindow()));
+
+    }
+
+
+
+};
+
+TEST_F(TestCollision, collisionTest)
 {
-    EXPECT_EQ(1000, cubic(10));
+
 }
+*/

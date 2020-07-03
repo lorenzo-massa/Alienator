@@ -55,16 +55,17 @@ set(SOURCE_FILES
         Objects/Block.cpp
         Objects/Block.h
         Engine/Loader.cpp
-        Engine/Loader.h)
+        Engine/Loader.h
+        )
 
 
 link_directories(SFML-2.5.1/bin)
-link_libraries(
-        sfml-audio-d-2.dll
-        sfml-graphics-d-2.dll
-        sfml-window-d-2.dll
-        sfml-system-d-2.dll
-)
+#link_libraries(
+#        sfml-audio-d-2.dll
+#        sfml-graphics-d-2.dll
+#        sfml-window-d-2.dll
+#        sfml-system-d-2.dll
+#)
 
 # Add directory containing FindSFML.cmake to module path
 set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
@@ -73,6 +74,9 @@ set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
 find_package(SFML 2.5 COMPONENTS audio graphics window system)
 include_directories(SFML-2.5.1/include)
 include_directories(Assets)
+
+# Google Tests
+add_subdirectory(test)
 
 add_executable(Alienator main.cpp ${SOURCE_FILES})
 
