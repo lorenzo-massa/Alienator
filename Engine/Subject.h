@@ -1,10 +1,9 @@
 //
-// Created by th3lo on 27/05/2020.
+// Created by Lorenzo Massa on 04/07/20.
 //
 
 #ifndef ALIENATOR_SUBJECT_H
 #define ALIENATOR_SUBJECT_H
-
 
 #include "Observer.h"
 

@@ -6,25 +6,10 @@
 
 Collectable::Collectable(sf::Vector2f position){
     powerUp = PowerUp();
-    /*
-    if(powerUp.getType() == "COINS"){
-        setScale(sf::Vector2f(0.075,0.075));
-    } else if(powerUp.getType() == "MUNITIONS"){
-        setScale(sf::Vector2f(0.075,0.075));
-    }else if(powerUp.getType() == "FIRE_RATE"){
-        setScale(sf::Vector2f(0.2,0.2));
-    }else if(powerUp.getType() == "SPEED"){
-        setScale(sf::Vector2f(0.1,0.1));
-    }    else if(powerUp.getType() == "DAMAGE_BOOST"){
-        setScale(sf::Vector2f(0.075,0.075));
-    }    else if(powerUp.getType() == "INVICIBILITY"){
-        setScale(sf::Vector2f(0.075,0.075));
-    }
-    */
+
     setScale(sf::Vector2f(0.05,0.05));
     setTextureRect(sf::IntRect(0,0,1184,1184));
     sf::Sprite::setPosition(position);
-
 
 }
 
@@ -48,4 +33,17 @@ const PowerUp &Collectable::getPowerUp() const {
 
 void Collectable::setPowerUp(const PowerUp &powerUp) {
     Collectable::powerUp = powerUp;
+}
+
+void Collectable::removeObserver(std::shared_ptr<ObserverGame> observer) {
+    observers.remove(observer);
+}
+
+void Collectable::registerObserver(std::shared_ptr<ObserverGame> observer) {
+    observers.push_back(observer);
+}
+
+void Collectable::notifyObservers(int i) const {
+    for(const auto& observer : observers)
+        observer->update(i);
 }

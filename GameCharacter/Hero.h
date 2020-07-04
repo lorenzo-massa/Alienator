@@ -17,8 +17,6 @@ public:
 
     int receiveDamage(int points) override ;
 
-    //bool isLegalMovement(char comparison) override;
-
     sf::Vector2f move(sf::Vector2f direction, float delatT) override;
 
     void jump() override;
@@ -27,6 +25,14 @@ public:
 
     int getCoins() const;
     void setCoins(int coins);
+
+    //PowerUp
+    void addCoins(int coins);
+    void addAmmo(int ammo);
+    void setFireRateBoost();
+    void setSpeedBoost();
+    void setDamageBoost();
+    void setInvincibility();
 
 private:
     int coins;

@@ -9,12 +9,19 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 #include "PowerUp.h"
+#include "../Engine/SubjectGame.h"
 
-class Collectable : public sf::Sprite {
+class Collectable : public sf::Sprite, public SubjectGame{
 public:
     explicit Collectable(sf::Vector2f position);
     Collectable(sf::Vector2f position, std::string type);
     ~Collectable();
+
+
+    virtual void registerObserver(std::shared_ptr<ObserverGame> observer);
+    virtual void removeObserver(std::shared_ptr<ObserverGame> observer);
+    virtual void notifyObservers(int i) const;
+
 
 
     const PowerUp &getPowerUp() const;
@@ -26,6 +33,9 @@ private:
     const float width {512};
 
     PowerUp powerUp;
+
+    std::list<std::shared_ptr<ObserverGame>> observers;
+
 };
 
 

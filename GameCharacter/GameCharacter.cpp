@@ -6,12 +6,17 @@
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
-healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir){}
+healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false){}
 
 int GameCharacter::receiveDamage(int points ) {
- //   if (healthPoint>points)
-        return healthPoint -= points;
-    //else
+    if(!invincibility)
+        healthPoint -= (points/armor);
+
+    //TODO DEATH
+    //if(healthPoint < 0)
+        //killed
+
+        return (points/armor);
 }
 
 /*bool GameCharacter::isLegalMovement(char comparison){
@@ -38,6 +43,9 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
 
     speed.y=speed.y+98.0f*64.0f*deltaT; //gravità
     yT=(speed.y*deltaT+0.5f*98.0f*64.0f*deltaT*deltaT)*direction.y;
+
+    xT = xT*speedBoost;
+    yT = yT*speedBoost;
 
     return sf::Vector2f(xT,yT);
 }
@@ -116,6 +124,22 @@ const std::string &GameCharacter::getStrTexture() const {
 
 void GameCharacter::setStrTexture(const std::string &strTexture) {
     GameCharacter::strTexture = strTexture;
+}
+
+float GameCharacter::getSpeedBoost() const {
+    return speedBoost;
+}
+
+void GameCharacter::setSpeedBoost(float speedBoost) {
+    GameCharacter::speedBoost = speedBoost;
+}
+
+bool GameCharacter::isInvincibility() const {
+    return invincibility;
+}
+
+void GameCharacter::setInvincibility(bool invincibility) {
+    GameCharacter::invincibility = invincibility;
 }
 
 

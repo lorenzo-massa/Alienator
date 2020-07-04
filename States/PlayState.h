@@ -28,6 +28,10 @@ private:
     void animationHero(int direction, sf::Vector2f speed);
 
     void animationEnemies();
+
+    void checkCollectables();
+
+    bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
 };
 
 

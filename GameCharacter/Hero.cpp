@@ -43,7 +43,29 @@ Hero::Hero() {
 
 }
 
-/*bool Hero::isLegalMovement(char comparison) {
-    return GameCharacter::isLegalMovement(comparison);
-}*/
+void Hero::addCoins(int coins) {
+    this->coins += coins;
+}
+
+void Hero::addAmmo(int ammo) {
+    this->ammo += ammo;
+}
+
+void Hero::setFireRateBoost() {
+    //TODO
+}
+
+void Hero::setSpeedBoost() {
+    GameCharacter::setSpeedBoost(1.4f);
+}
+
+void Hero::setDamageBoost() {
+    //TODO
+}
+
+void Hero::setInvincibility() {
+    GameCharacter::setInvincibility(true);
+}
+
+
 

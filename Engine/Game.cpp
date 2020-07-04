@@ -43,7 +43,6 @@ void Game::init() {
 void Game::start() {
     while (gameWindow->isOpen()) {
         if(clock->getElapsedTime().asSeconds() >= SLEEP_TIME) {
-            //timer.check();
 
             ptrStateHandler->getState()->handleInput();
 
@@ -69,7 +68,7 @@ void Game::setMyGame(const std::shared_ptr<Game> &myGame) {
 }
 
 void Game::createHero(int x ,int y) {
-    ptrHero = std::make_shared<Hero>(1,100,50,50,sf::Vector2f(0,0),sf::Vector2f(x,y),0,0);
+    ptrHero = std::make_shared<Hero>(1,100,5,50,sf::Vector2f(0,0),sf::Vector2f(x,y),0,0);
     Loader::loadHero();
 }
 
@@ -87,6 +86,53 @@ std::shared_ptr<sf::Clock> Game::getClock() {
 
 void Game::save() {
     Loader::saveHero(ptrHero->getCoins(), ptrHero->getAmmo(), ptrHero->getArmor());
+}
+
+void Game::addSubject(std::shared_ptr<SubjectGame> subject){
+    subjects.push_back(subject);
+}
+
+void Game::removeSubject(std::shared_ptr<SubjectGame> subject){
+    subjects.remove(subject);
+}
+
+void Game::removeSubject(int i){
+    std::_List_iterator<std::shared_ptr<SubjectGame>> it = subjects.begin();
+    std::advance(it, i);
+    subjects.erase(it);
+}
+
+std::shared_ptr<SubjectGame> Game::getSubject(int i){
+    std::_List_iterator<std::shared_ptr<SubjectGame>> it = subjects.begin();
+    std::advance(it, i);
+    return *it;
+}
+
+void Game::update(int i) {
+    //Collisione con subject[i] e hero
+
+    std::shared_ptr<Collectable> c = ptrMapHandler->getMap()->getCollectable(i);
+
+    std::string typeString ="Error";
+    typeString = c->getPowerUp().getType();
+    if(typeString == "COINS")
+        ptrHero->addCoins(10);
+    else if(typeString == "MUNITIONS")
+        ptrHero->addAmmo(25);
+    else if(typeString == "FIRE_RATE")
+        ptrHero->setFireRateBoost();
+    else if(typeString == "SPEED")
+        ptrHero->setSpeedBoost();
+    else if(typeString == "DAMAGE_BOOST")
+        ptrHero->setDamageBoost();
+    else if(typeString == "INVICIBILITY")
+        ptrHero->setInvincibility();
+    else
+        std::cerr<<"Error loading power up: undefined string: "<<typeString<<std::endl;
+
+
+    ptrMapHandler->getMap()->removeCollectable(i);
+    removeSubject(i);
 }
 
 

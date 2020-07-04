@@ -56,7 +56,9 @@ set(SOURCE_FILES
         Objects/Block.h
         Engine/Loader.cpp
         Engine/Loader.h
-        )
+        Engine/ObserverGame.h
+        Engine/SubjectGame.h
+        Engine/Observer.h Engine/Subject.h)
 
 
 link_directories(SFML-2.5.1/bin)

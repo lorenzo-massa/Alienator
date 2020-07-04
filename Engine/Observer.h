@@ -1,10 +1,9 @@
 //
-// Created by th3lo on 27/05/2020.
+// Created by Lorenzo Massa on 04/07/20.
 //
 
 #ifndef ALIENATOR_OBSERVER_H
 #define ALIENATOR_OBSERVER_H
-
 
 class Observer {
 public:
@@ -13,6 +12,5 @@ public:
 protected:
     virtual ~Observer() = default;
 };
-
 
 #endif //ALIENATOR_OBSERVER_H

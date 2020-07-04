@@ -1,5 +1,5 @@
 //
-// Created by leoco on 23/05/2020.
+// Created by Leonardo Corsini on 23/05/2020.
 //
 
 #ifndef ALIENATOR_GAMECHARACTER_H
@@ -20,8 +20,6 @@ public:
     virtual ~GameCharacter();
 
     virtual int receiveDamage(int points);
-
-    //virtual bool isLegalMovement(char comparison);
 
     virtual sf::Vector2f move(sf::Vector2f direction,float deltaT);
 
@@ -54,7 +52,13 @@ public:
 
     void setDirection(float direction);
 
+    float getSpeedBoost() const;
 
+    void setSpeedBoost(float speedBoost);
+
+    bool isInvincibility() const;
+
+    void setInvincibility(bool invincibility);
 
     const std::string &getStrTexture() const;
 
@@ -69,6 +73,9 @@ protected:
     Weapon * weapon;
     float direction;
     std::string strTexture;
+
+    float speedBoost;
+    bool invincibility;
 
 };
 

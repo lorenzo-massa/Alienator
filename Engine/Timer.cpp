@@ -1,5 +1,5 @@
 //
-// Created by th3lo on 27/05/2020.
+// Created by Lorenzo Massa on 27/05/2020.
 //
 
 #include "Timer.h"

@@ -14,6 +14,7 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState
     action = 0;
     clock = std::make_shared<sf::Clock>();
     clockEnemies = std::make_shared<sf::Clock>();
+
 }
 
 void PlayState::handleInput() {
@@ -88,6 +89,8 @@ void PlayState::generateFrame() {
        generateMap();
 
        generateGUI(move.x);
+       
+       checkCollectables();
 
     targetWindow->draw(*Game::getGame()->getHero());
 
@@ -295,29 +298,29 @@ sf::Vector2f PlayState::isLegalMovement(std::shared_ptr<GameCharacter> entity, s
             bottomtCollisionBool = false;
             topCollisionBool = false;
 
-            std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
-            std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
+            //std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
+            //std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
 
             if(intersectionX > intersectionY){ //se entra qui collide o a destra o a sinistra
                 if(deltaX > 0.0f){
                     leftCollision++;
                     leftCollisionBool = true;
-                    std::cout<<"Left Collision!";
+                    //std::cout<<"Left Collision!";
                 }else{
                     rightCollision++;
                     rightCollisionBool = true;
-                    std::cout<<"Right Collision!";
+                    //std::cout<<"Right Collision!";
                 }
             }
             else{
                  if(deltaY < 0.0f){
                      bottomtCollision++;
                      bottomtCollisionBool = true;
-                     std::cout<<"Bottom Collision!";
+                     //std::cout<<"Bottom Collision!";
                  }else{
                      topCollision++;
                      topCollisionBool = true;
-                     std::cout<<"Top Collision!";
+                     //std::cout<<"Top Collision!";
                  }
             }
 
@@ -345,12 +348,44 @@ sf::Vector2f PlayState::isLegalMovement(std::shared_ptr<GameCharacter> entity, s
 
     }
 
-
+    /*
     if(leftCollision > 0 || rightCollision > 0 || topCollision > 0 || bottomtCollision > 0){
         std::cout<<"\nnCollisions: " << leftCollision + rightCollision + topCollision + bottomtCollision<<std::endl;
         std::cout<<"Moving X: "<<moving.x<<" Y: "<<moving.y<<std::endl;
 
     }
-
+    */
     return moving;
+}
+
+bool PlayState::checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2){
+    bool collision = false;
+
+    sf::Vector2f entityPos = entity1->getPosition();
+    sf::Vector2u entitySize = entity1->getTexture()->getSize();
+    sf::Vector2f entityScale = entity1->getScale();
+
+    entityPos.x += entitySize.x*entityScale.x/2.0f;
+    entityPos.y += entitySize.y*entityScale.y/2.0f;
+
+    float deltaX = entityPos.x - (entity2->getPosition().x + entity2->getTexture()->getSize().x * entity2->getScale().x /2.0f);
+    float deltaY = entityPos.y - (entity2->getPosition().y + entity2->getTexture()->getSize().y * entity2->getScale().y /2.0f);
+    float intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (entity2->getTexture()->getSize().x*entity2->getScale().x/2.0f));
+    float intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (entity2->getTexture()->getSize().y*entity2->getScale().y/2.0f));
+
+    if(intersectionY < 0.0f && intersectionX < 0.0f){
+        collision = true;
+    }
+
+    return collision;
+}
+
+
+void PlayState::checkCollectables(){
+    int i=0;
+    for(const auto& collectable : Game::getGame()->getMapHandler()->getMap()->getCollectables()){
+        if(checkCollision(collectable, Game::getGame()->getHero()))
+            collectable->notifyObservers(i);
+        i++;
+    }
 }
