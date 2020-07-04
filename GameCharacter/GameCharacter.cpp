@@ -12,10 +12,6 @@ int GameCharacter::receiveDamage(int points ) {
     if(!invincibility)
         healthPoint -= (points/armor);
 
-    //TODO DEATH
-    //if(healthPoint < 0)
-        //killed
-
         return (points/armor);
 }
 
