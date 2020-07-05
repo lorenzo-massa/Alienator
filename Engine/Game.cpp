@@ -3,7 +3,7 @@
 //
 
 #include "Game.h"
-#include "Loader.h"
+
 
 std::shared_ptr<Game> Game::myGame = nullptr;
 
@@ -109,30 +109,47 @@ std::shared_ptr<SubjectGame> Game::getSubject(int i){
 }
 
 void Game::update(int i) {
-    //Collisione con subject[i] e hero
 
     std::shared_ptr<Collectable> c = ptrMapHandler->getMap()->getCollectable(i);
 
-    std::string typeString ="Error";
-    typeString = c->getPowerUp().getType();
+    std::string typeString = c->getPowerUp().getType();
+
     if(typeString == "COINS")
         ptrHero->addCoins(10);
     else if(typeString == "MUNITIONS")
         ptrHero->addAmmo(25);
-    else if(typeString == "FIRE_RATE")
-        ptrHero->setFireRateBoost();
-    else if(typeString == "SPEED")
-        ptrHero->setSpeedBoost();
-    else if(typeString == "DAMAGE_BOOST")
-        ptrHero->setDamageBoost();
-    else if(typeString == "INVICIBILITY")
-        ptrHero->setInvincibility();
+    else if(typeString == "FIRE_RATE") {
+        ptrHero->removePowerUp();
+        ptrHero->setFireRateBoost(1.5f);
+        ptrHero->setPowerUpState(true);
+        ptrHero->resetClockPowerUp();
+    }
+    else if(typeString == "SPEED") {
+        ptrHero->removePowerUp();
+        ptrHero->setSpeedBoost(1.5f);
+        ptrHero->setPowerUpState(true);
+        ptrHero->resetClockPowerUp();
+    }
+    else if(typeString == "DAMAGE_BOOST") {
+        ptrHero->removePowerUp();
+        ptrHero->setDamageBoost(1.5f);
+        ptrHero->setPowerUpState(true);
+        ptrHero->resetClockPowerUp();
+    }
+    else if(typeString == "INVICIBILITY") {
+        ptrHero->removePowerUp();
+        ptrHero->setInvincibility(true);
+        ptrHero->setPowerUpState(true);
+        ptrHero->resetClockPowerUp();
+    }
     else
         std::cerr<<"Error loading power up: undefined string: "<<typeString<<std::endl;
 
+    std::cout<<"Power Up: "<<typeString<<std::endl;
 
     ptrMapHandler->getMap()->removeCollectable(i);
     removeSubject(i);
+
 }
 
 

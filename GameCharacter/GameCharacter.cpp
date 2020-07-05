@@ -6,7 +6,7 @@
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
-healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false){}
+healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){}
 
 int GameCharacter::receiveDamage(int points ) {
     if(!invincibility)
@@ -14,10 +14,6 @@ int GameCharacter::receiveDamage(int points ) {
 
         return (points/armor);
 }
-
-/*bool GameCharacter::isLegalMovement(char comparison){
-    if(GameCharacter::getGlobalBounds().height+GameCharacter::getPosition().y+8*64*direction==)
-}*/
 
 sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
@@ -136,6 +132,52 @@ bool GameCharacter::isInvincibility() const {
 
 void GameCharacter::setInvincibility(bool invincibility) {
     GameCharacter::invincibility = invincibility;
+}
+
+const sf::Clock &GameCharacter::getClockPowerUp() const {
+    return clockPowerUp;
+}
+
+void GameCharacter::setClockPowerUp(const sf::Clock &clockPowerUp) {
+    GameCharacter::clockPowerUp = clockPowerUp;
+}
+
+bool GameCharacter::isPowerUpState() const {
+    return powerUpState;
+}
+
+void GameCharacter::setPowerUpState(bool powerUpState) {
+    GameCharacter::powerUpState = powerUpState;
+}
+
+float GameCharacter::getFireRateBoost() const {
+    return fireRateBoost;
+}
+
+void GameCharacter::setFireRateBoost(float fireRateBoost) {
+    GameCharacter::fireRateBoost = fireRateBoost;
+}
+
+float GameCharacter::getDamageBoost() const {
+    return damageBoost;
+}
+
+void GameCharacter::setDamageBoost(float damageBoost) {
+    GameCharacter::damageBoost = damageBoost;
+}
+
+void GameCharacter::resetClockPowerUp() {
+    clockPowerUp.restart();
+}
+
+void GameCharacter::removePowerUp() {
+    invincibility = false;
+    speedBoost = 1.0f;
+    fireRateBoost = 1.0f;
+    damageBoost = 1.0f;
+
+    powerUpState = false;
+    std::cout<<"Power Up removed!"<<std::endl;
 }
 
 

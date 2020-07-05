@@ -24,15 +24,16 @@ public:
     void shot(Weapon* weapon) override;
 
     int getCoins() const;
-    void setCoins(int coins);
+    void setCoins(const int coins);
+
+    int getType() const;
+    void setType(const int type);
+
+
 
     //PowerUp
     void addCoins(int coins);
     void addAmmo(int ammo);
-    void setFireRateBoost();
-    void setSpeedBoost();
-    void setDamageBoost();
-    void setInvincibility();
 
 private:
     int coins;

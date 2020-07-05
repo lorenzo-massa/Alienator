@@ -12,6 +12,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,flo
     //setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f,0.25f));
 
+    clockPowerUp = sf::Clock();
 }
 Hero::~Hero() {}
 
@@ -51,21 +52,15 @@ void Hero::addAmmo(int ammo) {
     this->ammo += ammo;
 }
 
-void Hero::setFireRateBoost() {
-    //TODO
+int Hero::getType() const {
+    return type;
 }
 
-void Hero::setSpeedBoost() {
-    GameCharacter::setSpeedBoost(1.4f);
+void Hero::setType(int type) {
+    Hero::type = type;
 }
 
-void Hero::setDamageBoost() {
-    //TODO
-}
 
-void Hero::setInvincibility() {
-    GameCharacter::setInvincibility(true);
-}
 
 
 

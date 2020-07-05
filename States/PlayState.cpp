@@ -66,6 +66,7 @@ void PlayState::handleInput() {
 
 void PlayState::generateFrame() {
 
+
     sf::Vector2f move = isLegalMovement(Game::getGame()->getHero(),Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(),
                                                                  1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds()));
     if(move.x != 0 || move.y != 0)
@@ -91,6 +92,9 @@ void PlayState::generateFrame() {
        generateGUI(move.x);
        
        checkCollectables();
+
+    if (Game::getGame()->getHero()->getClockPowerUp().getElapsedTime().asSeconds() > 10 && Game::getGame()->getHero()->isPowerUpState())
+        Game::getGame()->getHero()->removePowerUp();
 
     targetWindow->draw(*Game::getGame()->getHero());
 
@@ -224,6 +228,7 @@ sf::Vector2f PlayState::isLegalMovement(std::shared_ptr<GameCharacter> entity, s
 
 /*
     // Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
+    //da errore perchè non si controlla il massimo indice
     int x = int(entityPos.x/64);
     int y = int(entityPos.y/64);
 

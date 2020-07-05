@@ -16,6 +16,7 @@
 #include "../Weapons/Bullet.h"
 #include "ObserverGame.h"
 #include <AssetsManager.h>
+#include "Loader.h"
 
 #define GAME_NAME "Alienator"
 #define FPS 60

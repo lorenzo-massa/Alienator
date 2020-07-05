@@ -7,8 +7,8 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <memory>
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include "../Weapons/Weapon.h"
 
 
@@ -64,6 +64,26 @@ public:
 
     void setStrTexture(const std::string &strTexture);
 
+    const sf::Clock &getClockPowerUp() const;
+
+    void setClockPowerUp(const sf::Clock &clockPowerUp);
+
+    bool isPowerUpState() const;
+
+    void setPowerUpState(bool powerUpState);
+
+    float getFireRateBoost() const;
+
+    void setFireRateBoost(float fireRateBoost);
+
+    float getDamageBoost() const;
+
+    void setDamageBoost(float damageBoost);
+
+    void resetClockPowerUp();
+    void removePowerUp();
+
+
 protected:
     sf::Vector2f pos;
     int healthPoint;
@@ -74,8 +94,13 @@ protected:
     float direction;
     std::string strTexture;
 
+
+    sf::Clock clockPowerUp;
+    bool powerUpState;
     float speedBoost;
     bool invincibility;
+    float fireRateBoost;
+    float damageBoost;
 
 };
 
