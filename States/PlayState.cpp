@@ -10,11 +10,19 @@
 
 
 
-PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow) {
+PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow, int level) : GameState(targetWindow) {
+    this->level = level;
+    Game::getGame()->getMapHandler()->loadLevel(level);
+
     action = 0;
     clock = std::make_shared<sf::Clock>();
     clockEnemies = std::make_shared<sf::Clock>();
 
+    sf::View tempView = targetWindow->getView();
+    tempView.setCenter(tempView.getSize().x/2 - Game::getGame()->getHero()->sf::Sprite::getPosition().x,tempView.getSize().y/2);
+    targetWindow->setView(tempView);
+
+    AssetManager::initBackground(targetWindow,- Game::getGame()->getHero()->sf::Sprite::getPosition().x);
 }
 
 void PlayState::handleInput() {
@@ -69,8 +77,11 @@ void PlayState::generateFrame() {
 
     sf::Vector2f move = isLegalMovement(Game::getGame()->getHero(),Game::getGame()->getHero()->move(sf::Vector2f(Game::getGame()->getHero()->getDirection(),
                                                                  1.0f),Game::getGame()->getClock()->getElapsedTime().asSeconds()));
-    if(move.x != 0 || move.y != 0)
+    if(move.x != 0 || move.y != 0){
         Game::getGame()->getHero()->sf::Sprite::move(move);
+        if(Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16*64)
+            Game::getGame()->killHero();
+    }
 
     sf::View tempView = targetWindow->getView();
 
@@ -411,4 +422,28 @@ void PlayState::checkCollectables(){
             collectable->notifyObservers(i);
         i++;
     }
+}
+
+int PlayState::getAction() const {
+    return action;
+}
+
+void PlayState::setAction(int action) {
+    PlayState::action = action;
+}
+
+const std::shared_ptr<sf::Clock> &PlayState::getClock() const {
+    return clock;
+}
+
+void PlayState::setClock(const std::shared_ptr<sf::Clock> &clock) {
+    PlayState::clock = clock;
+}
+
+const std::shared_ptr<sf::Clock> &PlayState::getClockEnemies() const {
+    return clockEnemies;
+}
+
+void PlayState::setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies) {
+    PlayState::clockEnemies = clockEnemies;
 }

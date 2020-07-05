@@ -53,9 +53,7 @@ public:
     void removeSubject(int i);
     std::shared_ptr<SubjectGame> getSubject(int i);
 
-
-
-
+    void killHero();
 
 private:
     std::shared_ptr<sf::Clock> clock;

@@ -11,10 +11,23 @@
 
 class PlayState : public GameState{
 public:
-    PlayState(std::shared_ptr<sf::RenderWindow> targetWindow);
+    PlayState(std::shared_ptr<sf::RenderWindow> targetWindow, int level);
     void handleInput() override;
     void generateFrame() override;
     sf::Vector2f isLegalMovement(std::shared_ptr<GameCharacter> entity, sf::Vector2f move);
+
+    int getAction() const;
+
+    void setAction(int action);
+
+    const std::shared_ptr<sf::Clock> &getClock() const;
+
+    void setClock(const std::shared_ptr<sf::Clock> &clock);
+
+    const std::shared_ptr<sf::Clock> &getClockEnemies() const;
+
+    void setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies);
+
 private:
 
     int action;
@@ -32,6 +45,7 @@ private:
     void checkCollectables();
 
     bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
+
 };
 
 

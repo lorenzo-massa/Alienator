@@ -27,8 +27,7 @@ void LevelSelectState::handleInput() {
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::LEVEL_1:
-                        Game::getGame()->getMapHandler()->loadLevel(1);
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow));
+                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow,1));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_2:
 

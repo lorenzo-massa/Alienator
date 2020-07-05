@@ -1,5 +1,5 @@
 //
-// Created by th3lo on 23/05/2020.
+// Created by Lorenzo Massa on 23/05/2020.
 //
 
 #ifndef ALIENATOR_GAMESTATE_H
@@ -17,8 +17,18 @@ public:
 
     virtual void generateFrame() = 0;
 
+    const std::shared_ptr<sf::RenderWindow> &getTargetWindow() const;
+
+    void setTargetWindow(const std::shared_ptr<sf::RenderWindow> &targetWindow);
+
+    int getLevel() const;
+
+    void setLevel(int level);
+
 protected:
     std::shared_ptr<sf::RenderWindow> targetWindow;
+    int level;
+
 };
 
 

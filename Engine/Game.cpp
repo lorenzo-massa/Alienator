@@ -3,6 +3,7 @@
 //
 
 #include "Game.h"
+#include "../States/PlayState.h"
 
 
 std::shared_ptr<Game> Game::myGame = nullptr;
@@ -145,11 +146,22 @@ void Game::update(int i) {
     else
         std::cerr<<"Error loading power up: undefined string: "<<typeString<<std::endl;
 
-    std::cout<<"Power Up: "<<typeString<<std::endl;
+    //std::cout<<"Power Up: "<<typeString<<std::endl;
 
     ptrMapHandler->getMap()->removeCollectable(i);
     removeSubject(i);
 
+}
+
+void Game::killHero(){
+    ptrHero->~Hero();
+
+    int level = ptrStateHandler->getState()->getLevel();
+    ptrStateHandler->removeState();
+    if(level > 0 && level < 6)
+        ptrStateHandler->addState(std::make_shared<PlayState>(gameWindow,level));
+    else
+        std::cerr<<"Error loading level"<<std::endl;
 }
 
 

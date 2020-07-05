@@ -107,6 +107,13 @@ void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow,
     targetWindow->draw(background);
 }
 
+void AssetManager::initBackground(std::shared_ptr<sf::RenderWindow> targetWindow, float x) {
+    sf::Sprite background(textures.at("BACKGROUND"));
+    xBackground = x;
+    background.setPosition(xBackground, 0);
+    targetWindow->draw(background);
+}
+
 float AssetManager::getXBackground() {
     return xBackground;
 }
