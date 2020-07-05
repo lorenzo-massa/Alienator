@@ -1,18 +1,14 @@
 //
-// Created by leoco on 27/05/2020.
+// Created by Leonardo Corsini on 27/05/2020.
 //
 
 #include "Weapon.h"
 
-Weapon::Weapon(int direction, int d, float fR) {
+Weapon::Weapon(int d, float fR): damage(d), fireRate(fR) {}
 
-}
-
-void Weapon::fire() {
-    Bullet* bullet = nullptr;
-    //bullet = Factory::makeBullet()
-    //Bullet(Weapon::damage, Weapon::direction, Weapon::posX, Weapon::posY);
-    //bullet->move();
+std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mousePosition) const {
+    std::shared_ptr<Bullet> b = std::make_shared<Bullet>(damage, x, y, mousePosition);
+    return b;
 }
 
 void Weapon::setDamage(int d) {
@@ -25,7 +21,7 @@ int Weapon::getDamage()const{
 void Weapon::setFireRate(float fR) {
     Weapon::fireRate = fR;
 }
-float Weapon::getFireRate() {
+float Weapon::getFireRate() const{
     return Weapon::fireRate;
 }
 

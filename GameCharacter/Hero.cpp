@@ -14,6 +14,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,flo
 
     clockPowerUp = sf::Clock();
 }
+Hero::Hero() {}
 Hero::~Hero() {}
 
 int Hero::getCoins() const {
@@ -23,8 +24,8 @@ void Hero::setCoins(int coins) {
     Hero::coins = coins;
 }
 
-void Hero::shot(Weapon *weapon) {
-    GameCharacter::shot(weapon);
+std::shared_ptr<Bullet> Hero::shot(sf::Vector2f mousePosition) {
+    return GameCharacter::shot(mousePosition);
 }
 
 sf::Vector2f Hero::move(sf:: Vector2f direction, float deltaT) {
@@ -37,11 +38,6 @@ void Hero::jump() {
 
 int Hero::receiveDamage(int points) {
     return GameCharacter::receiveDamage(points);
-}
-
-
-Hero::Hero() {
-
 }
 
 void Hero::addCoins(int coins) {

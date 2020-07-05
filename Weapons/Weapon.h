@@ -1,25 +1,26 @@
 //
-// Created by leoco on 24/05/2020.
+// Created by Leonardo Corsini on 24/05/2020.
 //
 
 #ifndef ALIENATOR_WEAPON_H
 #define ALIENATOR_WEAPON_H
 
 #include "Bullet.h"
+#include <memory>
 
 class Weapon {
 public:
     Weapon();
-    explicit Weapon(int direction,int d=10,float fR=1.0);
+    explicit Weapon(int d=10,float fR=1.0);
     virtual ~Weapon(){}
 
-    virtual void fire();
+    std::shared_ptr<Bullet> fire(int x, int y, int damage, sf::Vector2f mousePosition) const;
 
     void setDamage(int d);
-    int getDamage()const;
+    int getDamage() const;
 
     void setFireRate(float fR);
-    float getFireRate();
+    float getFireRate() const;
 
     int getPosX() const;
     void setPosX(int posX);

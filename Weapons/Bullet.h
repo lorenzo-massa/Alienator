@@ -1,37 +1,41 @@
 //
-// Created by leoco on 24/05/2020.
+// Created by Leonardo Corsini on 24/05/2020.
 //
 
 #ifndef ALIENATOR_BULLET_H
 #define ALIENATOR_BULLET_H
 
 
+#include <SFML/Graphics/Sprite.hpp>
 
-
-class Bullet{
+class Bullet: public sf::Sprite{
 public:
-    Bullet(int dam,int d,int x,int y);//TODO direction? posX,posY di weapon?
+    Bullet(int dam, float x, float y, sf::Vector2f mousePosition);
+
     ~Bullet(){}
 
-    void move(float dir,float coeffAng,float dT);
+    void move(float dT);
 
     void setPosX(int x);
-    int getPosX() const;
+    float getPosX() const;
 
     void setPosY(int y);
-    int getPosY() const;
-
-    void setDirection(int d);
-    int getDirection()const;
+    float getPosY() const;
 
     int getDamage() const;
     void setDamage(int damage);
 
+    bool isFriendly() const;
+
+    void setFriendly(bool friendly);
+
 private:
-    int posX;
-    int posY;
+    float posX;
+    float posY;
     int damage;
-    int direction;
+    bool friendly;
+    sf::Vector2f currentSpeed;
+    float maxSpeed;
 };
 
 #endif //ALIENATOR_BULLE{}T_H

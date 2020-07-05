@@ -1,5 +1,5 @@
 //
-// Created by leoco on 24/05/2020.
+// Created by Leonardo Corsini on 24/05/2020.
 //
 
 #ifndef ALIENATOR_HERO_H
@@ -21,7 +21,7 @@ public:
 
     void jump() override;
 
-    void shot(Weapon* weapon) override;
+    std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 
     int getCoins() const;
     void setCoins(const int coins);

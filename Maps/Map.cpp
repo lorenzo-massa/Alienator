@@ -63,3 +63,19 @@ std::shared_ptr<Collectable> Map::getCollectable(int i) {
 std::vector<std::shared_ptr<Collectable>> Map::getCollectables() {
     return collectables;
 }
+
+void Map::addBullet(std::shared_ptr<Bullet> b) {
+    bullets.push_back(b);
+}
+
+void Map::removeBullet(int i) {
+    bullets.erase(bullets.begin()+i);
+}
+
+std::shared_ptr<Bullet> Map::getBullet(int i) {
+    return bullets[i];
+}
+
+std::vector<std::shared_ptr<Bullet>> Map::getBullets() {
+    return bullets;
+}

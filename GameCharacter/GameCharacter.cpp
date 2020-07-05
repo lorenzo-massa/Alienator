@@ -6,7 +6,9 @@
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
-healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){}
+healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){
+    weapon = std::make_shared<Weapon>(10, 1.5f);
+}
 
 int GameCharacter::receiveDamage(int points ) {
     if(!invincibility)
@@ -47,8 +49,8 @@ void GameCharacter::jump() {
     speed.y-=25.0f*64.0f;
 }
 
-void GameCharacter::shot(Weapon *weapon) {
-    weapon->fire();
+std::shared_ptr<Bullet> GameCharacter::shot(sf::Vector2f mousePosition) {
+    return weapon->fire(sf::Sprite::getPosition().x, sf::Sprite::getPosition().y, weapon->getDamage(), mousePosition);
 }
 
 //Getter e Setter
@@ -66,10 +68,10 @@ void GameCharacter::setHealthPoint(int healthPoint) {
     GameCharacter::healthPoint=healthPoint;
 }
 
-Weapon *GameCharacter::getWeapon() {
+std::shared_ptr<Weapon> GameCharacter::getWeapon() const{
     return weapon;
 }
-void GameCharacter::setWeapon(Weapon* weapon) {
+void GameCharacter::setWeapon(std::shared_ptr<Weapon> weapon) {
     this->weapon=weapon;
 }
 

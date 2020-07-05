@@ -64,6 +64,20 @@ void PlayState::handleInput() {
                 Game::getGame()->getHero()->setDirection(0.0f);
 
             }
+        } else if (event.type == sf::Event::MouseButtonPressed){
+            if(event.key.code == sf::Mouse::Left){
+                sf::Vector2i mousePosition = sf::Vector2i (sf::Mouse::getPosition(*targetWindow));
+                sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
+
+                mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x * Game::getGame()->getHero()->getScale().x/2.0f;
+                mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y * Game::getGame()->getHero()->getScale().y/2.0f;
+
+                std::cout<<"Mouse Position X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
+
+                std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
+                Game::getGame()->getMapHandler()->getMap()->addBullet(b);
+
+            }
         }
     }
 
@@ -94,6 +108,9 @@ void PlayState::generateFrame() {
        } else
            move.x = 0;
 
+    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets())
+        bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
+
        targetWindow->clear();
 
        AssetManager::setBackground(targetWindow, move.x);
@@ -118,8 +135,8 @@ void PlayState::generateMap(){
         targetWindow->draw(*enemy);
     for(const auto& collectable : Game::getGame()->getMapHandler()->getMap()->getCollectables())
         targetWindow->draw(*collectable);
-    //for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets())
-     //   targetWindow->draw(*bullet);
+    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets())
+        targetWindow->draw(*bullet);
 }
 
 

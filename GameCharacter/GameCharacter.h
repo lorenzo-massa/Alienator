@@ -25,7 +25,7 @@ public:
 
     virtual void jump();
 
-    virtual void shot(Weapon* weapon);
+    virtual std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition);
 
     sf::Vector2f getPos() const;
     void setPos(sf::Vector2f pos);
@@ -33,8 +33,8 @@ public:
     int getHealthPoint() const;
     void setHealthPoint(int healthPoint);
 
-    Weapon* getWeapon();
-    void setWeapon(Weapon* weapon);
+    std::shared_ptr<Weapon> getWeapon() const;
+    void setWeapon(std::shared_ptr<Weapon> weapon);
 
     int getArmor() const;
 
@@ -90,7 +90,7 @@ protected:
     int armor;
     sf::Vector2f speed;
     int ammo;
-    Weapon * weapon;
+    std::shared_ptr<Weapon> weapon;
     float direction;
     std::string strTexture;
 

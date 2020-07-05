@@ -33,6 +33,11 @@ public:
     std::shared_ptr<Collectable> getCollectable(int i);
     std::vector<std::shared_ptr<Collectable>> getCollectables();
 
+    void addBullet(std::shared_ptr<Bullet> b);
+    void removeBullet(int i);
+    std::shared_ptr<Bullet> getBullet(int i);
+    std::vector<std::shared_ptr<Bullet>> getBullets();
+
 
     int getN() const;
     int getM() const;
@@ -42,6 +47,7 @@ private:
     std::vector<std::shared_ptr<Enemy>> enemies;
     std::vector<std::shared_ptr<Collectable>> collectables;
     std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
+    std::vector<std::shared_ptr<Bullet>> bullets;
     int n;
     int m;
 };
