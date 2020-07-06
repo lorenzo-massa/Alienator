@@ -478,7 +478,7 @@ void PlayState::checkCollectables(){
 
 void PlayState::checkBullets(){
     int i=0, hp = 0;
-    bool deleted = false;
+    bool deleted = false, killedHero = false;
     for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){
         bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
         deleted = false;
@@ -490,8 +490,10 @@ void PlayState::checkBullets(){
             deleted = true;
             hp = Game::getGame()->getHero()->receiveDamage(bullet->getDamage());
             Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
-            if(hp < 1)
-                Game::getGame()->killHero();
+            if(hp < 1){
+                //Game::getGame()->killHero();
+                killedHero = true;
+            }
             //std::cout<<"Removed for hero"<<std::endl;
         }else{
             if(!deleted){
@@ -521,6 +523,11 @@ void PlayState::checkBullets(){
         //std::cout<<"i: "<<i<<std::endl;
         i++;
     }
+
+    if(killedHero)
+        Game::getGame()->killHero();
+
+
 }
 
 bool PlayState::spriteInView(sf::Sprite sprite)
