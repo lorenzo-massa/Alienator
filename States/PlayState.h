@@ -46,6 +46,7 @@ private:
 
     bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
 
+    bool spriteInView(sf::Sprite sprite);
 };
 
 

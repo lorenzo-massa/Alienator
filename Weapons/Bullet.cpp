@@ -25,22 +25,11 @@ Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam
     int directionX = 0;
     int directionY = 0;
 
-    /*if(mousePosition.x > x){
-        directionX = 1;
-    } else {
-        directionX = -1;
-    }
-
-    if(mousePosition.y > y){
-        directionY = 1;
-    } else {
-        directionY = -1;
-    }
-     */
+    /*
     std::cout<<"Mouse X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
     std::cout<<"Hero X: "<<playerPosition.x<<" Y: "<<playerPosition.y<<std::endl;
     std::cout<<"Direction X: "<<directionX<<" Y: "<<directionY<<std::endl;
-
+    */
 
     currentSpeed.x= dirNorm.x * maxSpeed;
     currentSpeed.y= dirNorm.y * maxSpeed;

@@ -108,8 +108,19 @@ void PlayState::generateFrame() {
        } else
            move.x = 0;
 
-    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets())
+       int cont=0;
+    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){
         bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
+        if (!spriteInView(*bullet)){
+            Game::getGame()->getMapHandler()->getMap()->removeBullet(cont);
+            std::cout<<"Removed"<<std::endl;
+        }
+
+        //if(checkCollision(bullet, Game::getGame()->getHero()))
+         //   bullet->notifyObservers(cont);
+        std::cout<<cont<<std::endl;
+        cont++;
+    }
 
        targetWindow->clear();
 
@@ -439,6 +450,19 @@ void PlayState::checkCollectables(){
             collectable->notifyObservers(i);
         i++;
     }
+}
+
+bool PlayState::spriteInView(sf::Sprite sprite)
+{
+    sf::Vector2f viewSize(targetWindow->getView().getSize());
+    sf::Vector2f viewCenter(targetWindow->getView().getCenter());
+
+    sf::Vector2i spritePosition = sf::Vector2i (sprite.getPosition());
+
+    if(fabs(spritePosition.x - viewCenter.x) > viewSize.x/2 || fabs(spritePosition.y - viewCenter.y) > viewSize.y/2 )
+        return false;
+    else
+        return true;
 }
 
 int PlayState::getAction() const {
