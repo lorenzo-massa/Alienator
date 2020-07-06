@@ -19,8 +19,8 @@ public:
 
     sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
-    bool patrol(float deltaT, float directionX,sf::Sprite hero,sf::Vector2f* move);
-    bool fight(bool found,sf::Sprite hero,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet>* b/*,bool collision*/);
+    bool patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vector2f* move);
+    std::shared_ptr<Bullet> fight(bool found,sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/);
 
 private:
     EnemyBehavior behavior;

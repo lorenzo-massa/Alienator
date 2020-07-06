@@ -33,6 +33,8 @@ private:
     int action;
     std::shared_ptr<sf::Clock> clock;
     std::shared_ptr<sf::Clock> clockEnemies;
+    std::shared_ptr<sf::Clock> directionClock;
+    std::shared_ptr<sf::Clock> combactClock;
 
     void generateMap();
 
@@ -47,6 +49,8 @@ private:
     bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
 
     bool spriteInView(sf::Sprite sprite);
+
+    bool patrolClock();
 };
 
 

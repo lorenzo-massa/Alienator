@@ -10,20 +10,20 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp,sf::Vector2f pat
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
         behavior = Wizard();
-        patrolDistance.x=64.0f*5.0f;
+        patrolDistance.x=64.0f*30.0f;
         patrolDistance.y=64.0f*2.0f;
     } else if (strBehavior == "Sentinel"){
         setTexture(AssetManager::textures.at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
         behavior = Sentinel();
-        patrolDistance.x=64.0f*7.0f;
+        patrolDistance.x=64.0f*30.0f;
         patrolDistance.y=64.0f*2.0f;
 
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
         behavior = Guard();
-        patrolDistance.x=64.0f*4.0f;
+        patrolDistance.x=64.0f*30.0f;
         patrolDistance.y=64.0f*2.0f;
     }
     setPosition(pos);
@@ -41,55 +41,61 @@ std::shared_ptr<Bullet> Enemy::shot(sf::Vector2f mousePosition) {
     return GameCharacter::shot(mousePosition);
 }
 
-bool Enemy::patrol(float deltaT, float directionX,sf::Sprite hero,sf::Vector2f* move) {
+bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vector2f* move) {
 
 
         bool found=false;
 
         if(directionX>0){
-            if( hero.getPosition().x<patrolDistance.x) {
-                if( hero.getPosition().y>patrolDistance.y){
+
+            if(heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x+patrolDistance.x>heroPos.x) {
+                /*if( hero.getPosition().y>patrolDistance.y){*/
                 found = true;
                 return found;
-                }
+               // }
             }
         }
-        else
-        if( hero.getPosition().x>-1*patrolDistance.x){
-            if( hero.getPosition().y>patrolDistance.y)
-            {
-                found=true;
+        else if (directionX<0){
+            if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x > -1 * patrolDistance.x + sf::Sprite::getPosition().x) {
+                /* if( hero.getPosition().y>patrolDistance.y)
+                 {*/
+                found = true;
                 return found;
+                //}
             }
         }
 
-            *move = Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT);
+        move->x = Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).x;
+        move->y=Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).y;
+
 
         return found;
 
 }
 
-bool Enemy::fight(bool found,sf::Sprite hero,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet>* b/*,bool collision*/) {
+std::shared_ptr<Bullet> Enemy::fight(bool found,sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/) {
 
-    bool shot= false;
+
     if(found){
 
-        if(hero.getPosition().x<Enemy::getPosition().x){
-            *move = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT);
-            *b=Enemy::shot(hero.getPosition());
-            shot=true;
+        if(heroPos.x<Enemy::getPosition().x){
+            move->x = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).x;
+            move->y=Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).y;
+            b=Enemy::shot(heroPos);
+
         }
         else{
-            *move = Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT);
-            *b=Enemy::shot(hero.getPosition());
-            shot=true;
+            move->x = Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).x;
+            move->y=Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).y;
+            b=Enemy::shot(heroPos);
+
         }
-        if(hero.getPosition().y<Enemy::getPosition().y){
+        if(heroPos.y<Enemy::getPosition().y){
            /* if(collision){
                 Enemy::jump();
             }*/
         }
     }
 
-    return shot;
+    return b;
 }

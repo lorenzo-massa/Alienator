@@ -17,6 +17,8 @@ PlayState::PlayState(std::shared_ptr<sf::RenderWindow> targetWindow, int level) 
     action = 0;
     clock = std::make_shared<sf::Clock>();
     clockEnemies = std::make_shared<sf::Clock>();
+    directionClock = std::make_shared<sf::Clock>();
+    combactClock = std::make_shared<sf::Clock>();
 
     sf::View tempView = targetWindow->getView();
     tempView.setCenter(tempView.getSize().x/2 - Game::getGame()->getHero()->sf::Sprite::getPosition().x,tempView.getSize().y/2);
@@ -112,23 +114,28 @@ void PlayState::generateFrame() {
        else
            move.x = 0;
 
-    float directionTimer;
+    float direction;
     float clockSaver;
     for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies())
     {
         sf::Vector2f moveEnemy=sf::Vector2f(0,0);
-        bool found=false;
-        bool shot=false;
-        std::shared_ptr<Bullet>* b= nullptr;
+        bool found;
+        std::shared_ptr<Bullet> b= nullptr;
         /*if(directionTimer<4.0f){
         directionTimer+=directionTimer/Game::getGame()->getClock()->getElapsedTime().asSeconds();
         }*/
-        found=enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(),1.0f,*(Game::getGame()->getHero()),&moveEnemy);
-        shot=enemy->fight(found,*(Game::getGame()->getHero()),&moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds(),b);
+        if(patrolClock()){
+            direction=-1.0f;
+        }
+        else{
+            direction=1.0f;
+        }
+        found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(),direction,sf::Vector2f(Game::getGame()->getHero()->getPosition()),&moveEnemy);
+        b = enemy->fight(found,sf::Vector2f(Game::getGame()->getHero()->getPosition()),&moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds(),b);
         moveEnemy = isLegalMovement(enemy,sf::Vector2f(moveEnemy));
         enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-        if(shot){
-            Game::getGame()->getMapHandler()->getMap()->addBullet(*b);
+        if(b!= nullptr){
+            Game::getGame()->getMapHandler()->getMap()->addBullet(b);
         }
     }
 
@@ -145,6 +152,7 @@ void PlayState::generateFrame() {
         std::cout<<cont<<std::endl;
         cont++;
     }
+
 
        targetWindow->clear();
 
@@ -263,6 +271,7 @@ void PlayState::animationEnemies(){
         }
     }
 }
+
 
 sf::Vector2f PlayState::isLegalMovement(std::shared_ptr<GameCharacter> entity, sf::Vector2f move){
     sf::Vector2f moving = move;
@@ -512,3 +521,14 @@ const std::shared_ptr<sf::Clock> &PlayState::getClockEnemies() const {
 void PlayState::setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies) {
     PlayState::clockEnemies = clockEnemies;
 }
+
+bool PlayState::patrolClock() {
+    if(directionClock->getElapsedTime().asSeconds()>3.0f)
+    {
+        if(directionClock->getElapsedTime().asSeconds()>6.0f)
+            directionClock->restart();
+        return true;
+    }
+    return false;
+}
+
