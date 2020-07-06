@@ -1,5 +1,5 @@
 //
-// Created by th3lo on 31/05/2020.
+// Created by Lorenzo Massa on 31/05/2020.
 //
 
 #ifndef ALIENATOR_PLAYSTATE_H
@@ -51,6 +51,8 @@ private:
     bool spriteInView(sf::Sprite sprite);
 
     bool patrolClock();
+
+    void checkBullets();
 };
 
 

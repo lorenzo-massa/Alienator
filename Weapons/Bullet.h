@@ -26,8 +26,16 @@ public:
     void setDamage(int damage);
 
     bool isFriendly() const;
-
     void setFriendly(bool friendly);
+
+    void setPosX1(float posX);
+    void setPosY1(float posY);
+
+    const sf::Vector2f &getCurrentSpeed() const;
+    void setCurrentSpeed(const sf::Vector2f &currentSpeed);
+
+    float getMaxSpeed() const;
+    void setMaxSpeed(float maxSpeed);
 
 private:
     float posX;

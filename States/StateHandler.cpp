@@ -10,7 +10,6 @@ StateHandler::StateHandler() {
 }
 
 void StateHandler::addState(const std::shared_ptr<GameState> &topState) {
-    //stateBuffer = NULL
     stateBuffer.push(topState);
 }
 

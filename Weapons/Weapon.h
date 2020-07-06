@@ -11,7 +11,7 @@
 class Weapon {
 public:
     Weapon();
-    explicit Weapon(int d=10,float fR=1.0);
+    Weapon(int d=10,float fR=1.0);
     virtual ~Weapon(){}
 
     std::shared_ptr<Bullet> fire(int x, int y, int damage, sf::Vector2f mousePosition) const;

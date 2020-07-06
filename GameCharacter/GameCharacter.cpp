@@ -7,14 +7,14 @@
 
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
 healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){
-    weapon = std::make_shared<Weapon>(10, 1.5f);
+    weapon = std::make_shared<Weapon>(10, 0.7f);
 }
 
 int GameCharacter::receiveDamage(int points ) {
-    if(!invincibility)
-        healthPoint -= (points/armor);
+    if(invincibility == false)
+        healthPoint -= points/armor;
 
-        return (points/armor);
+    return healthPoint;
 }
 
 sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {

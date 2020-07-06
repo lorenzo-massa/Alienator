@@ -8,8 +8,8 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam),posX(x),posY(y){
-    maxSpeed = 15.0f;
+Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam),posX(x),posY(y), friendly(false){
+    maxSpeed = 18.0f;
     currentSpeed = sf::Vector2f(0,0);
 
     setTexture(AssetManager::textures.at("Bullet"));
@@ -22,18 +22,8 @@ Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam
     dirNorm.x = dir.x / sqrt(pow(dir.x, 2) + pow(dir.y, 2));
     dirNorm.y = dir.y / sqrt(pow(dir.x, 2) + pow(dir.y, 2));
 
-    int directionX = 0;
-    int directionY = 0;
-
-    /*
-    std::cout<<"Mouse X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
-    std::cout<<"Hero X: "<<playerPosition.x<<" Y: "<<playerPosition.y<<std::endl;
-    std::cout<<"Direction X: "<<directionX<<" Y: "<<directionY<<std::endl;
-    */
-
     currentSpeed.x= dirNorm.x * maxSpeed;
     currentSpeed.y= dirNorm.y * maxSpeed;
-
 }
 
 void Bullet::move(float dT) {
@@ -67,4 +57,28 @@ bool Bullet::isFriendly() const {
 
 void Bullet::setFriendly(bool friendly) {
     Bullet::friendly = friendly;
+}
+
+void Bullet::setPosX1(float posX) {
+    Bullet::posX = posX;
+}
+
+void Bullet::setPosY1(float posY) {
+    Bullet::posY = posY;
+}
+
+const sf::Vector2f &Bullet::getCurrentSpeed() const {
+    return currentSpeed;
+}
+
+void Bullet::setCurrentSpeed(const sf::Vector2f &currentSpeed) {
+    Bullet::currentSpeed = currentSpeed;
+}
+
+float Bullet::getMaxSpeed() const {
+    return maxSpeed;
+}
+
+void Bullet::setMaxSpeed(float maxSpeed) {
+    Bullet::maxSpeed = maxSpeed;
 }

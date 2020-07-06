@@ -16,8 +16,8 @@ public:
 
     static std::map<std::string, sf::Texture> textures;
     static std::map<std::string, std::vector<sf::IntRect>> frames;
-    static std::map<std::string, sf::SoundBuffer> sounds;
-    static std::unique_ptr<sf::Font> font;
+    //static std::map<std::string, sf::SoundBuffer> sounds;
+    static std::shared_ptr<sf::Font> font;
 
     virtual ~AssetManager() = 0;
 

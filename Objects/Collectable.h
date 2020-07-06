@@ -22,10 +22,7 @@ public:
     virtual void removeObserver(std::shared_ptr<ObserverGame> observer);
     virtual void notifyObservers(int i) const;
 
-
-
     const PowerUp &getPowerUp() const;
-
     void setPowerUp(const PowerUp &powerUp);
 
 private:
@@ -33,7 +30,6 @@ private:
     const float width {512};
 
     PowerUp powerUp;
-
     std::list<std::shared_ptr<ObserverGame>> observers;
 
 };

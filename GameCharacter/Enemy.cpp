@@ -5,7 +5,7 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp,sf::Vector2f patrolDistance): behavior(behavior),patrolDistance(patrolDistance),GameCharacter::GameCharacter(hp, 0, 100,sf::Vector2f(0,0),pos,0) {
+Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance): behavior(behavior),patrolDistance(patrolDistance),GameCharacter::GameCharacter(hp, armor, 100,sf::Vector2f(0,0),pos,0) {
     if(strBehavior == "Wizard"){
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
@@ -18,7 +18,6 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp,sf::Vector2f pat
         behavior = Sentinel();
         patrolDistance.x=64.0f*30.0f;
         patrolDistance.y=64.0f*2.0f;
-
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
         strTexture = "Red_Idle_1";

@@ -75,10 +75,13 @@ void PlayState::handleInput() {
                     mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x * Game::getGame()->getHero()->getScale().x/2.0f;
                     mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y * Game::getGame()->getHero()->getScale().y/2.0f;
 
-                    std::cout<<"Mouse Position X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
+                    //std::cout<<"Mouse Position X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
 
                     std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
-                    Game::getGame()->getMapHandler()->getMap()->addBullet(b);
+                    b->setFriendly(true);
+
+                    if (Game::getGame()->getHero()->getAmmo() >= 0)
+                            Game::getGame()->getMapHandler()->getMap()->addBullet(b);
 
                     break;
 
@@ -139,30 +142,18 @@ void PlayState::generateFrame() {
         }
     }
 
-       int cont=0;
-    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){
-        bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
-        if (!spriteInView(*bullet)){
-            Game::getGame()->getMapHandler()->getMap()->removeBullet(cont);
-            std::cout<<"Removed"<<std::endl;
-        }
-
-        //if(checkCollision(bullet, Game::getGame()->getHero()))
-         //   bullet->notifyObservers(cont);
-        std::cout<<cont<<std::endl;
-        cont++;
-    }
+    checkBullets();
 
 
-       targetWindow->clear();
+   targetWindow->clear();
 
-       AssetManager::setBackground(targetWindow, move.x);
+   AssetManager::setBackground(targetWindow, move.x);
 
-       generateMap();
+   generateMap();
 
-       generateGUI(move.x);
-       
-       checkCollectables();
+   generateGUI(move.x);
+
+   checkCollectables();
 
     if (Game::getGame()->getHero()->getClockPowerUp().getElapsedTime().asSeconds() > 10 && Game::getGame()->getHero()->isPowerUpState())
         Game::getGame()->getHero()->removePowerUp();
@@ -198,7 +189,7 @@ void PlayState::generateGUI(float& xT){
     //Munitions
     sf::Sprite currentAmmoSprite;
     currentAmmoSprite.setTexture(AssetManager::textures.at("MUNITIONS"));
-    currentAmmoSprite.setPosition(health.getPosition().x + health.getSize().x + 50, health.getPosition().y - 5);
+    currentAmmoSprite.setPosition(line.getPosition().x + line.getSize().x + 50, line.getPosition().y - 5);
     currentAmmoSprite.setScale(0.05,0.05);
 
     sf::Text nMunitions;
@@ -481,6 +472,53 @@ void PlayState::checkCollectables(){
     for(const auto& collectable : Game::getGame()->getMapHandler()->getMap()->getCollectables()){
         if(checkCollision(collectable, Game::getGame()->getHero()))
             collectable->notifyObservers(i);
+        i++;
+    }
+}
+
+void PlayState::checkBullets(){
+    int i=0, hp = 0;
+    bool deleted = false;
+    for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){
+        bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
+        deleted = false;
+        if (!spriteInView(*bullet)){
+            deleted = true;
+            Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
+            //std::cout<<"Removed or view"<<std::endl;
+        }else if(checkCollision(bullet, Game::getGame()->getHero()) && !bullet->isFriendly()) {
+            deleted = true;
+            hp = Game::getGame()->getHero()->receiveDamage(bullet->getDamage());
+            Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
+            if(hp < 1)
+                Game::getGame()->killHero();
+            //std::cout<<"Removed for hero"<<std::endl;
+        }else{
+            if(!deleted){
+                for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()){
+                    if(checkCollision(bullet, enemy) && bullet->isFriendly() && !deleted){
+                        deleted = true;
+                        hp = enemy->receiveDamage(bullet->getDamage());
+                        //std::cout<<"Enemy hp: "<<hp<<std::endl;
+                        if(hp < 1)
+                            Game::getGame()->getMapHandler()->getMap()->removeEnemy(i);
+                        Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
+                        //std::cout<<"Removed for enemy"<<std::endl;
+                    }
+                }
+            }
+            if(!deleted){
+                for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
+                    if(checkCollision(bullet, block) && !deleted){
+                        deleted = true;
+                        Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
+                        //std::cout<<"Removed for block"<<std::endl;
+                    }
+                }
+            }
+
+        }
+        //std::cout<<"i: "<<i<<std::endl;
         i++;
     }
 }

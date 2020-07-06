@@ -6,9 +6,9 @@
 
 std::map<std::string, sf::Texture> AssetManager::textures = std::map<std::string, sf::Texture>();
 std::map<std::string, std::vector<sf::IntRect>> AssetManager::frames = std::map<std::string, std::vector<sf::IntRect>>();
-std::map<std::string, sf::SoundBuffer> AssetManager::sounds = std::map<std::string, sf::SoundBuffer>();
+//std::map<std::string, sf::SoundBuffer> AssetManager::sounds = std::map<std::string, sf::SoundBuffer>();
 
-std::unique_ptr<sf::Font> AssetManager::font = nullptr;
+std::shared_ptr<sf::Font> AssetManager::font = nullptr;
 
 float AssetManager::xBackground = 0;
 
@@ -87,7 +87,7 @@ void AssetManager::load() {
         textures.insert(std::make_pair("Red_Idle_3", texture));
 
 
-        font = std::make_unique<sf::Font>();
+        font = std::make_shared<sf::Font>();
         font->loadFromFile("Assets/Font/youre gone.ttf");
 
 

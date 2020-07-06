@@ -25,6 +25,7 @@ void Hero::setCoins(int coins) {
 }
 
 std::shared_ptr<Bullet> Hero::shot(sf::Vector2f mousePosition) {
+    ammo--;
     return GameCharacter::shot(mousePosition);
 }
 

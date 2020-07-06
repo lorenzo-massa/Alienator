@@ -14,7 +14,7 @@
 
 class Enemy : virtual public GameCharacter{
 public:
-    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp,sf::Vector2f patrolDistance);
+    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance);
     ~Enemy();
 
     sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
