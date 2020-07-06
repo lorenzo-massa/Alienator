@@ -65,17 +65,20 @@ void PlayState::handleInput() {
 
             }
         } else if (event.type == sf::Event::MouseButtonPressed){
-            if(event.key.code == sf::Mouse::Left){
-                sf::Vector2i mousePosition = sf::Vector2i (sf::Mouse::getPosition(*targetWindow));
-                sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
+            switch(event.key.code) {
+                case sf::Mouse::Left:
+                    sf::Vector2i mousePosition = sf::Vector2i (sf::Mouse::getPosition(*targetWindow));
+                    sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
 
-                mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x * Game::getGame()->getHero()->getScale().x/2.0f;
-                mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y * Game::getGame()->getHero()->getScale().y/2.0f;
+                    mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x * Game::getGame()->getHero()->getScale().x/2.0f;
+                    mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y * Game::getGame()->getHero()->getScale().y/2.0f;
 
-                std::cout<<"Mouse Position X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
+                    std::cout<<"Mouse Position X: "<<mousePosition.x<<" Y: "<<mousePosition.y<<std::endl;
 
-                std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
-                Game::getGame()->getMapHandler()->getMap()->addBullet(b);
+                    std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
+                    Game::getGame()->getMapHandler()->getMap()->addBullet(b);
+
+                    break;
 
             }
         }
@@ -105,8 +108,29 @@ void PlayState::generateFrame() {
                 Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
            tempView.move(move.x, 0);
            targetWindow->setView(tempView);
-       } else
+       }
+       else
            move.x = 0;
+
+    float directionTimer;
+    float clockSaver;
+    for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies())
+    {
+        sf::Vector2f moveEnemy=sf::Vector2f(0,0);
+        bool found=false;
+        bool shot=false;
+        std::shared_ptr<Bullet>* b= nullptr;
+        /*if(directionTimer<4.0f){
+        directionTimer+=directionTimer/Game::getGame()->getClock()->getElapsedTime().asSeconds();
+        }*/
+        found=enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(),1.0f,*(Game::getGame()->getHero()),&moveEnemy);
+        shot=enemy->fight(found,*(Game::getGame()->getHero()),&moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds(),b);
+        moveEnemy = isLegalMovement(enemy,sf::Vector2f(moveEnemy));
+        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+        if(shot){
+            Game::getGame()->getMapHandler()->getMap()->addBullet(*b);
+        }
+    }
 
        int cont=0;
     for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){

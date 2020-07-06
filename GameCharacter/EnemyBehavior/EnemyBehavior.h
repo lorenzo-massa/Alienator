@@ -8,10 +8,11 @@
 #include <memory>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
+//#include"../Enemy.h"
 
 class EnemyBehavior {
 public:
     virtual bool patrol(sf::Sprite hero,sf::Sprite enemy ,float deltaT, float directionX);
-    virtual void fight();
+    virtual void fight(/*bool found*/);
 };
 #endif //ALIENATOR_ENEMYBEHAVIOR_H

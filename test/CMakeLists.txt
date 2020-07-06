@@ -70,17 +70,17 @@ link_directories(SFML-2.5.1/bin)
 
 set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
 
-find_package(SFML 2.5 COMPONENTS audio graphics window system)
-include_directories(SFML-2.5.1/include)
-include_directories(Assets)
+##find_package(SFML 2.5 COMPONENTS audio graphics window system)
+##include_directories(SFML-2.5.1/include)
+##include_directories(Assets)
 ##
 
 
 
 
-add_executable(runTests ${SOURCE_FILES})
-target_link_libraries(runTests
-        gtest
-        gtest_main
-        sfml-audio sfml-graphics sfml-window sfml-system
-        )
+##add_executable(runTests ${SOURCE_FILES})
+##target_link_libraries(runTests
+        ##gtest
+        ##gtest_main
+        ##sfml-audio sfml-graphics sfml-window sfml-system
+        ##)

@@ -14,13 +14,17 @@
 
 class Enemy : virtual public GameCharacter{
 public:
-    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp);
+    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp,sf::Vector2f patrolDistance);
     ~Enemy();
 
-    sf::Vector2f move(sf::Vector2f direction, float delatT) override;
+    sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
+    std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
+    bool patrol(float deltaT, float directionX,sf::Sprite hero,sf::Vector2f* move);
+    bool fight(bool found,sf::Sprite hero,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet>* b/*,bool collision*/);
 
 private:
     EnemyBehavior behavior;
+    sf::Vector2f patrolDistance;
 };
 
 #endif //ALIENATOR_ENEMY_H
