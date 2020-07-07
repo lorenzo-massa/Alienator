@@ -52,6 +52,8 @@ private:
 
     bool patrolClock();
 
+    bool fireClock(float fireRate);
+
     void checkBullets();
 
     void checkFinished();

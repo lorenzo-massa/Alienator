@@ -5,25 +5,25 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance): behavior(behavior),patrolDistance(patrolDistance),GameCharacter::GameCharacter(hp, armor, 100,sf::Vector2f(0,0),pos,0) {
+Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance,std::string behavior): patrolDistance(patrolDistance),GameCharacter::GameCharacter(hp, armor, 100,sf::Vector2f(0,0),pos,1.0f),behavior(behavior) {
     if(strBehavior == "Wizard"){
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
-        behavior = Wizard();
-        patrolDistance.x=64.0f*30.0f;
-        patrolDistance.y=64.0f*2.0f;
+        //behavior = Wizard();
+       // patrolDistance.x=10.0f;
+        //patrolDistance.y=16.0f;
     } else if (strBehavior == "Sentinel"){
         setTexture(AssetManager::textures.at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
-        behavior = Sentinel();
-        patrolDistance.x=64.0f*30.0f;
-        patrolDistance.y=64.0f*2.0f;
+        //behavior = Sentinel();
+       // patrolDistance.x=10.0f;
+        //patrolDistance.y=16.0f;
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
-        behavior = Guard();
-        patrolDistance.x=64.0f*30.0f;
-        patrolDistance.y=64.0f*2.0f;
+       //behavior = Guard();
+        //patrolDistance.x=10.0f;
+        //patrolDistance.y=16.0f;
     }
     setPosition(pos);
     setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
@@ -46,21 +46,22 @@ bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vecto
         bool found=false;
 
         if(directionX>0){
-
+            std::cout<<"(-1)Hy:"<<heroPos.y<<"    Sy"<<sf::Sprite::getPosition().y<<"    Sy+Pd"<<sf::Sprite::getPosition().y+patrolDistance.y<<"\n";
             if(heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x+patrolDistance.x>heroPos.x) {
-                /*if( hero.getPosition().y>patrolDistance.y){*/
+
+                if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
                 found = true;
                 return found;
-               // }
+               }
             }
         }
         else if (directionX<0){
-            if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x > -1 * patrolDistance.x + sf::Sprite::getPosition().x) {
-                /* if( hero.getPosition().y>patrolDistance.y)
-                 {*/
+            if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x >sf::Sprite::getPosition().x-patrolDistance.x) {
+                std::cout<<"(-1)Hy:"<<heroPos.y<<"    Sy"<<sf::Sprite::getPosition().y<<"    Sy+Pd"<<sf::Sprite::getPosition().y+patrolDistance.y<<"\n";
+                if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
                 found = true;
                 return found;
-                //}
+                }
             }
         }
 
@@ -72,10 +73,8 @@ bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vecto
 
 }
 
-std::shared_ptr<Bullet> Enemy::fight(bool found,sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/) {
+std::shared_ptr<Bullet> Enemy::fight(sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/) {
 
-
-    if(found){
 
         if(heroPos.x<Enemy::getPosition().x){
             move->x = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).x;
@@ -94,7 +93,13 @@ std::shared_ptr<Bullet> Enemy::fight(bool found,sf::Vector2f heroPos,sf::Vector2
                 Enemy::jump();
             }*/
         }
-    }
-
     return b;
+}
+
+const std::string &Enemy::getBehavior() const {
+    return behavior;
+}
+
+void Enemy::setBehavior(const std::string &behavior) {
+    Enemy::behavior = behavior;
 }

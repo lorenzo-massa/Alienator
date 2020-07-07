@@ -14,16 +14,20 @@
 
 class Enemy : virtual public GameCharacter{
 public:
-    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance);
+    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f patrolDistance,std::string behavior);
     ~Enemy();
 
     sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
     bool patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vector2f* move);
-    std::shared_ptr<Bullet> fight(bool found,sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/);
+    std::shared_ptr<Bullet> fight(sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/);
+
+    const std::string &getBehavior() const;
+
+    void setBehavior(const std::string &behavior);
 
 private:
-    EnemyBehavior behavior;
+    std::string behavior;
     sf::Vector2f patrolDistance;
 };
 
