@@ -49,6 +49,8 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images//Object/bullet.png");
         textures.insert(std::make_pair("Bullet", texture));
 
+        texture.loadFromFile("Assets/Images//Object/portal.png");
+        textures.insert(std::make_pair("PORTAL", texture));
 
         const int nTiles = 16;
         for (int i = 1; i < nTiles+1; ++i) {

@@ -37,6 +37,7 @@ void MapHandler::loadLevel(int x) {
                     std::shared_ptr<Block> b;
                     std::shared_ptr<Collectable> coll;
                     std::shared_ptr<Enemy> enemy;
+                    std::shared_ptr<sf::Sprite> p;
 
 
                     switch (c) {
@@ -131,6 +132,14 @@ void MapHandler::loadLevel(int x) {
                         case 'O':
                             enemy = std::make_shared<Enemy>("Wizard",sf::Vector2f(j * 64.0f, i * 64.0f), 20,3,sf::Vector2f(15*64.0f,1));
                             map->addEnemy(enemy);
+                            break;
+                        case 'Q':
+                            p = std::make_shared<sf::Sprite>();
+                            p->setPosition(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            p->setTexture(AssetManager::textures.at("PORTAL"));
+                            p->setTextureRect(sf::IntRect(0,0,464,742));
+                            p->setScale(sf::Vector2f(0.15,0.17));
+                            map->setPortal(p);
                             break;
                         case 'X':
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "COINS");

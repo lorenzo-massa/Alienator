@@ -53,6 +53,8 @@ private:
     bool patrolClock();
 
     void checkBullets();
+
+    void checkFinished();
 };
 
 

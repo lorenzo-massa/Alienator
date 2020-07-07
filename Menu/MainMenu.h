@@ -45,6 +45,10 @@ public:
     const MenuItem::TYPE& getAction() const;
 
 
+    void forwardLevel();
+
+    void backwardLevel();
+
 private:
     int active {0};
     int count {0};

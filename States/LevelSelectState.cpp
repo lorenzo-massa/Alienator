@@ -21,25 +21,29 @@ void LevelSelectState::handleInput() {
         }
         else if(event.type == sf::Event::KeyPressed) {
             if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
-                mainMenu.backward();
+                mainMenu.backwardLevel();
             if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
-                mainMenu.forward();
+                mainMenu.forwardLevel();
             if(event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::LEVEL_1:
                         Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow,1));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_2:
-
+                        if(!Game::getGame()->getLevelCompleted()[0])
+                            std::cout<<"You have to complete level 1"<<std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_3:
-
+                        if(!Game::getGame()->getLevelCompleted()[1])
+                            std::cout<<"You have to complete level 2"<<std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_4:
-
+                        if(!Game::getGame()->getLevelCompleted()[2])
+                            std::cout<<"You have to complete level 3"<<std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_5:
-
+                        if(!Game::getGame()->getLevelCompleted()[3])
+                            std::cout<<"You have to complete level 4"<<std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::BACK:
                         Game::getGame()->getStateHandler()->removeState();

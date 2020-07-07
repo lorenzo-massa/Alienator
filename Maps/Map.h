@@ -42,12 +42,16 @@ public:
     int getN() const;
     int getM() const;
 
+    const std::shared_ptr<sf::Sprite> &getPortal() const;
+
+    void setPortal(const std::shared_ptr<sf::Sprite> &portal);
 
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;
     std::vector<std::shared_ptr<Collectable>> collectables;
     std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
     std::vector<std::shared_ptr<Bullet>> bullets;
+    std::shared_ptr<sf::Sprite> portal;
     int n;
     int m;
 };

@@ -8,6 +8,7 @@
 GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
 healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){
     weapon = std::make_shared<Weapon>(10, 0.7f);
+    typePowerUp = "";
 }
 
 int GameCharacter::receiveDamage(int points ) {
@@ -178,8 +179,17 @@ void GameCharacter::removePowerUp() {
     fireRateBoost = 1.0f;
     damageBoost = 1.0f;
 
+    typePowerUp = "";
     powerUpState = false;
-    std::cout<<"Power Up removed!"<<std::endl;
+    //std::cout<<"Power Up removed!"<<std::endl;
+}
+
+const std::string &GameCharacter::getTypePowerUp() const {
+    return typePowerUp;
+}
+
+void GameCharacter::setTypePowerUp(const std::string &typePowerUp) {
+    GameCharacter::typePowerUp = typePowerUp;
 }
 
 

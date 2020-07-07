@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "MainMenu.h"
+#include "../Engine/Game.h"
 
 MainMenu::MenuItem::MenuItem(MainMenu::MenuItem::TYPE type) : type(type){
     std::string btnText;
@@ -69,11 +70,32 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         count = itemList.size();
     } else if (style == MainMenu::STYLE::LEVELS) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_1));
+        if(Game::getGame()->getLevelCompleted()[0])
+            itemList[0]->setFillColor(sf::Color::White);
+        else
+            itemList[0]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_2));
+        if(Game::getGame()->getLevelCompleted()[1])
+            itemList[1]->setFillColor(sf::Color::White);
+        else
+            itemList[1]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_3));
+        if(Game::getGame()->getLevelCompleted()[2])
+            itemList[2]->setFillColor(sf::Color::White);
+        else
+            itemList[2]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_4));
+        if(Game::getGame()->getLevelCompleted()[3])
+            itemList[3]->setFillColor(sf::Color::White);
+        else
+            itemList[3]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_5));
+        if(Game::getGame()->getLevelCompleted()[4])
+            itemList[4]->setFillColor(sf::Color::White);
+        else
+            itemList[4]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::BACK));
+        itemList[5]->setFillColor(sf::Color::White);
         itemList[active]->setFillColor(sf::Color::Green);
         count = itemList.size();
     } else std::cerr << "Error: Menu not found";
@@ -106,6 +128,31 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
         window->draw(*i);
     }
 
+}
+
+void MainMenu::forwardLevel() {
+    if(active == 5)
+        itemList[active]->setFillColor(sf::Color::White);
+    else if(Game::getGame()->getLevelCompleted()[active])
+        itemList[active]->setFillColor(sf::Color::White);
+    else
+        itemList[active]->setFillColor(sf::Color::Yellow);
+    if (active >= count - 1)
+        active = 0;
+    else active++;
+    itemList[active]->setFillColor(sf::Color::Green);
+}
+void MainMenu::backwardLevel() {
+    if(active == 5)
+        itemList[active]->setFillColor(sf::Color::White);
+    else if(Game::getGame()->getLevelCompleted()[active])
+        itemList[active]->setFillColor(sf::Color::White);
+    else
+        itemList[active]->setFillColor(sf::Color::Yellow);
+    if (active == 0)
+        active = count - 1;
+    else active--;
+    itemList[active]->setFillColor(sf::Color::Green);
 }
 
 void MainMenu::forward() {

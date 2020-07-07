@@ -13,6 +13,9 @@ Game::Game(){
     gameWindow = nullptr;
     ptrMapHandler = std::make_shared<MapHandler>();
     clock = std::make_shared<sf::Clock>();
+
+    for(int i = 0; i < 5; i++)
+        levelCompleted.push_back(false);
 }
 Game::~Game() = default;
 
@@ -27,13 +30,17 @@ const std::shared_ptr<sf::RenderWindow>& Game::getWindow() const {
 }
 
 void Game::init() {
+
     if(gameWindow == nullptr) {
         //gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME, sf::Style::Fullscreen);
         gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME);
         gameWindow->setVerticalSyncEnabled(true);
         gameWindow->setFramerateLimit(FPS);
+        std::cout<<"All textures are loaded!"<<std::endl;
+
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
         AssetManager::load();
+        std::cout<<"All textures are loaded!"<<std::endl;
 
         srand (time(NULL));
 
@@ -123,24 +130,28 @@ void Game::update(int i) {
         ptrHero->removePowerUp();
         ptrHero->setFireRateBoost(1.5f);
         ptrHero->setPowerUpState(true);
+        ptrHero->setTypePowerUp("FIRE_RATE");
         ptrHero->resetClockPowerUp();
     }
     else if(typeString == "SPEED") {
         ptrHero->removePowerUp();
         ptrHero->setSpeedBoost(1.5f);
         ptrHero->setPowerUpState(true);
+        ptrHero->setTypePowerUp("SPEED");
         ptrHero->resetClockPowerUp();
     }
     else if(typeString == "DAMAGE_BOOST") {
         ptrHero->removePowerUp();
         ptrHero->setDamageBoost(1.5f);
         ptrHero->setPowerUpState(true);
+        ptrHero->setTypePowerUp("DAMAGE_BOOST");
         ptrHero->resetClockPowerUp();
     }
     else if(typeString == "INVICIBILITY") {
         ptrHero->removePowerUp();
         ptrHero->setInvincibility(true);
         ptrHero->setPowerUpState(true);
+        ptrHero->setTypePowerUp("INVINCIBILITY");
         ptrHero->resetClockPowerUp();
     }
     else
@@ -162,6 +173,19 @@ void Game::killHero(){
         ptrStateHandler->addState(std::make_shared<PlayState>(gameWindow,level));
     else
         std::cerr<<"Error loading level"<<std::endl;
+}
+
+const std::vector<bool> &Game::getLevelCompleted() const {
+    return levelCompleted;
+}
+
+void Game::setLevelCompleted(const std::vector<bool> &levelCompleted) {
+    Game::levelCompleted = levelCompleted;
+}
+
+void Game::finishLevel (int i ){
+    levelCompleted[i-1] = true;
+    ptrStateHandler->removeState();
 }
 
 

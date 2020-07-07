@@ -83,6 +83,10 @@ public:
     void resetClockPowerUp();
     void removePowerUp();
 
+    const std::string &getTypePowerUp() const;
+
+    void setTypePowerUp(const std::string &typePowerUp);
+
 
 protected:
     sf::Vector2f pos;
@@ -101,6 +105,7 @@ protected:
     bool invincibility;
     float fireRateBoost;
     float damageBoost;
+    std::string typePowerUp;
 
 };
 

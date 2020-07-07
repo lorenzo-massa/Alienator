@@ -53,7 +53,13 @@ public:
     void removeSubject(int i);
     std::shared_ptr<SubjectGame> getSubject(int i);
 
+    const std::vector<bool> &getLevelCompleted() const;
+
+    void setLevelCompleted(const std::vector<bool> &levelCompleted);
+
     void killHero();
+
+    void finishLevel(int i);
 
 private:
     std::shared_ptr<sf::Clock> clock;
@@ -69,6 +75,7 @@ private:
 
     std::list<std::shared_ptr<SubjectGame>> subjects;
 
+    std::vector<bool> levelCompleted;
 
 };
 

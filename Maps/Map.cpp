@@ -79,3 +79,11 @@ std::shared_ptr<Bullet> Map::getBullet(int i) {
 std::vector<std::shared_ptr<Bullet>> Map::getBullets() {
     return bullets;
 }
+
+const std::shared_ptr<sf::Sprite> &Map::getPortal() const {
+    return portal;
+}
+
+void Map::setPortal(const std::shared_ptr<sf::Sprite> &portal) {
+    Map::portal = portal;
+}

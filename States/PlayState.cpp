@@ -107,9 +107,9 @@ void PlayState::generateFrame() {
 
     sf::View tempView = targetWindow->getView();
 
-       if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 500 &&
+       if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 800 &&
                 Game::getGame()->getHero()->getDirection() == -1) ||
-           (AssetManager::getXBackground() + targetWindow->getSize().x - 500 <
+           (AssetManager::getXBackground() + targetWindow->getSize().x - 800 <
                 Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
            tempView.move(move.x, 0);
            targetWindow->setView(tempView);
@@ -155,10 +155,22 @@ void PlayState::generateFrame() {
 
    checkCollectables();
 
-    if (Game::getGame()->getHero()->getClockPowerUp().getElapsedTime().asSeconds() > 10 && Game::getGame()->getHero()->isPowerUpState())
+    if (Game::getGame()->getHero()->getClockPowerUp().getElapsedTime().asSeconds() > 10 && Game::getGame()->getHero()->isPowerUpState()){
         Game::getGame()->getHero()->removePowerUp();
+    }
 
     targetWindow->draw(*Game::getGame()->getHero());
+
+    checkFinished();
+
+}
+
+void PlayState::checkFinished(){
+    if (checkCollision(Game::getGame()->getHero(), Game::getGame()->getMapHandler()->getMap()->getPortal()) &&
+    Game::getGame()->getMapHandler()->getMap()->getEnemies().size() < 1){
+        std::cout<<"Level completed!"<<std::endl;
+        Game::getGame()->finishLevel(level);
+    }
 
 }
 
@@ -171,6 +183,9 @@ void PlayState::generateMap(){
         targetWindow->draw(*collectable);
     for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets())
         targetWindow->draw(*bullet);
+
+    if(Game::getGame()->getMapHandler()->getMap()->getPortal() != nullptr)
+        targetWindow->draw(*Game::getGame()->getMapHandler()->getMap()->getPortal());
 }
 
 
@@ -216,6 +231,16 @@ void PlayState::generateGUI(float& xT){
     targetWindow->draw(nMunitions);
     targetWindow->draw(currentCoinsSprite);
     targetWindow->draw(nCoins);
+
+    sf::Text message;
+    message.setFont(*AssetManager::font);
+    message.setString(Game::getGame()->getHero()->getTypePowerUp());
+    message.setCharacterSize(25);
+    message.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x/2 - message.getLocalBounds().width/2, nCoins.getPosition().y+3);
+    if(Game::getGame()->getHero()->isPowerUpState()){
+        targetWindow->draw(message);
+    }
+
 }
 
 void PlayState::animationHero(int direction, sf::Vector2f speed){
