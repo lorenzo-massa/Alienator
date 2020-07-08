@@ -28,6 +28,12 @@ public:
 
     void setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies);
 
+    bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
+
+    void checkFinished();
+
+
+
 private:
 
     int action;
@@ -46,7 +52,6 @@ private:
 
     void checkCollectables();
 
-    bool checkCollision(std::shared_ptr<sf::Sprite> entity1, std::shared_ptr<sf::Sprite> entity2);
 
     bool spriteInView(sf::Sprite sprite);
 
@@ -56,7 +61,6 @@ private:
 
     void checkBullets();
 
-    void checkFinished();
 };
 
 

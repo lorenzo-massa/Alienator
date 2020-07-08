@@ -14,6 +14,8 @@ Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam
 
     setTexture(AssetManager::textures.at("Bullet"));
     setPosition(x+32,y+64);
+    posX += 32;
+    posY += 64;
     setScale(sf::Vector2f(0.02f,0.02f));
 
     sf::Vector2f playerPosition = sf::Vector2f (x, y);
@@ -27,6 +29,8 @@ Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam
 }
 
 void Bullet::move(float dT) {
+    posX += currentSpeed.x;
+    posY += currentSpeed.y;
     sf::Sprite::move(currentSpeed);
 }
 
