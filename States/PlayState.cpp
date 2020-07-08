@@ -49,12 +49,14 @@ void PlayState::handleInput() {
             }
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 Game::getGame()->getHero()->setDirection(-1.0f);
-                speed = Game::getGame()->getHero()->getSpeed();
+                //speed.x =10.0f*64.0f;
+                speed= Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f( speed.x,speed.y));
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                 Game::getGame()->getHero()->setDirection(1.0f);
-                speed = Game::getGame()->getHero()->getSpeed();
+                //speed.x =10.0f*64.0f; //Game::getGame()->getHero()->getSpeed();
+                speed= Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f( speed.x,speed.y));
             }
         } else if (event.type == sf::Event::KeyReleased) {

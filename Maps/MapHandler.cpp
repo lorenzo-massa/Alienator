@@ -122,15 +122,15 @@ void MapHandler::loadLevel(int x) {
                             map->addToMatrix(b);
                             break;
                         case 'M':
-                            enemy = std::make_shared<Enemy>("Guard",sf::Vector2f(j * 64.0f, i * 64.0f), 50,5,sf::Vector2f(128.0f,16.0f),"patrol");
+                            enemy = std::make_shared<Enemy>("Guard",sf::Vector2f(j * 64.0f, i * 64.0f), 50,5,sf::Vector2f(8.0f*64.0f,0),7.0f,sf::Vector2f(128.0f,32.0f),"patrol");
                             map->addEnemy(enemy);
                             break;
                         case 'N':
-                            enemy = std::make_shared<Enemy>("Sentinel",sf::Vector2f(j * 64.0f, i * 64.0f), 10,2,sf::Vector2f(192.0f,16.0f),"patrol");
+                            enemy = std::make_shared<Enemy>("Sentinel",sf::Vector2f(j * 64.0f, i * 64.0f), 10,2,sf::Vector2f(5.0f*64.0f,0),3.0f,sf::Vector2f(192.0f,32.0f),"patrol");
                             map->addEnemy(enemy);
                             break;
                         case 'O':
-                            enemy = std::make_shared<Enemy>("Wizard",sf::Vector2f(j * 64.0f, i * 64.0f), 20,3,sf::Vector2f(128.0f,16.0f),"patrol");
+                            enemy = std::make_shared<Enemy>("Wizard",sf::Vector2f(j * 64.0f, i * 64.0f), 20,3,sf::Vector2f(6.5f*64.0f,0),5.0f,sf::Vector2f(128.0f,32.0f),"patrol");
                             map->addEnemy(enemy);
                             break;
                         case 'Q':

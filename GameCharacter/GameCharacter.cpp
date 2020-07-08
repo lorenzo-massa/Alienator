@@ -5,8 +5,8 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir) :
-healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f){
+GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir,float speedCoeff) :
+healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f),speedCoeff(speedCoeff){
     weapon = std::make_shared<Weapon>(10, 3.0f);
     typePowerUp = "";
 }
@@ -22,9 +22,10 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
     float yT;
     float xT;
 
-   if(direction.x==0.0f) {   //attrito
+    if(direction.x==0.0f) {   //attrito
         if (speed.x > 0)
             speed.x -= 30.0f * 64.0f * deltaT;
+
         else if (speed.x<0)
             speed.x += 30.0f * 64.0f * deltaT;
 
@@ -32,7 +33,7 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
             speed.x=0;
     }
     if(direction.x!=0)
-        speed.x=10.0f*64.0f*direction.x;//velocità costante se tengo premuto
+        speed.x = speedCoeff*64.0f*direction.x;//velocità costante se tengo premuto
 
     xT=speed.x*deltaT;
 
