@@ -26,8 +26,13 @@ public:
 
     void setBehavior(const std::string &behavior);
 
+    const std::string &getBehaviorType() const;
+
+    void setBehaviorType(const std::string &behaviorType);
+
 private:
     std::string behavior;
+    std::string behaviorType;
     sf::Vector2f patrolDistance;
 };
 

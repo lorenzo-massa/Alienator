@@ -9,22 +9,20 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::V
     if(strBehavior == "Wizard"){
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
-        //behavior = Wizard();
        // patrolDistance.x=10.0f;
         //patrolDistance.y=16.0f;
     } else if (strBehavior == "Sentinel"){
         setTexture(AssetManager::textures.at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
-        //behavior = Sentinel();
        // patrolDistance.x=10.0f;
         //patrolDistance.y=16.0f;
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
-       //behavior = Guard();
         //patrolDistance.x=10.0f;
         //patrolDistance.y=16.0f;
     }
+    behaviorType = strBehavior;
     setPosition(pos);
     setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f,0.25f));
@@ -102,4 +100,12 @@ const std::string &Enemy::getBehavior() const {
 
 void Enemy::setBehavior(const std::string &behavior) {
     Enemy::behavior = behavior;
+}
+
+const std::string &Enemy::getBehaviorType() const {
+    return behaviorType;
+}
+
+void Enemy::setBehaviorType(const std::string &behaviorType) {
+    Enemy::behaviorType = behaviorType;
 }

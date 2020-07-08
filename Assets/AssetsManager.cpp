@@ -58,21 +58,34 @@ void AssetManager::load() {
             textures.insert(std::make_pair(std::to_string(i), texture));
         }
 
-        for (int i = 1; i < 4; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_green/Idle_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Idle_"+std::to_string(i), texture));
-        }
+        texture.loadFromFile("Assets/Images/Alien/alien_green/Idle_1.png");
+        textures.insert(std::make_pair("Idle_1", texture));
+
+        texture.loadFromFile("Assets/Images/Alien/alien_green/Idle_1_Reversed.png");
+        textures.insert(std::make_pair("Idle_1_Reversed", texture));
+
         for (int i = 1; i < 7; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_green/Walk_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Walk_"+std::to_string(i), texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_"+std::to_string(i)+".png");
+            textures.insert(std::make_pair("Run_"+std::to_string(i), texture));
+
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_"+std::to_string(i)+"_Reversed.png");
+            textures.insert(std::make_pair("Run_"+std::to_string(i)+"_Reversed", texture));
         }
 
-        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_1.png");
+        texture.loadFromFile("Assets/Images/Alien/alien_blue/Idle_1.png");
         textures.insert(std::make_pair("Blue_Idle_1", texture));
-        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_2.png");
-        textures.insert(std::make_pair("Blue_Idle_2", texture));
-        texture.loadFromFile("Assets/Images/Alien/alien_blue/Blue_Idle_3.png");
-        textures.insert(std::make_pair("Blue_Idle_3", texture));
+
+        texture.loadFromFile("Assets/Images/Alien/alien_blue/Idle_1_Reversed.png");
+        textures.insert(std::make_pair("Blue_Idle_1_Reversed", texture));
+
+        for (int i = 1; i < 7; ++i) {
+            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_"+std::to_string(i)+".png");
+            textures.insert(std::make_pair("Blue_Run_"+std::to_string(i), texture));
+
+            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_"+std::to_string(i)+"_Reversed.png");
+            textures.insert(std::make_pair("Blue_Run_"+std::to_string(i)+"_Reversed", texture));
+        }
+
 
         texture.loadFromFile("Assets/Images/Alien/alien_gray/Gray_Idle_1.png");
         textures.insert(std::make_pair("Gray_Idle_1", texture));
