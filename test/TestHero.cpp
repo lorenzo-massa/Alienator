@@ -17,7 +17,7 @@ protected:
         AssetManager::load();
         auto s = sf::Vector2f(0,0);
         auto pos = sf::Vector2f(0,0);
-        hero = new Hero(1,100,50,50,s,pos,0,0);
+        hero = new Hero(1,100,50,50,s,pos,0,1,0);
     }
 
     virtual void TearDown() {
