@@ -44,9 +44,8 @@ bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vecto
         bool found=false;
 
         if(directionX>0){
-            std::cout<<"(-1)Hy:"<<heroPos.y<<"    Sy"<<sf::Sprite::getPosition().y<<"    Sy+Pd"<<sf::Sprite::getPosition().y+patrolDistance.y<<"\n";
-            if(heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x+patrolDistance.x>heroPos.x) {
 
+            if(heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x+patrolDistance.x>heroPos.x) {
                 if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
                 found = true;
                 return found;
@@ -55,7 +54,6 @@ bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vecto
         }
         else if (directionX<0){
             if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x >sf::Sprite::getPosition().x-patrolDistance.x) {
-                std::cout<<"(-1)Hy:"<<heroPos.y<<"    Sy"<<sf::Sprite::getPosition().y<<"    Sy+Pd"<<sf::Sprite::getPosition().y+patrolDistance.y<<"\n";
                 if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
                 found = true;
                 return found;

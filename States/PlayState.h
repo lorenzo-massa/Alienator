@@ -64,6 +64,7 @@ private:
 
     void animateEnemy(std::shared_ptr<Enemy> enemy, std::string color);
 
+    void behaviorChanger();
 };
 
 
