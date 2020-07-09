@@ -8,6 +8,8 @@
 
 #include "GameState.h"
 #include "../GameCharacter/Hero.h"
+#include "../Engine/Game.h"
+#include "PauseState.h"
 
 class PlayState : public GameState{
 public:
@@ -37,8 +39,7 @@ public:
 private:
 
     int action;
-    std::shared_ptr<sf::Clock> clock;
-    std::shared_ptr<sf::Clock> clockEnemies;
+
     std::shared_ptr<sf::Clock> directionClock;
     std::shared_ptr<sf::Clock> combactClock;
 
@@ -60,6 +61,8 @@ private:
     bool fireClock(float fireRate);
 
     void checkBullets();
+
+    void animateEnemy(std::shared_ptr<Enemy> enemy, std::string color);
 
 };
 

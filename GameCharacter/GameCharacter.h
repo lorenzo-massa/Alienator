@@ -87,6 +87,13 @@ public:
 
     void setTypePowerUp(const std::string &typePowerUp);
 
+    float getSpeedCoeff() const;
+
+    void setSpeedCoeff(float speedCoeff);
+
+    const std::shared_ptr<sf::Clock> &getClockAnimation() const;
+
+    void setClockAnimation(const std::shared_ptr<sf::Clock> &clockAnimation);
 
 protected:
     sf::Vector2f pos;
@@ -107,6 +114,8 @@ protected:
     float fireRateBoost;
     float damageBoost;
     std::string typePowerUp;
+
+    std::shared_ptr<sf::Clock> clockAnimation;
 
 };
 

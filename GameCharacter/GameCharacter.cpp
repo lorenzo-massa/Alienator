@@ -9,6 +9,7 @@ GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f 
 healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f),speedCoeff(speedCoeff){
     weapon = std::make_shared<Weapon>(10, 3.0f);
     typePowerUp = "";
+    clockAnimation = std::make_shared<sf::Clock>();
 }
 
 int GameCharacter::receiveDamage(int points ) {
@@ -192,6 +193,23 @@ const std::string &GameCharacter::getTypePowerUp() const {
 void GameCharacter::setTypePowerUp(const std::string &typePowerUp) {
     GameCharacter::typePowerUp = typePowerUp;
 }
+
+float GameCharacter::getSpeedCoeff() const {
+    return speedCoeff;
+}
+
+void GameCharacter::setSpeedCoeff(float speedCoeff) {
+    GameCharacter::speedCoeff = speedCoeff;
+}
+
+const std::shared_ptr<sf::Clock> &GameCharacter::getClockAnimation() const {
+    return clockAnimation;
+}
+
+void GameCharacter::setClockAnimation(const std::shared_ptr<sf::Clock> &clockAnimation) {
+    GameCharacter::clockAnimation = clockAnimation;
+}
+
 
 
 

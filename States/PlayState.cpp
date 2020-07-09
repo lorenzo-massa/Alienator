@@ -4,8 +4,7 @@
 
 #include <cmath>
 #include "PlayState.h"
-#include "../Engine/Game.h"
-#include "PauseState.h"
+
 
 
 
@@ -14,8 +13,6 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow>& targetWindow, int 
     Game::getGame()->getMapHandler()->loadLevel(level);
 
     action = 0;
-    clock = std::make_shared<sf::Clock>();
-    clockEnemies = std::make_shared<sf::Clock>();
     directionClock = std::make_shared<sf::Clock>();
     combactClock = std::make_shared<sf::Clock>();
 
@@ -261,7 +258,7 @@ void PlayState::generateGUI(float& xT){
 void PlayState::animationHero(int direction, sf::Vector2f speed) {
     float speedClock = 0.1;
 
-    if (clock->getElapsedTime().asSeconds()>speedClock && direction == 0) {
+    if (Game::getGame()->getHero()->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && direction == 0) {
         if(Game::getGame()->getHero()->getStrTexture().back() == 'd'){
             Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_1_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Idle_1_Reversed");
@@ -270,10 +267,10 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
             Game::getGame()->getHero()->setStrTexture("Idle_1");
         }
 
-    }else if(clock->getElapsedTime().asSeconds()>speedClock && direction > 0){
-        clock->restart();
+    }else if(Game::getGame()->getHero()->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && direction > 0){
+        Game::getGame()->getHero()->getClockAnimation()->restart();
         if(Game::getGame()->getHero()->getStrTexture() == "Run_6" || Game::getGame()->getHero()->getStrTexture() == "Idle_1"
-            || Game::getGame()->getHero()->getStrTexture() == "Idle_1_Reversed"){
+            || Game::getGame()->getHero()->getStrTexture().back() == 'd'){
             Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_1"));
             Game::getGame()->getHero()->setStrTexture("Run_1");
         } else if(Game::getGame()->getHero()->getStrTexture() == "Run_1"){
@@ -293,10 +290,10 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
             Game::getGame()->getHero()->setStrTexture("Run_6");
         }
 
-    }else if(clock->getElapsedTime().asSeconds()>speedClock && direction < 0){
-        clock->restart();
+    }else if(Game::getGame()->getHero()->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && direction < 0){
+        Game::getGame()->getHero()->getClockAnimation()->restart();
         if(Game::getGame()->getHero()->getStrTexture() == "Run_6_Reversed" || Game::getGame()->getHero()->getStrTexture() == "Idle_1"
-            || Game::getGame()->getHero()->getStrTexture() == "Idle_1_Reversed"){
+            || Game::getGame()->getHero()->getStrTexture() == "Idle_1_Reversed" || Game::getGame()->getHero()->getStrTexture().back() != 'd'){
             Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_1_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_1_Reversed");
         } else if(Game::getGame()->getHero()->getStrTexture() == "Run_1_Reversed"){
@@ -320,92 +317,93 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
 }
 
 void PlayState::animationEnemies(){
-    float speedClock = 0.1;
+    std::string color;
 
-    int i = 0;
     for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()){
-        i++;
 
         if(enemy->getBehaviorType() == "Wizard"){
-            if (clockEnemies->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() == 0) {
-                if(enemy->getStrTexture().back() == 'd'){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Idle_1_Reversed"));
-                    enemy->setStrTexture("Blue_Idle_1_Reversed");
-                }else{
-                    enemy->setTexture(AssetManager::textures.at("Blue_Idle_1"));
-                    enemy->setStrTexture("Blue_Idle_1");
-                }
-            }
-            if(clockEnemies->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() > 0){
-                clockEnemies->restart();
-                if(enemy->getStrTexture() == "Blue_Run_6" || enemy->getStrTexture() == "Blue_Idle_1"
-                   || enemy->getStrTexture() == "Blue_Idle_1_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_1"));
-                    enemy->setStrTexture("Blue_Run_1");
-                } else if(enemy->getStrTexture() == "Blue_Run_1"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_2"));
-                    enemy->setStrTexture("Blue_Run_2");
-                }else if(enemy->getStrTexture() == "Blue_Run_2"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_3"));
-                    enemy->setStrTexture("Blue_Run_3");
-                } else if(enemy->getStrTexture() == "Blue_Run_3"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_4"));
-                    enemy->setStrTexture("Blue_Run_4");
-                }else if(enemy->getStrTexture() == "Blue_Run_4"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_5"));
-                    enemy->setStrTexture("Blue_Run_5");
-                }else if(enemy->getStrTexture() == "Blue_Run_5"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_6"));
-                    enemy->setStrTexture("Blue_Run_6");
-                }else{
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_1"));
-                    enemy->setStrTexture("Blue_Run_1");
-                }
 
-            }else if(clockEnemies->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() < 0){
-                clockEnemies->restart();
-                if(enemy->getStrTexture() == "Blue_Run_6_Reversed" || enemy->getStrTexture() == "Blue_Idle_1"
-                   || enemy->getStrTexture() == "Blue_Idle_1_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_1_Reversed"));
-                    enemy->setStrTexture("Blue_Run_1_Reversed");
-                } else if(enemy->getStrTexture() == "Blue_Run_1_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_2_Reversed"));
-                    enemy->setStrTexture("Blue_Run_2_Reversed");
-                }else if(enemy->getStrTexture() == "Blue_Run_2_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_3_Reversed"));
-                    enemy->setStrTexture("Blue_Run_3_Reversed");
-                } else if(enemy->getStrTexture() == "Blue_Run_3_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_4_Reversed"));
-                    enemy->setStrTexture("Blue_Run_4_Reversed");
-                }else if(enemy->getStrTexture() == "Blue_Run_4_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_5_Reversed"));
-                    enemy->setStrTexture("Blue_Run_5_Reversed");
-                }else if(enemy->getStrTexture() == "Blue_Run_5_Reversed"){
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_6_Reversed"));
-                    enemy->setStrTexture("Blue_Run_6_Reversed");
-                }else{
-                    enemy->setTexture(AssetManager::textures.at("Blue_Run_1_Reversed"));
-                    enemy->setStrTexture("Blue_Run_1_Reversed");
-                }
-            }
-
+            color = "Blue";
 
         }else if (enemy->getBehavior() == "Sentinel"){
 
-
-
+            color = "Gray";
 
         }else{
 
-
-
+            color = "Red";
 
         }
 
-
-
-
+        animateEnemy(enemy, color);
     }
+}
+
+void PlayState::animateEnemy(std::shared_ptr<Enemy> enemy,std::string color){
+    float speedClock = 0.12;
+
+    if (enemy->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() == 0) {
+        if(enemy->getStrTexture().back() == 'd'){
+            enemy->setTexture(AssetManager::textures.at(color+"_Idle_1_Reversed"));
+            enemy->setStrTexture(color+"_Idle_1_Reversed");
+        }else{
+            enemy->setTexture(AssetManager::textures.at(color+"_Idle_1"));
+            enemy->setStrTexture(color+"_Idle_1");
+        }
+    }
+    if(enemy->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() > 0){
+        enemy->getClockAnimation()->restart();
+        if(enemy->getStrTexture() == color+"_Run_6" || enemy->getStrTexture() == color+"_Idle_1"
+           || enemy->getStrTexture().back() == 'd'){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_1"));
+            enemy->setStrTexture(color+"_Run_1");
+        } else if(enemy->getStrTexture() == color+"_Run_1"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_2"));
+            enemy->setStrTexture(color+"_Run_2");
+        }else if(enemy->getStrTexture() == color+"_Run_2"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_3"));
+            enemy->setStrTexture(color+"_Run_3");
+        } else if(enemy->getStrTexture() == color+"_Run_3"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_4"));
+            enemy->setStrTexture(color+"_Run_4");
+        }else if(enemy->getStrTexture() == color+"_Run_4"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_5"));
+            enemy->setStrTexture(color+"_Run_5");
+        }else if(enemy->getStrTexture() == color+"_Run_5"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_6"));
+            enemy->setStrTexture(color+"_Run_6");
+        }else{
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_1"));
+            enemy->setStrTexture(color+"_Run_1");
+        }
+
+    }else if(enemy->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() < 0){
+        enemy->getClockAnimation()->restart();
+        if(enemy->getStrTexture() == color+"_Run_6_Reversed" || enemy->getStrTexture() == color+"_Idle_1"
+           || enemy->getStrTexture() == color+"_Idle_1_Reversed" || enemy->getStrTexture().back() != 'd'){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_1_Reversed"));
+            enemy->setStrTexture(color+"_Run_1_Reversed");
+        } else if(enemy->getStrTexture() == color+"_Run_1_Reversed"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_2_Reversed"));
+            enemy->setStrTexture(color+"_Run_2_Reversed");
+        }else if(enemy->getStrTexture() == color+"_Run_2_Reversed"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_3_Reversed"));
+            enemy->setStrTexture(color+"_Run_3_Reversed");
+        } else if(enemy->getStrTexture() == color+"_Run_3_Reversed"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_4_Reversed"));
+            enemy->setStrTexture(color+"_Run_4_Reversed");
+        }else if(enemy->getStrTexture() == color+"_Run_4_Reversed"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_5_Reversed"));
+            enemy->setStrTexture(color+"_Run_5_Reversed");
+        }else if(enemy->getStrTexture() == color+"_Run_5_Reversed"){
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_6_Reversed"));
+            enemy->setStrTexture(color+"_Run_6_Reversed");
+        }else{
+            enemy->setTexture(AssetManager::textures.at(color+"_Run_1_Reversed"));
+            enemy->setStrTexture(color+"_Run_1_Reversed");
+        }
+    }
+
 }
 
 
@@ -433,87 +431,6 @@ sf::Vector2f PlayState::isLegalMovement(const std::shared_ptr<GameCharacter>& en
     bool bottomtCollisionBool = false;
     bool topCollisionBool = false;
 
-
-/*
-    // Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
-    //da errore perchè non si controlla il massimo indice
-    int x = int(entityPos.x/64);
-    int y = int(entityPos.y/64);
-
-
-    if(y < 8)
-        y = 8;
-    if(x < 8)
-        x = 8;
-
-    std::shared_ptr<sf::Sprite> block;
-
-    for(int i = x - 8; i < x + 9; i++){
-        for(int j = y - 8; j < y + 9; j++){
-
-            //std::cout<<i * Game::getGame()->getMapHandler()->getMap()->getN() + j<<std::endl;
-
-            std::cout<<"\n1";
-            block = Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i * Game::getGame()->getMapHandler()->getMap()->getN() + j);
-            std::cout<<"2";
-
-            deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
-            intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
-            deltaY  = entityPos.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
-            intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
-
-
-            if(intersectionY < 0.0f && intersectionX < 0.0f){
-
-                rightCollisionBool = false;
-                leftCollisionBool = false;
-                bottomtCollisionBool = false;
-                topCollisionBool = false;
-
-                if(intersectionX > intersectionY){
-                    if(deltaX > 0.0f){
-                        leftCollision++;
-                        leftCollisionBool = true;
-                    }else{
-                        rightCollision++;
-                        rightCollisionBool = true;
-                    }
-                }
-                else{
-                     if(deltaY < 0.0f){
-                         bottomtCollision++;
-                         bottomtCollisionBool = true;
-                     }else{
-                         topCollision++;
-                         topCollisionBool = true;
-                     }
-                }
-
-                if(leftCollision == 1 && leftCollisionBool){
-                    moving.x -= intersectionX;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
-                }
-
-                if(rightCollision == 1 && rightCollisionBool){
-                    moving.x += intersectionX;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
-                }
-
-                if(topCollision == 1 && topCollisionBool){
-                    moving.y -= intersectionY;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
-                }
-
-                if(bottomtCollision == 1 && bottomtCollisionBool){
-                    moving.y += intersectionY;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
-                }
-
-            }
-        }
-    }
-
-*/
 
     for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
         deltaX  = entityPos.x + moving.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
@@ -694,22 +611,6 @@ void PlayState::setAction(int action) {
     PlayState::action = action;
 }
 
-const std::shared_ptr<sf::Clock> &PlayState::getClock() const {
-    return clock;
-}
-
-void PlayState::setClock(const std::shared_ptr<sf::Clock> &clock) {
-    PlayState::clock = clock;
-}
-
-const std::shared_ptr<sf::Clock> &PlayState::getClockEnemies() const {
-    return clockEnemies;
-}
-
-void PlayState::setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies) {
-    PlayState::clockEnemies = clockEnemies;
-}
-
 bool PlayState::patrolClock() {
     if(directionClock->getElapsedTime().asSeconds()>3.0f)
     {
@@ -729,3 +630,86 @@ bool PlayState:: fireClock(float fireRate){
 
     return false;
 }
+
+
+
+/*
+    // Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
+    //da errore perchè non si controlla il massimo indice
+    int x = int(entityPos.x/64);
+    int y = int(entityPos.y/64);
+
+
+    if(y < 8)
+        y = 8;
+    if(x < 8)
+        x = 8;
+
+    std::shared_ptr<sf::Sprite> block;
+
+    for(int i = x - 8; i < x + 9; i++){
+        for(int j = y - 8; j < y + 9; j++){
+
+            //std::cout<<i * Game::getGame()->getMapHandler()->getMap()->getN() + j<<std::endl;
+
+            std::cout<<"\n1";
+            block = Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i * Game::getGame()->getMapHandler()->getMap()->getN() + j);
+            std::cout<<"2";
+
+            deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
+            intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
+            deltaY  = entityPos.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
+            intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
+
+
+            if(intersectionY < 0.0f && intersectionX < 0.0f){
+
+                rightCollisionBool = false;
+                leftCollisionBool = false;
+                bottomtCollisionBool = false;
+                topCollisionBool = false;
+
+                if(intersectionX > intersectionY){
+                    if(deltaX > 0.0f){
+                        leftCollision++;
+                        leftCollisionBool = true;
+                    }else{
+                        rightCollision++;
+                        rightCollisionBool = true;
+                    }
+                }
+                else{
+                     if(deltaY < 0.0f){
+                         bottomtCollision++;
+                         bottomtCollisionBool = true;
+                     }else{
+                         topCollision++;
+                         topCollisionBool = true;
+                     }
+                }
+
+                if(leftCollision == 1 && leftCollisionBool){
+                    moving.x -= intersectionX;
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
+                }
+
+                if(rightCollision == 1 && rightCollisionBool){
+                    moving.x += intersectionX;
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
+                }
+
+                if(topCollision == 1 && topCollisionBool){
+                    moving.y -= intersectionY;
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
+                }
+
+                if(bottomtCollision == 1 && bottomtCollisionBool){
+                    moving.y += intersectionY;
+                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
+                }
+
+            }
+        }
+    }
+
+*/
