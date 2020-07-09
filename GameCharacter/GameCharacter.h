@@ -117,6 +117,7 @@ protected:
 
     std::shared_ptr<sf::Clock> clockAnimation;
 
+
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

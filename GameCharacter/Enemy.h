@@ -28,12 +28,17 @@ public:
 
     const sf::Vector2f &getPatrolDistance() const;
 
+    const std::shared_ptr<sf::Clock> &getClockPatrol() const;
+
+    void setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol);
+
     void setPatrolDistance(const sf::Vector2f &patrolDistance);
 
 private:
     std::string behavior;
     std::string behaviorType;
     sf::Vector2f patrolDistance;
+    std::shared_ptr<sf::Clock> clockPatrol;
 };
 
 #endif //ALIENATOR_ENEMY_H

@@ -28,8 +28,7 @@ public:
 
     void behaviorChanger();
 
-
-    void enemyBehaviorChanger(std::shared_ptr<Enemy> enemy);
+    void enemyBehaviorChanger(const std::shared_ptr<Enemy>& enemy);
 
     void detectCollision(const std::shared_ptr<GameCharacter> &entity, const std::shared_ptr<sf::Sprite> &block,
                          sf::Vector2f &moving);
@@ -38,8 +37,7 @@ private:
 
     int action;
 
-    std::shared_ptr<sf::Clock> directionClock;
-    std::shared_ptr<sf::Clock> combactClock;
+    std::shared_ptr<sf::Clock> fireRateClock;
 
     void generateMap();
 
@@ -51,10 +49,7 @@ private:
 
     void checkCollectables();
 
-
-    bool spriteInView(sf::Sprite sprite);
-
-    bool patrolClock();
+    bool spriteInView(const sf::Sprite& sprite);
 
     bool fireClock(float fireRate);
 

@@ -13,8 +13,7 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow>& targetWindow, int 
     Game::getGame()->getMapHandler()->loadLevel(level);
 
     action = 0;
-    directionClock = std::make_shared<sf::Clock>();
-    combactClock = std::make_shared<sf::Clock>();
+    fireRateClock = std::make_shared<sf::Clock>();
 
     sf::View tempView = targetWindow->getView();
     tempView.setCenter(tempView.getSize().x/2 - Game::getGame()->getHero()->sf::Sprite::getPosition().x,tempView.getSize().y/2);
@@ -303,7 +302,7 @@ void PlayState::animationEnemies(){
     }
 }
 
-void PlayState::animateEnemy(std::shared_ptr<Enemy> enemy,std::string color){
+void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy,std::string color){
     float speedClock = 0.12;
 
     if (enemy->getClockAnimation()->getElapsedTime().asSeconds()>speedClock && enemy->getDirection() == 0) {
@@ -546,7 +545,7 @@ void PlayState::checkBullets(){
 
 }
 
-bool PlayState::spriteInView(sf::Sprite sprite)
+bool PlayState::spriteInView(const sf::Sprite& sprite)
 {
     sf::Vector2f viewSize(targetWindow->getView().getSize());
     sf::Vector2f viewCenter(targetWindow->getView().getCenter());
@@ -565,20 +564,10 @@ void PlayState::setAction(int action) {
     PlayState::action = action;
 }
 
-bool PlayState::patrolClock() {
-    if(directionClock->getElapsedTime().asSeconds()>3.0f)
-    {
-        if(directionClock->getElapsedTime().asSeconds()>6.0f)
-            directionClock->restart();
-        return true;
-    }
-    return false;
-}
-
 bool PlayState:: fireClock(float fireRate){
-    if(combactClock->getElapsedTime().asSeconds()>1.0f/fireRate)
+    if(fireRateClock->getElapsedTime().asSeconds()>1.0f/fireRate)
     {
-        combactClock->restart();
+        fireRateClock->restart();
         return true;
     }
 
@@ -586,36 +575,52 @@ bool PlayState:: fireClock(float fireRate){
 }
 
 void PlayState::behaviorChanger(){
+int i=1;
     for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()) {
+        std::cout<<i<<")";
         enemyBehaviorChanger(enemy);
+        i++;
     }
 }
 
-void PlayState::enemyBehaviorChanger(std::shared_ptr<Enemy> enemy){
+void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy>& enemy){
     sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
     bool found;
     std::shared_ptr<Bullet> b = nullptr;
 
     if (enemy->getBehavior() == "patrol") {
-        if (patrolClock()) {
-            enemy->setDirection(-1.0f);
-        } else {
-            enemy->setDirection(1.0f);
+        std::cout<<enemy->getClockPatrol()->getElapsedTime().asSeconds()<<std::endl<<enemy->getDirection()<<std::endl;
+        if (enemy->getClockPatrol()->getElapsedTime().asSeconds()>3.0f) {
+
+            enemy->setDirection( enemy->getDirection()*(-1.0f));
+            enemy->getClockPatrol()->restart();
+
         }
 
         found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(), enemy->getDirection(),
                               sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
         moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+        /*if(moveEnemy.x==0){
+            enemy->setDirection(enemy->getDirection()*-1);
+            enemy->getClockPatrol()->restart();
+        }*/
 
         enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
         if (found) {
             enemy->setBehavior("fight");
         }
     } else if (enemy->getBehavior() == "fight") {
+
         b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), &moveEnemy,
                          Game::getGame()->getClock()->getElapsedTime().asSeconds(), b);
         moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+
+        if(enemy->getSpeed()==sf::Vector2f(0,0)){
+            enemy->jump();
+        }
         enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
 
         if (b != nullptr) {
             if (fireClock(enemy->getWeapon()->getFireRate())) {

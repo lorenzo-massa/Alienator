@@ -26,6 +26,8 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::V
     setPosition(pos);
     setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f,0.25f));
+
+    clockPatrol=std::make_shared<sf::Clock>();
 }
 
 Enemy::~Enemy() {}
@@ -114,4 +116,12 @@ const sf::Vector2f &Enemy::getPatrolDistance() const {
 
 void Enemy::setPatrolDistance(const sf::Vector2f &patrolDistance) {
     Enemy::patrolDistance = patrolDistance;
+}
+
+const std::shared_ptr<sf::Clock> &Enemy::getClockPatrol() const {
+    return clockPatrol;
+}
+
+void Enemy::setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol) {
+    Enemy::clockPatrol = clockPatrol;
 }
