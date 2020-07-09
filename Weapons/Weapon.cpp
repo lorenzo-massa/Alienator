@@ -4,7 +4,7 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(int d, float fR): damage(d), fireRate(fR) {}
+Weapon::Weapon(int d, float fR) : damage(d), fireRate(fR) {}
 
 std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mousePosition) const {
     std::shared_ptr<Bullet> b = std::make_shared<Bullet>(damage, x, y, mousePosition);
@@ -14,20 +14,23 @@ std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mous
 void Weapon::setDamage(int d) {
     Weapon::damage = d;
 }
-int Weapon::getDamage()const{
+
+int Weapon::getDamage() const {
     return Weapon::damage;
 }
 
 void Weapon::setFireRate(float fR) {
     Weapon::fireRate = fR;
 }
-float Weapon::getFireRate() const{
+
+float Weapon::getFireRate() const {
     return Weapon::fireRate;
 }
 
 int Weapon::getPosX() const {
     return Weapon::posX;
 }
+
 void Weapon::setPosX(int posX) {
     Weapon::posX = posX;
 }
@@ -35,6 +38,7 @@ void Weapon::setPosX(int posX) {
 int Weapon::getPosY() const {
     return Weapon::posY;
 }
+
 void Weapon::setPosY(int posY) {
     Weapon::posY = posY;
 }
@@ -42,6 +46,7 @@ void Weapon::setPosY(int posY) {
 int Weapon::getDirection() const {
     return Weapon::direction;
 }
+
 void Weapon::setDirection(int direction) {
     Weapon::direction = direction;
 }

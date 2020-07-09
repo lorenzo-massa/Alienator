@@ -21,7 +21,6 @@ void AssetManager::load() {
         sf::SoundBuffer sound;
 
 
-
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
 
@@ -53,8 +52,8 @@ void AssetManager::load() {
         textures.insert(std::make_pair("PORTAL", texture));
 
         const int nTiles = 16;
-        for (int i = 1; i < nTiles+1; ++i) {
-            texture.loadFromFile("Assets/Images/Tiles/"+std::to_string(i)+".png");
+        for (int i = 1; i < nTiles + 1; ++i) {
+            texture.loadFromFile("Assets/Images/Tiles/" + std::to_string(i) + ".png");
             textures.insert(std::make_pair(std::to_string(i), texture));
         }
 
@@ -65,11 +64,11 @@ void AssetManager::load() {
         textures.insert(std::make_pair("Idle_1_Reversed", texture));
 
         for (int i = 1; i < 7; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Run_"+std::to_string(i), texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_" + std::to_string(i) + ".png");
+            textures.insert(std::make_pair("Run_" + std::to_string(i), texture));
 
-            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_"+std::to_string(i)+"_Reversed.png");
-            textures.insert(std::make_pair("Run_"+std::to_string(i)+"_Reversed", texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_green/Run_" + std::to_string(i) + "_Reversed.png");
+            textures.insert(std::make_pair("Run_" + std::to_string(i) + "_Reversed", texture));
         }
 
         texture.loadFromFile("Assets/Images/Alien/alien_blue/Idle_1.png");
@@ -79,11 +78,11 @@ void AssetManager::load() {
         textures.insert(std::make_pair("Blue_Idle_1_Reversed", texture));
 
         for (int i = 1; i < 7; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Blue_Run_"+std::to_string(i), texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_" + std::to_string(i) + ".png");
+            textures.insert(std::make_pair("Blue_Run_" + std::to_string(i), texture));
 
-            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_"+std::to_string(i)+"_Reversed.png");
-            textures.insert(std::make_pair("Blue_Run_"+std::to_string(i)+"_Reversed", texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_blue/Run_" + std::to_string(i) + "_Reversed.png");
+            textures.insert(std::make_pair("Blue_Run_" + std::to_string(i) + "_Reversed", texture));
         }
 
         texture.loadFromFile("Assets/Images/Alien/alien_gray/Idle_1.png");
@@ -93,11 +92,11 @@ void AssetManager::load() {
         textures.insert(std::make_pair("Gray_Idle_1_Reversed", texture));
 
         for (int i = 1; i < 7; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_gray/Run_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Gray_Run_"+std::to_string(i), texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_gray/Run_" + std::to_string(i) + ".png");
+            textures.insert(std::make_pair("Gray_Run_" + std::to_string(i), texture));
 
-            texture.loadFromFile("Assets/Images/Alien/alien_gray/Run_"+std::to_string(i)+"_Reversed.png");
-            textures.insert(std::make_pair("Gray_Run_"+std::to_string(i)+"_Reversed", texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_gray/Run_" + std::to_string(i) + "_Reversed.png");
+            textures.insert(std::make_pair("Gray_Run_" + std::to_string(i) + "_Reversed", texture));
         }
 
 
@@ -108,11 +107,11 @@ void AssetManager::load() {
         textures.insert(std::make_pair("Red_Idle_1_Reversed", texture));
 
         for (int i = 1; i < 7; ++i) {
-            texture.loadFromFile("Assets/Images/Alien/alien_red/Run_"+std::to_string(i)+".png");
-            textures.insert(std::make_pair("Red_Run_"+std::to_string(i), texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_red/Run_" + std::to_string(i) + ".png");
+            textures.insert(std::make_pair("Red_Run_" + std::to_string(i), texture));
 
-            texture.loadFromFile("Assets/Images/Alien/alien_red/Run_"+std::to_string(i)+"_Reversed.png");
-            textures.insert(std::make_pair("Red_Run_"+std::to_string(i)+"_Reversed", texture));
+            texture.loadFromFile("Assets/Images/Alien/alien_red/Run_" + std::to_string(i) + "_Reversed.png");
+            textures.insert(std::make_pair("Red_Run_" + std::to_string(i) + "_Reversed", texture));
         }
 
 
@@ -126,7 +125,7 @@ void AssetManager::load() {
         sounds.insert(std::make_pair("HERO_JUMP", sound));
         */
 
-    } catch (const std::exception& exception) {
+    } catch (const std::exception &exception) {
         std::cerr << exception.what() << std::endl;
     }
 

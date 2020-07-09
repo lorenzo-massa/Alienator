@@ -5,16 +5,20 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f(speed),float speedCoeff,sf::Vector2f patrolDistance,std::string behavior): patrolDistance(patrolDistance),GameCharacter::GameCharacter(hp, armor, 100,speed,pos,1.0f,speedCoeff),behavior(behavior) {
-    if(strBehavior == "Wizard"){
+Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
+             sf::Vector2f patrolDistance, std::string behavior) : patrolDistance(patrolDistance),
+                                                                  GameCharacter::GameCharacter(hp, armor, 100, speed,
+                                                                                               pos, 1.0f, speedCoeff),
+                                                                  behavior(behavior) {
+    if (strBehavior == "Wizard") {
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
-       // patrolDistance.x=10.0f;
+        // patrolDistance.x=10.0f;
         //patrolDistance.y=16.0f;
-    } else if (strBehavior == "Sentinel"){
+    } else if (strBehavior == "Sentinel") {
         setTexture(AssetManager::textures.at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
-       // patrolDistance.x=10.0f;
+        // patrolDistance.x=10.0f;
         //patrolDistance.y=16.0f;
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
@@ -24,10 +28,10 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::V
     }
     behaviorType = strBehavior;
     setPosition(pos);
-    setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
-    setScale(sf::Vector2f(0.25f,0.25f));
+    setTextureRect(sf::IntRect(0, 0, 213.0f, 428.0f));
+    setScale(sf::Vector2f(0.25f, 0.25f));
 
-    clockPatrol=std::make_shared<sf::Clock>();
+    clockPatrol = std::make_shared<sf::Clock>();
 }
 
 Enemy::~Enemy() {}
@@ -40,58 +44,67 @@ std::shared_ptr<Bullet> Enemy::shot(sf::Vector2f mousePosition) {
     return GameCharacter::shot(mousePosition);
 }
 
-bool Enemy::patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vector2f* move) {
+bool Enemy::patrol(float deltaT, float directionX, sf::Vector2f heroPos, sf::Vector2f *move) {
 
 
-        bool found=false;
+    bool found = false;
 
-        if(directionX>0){
+    if (directionX > 0) {
 
-            if(heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x+patrolDistance.x>heroPos.x) {
-                if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
+        if (heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x + patrolDistance.x > heroPos.x) {
+            if ((heroPos.y <= sf::Sprite::getPosition().y &&
+                 heroPos.y > sf::Sprite::getPosition().y - patrolDistance.y) ||
+                (heroPos.y >= sf::Sprite::getPosition().y &&
+                 heroPos.y < sf::Sprite::getPosition().y + patrolDistance.y)) {
                 found = true;
                 return found;
-               }
             }
         }
-        else if (directionX<0){
-            if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x >sf::Sprite::getPosition().x-patrolDistance.x) {
-                if( (heroPos.y<=sf::Sprite::getPosition().y&&heroPos.y>sf::Sprite::getPosition().y-patrolDistance.y)||(heroPos.y>=sf::Sprite::getPosition().y&&heroPos.y<sf::Sprite::getPosition().y+patrolDistance.y)){
+    } else if (directionX < 0) {
+        if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x > sf::Sprite::getPosition().x - patrolDistance.x) {
+            if ((heroPos.y <= sf::Sprite::getPosition().y &&
+                 heroPos.y > sf::Sprite::getPosition().y - patrolDistance.y) ||
+                (heroPos.y >= sf::Sprite::getPosition().y &&
+                 heroPos.y < sf::Sprite::getPosition().y + patrolDistance.y)) {
                 found = true;
                 return found;
-                }
             }
         }
+    }
 
-        move->x = Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).x;
-        move->y=Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).y;
+    move->x = Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).x;
+    move->y = Enemy::move(sf::Vector2f(directionX, 1.0f), deltaT).y;
 
 
-        return found;
+    return found;
 
 }
 
-std::shared_ptr<Bullet> Enemy::fight(sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/) {
+std::shared_ptr<Bullet> Enemy::fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT) {
 
+    std::shared_ptr<Bullet> b;
 
-        if(heroPos.x<Enemy::getPosition().x){
-            move->x = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).x;
-            move->y=Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).y;
-            b=Enemy::shot(heroPos);
+    if (heroPos.x < Enemy::getPosition().x) {
+        move.x = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).x;
+        move.y = Enemy::move(sf::Vector2f(-1.0f, 1.0f), deltaT).y;
+        b = Enemy::shot(heroPos);
 
-        }
-        else{
-            move->x = Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).x;
-            move->y=Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).y;
-            b=Enemy::shot(heroPos);
+    } else {
+        move.x = Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).x;
+        move.y = Enemy::move(sf::Vector2f(1.0f, 1.0f), deltaT).y;
+        b = Enemy::shot(heroPos);
 
-        }
-        if(heroPos.y<Enemy::getPosition().y){
-           /* if(collision){
-                Enemy::jump();
-            }*/
-        }
+    }
+    if (heroPos.y < Enemy::getPosition().y) {
+        /* if(collision){
+             Enemy::jump();
+         }*/
+    }
     return b;
+}
+
+bool Enemy::checkJump() {
+    return getSpeed() == sf::Vector2f(0, 0);
 }
 
 const std::string &Enemy::getBehavior() const {

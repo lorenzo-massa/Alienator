@@ -7,44 +7,44 @@
 #include "../Engine/Game.h"
 #include "PlayState.h"
 
-LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::LEVELS)) {
+LevelSelectState::LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(
+        MainMenu(MainMenu::STYLE::LEVELS)) {
 }
 
 void LevelSelectState::handleInput() {
     sf::Event event;
-    while(targetWindow->pollEvent(event)) {
-        if(event.type == sf::Event::Closed)
+    while (targetWindow->pollEvent(event)) {
+        if (event.type == sf::Event::Closed)
             targetWindow->close();
         else if (event.type == sf::Event::Resized) {
             sf::Vector2u size = targetWindow->getSize();
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
-        }
-        else if(event.type == sf::Event::KeyPressed) {
-            if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
+        } else if (event.type == sf::Event::KeyPressed) {
+            if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
                 mainMenu.backwardLevel();
-            if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
+            if (event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
                 mainMenu.forwardLevel();
-            if(event.key.code == sf::Keyboard::Enter) {
+            if (event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::LEVEL_1:
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow,1));
+                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow, 1));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_2:
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow,2));
-                        if(!Game::getGame()->getLevelCompleted()[0])
-                            std::cout<<"You have to complete level 1"<<std::endl;
+                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow, 2));
+                        if (!Game::getGame()->getLevelCompleted()[0])
+                            std::cout << "You have to complete level 1" << std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_3:
-                        if(!Game::getGame()->getLevelCompleted()[1])
-                            std::cout<<"You have to complete level 2"<<std::endl;
+                        if (!Game::getGame()->getLevelCompleted()[1])
+                            std::cout << "You have to complete level 2" << std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_4:
-                        if(!Game::getGame()->getLevelCompleted()[2])
-                            std::cout<<"You have to complete level 3"<<std::endl;
+                        if (!Game::getGame()->getLevelCompleted()[2])
+                            std::cout << "You have to complete level 3" << std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_5:
-                        if(!Game::getGame()->getLevelCompleted()[3])
-                            std::cout<<"You have to complete level 4"<<std::endl;
+                        if (!Game::getGame()->getLevelCompleted()[3])
+                            std::cout << "You have to complete level 4" << std::endl;
                         break;
                     case MainMenu::MenuItem::TYPE::BACK:
                         Game::getGame()->getStateHandler()->removeState();
@@ -60,7 +60,7 @@ void LevelSelectState::handleInput() {
 
 void LevelSelectState::generateFrame() {
     targetWindow->clear();
-    AssetManager::setBackground(targetWindow,0);
+    AssetManager::setBackground(targetWindow, 0);
 
     mainMenu.draw(targetWindow);
 

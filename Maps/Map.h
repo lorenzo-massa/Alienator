@@ -15,36 +15,52 @@
 
 class Map {
 public:
-    explicit Map(int n, int m);
-    //~Map();
+    Map();
+
+    ~Map();
 
     void addToMatrix(std::shared_ptr<sf::Sprite> x);
+
     void removeFromMatrix(int i);
+
     std::shared_ptr<sf::Sprite> getFromMatrix(int i);
+
     std::vector<std::shared_ptr<sf::Sprite>> getMatrix();
 
     void addEnemy(std::shared_ptr<Enemy> e);
+
     void removeEnemy(int t);
+
     std::shared_ptr<Enemy> getEnemy(int i);
+
     std::vector<std::shared_ptr<Enemy>> getEnemies();
 
     void addCollectable(std::shared_ptr<Collectable> c);
+
     void removeCollectable(int i);
+
     std::shared_ptr<Collectable> getCollectable(int i);
+
     std::vector<std::shared_ptr<Collectable>> getCollectables();
 
     void addBullet(std::shared_ptr<Bullet> b);
+
     void removeBullet(int i);
+
     std::shared_ptr<Bullet> getBullet(int i);
+
     std::vector<std::shared_ptr<Bullet>> getBullets();
 
 
     int getN() const;
+
     int getM() const;
 
     const std::shared_ptr<sf::Sprite> &getPortal() const;
 
     void setPortal(const std::shared_ptr<sf::Sprite> &portal);
+
+    void loadLevel(int i);
 
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;

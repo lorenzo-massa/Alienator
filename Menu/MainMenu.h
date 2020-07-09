@@ -25,8 +25,10 @@ public:
             LEVEL_4,
             LEVEL_5
         };
+
         explicit MenuItem(MenuItem::TYPE type);
-        const TYPE& getType() const;
+
+        const TYPE &getType() const;
 
     private:
         TYPE type;
@@ -37,12 +39,18 @@ public:
         MAIN,
         LEVELS
     };
+
     explicit MainMenu(STYLE style);
+
     ~MainMenu();
-    void draw(const std::shared_ptr<sf::RenderWindow>& window);
+
+    void draw(const std::shared_ptr<sf::RenderWindow> &window);
+
     void forward();
+
     void backward();
-    const MenuItem::TYPE& getAction() const;
+
+    const MenuItem::TYPE &getAction() const;
 
 
     void forwardLevel();
@@ -50,12 +58,13 @@ public:
     void backwardLevel();
 
 private:
-    int active {0};
-    int count {0};
+    int active{0};
+    int count{0};
     sf::Font font;
     std::vector<std::shared_ptr<MenuItem>> itemList;
     STYLE style;
 
 
 };
+
 #endif //ALIENATOR_MAINMENU_H

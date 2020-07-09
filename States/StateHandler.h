@@ -17,14 +17,14 @@ class StateHandler {
 public:
     StateHandler();
 
-    void addState(const std::shared_ptr<GameState>& topState);
+    void addState(const std::shared_ptr<GameState> &topState);
 
     void removeState();
 
-    const std::shared_ptr <GameState> &getState();
+    const std::shared_ptr<GameState> &getState();
 
 private:
-    std::stack <std::shared_ptr<GameState>> stateBuffer;
+    std::stack<std::shared_ptr<GameState>> stateBuffer;
 };
 
 

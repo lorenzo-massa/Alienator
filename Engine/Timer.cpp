@@ -4,19 +4,19 @@
 
 #include "Timer.h"
 
-Timer* Timer::myTimer = nullptr;
+Timer *Timer::myTimer = nullptr;
 
-void Timer::registerObserver(Observer* o) {
+void Timer::registerObserver(Observer *o) {
     observers.emplace_back(o);
 
 }
 
-void Timer::removeObserver(Observer* o) {
+void Timer::removeObserver(Observer *o) {
     observers.remove(o);
 }
 
 void Timer::notifyObservers() const {
-    for(auto &i : observers)
+    for (auto &i : observers)
         i->update();
 }
 
@@ -33,16 +33,15 @@ float Timer::getTime() {
 }
 
 
-
 void Timer::check() {
-    if(clock.getElapsedTime().asMilliseconds() >= 100){
+    if (clock.getElapsedTime().asMilliseconds() >= 100) {
         clock.restart();
         notifyObservers();
     }
 }
 
-Timer & Timer::getTimer() {
-    if(myTimer == nullptr)
+Timer &Timer::getTimer() {
+    if (myTimer == nullptr)
         myTimer = new Timer();
     return *myTimer;
 }

@@ -12,7 +12,7 @@
 
 class Loader {
 public:
-    static void saveHero(int coins, int ammo, int  armor);
+    static void saveHero(int coins, int ammo, int armor);
 
     static void loadHero();
 };

@@ -6,7 +6,7 @@
 #include "../GameCharacter/Hero.h"
 #include "Game.h"
 
-void Loader::saveHero(int coins, int ammo, int  armor) {
+void Loader::saveHero(int coins, int ammo, int armor) {
     std::basic_ofstream<char> file = std::ofstream("Data/heroFile.txt");
     file << std::to_string(coins);
     file << " ";
@@ -19,7 +19,7 @@ void Loader::saveHero(int coins, int ammo, int  armor) {
 void Loader::loadHero() {
 
     std::basic_ifstream<char> file = std::ifstream("Data/heroFile.txt");
-    if(file.is_open()) {
+    if (file.is_open()) {
         int coins, ammo, armor;
         file >> coins;
         file >> ammo;
@@ -28,7 +28,7 @@ void Loader::loadHero() {
         Game::getGame()->getHero()->setAmmo(ammo);
         Game::getGame()->getHero()->setArmor(armor);
         file.close();
-    }else{
+    } else {
         Game::getGame()->getHero()->setCoins(0);
         Game::getGame()->getHero()->setAmmo(50);
         Game::getGame()->getHero()->setArmor(50);

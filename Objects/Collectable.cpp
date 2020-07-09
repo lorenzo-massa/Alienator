@@ -4,26 +4,26 @@
 
 #include "Collectable.h"
 
-Collectable::Collectable(sf::Vector2f position){
+Collectable::Collectable(sf::Vector2f position) {
     powerUp = PowerUp();
 
-    setScale(sf::Vector2f(0.05,0.05));
-    setTextureRect(sf::IntRect(0,0,1184,1184));
+    setScale(sf::Vector2f(0.05, 0.05));
+    setTextureRect(sf::IntRect(0, 0, 1184, 1184));
     sf::Sprite::setPosition(position);
 
 }
 
-Collectable::Collectable(sf::Vector2f position, std::string type){
+Collectable::Collectable(sf::Vector2f position, std::string type) {
 
-    setTextureRect(sf::IntRect(0,0,width,height));
-    setScale(sf::Vector2f(0.075,0.075));
+    setTextureRect(sf::IntRect(0, 0, width, height));
+    setScale(sf::Vector2f(0.075, 0.075));
     sf::Sprite::setPosition(position);
 
     powerUp = PowerUp(type);
 
 }
 
-Collectable::~Collectable(){
+Collectable::~Collectable() {
 }
 
 
@@ -44,6 +44,6 @@ void Collectable::registerObserver(std::shared_ptr<ObserverGame> observer) {
 }
 
 void Collectable::notifyObservers(int i) const {
-    for(const auto& observer : observers)
+    for (const auto &observer : observers)
         observer->update(i);
 }

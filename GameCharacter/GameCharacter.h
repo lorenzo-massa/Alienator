@@ -12,28 +12,32 @@
 #include "../Weapons/Weapon.h"
 
 
-class GameCharacter : public sf::Sprite{
+class GameCharacter : public sf::Sprite {
 public:
     GameCharacter();
-    GameCharacter(int hp,int ar,int am,sf::Vector2f s,sf::Vector2f pos,float dir,float speedCoeff);
+
+    GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff);
 
     virtual ~GameCharacter();
 
     virtual int receiveDamage(int points);
 
-    virtual sf::Vector2f move(sf::Vector2f direction,float deltaT);
+    virtual sf::Vector2f move(sf::Vector2f direction, float deltaT);
 
     virtual void jump();
 
     virtual std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition);
 
     sf::Vector2f getPos() const;
+
     void setPos(sf::Vector2f pos);
 
     int getHealthPoint() const;
+
     void setHealthPoint(int healthPoint);
 
     std::shared_ptr<Weapon> getWeapon() const;
+
     void setWeapon(std::shared_ptr<Weapon> weapon);
 
     int getArmor() const;
@@ -81,6 +85,7 @@ public:
     void setDamageBoost(float damageBoost);
 
     void resetClockPowerUp();
+
     void removePowerUp();
 
     const std::string &getTypePowerUp() const;

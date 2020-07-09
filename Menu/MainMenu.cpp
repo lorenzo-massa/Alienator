@@ -6,7 +6,7 @@
 #include "MainMenu.h"
 #include "../Engine/Game.h"
 
-MainMenu::MenuItem::MenuItem(MainMenu::MenuItem::TYPE type) : type(type){
+MainMenu::MenuItem::MenuItem(MainMenu::MenuItem::TYPE type) : type(type) {
     std::string btnText;
     switch (type) {
         case MenuItem::TYPE::START:
@@ -46,14 +46,14 @@ MainMenu::MenuItem::MenuItem(MainMenu::MenuItem::TYPE type) : type(type){
     setString(btnText);
 }
 
-const MainMenu::MenuItem::TYPE& MainMenu::MenuItem::getType() const {
+const MainMenu::MenuItem::TYPE &MainMenu::MenuItem::getType() const {
     return type;
 }
 
-MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
-    if(!font.loadFromFile("Assets/Font/youre gone.ttf"))
+MainMenu::MainMenu(MainMenu::STYLE style) : style(style) {
+    if (!font.loadFromFile("Assets/Font/youre gone.ttf"))
         std::cerr << "Font not found" << std::endl;
-    if(style == MainMenu::STYLE::MAIN) {
+    if (style == MainMenu::STYLE::MAIN) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::START));
         itemList[0]->setFont(font);
 
@@ -70,27 +70,27 @@ MainMenu::MainMenu(MainMenu::STYLE style) : style(style){
         count = itemList.size();
     } else if (style == MainMenu::STYLE::LEVELS) {
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_1));
-        if(Game::getGame()->getLevelCompleted()[0])
+        if (Game::getGame()->getLevelCompleted()[0])
             itemList[0]->setFillColor(sf::Color::White);
         else
             itemList[0]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_2));
-        if(Game::getGame()->getLevelCompleted()[1])
+        if (Game::getGame()->getLevelCompleted()[1])
             itemList[1]->setFillColor(sf::Color::White);
         else
             itemList[1]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_3));
-        if(Game::getGame()->getLevelCompleted()[2])
+        if (Game::getGame()->getLevelCompleted()[2])
             itemList[2]->setFillColor(sf::Color::White);
         else
             itemList[2]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_4));
-        if(Game::getGame()->getLevelCompleted()[3])
+        if (Game::getGame()->getLevelCompleted()[3])
             itemList[3]->setFillColor(sf::Color::White);
         else
             itemList[3]->setFillColor(sf::Color::Yellow);
         itemList.emplace_back(std::make_shared<MenuItem>(MenuItem::TYPE::LEVEL_5));
-        if(Game::getGame()->getLevelCompleted()[4])
+        if (Game::getGame()->getLevelCompleted()[4])
             itemList[4]->setFillColor(sf::Color::White);
         else
             itemList[4]->setFillColor(sf::Color::Yellow);
@@ -106,7 +106,7 @@ MainMenu::~MainMenu() {
     itemList.clear();
 }
 
-void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
+void MainMenu::draw(const std::shared_ptr<sf::RenderWindow> &window) {
 
     sf::View actualView = window->getView();
     sf::Vector2f origin, dim, pos;
@@ -131,9 +131,9 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow>& window) {
 }
 
 void MainMenu::forwardLevel() {
-    if(active == 5)
+    if (active == 5)
         itemList[active]->setFillColor(sf::Color::White);
-    else if(Game::getGame()->getLevelCompleted()[active])
+    else if (Game::getGame()->getLevelCompleted()[active])
         itemList[active]->setFillColor(sf::Color::White);
     else
         itemList[active]->setFillColor(sf::Color::Yellow);
@@ -142,10 +142,11 @@ void MainMenu::forwardLevel() {
     else active++;
     itemList[active]->setFillColor(sf::Color::Green);
 }
+
 void MainMenu::backwardLevel() {
-    if(active == 5)
+    if (active == 5)
         itemList[active]->setFillColor(sf::Color::White);
-    else if(Game::getGame()->getLevelCompleted()[active])
+    else if (Game::getGame()->getLevelCompleted()[active])
         itemList[active]->setFillColor(sf::Color::White);
     else
         itemList[active]->setFillColor(sf::Color::Yellow);
@@ -162,6 +163,7 @@ void MainMenu::forward() {
     else active++;
     itemList[active]->setFillColor(sf::Color::Green);
 }
+
 void MainMenu::backward() {
     itemList[active]->setFillColor(sf::Color::White);
     if (active == 0)
@@ -170,6 +172,6 @@ void MainMenu::backward() {
     itemList[active]->setFillColor(sf::Color::Green);
 }
 
-const MainMenu::MenuItem::TYPE& MainMenu::getAction() const {
+const MainMenu::MenuItem::TYPE &MainMenu::getAction() const {
     return itemList[active]->getType();
 }

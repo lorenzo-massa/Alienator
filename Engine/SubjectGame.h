@@ -14,7 +14,9 @@ public:
     virtual ~SubjectGame() = default;
 
     virtual void registerObserver(std::shared_ptr<ObserverGame> observer) = 0;
+
     virtual void removeObserver(std::shared_ptr<ObserverGame> observer) = 0;
+
     virtual void notifyObservers(int i) const = 0;
 
 protected:

@@ -8,11 +8,14 @@
 #include "GameState.h"
 #include "../Menu/MainMenu.h"
 
-class PauseState : public GameState{
+class PauseState : public GameState {
 public:
     PauseState(std::shared_ptr<sf::RenderWindow> targetWindow);
+
     void handleInput() override;
+
     void generateFrame() override;
+
 private:
     MainMenu mainMenu;
 };

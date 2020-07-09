@@ -8,15 +8,20 @@
 #include "GameCharacter.h"
 #include <AssetsManager.h>
 
-class Enemy : virtual public GameCharacter{
+class Enemy : virtual public GameCharacter {
 public:
-    Enemy(std::string strBehavior, sf::Vector2f pos,  int hp, int armor,sf::Vector2f(speed),float speedCoeff,sf::Vector2f patrolDistance,std::string behavior);
+    Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
+          sf::Vector2f patrolDistance, std::string behavior);
+
     ~Enemy();
 
     sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
+
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
-    bool patrol(float deltaT, float directionX,sf::Vector2f heroPos,sf::Vector2f* move);
-    std::shared_ptr<Bullet> fight(sf::Vector2f heroPos,sf::Vector2f* move,float deltaT,std::shared_ptr<Bullet> b/*,bool collision*/);
+
+    bool patrol(float deltaT, float directionX, sf::Vector2f heroPos, sf::Vector2f *move);
+
+    std::shared_ptr<Bullet> fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT);
 
     const std::string &getBehavior() const;
 
@@ -34,10 +39,16 @@ public:
 
     void setPatrolDistance(const sf::Vector2f &patrolDistance);
 
+    bool checkJump();
+
+
 private:
     std::string behavior;
+
     std::string behaviorType;
+
     sf::Vector2f patrolDistance;
+
     std::shared_ptr<sf::Clock> clockPatrol;
 };
 

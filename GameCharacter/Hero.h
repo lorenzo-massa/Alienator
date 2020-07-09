@@ -8,14 +8,15 @@
 
 #include "GameCharacter.h"
 
-class Hero: virtual public GameCharacter{
+class Hero : virtual public GameCharacter {
 public:
     Hero();
-    Hero(int type, int hp, int ar, int am, sf::Vector2f s,sf::Vector2f pos,float dir,float speedCoeff, int coins);
+
+    Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff, int coins);
 
     ~Hero();
 
-    int receiveDamage(int points) override ;
+    int receiveDamage(int points) override;
 
     sf::Vector2f move(sf::Vector2f direction, float delatT) override;
 
@@ -24,15 +25,17 @@ public:
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 
     int getCoins() const;
+
     void setCoins(const int coins);
 
     int getType() const;
-    void setType(const int type);
 
+    void setType(const int type);
 
 
     //PowerUp
     void addCoins(int coins);
+
     void addAmmo(int ammo);
 
 private:

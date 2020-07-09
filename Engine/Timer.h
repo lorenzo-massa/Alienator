@@ -13,19 +13,28 @@
 
 class Timer : public Subject {
 public:
-    static Timer& getTimer();
+    static Timer &getTimer();
 
-    void registerObserver(Observer* o) override;
-    void removeObserver(Observer* o) override;
+    void registerObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
+
     void notifyObservers() const override;
+
     void clearObservers();
+
     void check();
+
     float getTime();
+
     void resetTime();
-    std::list<Observer*> observers;
+
+    std::list<Observer *> observers;
 private:
-    static Timer* myTimer;
+    static Timer *myTimer;
+
     Timer() = default;
+
     sf::Clock clock;
     sf::Clock mainClock;
 };

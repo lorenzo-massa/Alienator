@@ -11,24 +11,31 @@
 class Weapon {
 public:
     Weapon();
-    Weapon(int d=10,float fR=1.0);
-    virtual ~Weapon(){}
+
+    Weapon(int d = 10, float fR = 1.0);
+
+    virtual ~Weapon() {}
 
     std::shared_ptr<Bullet> fire(int x, int y, int damage, sf::Vector2f mousePosition) const;
 
     void setDamage(int d);
+
     int getDamage() const;
 
     void setFireRate(float fR);
+
     float getFireRate() const;
 
     int getPosX() const;
+
     void setPosX(int posX);
 
     int getPosY() const;
+
     void setPosY(int posY);
 
     int getDirection() const;
+
     void setDirection(int direction);
 
 protected:

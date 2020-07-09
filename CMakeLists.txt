@@ -30,8 +30,6 @@ set(SOURCE_FILES
         Weapons/Weapon.cpp
         Menu/MainMenu.cpp
         Menu/MainMenu.h
-        Maps/MapHandler.cpp
-        Maps/MapHandler.h
         Maps/Map.cpp
         Maps/Map.h
         States/PlayState.cpp

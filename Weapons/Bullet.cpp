@@ -8,24 +8,24 @@
 #include "Bullet.h"
 
 
-Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition):damage(dam),posX(x),posY(y), friendly(false){
+Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition) : damage(dam), posX(x), posY(y), friendly(false) {
     maxSpeed = 18.0f;
-    currentSpeed = sf::Vector2f(0,0);
+    currentSpeed = sf::Vector2f(0, 0);
 
     setTexture(AssetManager::textures.at("Bullet"));
-    setPosition(x+32,y+64);
+    setPosition(x + 32, y + 64);
     posX += 32;
     posY += 64;
-    setScale(sf::Vector2f(0.02f,0.02f));
+    setScale(sf::Vector2f(0.02f, 0.02f));
 
-    sf::Vector2f playerPosition = sf::Vector2f (x, y);
+    sf::Vector2f playerPosition = sf::Vector2f(x, y);
     sf::Vector2f dir = mousePosition - playerPosition;
     sf::Vector2f dirNorm;
     dirNorm.x = dir.x / sqrt(pow(dir.x, 2) + pow(dir.y, 2));
     dirNorm.y = dir.y / sqrt(pow(dir.x, 2) + pow(dir.y, 2));
 
-    currentSpeed.x= dirNorm.x * maxSpeed;
-    currentSpeed.y= dirNorm.y * maxSpeed;
+    currentSpeed.x = dirNorm.x * maxSpeed;
+    currentSpeed.y = dirNorm.y * maxSpeed;
 }
 
 void Bullet::move(float dT) {
@@ -37,20 +37,23 @@ void Bullet::move(float dT) {
 float Bullet::getPosY() const {
     return posY;
 }
+
 void Bullet::setPosY(int y) {
-    posY=y;
+    posY = y;
 }
 
 float Bullet::getPosX() const {
     return posX;
 }
+
 void Bullet::setPosX(int x) {
-    posX=x;
+    posX = x;
 }
 
 int Bullet::getDamage() const {
     return damage;
 }
+
 void Bullet::setDamage(int damage) {
     Bullet::damage = damage;
 }

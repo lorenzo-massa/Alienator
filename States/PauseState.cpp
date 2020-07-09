@@ -7,27 +7,27 @@
 #include "../Engine/Game.h"
 
 
-PauseState::PauseState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow), mainMenu(MainMenu(MainMenu::STYLE::PAUSE)) {
+PauseState::PauseState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow),
+                                                                         mainMenu(MainMenu(MainMenu::STYLE::PAUSE)) {
 }
 
 void PauseState::handleInput() {
     sf::Event event;
-    while(targetWindow->pollEvent(event)) {
-        if(event.type == sf::Event::Closed)
+    while (targetWindow->pollEvent(event)) {
+        if (event.type == sf::Event::Closed)
             targetWindow->close();
         else if (event.type == sf::Event::Resized) {
             sf::Vector2u size = targetWindow->getSize();
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
-        }
-        else if(event.type == sf::Event::KeyPressed) {
-            if(event.key.code == sf::Keyboard::Escape) {
+        } else if (event.type == sf::Event::KeyPressed) {
+            if (event.key.code == sf::Keyboard::Escape) {
                 Game::getGame()->getStateHandler()->removeState();
             }
-            if(event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
+            if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up)
                 mainMenu.backward();
-            if(event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
+            if (event.key.code == sf::Keyboard::S || event.key.code == sf::Keyboard::Down)
                 mainMenu.forward();
-            if(event.key.code == sf::Keyboard::Enter) {
+            if (event.key.code == sf::Keyboard::Enter) {
                 switch (mainMenu.getAction()) {
                     case MainMenu::MenuItem::TYPE::RESUME:
                         Game::getGame()->getStateHandler()->removeState();
@@ -47,7 +47,7 @@ void PauseState::handleInput() {
 
 void PauseState::generateFrame() {
     targetWindow->clear();
-    AssetManager::setBackground(targetWindow,0);
+    AssetManager::setBackground(targetWindow, 0);
 
     mainMenu.draw(targetWindow);
 }

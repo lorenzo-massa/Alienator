@@ -5,61 +5,64 @@
 #include <AssetsManager.h>
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am,sf::Vector2f s,sf::Vector2f pos,float dir,float speedCoeff) :
-healthPoint(hp),armor(ar),ammo(am),speed(s),pos(pos),direction(dir),speedBoost(1.0f),invincibility(false),fireRateBoost(1.0f),damageBoost(1.0f),speedCoeff(speedCoeff){
+GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff) :
+        healthPoint(hp), armor(ar), ammo(am), speed(s), pos(pos), direction(dir), speedBoost(1.0f),
+        invincibility(false), fireRateBoost(1.0f), damageBoost(1.0f), speedCoeff(speedCoeff) {
     weapon = std::make_shared<Weapon>(10, 3.0f);
     typePowerUp = "";
     clockAnimation = std::make_shared<sf::Clock>();
 }
 
-int GameCharacter::receiveDamage(int points ) {
-    if(invincibility == false)
-        healthPoint -= points/armor;
+int GameCharacter::receiveDamage(int points) {
+    if (invincibility == false)
+        healthPoint -= points / armor;
 
     return healthPoint;
 }
 
-sf::Vector2f GameCharacter::move(sf::Vector2f direction,float deltaT) {
+sf::Vector2f GameCharacter::move(sf::Vector2f direction, float deltaT) {
     float yT;
     float xT;
 
-    if(direction.x==0.0f) {   //attrito
+    if (direction.x == 0.0f) {   //attrito
         if (speed.x > 0)
             speed.x -= 30.0f * 64.0f * deltaT;
 
-        else if (speed.x<0)
+        else if (speed.x < 0)
             speed.x += 30.0f * 64.0f * deltaT;
 
-        if(speed.x>-3 && speed.x<3)//settaggio velocità
-            speed.x=0;
+        if (speed.x > -3 && speed.x < 3)//settaggio velocità
+            speed.x = 0;
     }
-    if(direction.x!=0)
-        speed.x = speedCoeff*64.0f*direction.x;//velocità costante se tengo premuto
+    if (direction.x != 0)
+        speed.x = speedCoeff * 64.0f * direction.x;//velocità costante se tengo premuto
 
-    xT=speed.x*deltaT;
+    xT = speed.x * deltaT;
 
-    speed.y=speed.y+98.0f*64.0f*deltaT; //gravità
-    yT=(speed.y*deltaT+0.5f*98.0f*64.0f*deltaT*deltaT)*direction.y;
+    speed.y = speed.y + 98.0f * 64.0f * deltaT; //gravità
+    yT = (speed.y * deltaT + 0.5f * 98.0f * 64.0f * deltaT * deltaT) * direction.y;
 
-    xT = xT*speedBoost;
-    yT = yT*speedBoost;
+    xT = xT * speedBoost;
+    yT = yT * speedBoost;
 
-    return sf::Vector2f(xT,yT);
+    return sf::Vector2f(xT, yT);
 }
 
 
 void GameCharacter::jump() {
-    speed.y-=25.0f*64.0f;
+    speed.y -= 25.0f * 64.0f;
 }
 
 std::shared_ptr<Bullet> GameCharacter::shot(sf::Vector2f mousePosition) {
-    return weapon->fire(sf::Sprite::getPosition().x, sf::Sprite::getPosition().y, weapon->getDamage(), mousePosition);
+    return weapon->fire(sf::Sprite::getPosition().x, sf::Sprite::getPosition().y, weapon->getDamage() * damageBoost,
+                        mousePosition);
 }
 
 //Getter e Setter
 sf::Vector2f GameCharacter::getPos() const {
     return GameCharacter::pos;
 }
+
 void GameCharacter::setPos(sf::Vector2f pos) {
     GameCharacter::pos = pos;
 }
@@ -67,20 +70,23 @@ void GameCharacter::setPos(sf::Vector2f pos) {
 int GameCharacter::getHealthPoint() const {
     return GameCharacter::healthPoint;
 }
+
 void GameCharacter::setHealthPoint(int healthPoint) {
-    GameCharacter::healthPoint=healthPoint;
+    GameCharacter::healthPoint = healthPoint;
 }
 
-std::shared_ptr<Weapon> GameCharacter::getWeapon() const{
+std::shared_ptr<Weapon> GameCharacter::getWeapon() const {
     return weapon;
 }
+
 void GameCharacter::setWeapon(std::shared_ptr<Weapon> weapon) {
-    this->weapon=weapon;
+    this->weapon = weapon;
 }
 
 int GameCharacter::getArmor() const {
     return armor;
 }
+
 void GameCharacter::setArmor(int armor) {
     GameCharacter::armor = armor;
 }
@@ -88,6 +94,7 @@ void GameCharacter::setArmor(int armor) {
 sf::Vector2f GameCharacter::getSpeed() const {
     return speed;
 }
+
 void GameCharacter::setSpeed(sf::Vector2f speed) {
     GameCharacter::speed = speed;
 }
@@ -107,6 +114,7 @@ float GameCharacter::getDirection() const {
 void GameCharacter::setDirection(float direction) {
     GameCharacter::direction = direction;
 }
+
 GameCharacter::~GameCharacter() {
 
 }
