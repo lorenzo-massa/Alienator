@@ -22,19 +22,17 @@ public:
 
     void setAction(int action);
 
-    const std::shared_ptr<sf::Clock> &getClock() const;
-
-    void setClock(const std::shared_ptr<sf::Clock> &clock);
-
-    const std::shared_ptr<sf::Clock> &getClockEnemies() const;
-
-    void setClockEnemies(const std::shared_ptr<sf::Clock> &clockEnemies);
-
     bool checkCollision(const std::shared_ptr<sf::Sprite>& entity1, const std::shared_ptr<sf::Sprite>& entity2);
 
     void checkFinished();
 
+    void behaviorChanger();
 
+
+    void enemyBehaviorChanger(std::shared_ptr<Enemy> enemy);
+
+    void detectCollision(const std::shared_ptr<GameCharacter> &entity, const std::shared_ptr<sf::Sprite> &block,
+                         sf::Vector2f &moving);
 
 private:
 
@@ -64,7 +62,10 @@ private:
 
     void animateEnemy(std::shared_ptr<Enemy> enemy, std::string color);
 
-    void behaviorChanger();
+    sf::Vector2f
+    detectCollision(const std::shared_ptr<GameCharacter> &entity, const std::shared_ptr<Block> &block,
+                    sf::Vector2f moving);
+
 };
 
 

@@ -55,3 +55,6 @@ TEST_F(TestHero,shotTest){
     ASSERT_EQ(bullet->getPosition().x,hero->getPosition().x+32);
     ASSERT_EQ(bullet->getPosition().y,hero->getPosition().y+64);
 }
+
+
+

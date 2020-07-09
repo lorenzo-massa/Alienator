@@ -6,10 +6,6 @@
 #define ALIENATOR_ENEMY_H
 
 #include "GameCharacter.h"
-#include "EnemyBehavior/EnemyBehavior.h"
-#include "EnemyBehavior/Wizard.h"
-#include "EnemyBehavior/Sentinel.h"
-#include "EnemyBehavior/Guard.h"
 #include <AssetsManager.h>
 
 class Enemy : virtual public GameCharacter{
@@ -29,6 +25,10 @@ public:
     const std::string &getBehaviorType() const;
 
     void setBehaviorType(const std::string &behaviorType);
+
+    const sf::Vector2f &getPatrolDistance() const;
+
+    void setPatrolDistance(const sf::Vector2f &patrolDistance);
 
 private:
     std::string behavior;

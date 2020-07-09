@@ -57,11 +57,11 @@ void PlayState::handleInput() {
             }
         } else if (event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(0.0f);
+                Game::getGame()->getHero()->setDirection(0);
 
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(0.0f);
+                Game::getGame()->getHero()->setDirection(0);
 
             }
         } else if (event.type == sf::Event::MouseButtonPressed){
@@ -104,17 +104,16 @@ void PlayState::generateFrame() {
 
     sf::View tempView = targetWindow->getView();
 
-       if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 800 &&
-                Game::getGame()->getHero()->getDirection() == -1) ||
-           (AssetManager::getXBackground() + targetWindow->getSize().x - 800 <
-                Game::getGame()->getHero()->getPosition().x && Game::getGame()->getHero()->getDirection() == 1)) {
+       if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 800 && (Game::getGame()->getHero()->getDirection() == -1
+            || (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))
+            ||
+            (AssetManager::getXBackground() + targetWindow->getSize().x - 800 < Game::getGame()->getHero()->getPosition().x
+            && (Game::getGame()->getHero()->getDirection() == 1 || (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))) {
            tempView.move(move.x, 0);
            targetWindow->setView(tempView);
        }
        else
            move.x = 0;
-
-    float directionEnemy;
 
     behaviorChanger();
 
@@ -371,15 +370,7 @@ void PlayState::animateEnemy(std::shared_ptr<Enemy> enemy,std::string color){
 
 }
 
-
-sf::Vector2f PlayState::isLegalMovement(const std::shared_ptr<GameCharacter>& entity, sf::Vector2f move){
-    sf::Vector2f moving = move;
-    sf::Vector2f entityPos = entity->getPosition();
-    sf::Vector2u entitySize = entity->getTexture()->getSize();
-    sf::Vector2f entityScale = entity->getScale();
-
-    entityPos.x += entitySize.x*entityScale.x/2.0f;
-    entityPos.y += entitySize.y*entityScale.y/2.0f;
+void PlayState::detectCollision(const std::shared_ptr<GameCharacter>& entity, const std::shared_ptr<sf::Sprite>& block, sf::Vector2f &moving){
 
     float deltaX;
     float deltaY;
@@ -396,78 +387,77 @@ sf::Vector2f PlayState::isLegalMovement(const std::shared_ptr<GameCharacter>& en
     bool bottomtCollisionBool = false;
     bool topCollisionBool = false;
 
+    sf::Vector2f entityPos = entity->getPosition();
+    sf::Vector2u entitySize = entity->getTexture()->getSize();
+    sf::Vector2f entityScale = entity->getScale();
 
-    for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
-        deltaX  = entityPos.x + moving.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
-        intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
-        deltaY  = entityPos.y + moving.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
-        intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
+    entityPos.x += entitySize.x*entityScale.x/2.0f;
+    entityPos.y += entitySize.y*entityScale.y/2.0f;
+
+    deltaX  = entityPos.x + moving.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
+    intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
+    deltaY  = entityPos.y + moving.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
+    intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
 
 
-        if(intersectionY < 0.0f && intersectionX < 0.0f){ //se entra qui collide con un blocco
+    if(intersectionY < 0.0f && intersectionX < 0.0f){ //se entra qui collide con un blocco
 
-            rightCollisionBool = false;
-            leftCollisionBool = false;
-            bottomtCollisionBool = false;
-            topCollisionBool = false;
+        rightCollisionBool = false;
+        leftCollisionBool = false;
+        bottomtCollisionBool = false;
+        topCollisionBool = false;
 
-            //std::cout<<"\n\nMove X: "<< move.x << " Y: "<<move.y<<std::endl;
-            //std::cout<<"Collision with: X: "<< block->getPosition().x/64 << " Y: "<<block->getPosition().y/64 << std::endl;
-
-            if(intersectionX > intersectionY){
-                if(deltaX > 0.0f){
-                    leftCollision++;
-                    leftCollisionBool = true;
-                    //std::cout<<"Left Collision!";
-                }else{
-                    rightCollision++;
-                    rightCollisionBool = true;
-                    //std::cout<<"Right Collision!";
-                }
+        if(intersectionX > intersectionY){
+            if(deltaX > 0.0f){
+                leftCollision++;
+                leftCollisionBool = true;
+            }else{
+                rightCollision++;
+                rightCollisionBool = true;
             }
-            else{
-                 if(deltaY < 0.0f){
-                     bottomtCollision++;
-                     bottomtCollisionBool = true;
-                     //std::cout<<"Bottom Collision!";
-                 }else{
-                     topCollision++;
-                     topCollisionBool = true;
-                     //std::cout<<"Top Collision!";
-                 }
+        }
+        else{
+            if(deltaY < 0.0f){
+                bottomtCollision++;
+                bottomtCollisionBool = true;
+            }else{
+                topCollision++;
+                topCollisionBool = true;
             }
+        }
 
-            if(leftCollision == 1 && leftCollisionBool){
-                moving.x -= intersectionX;
-                entity->setSpeed(sf::Vector2f(0,entity->getSpeed().y));
-            }
+        if(leftCollision == 1 && leftCollisionBool){
+            moving.x -= intersectionX;
+            entity->setSpeed(sf::Vector2f(0,entity->getSpeed().y));
+        }
 
-            if(rightCollision == 1 && rightCollisionBool){
-                moving.x += intersectionX;
-                entity->setSpeed(sf::Vector2f(0,entity->getSpeed().y));
-            }
+        if(rightCollision == 1 && rightCollisionBool){
+            moving.x += intersectionX;
+            entity->setSpeed(sf::Vector2f(0,entity->getSpeed().y));
+        }
 
-            if(topCollision == 1 && topCollisionBool){
-                moving.y -= intersectionY;
-                entity->setSpeed(sf::Vector2f(entity->getSpeed().x,0));
-            }
+        if(topCollision == 1 && topCollisionBool){
+            moving.y -= intersectionY;
+            entity->setSpeed(sf::Vector2f(entity->getSpeed().x,0));
+        }
 
-            if(bottomtCollision == 1 && bottomtCollisionBool){
-                moving.y += intersectionY;
-                entity->setSpeed(sf::Vector2f(entity->getSpeed().x,0));
-            }
-
+        if(bottomtCollision == 1 && bottomtCollisionBool){
+            moving.y += intersectionY;
+            entity->setSpeed(sf::Vector2f(entity->getSpeed().x,0));
         }
 
     }
 
-    /*
-    if(leftCollision > 0 || rightCollision > 0 || topCollision > 0 || bottomtCollision > 0){
-        std::cout<<"\nnCollisions: " << leftCollision + rightCollision + topCollision + bottomtCollision<<std::endl;
-        std::cout<<"Moving X: "<<moving.x<<" Y: "<<moving.y<<std::endl;
+}
 
+
+sf::Vector2f PlayState::isLegalMovement(const std::shared_ptr<GameCharacter>& entity, sf::Vector2f move){
+    sf::Vector2f moving = move;
+
+    for(const auto& block : Game::getGame()->getMapHandler()->getMap()->getMatrix()){
+        detectCollision(entity,block,moving);
     }
-    */
+
     return moving;
 }
 
@@ -505,6 +495,7 @@ void PlayState::checkCollectables(){
 
 void PlayState::checkBullets(){
     int i=0, hp = 0;
+    int cont = 0;
     bool deleted = false, killedHero = false;
     for(const auto& bullet : Game::getGame()->getMapHandler()->getMap()->getBullets()){
         bullet->move(Game::getGame()->getClock()->getElapsedTime().asSeconds());
@@ -518,22 +509,22 @@ void PlayState::checkBullets(){
             hp = Game::getGame()->getHero()->receiveDamage(bullet->getDamage());
             Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
             if(hp < 1){
-                //Game::getGame()->killHero();
                 killedHero = true;
             }
-            //std::cout<<"Removed for hero"<<std::endl;
         }else{
             if(!deleted){
+                cont = 0;
                 for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()){
                     if(checkCollision(bullet, enemy) && bullet->isFriendly() && !deleted){
                         deleted = true;
                         hp = enemy->receiveDamage(bullet->getDamage());
-                        //std::cout<<"Enemy hp: "<<hp<<std::endl;
-                        if(hp < 1)
-                            Game::getGame()->getMapHandler()->getMap()->removeEnemy(i);
-                        Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
-                        //std::cout<<"Removed for enemy"<<std::endl;
+                        if(hp < 1){
+                            Game::getGame()->getMapHandler()->getMap()->removeEnemy(cont);
+                            Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
+                        }
                     }
+                    cont++;
+
                 }
             }
             if(!deleted){
@@ -541,13 +532,11 @@ void PlayState::checkBullets(){
                     if(checkCollision(bullet, block) && !deleted){
                         deleted = true;
                         Game::getGame()->getMapHandler()->getMap()->removeBullet(i);
-                        //std::cout<<"Removed for block"<<std::endl;
                     }
                 }
             }
 
         }
-        //std::cout<<"i: "<<i<<std::endl;
         i++;
     }
 
@@ -596,36 +585,41 @@ bool PlayState:: fireClock(float fireRate){
     return false;
 }
 
-void PlayState:: behaviorChanger(){
+void PlayState::behaviorChanger(){
     for(const auto& enemy : Game::getGame()->getMapHandler()->getMap()->getEnemies()) {
-        sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
-        bool found;
-        std::shared_ptr<Bullet> b = nullptr;
+        enemyBehaviorChanger(enemy);
+    }
+}
 
-        if (enemy->getBehavior() == "patrol") {
-            if (patrolClock()) {
-                enemy->setDirection(-1.0f);
-            } else {
-                enemy->setDirection(1.0f);
-            }
+void PlayState::enemyBehaviorChanger(std::shared_ptr<Enemy> enemy){
+    sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
+    bool found;
+    std::shared_ptr<Bullet> b = nullptr;
 
-            found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(), enemy->getDirection(),
-                                  sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
-            moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-            if (found) {
-                enemy->setBehavior("fight");
-            }
-        } else if (enemy->getBehavior() == "fight") {
-            b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), &moveEnemy,
-                             Game::getGame()->getClock()->getElapsedTime().asSeconds(), b);
-            moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+    if (enemy->getBehavior() == "patrol") {
+        if (patrolClock()) {
+            enemy->setDirection(-1.0f);
+        } else {
+            enemy->setDirection(1.0f);
+        }
 
-            if (b != nullptr) {
-                if (fireClock(enemy->getWeapon()->getFireRate())) {
-                    Game::getGame()->getMapHandler()->getMap()->addBullet(b);
-                }
+        found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(), enemy->getDirection(),
+                              sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
+        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+
+        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+        if (found) {
+            enemy->setBehavior("fight");
+        }
+    } else if (enemy->getBehavior() == "fight") {
+        b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), &moveEnemy,
+                         Game::getGame()->getClock()->getElapsedTime().asSeconds(), b);
+        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
+        if (b != nullptr) {
+            if (fireClock(enemy->getWeapon()->getFireRate())) {
+                Game::getGame()->getMapHandler()->getMap()->addBullet(b);
             }
         }
     }

@@ -35,14 +35,6 @@ set(SOURCE_FILES
         ../Weapons/Bullet.h
         ../Weapons/Bullet.cpp
         ../Weapons/Weapon.cpp
-        ../GameCharacter/EnemyBehavior/EnemyBehavior.h
-        ../GameCharacter/EnemyBehavior/EnemyBehavior.cpp
-        ../GameCharacter/EnemyBehavior/Sentinel.h
-        ../GameCharacter/EnemyBehavior/Sentinel.cpp
-        ../GameCharacter/EnemyBehavior/Guard.h
-        ../GameCharacter/EnemyBehavior/Guard.cpp
-        ../GameCharacter/EnemyBehavior/Wizard.cpp
-        ../GameCharacter/EnemyBehavior/Wizard.h
         ../Menu/MainMenu.cpp
         ../Menu/MainMenu.h
         ../Maps/MapHandler.cpp

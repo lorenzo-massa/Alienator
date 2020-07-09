@@ -107,3 +107,11 @@ const std::string &Enemy::getBehaviorType() const {
 void Enemy::setBehaviorType(const std::string &behaviorType) {
     Enemy::behaviorType = behaviorType;
 }
+
+const sf::Vector2f &Enemy::getPatrolDistance() const {
+    return patrolDistance;
+}
+
+void Enemy::setPatrolDistance(const sf::Vector2f &patrolDistance) {
+    Enemy::patrolDistance = patrolDistance;
+}
