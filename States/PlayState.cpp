@@ -9,6 +9,9 @@
 PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int level) : GameState(targetWindow) {
     this->level = level;
 
+    Game::getGame()->getMap()->reset();
+
+
     Game::getGame()->getMap()->loadLevel(level);
 
     action = 0;
@@ -297,7 +300,7 @@ void PlayState::animationEnemies() {
 
             color = "Blue";
 
-        } else if (enemy->getBehavior() == "Sentinel") {
+        } else if (enemy->getBehaviorType() == "Sentinel") {
 
             color = "Gray";
 

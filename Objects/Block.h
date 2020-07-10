@@ -9,19 +9,11 @@
 
 class Block : public sf::Sprite {
 public:
-    Block(sf::Vector2f position);
-
-
-    void setPosition(float x, float y);
+    explicit Block(sf::Vector2f position);
 
 private:
     const float height{64};
     const float width{64};
-
-    float left;
-    float right;
-    float top;
-    float bottom;
 };
 
 

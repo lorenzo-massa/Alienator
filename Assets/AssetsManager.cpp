@@ -131,14 +131,14 @@ void AssetManager::load() {
 
 }
 
-void AssetManager::setBackground(std::shared_ptr<sf::RenderWindow> targetWindow, float xT) {
+void AssetManager::setBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float xT) {
     sf::Sprite background(textures.at("BACKGROUND"));
     xBackground += xT;
     background.setPosition(xBackground, 0);
     targetWindow->draw(background);
 }
 
-void AssetManager::initBackground(std::shared_ptr<sf::RenderWindow> targetWindow, float x) {
+void AssetManager::initBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float x) {
     sf::Sprite background(textures.at("BACKGROUND"));
     xBackground = x;
     background.setPosition(xBackground, 0);

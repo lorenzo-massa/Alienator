@@ -20,11 +20,11 @@ public:
     ~Collectable();
 
 
-    virtual void registerObserver(std::shared_ptr<ObserverGame> observer);
+    void registerObserver(std::shared_ptr<ObserverGame> observer) override;
 
-    virtual void removeObserver(std::shared_ptr<ObserverGame> observer);
+    void removeObserver(std::shared_ptr<ObserverGame> observer) override;
 
-    virtual void notifyObservers(int i) const;
+    void notifyObservers(int i) const override;
 
     const PowerUp &getPowerUp() const;
 

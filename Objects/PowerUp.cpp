@@ -37,8 +37,8 @@ PowerUp::~PowerUp() {
 
 }
 
-const std::string PowerUp::getType() const {
-    std::string string = "";
+std::string PowerUp::getType() const {
+    std::string string;
 
     if (type == COINS)
         string = "COINS";
