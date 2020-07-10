@@ -9,7 +9,6 @@
 PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int level) : GameState(targetWindow) {
     this->level = level;
 
-
     Game::getGame()->getMap()->loadLevel(level);
 
     action = 0;
@@ -584,7 +583,6 @@ bool PlayState::fireClock(float fireRate) {
 void PlayState::behaviorChanger() {
     int i = 1;
     for (const auto &enemy : Game::getGame()->getMap()->getEnemies()) {
-        std::cout << i << ")";
         enemyBehaviorChanger(enemy);
         i++;
     }
@@ -596,8 +594,6 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
     std::shared_ptr<Bullet> b = nullptr;
 
     if (enemy->getBehavior() == "patrol") {
-        std::cout << enemy->getClockPatrol()->getElapsedTime().asSeconds() << std::endl << enemy->getDirection()
-                  << std::endl;
         if (enemy->getClockPatrol()->getElapsedTime().asSeconds() > 3.0f) {
 
             enemy->setDirection(enemy->getDirection() * (-1.0f));

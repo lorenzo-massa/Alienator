@@ -7,9 +7,14 @@
 #include "../Engine/Game.h"
 
 Map::Map() {
+    enemies = std::vector<std::shared_ptr<Enemy>>();
+    collectables = std::vector<std::shared_ptr<Collectable>>();
+    mapMatrix = std::vector<std::shared_ptr<sf::Sprite>>();
+    bullets = std::vector<std::shared_ptr<Bullet>>();
+    portal = std::make_shared<sf::Sprite>();
 }
 
-void Map::addToMatrix(std::shared_ptr<sf::Sprite> x) {
+void Map::addToMatrix(const std::shared_ptr<sf::Sprite>& x) {
     mapMatrix.push_back(x);
 }
 
@@ -21,7 +26,7 @@ std::shared_ptr<sf::Sprite> Map::getFromMatrix(int i) {
     return mapMatrix[i];
 }
 
-void Map::addEnemy(std::shared_ptr<Enemy> e) {
+void Map::addEnemy(const std::shared_ptr<Enemy>& e) {
     enemies.push_back(e);
 }
 
@@ -33,13 +38,6 @@ std::shared_ptr<Enemy> Map::getEnemy(int i) {
     return enemies[i];
 }
 
-int Map::getN() const {
-    return n;
-}
-
-int Map::getM() const {
-    return m;
-}
 
 std::vector<std::shared_ptr<sf::Sprite>> Map::getMatrix() {
     return mapMatrix;
@@ -49,7 +47,7 @@ std::vector<std::shared_ptr<Enemy>> Map::getEnemies() {
     return enemies;
 }
 
-void Map::addCollectable(std::shared_ptr<Collectable> c) {
+void Map::addCollectable(const std::shared_ptr<Collectable>& c) {
     collectables.push_back(c);
 }
 
@@ -65,7 +63,7 @@ std::vector<std::shared_ptr<Collectable>> Map::getCollectables() {
     return collectables;
 }
 
-void Map::addBullet(std::shared_ptr<Bullet> b) {
+void Map::addBullet(const std::shared_ptr<Bullet>& b) {
     bullets.push_back(b);
 }
 
@@ -89,6 +87,22 @@ void Map::setPortal(const std::shared_ptr<sf::Sprite> &portal) {
     Map::portal = portal;
 }
 
+int Map::getN() const {
+    return n;
+}
+
+void Map::setN(int n) {
+    Map::n = n;
+}
+
+int Map::getM() const {
+    return m;
+}
+
+void Map::setM(int m) {
+    Map::m = m;
+}
+
 void Map::loadLevel(int x) {
     std::string filename = "Maps/Files/level" + std::to_string(x) + ".txt";
     std::basic_ifstream<char> file = std::ifstream(filename);
@@ -97,7 +111,6 @@ void Map::loadLevel(int x) {
     } else {
         std::cout << filename << " is opened!" << std::endl;
 
-        int n, m;
         char c;
 
         file >> n;
@@ -261,9 +274,23 @@ void Map::loadLevel(int x) {
             }
             i++;
         }
+        std::cout<<"Map loaded!"<<std::endl;
     }
 }
 
-Map::~Map() {
-
+void Map::reset(){
+    enemies.clear();
+    collectables.clear();
+    mapMatrix.clear();
+    bullets.clear();
+    portal = nullptr;
 }
+
+Map::~Map() {
+    enemies.clear();
+    collectables.clear();
+    mapMatrix.clear();
+    bullets.clear();
+}
+
+

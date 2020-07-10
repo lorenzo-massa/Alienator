@@ -157,14 +157,22 @@ void Game::update(int i) {
 }
 
 void Game::killHero() {
+
     ptrHero->~Hero();
 
     int level = ptrStateHandler->getState()->getLevel();
+
     ptrStateHandler->removeState();
+
+    ptrMap->reset();
+
     if (level > 0 && level < 6)
         ptrStateHandler->addState(std::make_shared<PlayState>(gameWindow, level));
     else
         std::cerr << "Error loading level" << std::endl;
+
+    std::cout<<"KILLED"<<std::endl;
+
 }
 
 const std::vector<bool> &Game::getLevelCompleted() const {

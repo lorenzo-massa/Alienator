@@ -19,7 +19,7 @@ public:
 
     ~Map();
 
-    void addToMatrix(std::shared_ptr<sf::Sprite> x);
+    void addToMatrix(const std::shared_ptr<sf::Sprite>& x);
 
     void removeFromMatrix(int i);
 
@@ -27,7 +27,7 @@ public:
 
     std::vector<std::shared_ptr<sf::Sprite>> getMatrix();
 
-    void addEnemy(std::shared_ptr<Enemy> e);
+    void addEnemy(const std::shared_ptr<Enemy>& e);
 
     void removeEnemy(int t);
 
@@ -35,7 +35,7 @@ public:
 
     std::vector<std::shared_ptr<Enemy>> getEnemies();
 
-    void addCollectable(std::shared_ptr<Collectable> c);
+    void addCollectable(const std::shared_ptr<Collectable>& c);
 
     void removeCollectable(int i);
 
@@ -43,7 +43,7 @@ public:
 
     std::vector<std::shared_ptr<Collectable>> getCollectables();
 
-    void addBullet(std::shared_ptr<Bullet> b);
+    void addBullet(const std::shared_ptr<Bullet>& b);
 
     void removeBullet(int i);
 
@@ -51,16 +51,23 @@ public:
 
     std::vector<std::shared_ptr<Bullet>> getBullets();
 
-
-    int getN() const;
-
-    int getM() const;
-
     const std::shared_ptr<sf::Sprite> &getPortal() const;
 
     void setPortal(const std::shared_ptr<sf::Sprite> &portal);
 
+    int getN() const;
+
+    void setN(int n);
+
+    int getM() const;
+
+    void setM(int m);
+
+
     void loadLevel(int i);
+
+    void reset();
+
 
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;
@@ -68,8 +75,8 @@ private:
     std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
     std::vector<std::shared_ptr<Bullet>> bullets;
     std::shared_ptr<sf::Sprite> portal;
-    int n;
-    int m;
+    int n{};
+    int m{};
 };
 
 
