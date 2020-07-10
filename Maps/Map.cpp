@@ -137,134 +137,134 @@ void Map::loadLevel(int x) {
 
                     switch (c) {
                         case '1':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("1"));
                             addToMatrix(b);
                             break;
                         case '2':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("2"));
                             addToMatrix(b);
                             break;
                         case '3':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("3"));
                             addToMatrix(b);
                             break;
                         case '4':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("4"));
                             addToMatrix(b);
                             break;
                         case '5':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("5"));
                             addToMatrix(b);
                             break;
                         case '6':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("6"));
                             addToMatrix(b);
                             break;
                         case '7':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("7"));
                             addToMatrix(b);
                             break;
                         case '8':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("8"));
                             addToMatrix(b);
                             break;
                         case '9':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("9"));
                             addToMatrix(b);
                             break;
                         case 'A':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("10"));
                             addToMatrix(b);
                             break;
                         case 'B':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("11"));
                             addToMatrix(b);
                             break;
                         case 'C':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64, i * 64));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("12"));
                             addToMatrix(b);
                             break;
                         case 'D':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("13"));
                             addToMatrix(b);
                             break;
                         case 'E':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("14"));
                             addToMatrix(b);
                             break;
                         case 'F':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("15"));
                             addToMatrix(b);
                             break;
                         case 'G':
-                            b = std::make_shared<Block>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             b->setTexture(AssetManager::textures.at("16"));
                             addToMatrix(b);
                             break;
                         case 'M':
-                            enemy = std::make_shared<Enemy>("Guard", sf::Vector2f(j * 64.0f, i * 64.0f), 1000, 1,
-                                                            sf::Vector2f(8.0f * 64.0f, 0), 7.0f,
-                                                            sf::Vector2f(64.0f * 5.0f, 64.0f * 4.0f), "patrol");
+                            enemy = std::make_shared<Enemy>("Guard", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 1000, 1,
+                                                            sf::Vector2f(8.0f * BLOCK_SIZE, 0), 7.0f,
+                                                            sf::Vector2f(BLOCK_SIZE * 5.0f, BLOCK_SIZE * 4.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'N':
-                            enemy = std::make_shared<Enemy>("Sentinel", sf::Vector2f(j * 64.0f, i * 64.0f), 600, 1,
-                                                            sf::Vector2f(5.0f * 64.0f, 0), 3.0f,
-                                                            sf::Vector2f(64.0f * 8.0f, 64.0f * 5.0f), "patrol");
+                            enemy = std::make_shared<Enemy>("Sentinel", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 600, 1,
+                                                            sf::Vector2f(5.0f * BLOCK_SIZE, 0), 3.0f,
+                                                            sf::Vector2f(BLOCK_SIZE * 8.0f, BLOCK_SIZE * 5.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'O':
-                            enemy = std::make_shared<Enemy>("Wizard", sf::Vector2f(j * 64.0f, i * 64.0f), 800, 1,
-                                                            sf::Vector2f(6.5f * 64.0f, 0), 5.0f,
-                                                            sf::Vector2f(64.0f * 6.0f, 64.0f * 3.0f), "patrol");
+                            enemy = std::make_shared<Enemy>("Wizard", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 800, 1,
+                                                            sf::Vector2f(6.5f * BLOCK_SIZE, 0), 5.0f,
+                                                            sf::Vector2f(BLOCK_SIZE * 6.0f, BLOCK_SIZE * 3.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'Q':
                             p = std::make_shared<sf::Sprite>();
-                            p->setPosition(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            p->setPosition(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             p->setTexture(AssetManager::textures.at("PORTAL"));
                             p->setTextureRect(sf::IntRect(0, 0, 464, 742));
                             p->setScale(sf::Vector2f(0.15, 0.17));
                             setPortal(p);
                             break;
                         case 'X':
-                            coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "COINS");
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), "COINS");
                             coll->setTexture(AssetManager::textures.at("COINS"));
                             coll->registerObserver(Game::getGame());
                             Game::getGame()->addSubject(coll);
                             addCollectable(coll);
                             break;
                         case 'Y':
-                            coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f), "MUNITIONS");
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), "MUNITIONS");
                             coll->setTexture(AssetManager::textures.at("MUNITIONS"));
                             coll->registerObserver(Game::getGame());
                             Game::getGame()->addSubject(coll);
                             addCollectable(coll);
                             break;
                         case 'Z':
-                            coll = std::make_shared<Collectable>(sf::Vector2f(j * 64.0f, i * 64.0f));
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
                             coll->setTexture(AssetManager::textures.at("MYSTERY"));
                             coll->registerObserver(Game::getGame());
                             Game::getGame()->addSubject(coll);
                             addCollectable(coll);
                             break;
                         case 'P':
-                            Game::getGame()->createHero(j * 64.0f, i * 64.0f);
+                            Game::getGame()->createHero(j * BLOCK_SIZE, i * BLOCK_SIZE);
                             break;
                         default:
                             break;

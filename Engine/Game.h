@@ -21,6 +21,7 @@
 #define GAME_NAME "Alienator"
 #define FPS 60
 #define SLEEP_TIME 1.0f / FPS
+#define BLOCK_SIZE 64
 
 class Game : public ObserverGame {
 public:
