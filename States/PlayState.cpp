@@ -626,6 +626,8 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
 
         b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,
                          Game::getGame()->getClock()->getElapsedTime().asSeconds());
+
+
         moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
 
         if (enemy->checkJump() &&
@@ -633,6 +635,7 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
             50) {
             enemy->jump();
         }
+
         enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
 
 
