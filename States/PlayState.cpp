@@ -300,7 +300,7 @@ void PlayState::animationEnemies() {
 
             color = "Blue";
 
-        } else if (enemy->getBehavior() == "Sentinel") {
+        } else if (enemy->getBehaviorType() == "Sentinel") {
 
             color = "Gray";
 
