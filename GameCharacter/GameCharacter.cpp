@@ -2,7 +2,6 @@
 // Created by Leonardo Corsini on 27/05/2020.
 //
 
-#include <AssetsManager.h>
 #include "GameCharacter.h"
 
 GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff) :
@@ -15,7 +14,7 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
 
 int GameCharacter::receiveDamage(int points) {
     if (invincibility == false)
-        healthPoint -= points / armor;
+        healthPoint -= (points / armor);
 
     return healthPoint;
 }

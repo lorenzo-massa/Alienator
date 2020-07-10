@@ -177,7 +177,7 @@ void PlayState::generateGUI(float &xT) {
     line.setOutlineColor(sf::Color::White);
     line.setPosition(AssetManager::getXBackground() + 100, 50);
 
-    sf::RectangleShape health(sf::Vector2f(Game::getGame()->getHero()->getHealthPoint(), 11));
+    sf::RectangleShape health(sf::Vector2f(Game::getGame()->getHero()->getHealthPoint()/10, 11));
     health.setFillColor(sf::Color::Red);
     health.setPosition(AssetManager::getXBackground() + 102, 52);
 
@@ -528,9 +528,9 @@ void PlayState::checkBullets() {
                     if (checkCollision(bullet, enemy) && bullet->isFriendly() && !deleted) {
                         deleted = true;
                         hp = enemy->receiveDamage(bullet->getDamage());
+                        Game::getGame()->getMap()->removeBullet(i);
                         if (hp < 1) {
                             Game::getGame()->getMap()->removeEnemy(cont);
-                            Game::getGame()->getMap()->removeBullet(i);
                         }
                     }
                     cont++;
