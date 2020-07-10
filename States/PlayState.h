@@ -55,8 +55,6 @@ private:
 
     bool spriteInView(const sf::Sprite &sprite);
 
-    bool fireClock(float fireRate);
-
     void checkBullets();
 
     void animateEnemy(std::shared_ptr<Enemy> enemy, std::string color);

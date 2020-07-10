@@ -100,6 +100,8 @@ public:
 
     void setClockAnimation(const std::shared_ptr<sf::Clock> &clockAnimation);
 
+    bool fireClock(float fireRate);
+
 protected:
     sf::Vector2f pos;
     int healthPoint;
@@ -111,7 +113,7 @@ protected:
     std::string strTexture;
     float speedCoeff;
 
-
+    std::shared_ptr<sf::Clock> fireRateClock;
     sf::Clock clockPowerUp;
     bool powerUpState;
     float speedBoost;

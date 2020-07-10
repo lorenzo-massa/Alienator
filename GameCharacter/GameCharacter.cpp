@@ -11,6 +11,7 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
 
     typePowerUp = "";
     clockAnimation = std::make_shared<sf::Clock>();
+    fireRateClock = std::make_shared<sf::Clock>();
 }
 
 int GameCharacter::receiveDamage(int points) {
@@ -218,7 +219,14 @@ void GameCharacter::setClockAnimation(const std::shared_ptr<sf::Clock> &clockAni
     GameCharacter::clockAnimation = clockAnimation;
 }
 
+bool GameCharacter::fireClock(float fireRate) {
+    if (fireRateClock->getElapsedTime().asSeconds() > 1.0f / fireRate) {
+        fireRateClock->restart();
+        return true;
+    }
 
+    return false;
+}
 
 
 

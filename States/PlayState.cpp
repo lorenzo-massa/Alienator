@@ -15,7 +15,6 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int 
     Game::getGame()->getMap()->loadLevel(level);
 
     action = 0;
-    fireRateClock = std::make_shared<sf::Clock>();
 
     sf::View tempView = targetWindow->getView();
     tempView.setCenter(tempView.getSize().x / 2 - Game::getGame()->getHero()->sf::Sprite::getPosition().x,
@@ -76,20 +75,26 @@ void PlayState::handleInput() {
                     mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y *
                                             Game::getGame()->getHero()->getScale().y / 2.0f;
 
-                    std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
-                    b->setFriendly(true);
-
-                    if (Game::getGame()->getHero()->getAmmo() >= 0)
-                        Game::getGame()->getMap()->addBullet(b);
-
+                    if (Game::getGame()->getHero()->fireClock(Game::getGame()->getHero()->getWeapon()->getFireRate())) {
+                        std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
+                        b->setFriendly(true);
+                        if (Game::getGame()->getHero()->getAmmo() >= 0)
+                            Game::getGame()->getMap()->addBullet(b);
+                        }
                     break;
 
             }
         }
-    }
-
+        /*}else if (event.type == sf::Event::MouseButtonReleased) {
+            switch (event.key.code) {
+                case sf::Mouse::Left:
+                    Game::getGame()->getHero()->setWeaponHit(false);
+                    break;
+            }
+        }*/
     animationHero(Game::getGame()->getHero()->getDirection(), speed);
 
+    }
 }
 
 void PlayState::generateFrame() {
@@ -574,15 +579,6 @@ void PlayState::setAction(int action) {
     PlayState::action = action;
 }
 
-bool PlayState::fireClock(float fireRate) {
-    if (fireRateClock->getElapsedTime().asSeconds() > 1.0f / fireRate) {
-        fireRateClock->restart();
-        return true;
-    }
-
-    return false;
-}
-
 void PlayState::behaviorChanger() {
     int i = 1;
     for (const auto &enemy : Game::getGame()->getMap()->getEnemies()) {
@@ -628,7 +624,7 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
 
 
         if (b != nullptr) {
-            if (fireClock(enemy->getWeapon()->getFireRate())) {
+            if (enemy->fireClock(enemy->getWeapon()->getFireRate())) {
                 Game::getGame()->getMap()->addBullet(b);
             }
         }
