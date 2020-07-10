@@ -19,7 +19,7 @@ public:
 
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 
-    bool patrol(float deltaT, float directionX, sf::Vector2f heroPos, sf::Vector2f *move);
+    bool patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move);
 
     std::shared_ptr<Bullet> fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT);
 

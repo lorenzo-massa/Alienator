@@ -589,6 +589,8 @@ void PlayState::behaviorChanger() {
 
 void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
     sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
+    sf::Vector2f movmentCollision;
+    float eps=10.0f;
     bool found;
     std::shared_ptr<Bullet> b = nullptr;
 
@@ -600,15 +602,26 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
 
         }
 
-        found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(), enemy->getDirection(),
-                              sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
+        found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(),
+                sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
+        movmentCollision=moveEnemy;
         moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
 
-        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
+        if(abs(movmentCollision.x-moveEnemy.x)>eps){
+            enemy->setDirection(enemy->getDirection()*(-1.0f));
+            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy.x*-1.0f,moveEnemy.y));
+            enemy->getClockPatrol()->restart();
+        }
+        else
+            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
 
         if (found) {
             enemy->setBehavior("fight");
         }
+
+
     } else if (enemy->getBehavior() == "fight") {
 
         b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,

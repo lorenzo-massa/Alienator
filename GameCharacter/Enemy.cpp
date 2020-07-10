@@ -49,12 +49,12 @@ std::shared_ptr<Bullet> Enemy::shot(sf::Vector2f mousePosition) {
     return GameCharacter::shot(mousePosition);
 }
 
-bool Enemy::patrol(float deltaT, float directionX, sf::Vector2f heroPos, sf::Vector2f *move) {
+bool Enemy::patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move) {
 
 
     bool found = false;
 
-    if (directionX > 0) {
+    if (Enemy::getDirection() > 0) {
 
         if (heroPos.x > sf::Sprite::getPosition().x && sf::Sprite::getPosition().x + patrolDistance.x > heroPos.x) {
             if ((heroPos.y <= sf::Sprite::getPosition().y &&
@@ -65,7 +65,7 @@ bool Enemy::patrol(float deltaT, float directionX, sf::Vector2f heroPos, sf::Vec
                 return found;
             }
         }
-    } else if (directionX < 0) {
+    } else if (Enemy::getDirection() < 0) {
         if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x > sf::Sprite::getPosition().x - patrolDistance.x) {
             if ((heroPos.y <= sf::Sprite::getPosition().y &&
                  heroPos.y > sf::Sprite::getPosition().y - patrolDistance.y) ||
@@ -91,7 +91,7 @@ std::shared_ptr<Bullet> Enemy::fight(sf::Vector2f heroPos, sf::Vector2f &move, f
 
     if (heroPos.x < Enemy::getPosition().x) {
 
-        GameCharacter::setDirection(-1.0f);
+        Enemy::setDirection(-1.0f);
         move.x = Enemy::move( deltaT).x;
         move.y = Enemy::move( deltaT).y;
         if(std::abs(heroPos.x-Enemy::getPosition().x)<128.0f){
@@ -102,7 +102,7 @@ std::shared_ptr<Bullet> Enemy::fight(sf::Vector2f heroPos, sf::Vector2f &move, f
 
     }
     else{
-        GameCharacter::setDirection(1.0f);
+        Enemy::setDirection(1.0f);
         move.x = Enemy::move( deltaT).x;
         move.y = Enemy::move( deltaT).y;
         if(std::abs(heroPos.x-Enemy::getPosition().x)<128.0f){
