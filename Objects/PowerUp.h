@@ -27,13 +27,13 @@ public:
 
     ~PowerUp();
 
-    const std::string getType() const;
+    std::string getType() const;
 
 
 private:
     TYPE type;
 
-    TYPE generateRandom();
+    static TYPE generateRandom();
 };
 
 

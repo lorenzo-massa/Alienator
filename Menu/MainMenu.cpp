@@ -118,7 +118,7 @@ void MainMenu::draw(const std::shared_ptr<sf::RenderWindow> &window) {
     int height = count * (64 + 8);
     pos = actualView.getCenter();
     pos.y -= height / 2;
-    for (auto i : itemList) {
+    for (const auto& i : itemList) {
         i->setCharacterSize(64);
         i->setFont(font);
         sf::FloatRect s = i->getGlobalBounds();
