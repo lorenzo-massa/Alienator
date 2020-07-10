@@ -217,21 +217,21 @@ void Map::loadLevel(int x) {
                             addToMatrix(b);
                             break;
                         case 'M':
-                            enemy = std::make_shared<Enemy>("Guard", sf::Vector2f(j * 64.0f, i * 64.0f), 50, 5,
+                            enemy = std::make_shared<Enemy>("Guard", sf::Vector2f(j * 64.0f, i * 64.0f), 1000, 1,
                                                             sf::Vector2f(8.0f * 64.0f, 0), 7.0f,
-                                                            sf::Vector2f(128.0f * 2.0f, 32.0f), "patrol");
+                                                            sf::Vector2f(64.0f * 5.0f, 64.0f * 4.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'N':
-                            enemy = std::make_shared<Enemy>("Sentinel", sf::Vector2f(j * 64.0f, i * 64.0f), 10, 2,
+                            enemy = std::make_shared<Enemy>("Sentinel", sf::Vector2f(j * 64.0f, i * 64.0f), 600, 1,
                                                             sf::Vector2f(5.0f * 64.0f, 0), 3.0f,
-                                                            sf::Vector2f(192.0f * 2.0f, 32.0f), "patrol");
+                                                            sf::Vector2f(64.0f * 8.0f, 64.0f * 5.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'O':
-                            enemy = std::make_shared<Enemy>("Wizard", sf::Vector2f(j * 64.0f, i * 64.0f), 20, 3,
+                            enemy = std::make_shared<Enemy>("Wizard", sf::Vector2f(j * 64.0f, i * 64.0f), 800, 1,
                                                             sf::Vector2f(6.5f * 64.0f, 0), 5.0f,
-                                                            sf::Vector2f(128.0f * 2.0f, 32.0f), "patrol");
+                                                            sf::Vector2f(64.0f * 6.0f, 64.0f * 3.0f), "patrol");
                             addEnemy(enemy);
                             break;
                         case 'Q':

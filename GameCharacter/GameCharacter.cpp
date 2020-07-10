@@ -8,7 +8,7 @@
 GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff) :
         healthPoint(hp), armor(ar), ammo(am), speed(s), pos(pos), direction(dir), speedBoost(1.0f),
         invincibility(false), fireRateBoost(1.0f), damageBoost(1.0f), speedCoeff(speedCoeff) {
-    weapon = std::make_shared<Weapon>(10, 3.0f);
+
     typePowerUp = "";
     clockAnimation = std::make_shared<sf::Clock>();
 }

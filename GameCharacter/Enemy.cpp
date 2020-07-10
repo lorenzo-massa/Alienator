@@ -9,23 +9,28 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::V
              sf::Vector2f patrolDistance, std::string behavior) : patrolDistance(patrolDistance),
                                                                   GameCharacter::GameCharacter(hp, armor, 100, speed,
                                                                                                pos, 1.0f, speedCoeff),
-                                                                  behavior(behavior) {
+                                                                                               behavior(behavior) {
+   float fr,dm;
     if (strBehavior == "Wizard") {
         setTexture(AssetManager::textures.at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
-        // patrolDistance.x=10.0f;
-        //patrolDistance.y=16.0f;
+        fr=1.0f;
+        dm=250.0f;
+
     } else if (strBehavior == "Sentinel") {
         setTexture(AssetManager::textures.at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
-        // patrolDistance.x=10.0f;
-        //patrolDistance.y=16.0f;
+        fr=0.5f;
+        dm=800.0f;
+
     } else {
         setTexture(AssetManager::textures.at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
-        //patrolDistance.x=10.0f;
-        //patrolDistance.y=16.0f;
+        fr=3;
+        dm=100.0f;
+
     }
+    weapon = std::make_shared<Weapon>(dm, fr);
     behaviorType = strBehavior;
     setPosition(pos);
     setTextureRect(sf::IntRect(0, 0, 213.0f, 428.0f));
