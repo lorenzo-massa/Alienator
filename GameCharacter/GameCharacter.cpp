@@ -20,11 +20,11 @@ int GameCharacter::receiveDamage(int points) {
     return healthPoint;
 }
 
-sf::Vector2f GameCharacter::move(sf::Vector2f direction, float deltaT) {
+sf::Vector2f GameCharacter::move( float deltaT) {
     float yT;
     float xT;
 
-    if (direction.x == 0.0f) {   //attrito
+    if (GameCharacter::getDirection() == 0.0f) {   //attrito
         if (speed.x > 0)
             speed.x -= 30.0f * 64.0f * deltaT;
 
@@ -34,13 +34,13 @@ sf::Vector2f GameCharacter::move(sf::Vector2f direction, float deltaT) {
         if (speed.x > -3 && speed.x < 3)//settaggio velocità
             speed.x = 0;
     }
-    if (direction.x != 0)
-        speed.x = speedCoeff * 64.0f * direction.x;//velocità costante se tengo premuto
+    if (GameCharacter::getDirection() != 0)
+        speed.x = speedCoeff * 64.0f * GameCharacter::getDirection();//velocità costante se tengo premuto
 
     xT = speed.x * deltaT;
 
     speed.y = speed.y + 98.0f * 64.0f * deltaT; //gravità
-    yT = (speed.y * deltaT + 0.5f * 98.0f * 64.0f * deltaT * deltaT) * direction.y;
+    yT = speed.y * deltaT + 0.5f * 98.0f * 64.0f * deltaT * deltaT ;
 
     xT = xT * speedBoost;
     yT = yT * speedBoost;

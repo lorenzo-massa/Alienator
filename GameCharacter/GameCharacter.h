@@ -22,7 +22,7 @@ public:
 
     virtual int receiveDamage(int points);
 
-    virtual sf::Vector2f move(sf::Vector2f direction, float deltaT);
+    virtual sf::Vector2f move( float deltaT);
 
     virtual void jump();
 

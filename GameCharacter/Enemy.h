@@ -15,7 +15,7 @@ public:
 
     ~Enemy();
 
-    sf::Vector2f move(sf::Vector2f direction, float deltaT) override;
+    sf::Vector2f move( float deltaT) override;
 
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 

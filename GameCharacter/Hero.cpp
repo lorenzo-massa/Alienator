@@ -33,8 +33,8 @@ std::shared_ptr<Bullet> Hero::shot(sf::Vector2f mousePosition) {
     return GameCharacter::shot(mousePosition);
 }
 
-sf::Vector2f Hero::move(sf::Vector2f direction, float deltaT) {
-    return GameCharacter::move(direction, deltaT);
+sf::Vector2f Hero::move( float deltaT) {
+    return GameCharacter::move( deltaT);
 }
 
 void Hero::jump() {

@@ -92,9 +92,9 @@ void PlayState::handleInput() {
 void PlayState::generateFrame() {
 
 
-    sf::Vector2f move = isLegalMovement(Game::getGame()->getHero(), Game::getGame()->getHero()->move(
-            sf::Vector2f(Game::getGame()->getHero()->getDirection(),
-                         1.0f), Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+    sf::Vector2f move ;
+    move = isLegalMovement(Game::getGame()->getHero(), Game::getGame()->getHero()->move(Game::getGame()->getClock()->getElapsedTime().asSeconds()));
+
     if (move.x != 0 || move.y != 0) {
         Game::getGame()->getHero()->sf::Sprite::move(move);
         if (Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16 * 64)

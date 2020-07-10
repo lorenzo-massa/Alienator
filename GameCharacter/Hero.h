@@ -18,7 +18,7 @@ public:
 
     int receiveDamage(int points) override;
 
-    sf::Vector2f move(sf::Vector2f direction, float delatT) override;
+    sf::Vector2f move( float delatT) override;
 
     void jump() override;
 
