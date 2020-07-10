@@ -164,8 +164,6 @@ void Game::killHero() {
 
     ptrStateHandler->removeState();
 
-    ptrMap->reset();
-
     if (level > 0 && level < 6)
         ptrStateHandler->addState(std::make_shared<PlayState>(gameWindow, level));
     else
