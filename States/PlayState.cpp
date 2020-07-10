@@ -75,7 +75,7 @@ void PlayState::handleInput() {
                     mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y *
                                             Game::getGame()->getHero()->getScale().y / 2.0f;
 
-                    if (Game::getGame()->getHero()->fireClock(Game::getGame()->getHero()->getWeapon()->getFireRate())) {
+                    if (Game::getGame()->getHero()->fireClock(Game::getGame()->getHero()->getWeapon()->getFireRate()*(Game::getGame()->getHero()->getFireRateBoost()))){
                         std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
                         b->setFriendly(true);
                         if (Game::getGame()->getHero()->getAmmo() >= 0)
@@ -532,7 +532,7 @@ void PlayState::checkBullets() {
                 for (const auto &enemy : Game::getGame()->getMap()->getEnemies()) {
                     if (checkCollision(bullet, enemy) && bullet->isFriendly() && !deleted) {
                         deleted = true;
-                        hp = enemy->receiveDamage(bullet->getDamage());
+                        hp = enemy->receiveDamage(bullet->getDamage()*Game::getGame()->getHero()->getDamageBoost());
                         Game::getGame()->getMap()->removeBullet(i);
                         if (hp < 1) {
                             Game::getGame()->getMap()->removeEnemy(cont);
