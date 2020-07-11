@@ -220,7 +220,7 @@ void PlayState::generateGUI(float &xT) {
     //Show power up
     sf::Text message;
     message.setFont(*AssetManager::font);
-    message.setString(Game::getGame()->getHero()->getTypePowerUp());
+    message.setString(Game::getGame()->getHero()->getPowerUp().typeToString());
     message.setCharacterSize(25);
     message.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x / 2 -
                         message.getLocalBounds().width / 2, nCoins.getPosition().y + 3);

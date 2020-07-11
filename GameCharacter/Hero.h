@@ -32,11 +32,6 @@ public:
 
     void setType(const int type);
 
-    bool isWeaponHit() const;
-
-    void setWeaponHit(bool weaponHit);
-
-    //PowerUp
     void addCoins(int coins);
 
     void addAmmo(int ammo);

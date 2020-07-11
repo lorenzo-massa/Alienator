@@ -15,7 +15,7 @@ class Collectable : public sf::Sprite, public SubjectGame {
 public:
     explicit Collectable(sf::Vector2f position);
 
-    Collectable(sf::Vector2f position, std::string type);
+    Collectable(sf::Vector2f position, PowerUp::TYPE type);
 
     ~Collectable();
 

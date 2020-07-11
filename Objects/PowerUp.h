@@ -11,24 +11,26 @@
 
 class PowerUp {
 public:
-    enum TYPE {
-        COINS = 1,
-        MUNITIONS = 2,
-        FIRE_RATE = 3,
-        SPEED = 4,
-        DAMAGE_BOOST = 5,
-        INVICIBILITY = 6,
-        ERROR
+    enum class TYPE {
+        COINS,
+        MUNITIONS,
+        FIRE_RATE,
+        SPEED,
+        DAMAGE_BOOST,
+        INVINCIBILITY,
     };
 
-    explicit PowerUp(std::string typeString);
+    explicit PowerUp(TYPE t);
 
     PowerUp();
 
     ~PowerUp();
 
-    std::string getType() const;
+    void setType(TYPE type);
 
+    TYPE getType() const;
+
+    std::string typeToString() const;
 
 private:
     TYPE type;

@@ -8,7 +8,6 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
         healthPoint(hp), armor(ar), ammo(am), speed(s), pos(pos), direction(dir), speedBoost(1.0f),
         invincibility(false), fireRateBoost(1.0f), damageBoost(1.0f), speedCoeff(speedCoeff) {
 
-    typePowerUp = "";
     clockAnimation = std::make_shared<sf::Clock>();
     fireRateClock = std::make_shared<sf::Clock>();
 }
@@ -189,17 +188,9 @@ void GameCharacter::removePowerUp() {
     fireRateBoost = 1.0f;
     damageBoost = 1.0f;
 
-    typePowerUp = "";
+    powerUp.~PowerUp();
     powerUpState = false;
-    //std::cout<<"Power Up removed!"<<std::endl;
-}
 
-const std::string &GameCharacter::getTypePowerUp() const {
-    return typePowerUp;
-}
-
-void GameCharacter::setTypePowerUp(const std::string &typePowerUp) {
-    GameCharacter::typePowerUp = typePowerUp;
 }
 
 float GameCharacter::getSpeedCoeff() const {
@@ -227,8 +218,21 @@ bool GameCharacter::fireClock(float fireRate) {
     return false;
 }
 
+const std::shared_ptr<sf::Clock> &GameCharacter::getFireRateClock() const {
+    return fireRateClock;
+}
 
+void GameCharacter::setFireRateClock(const std::shared_ptr<sf::Clock> &fireRateClock) {
+    GameCharacter::fireRateClock = fireRateClock;
+}
 
+const PowerUp GameCharacter::getPowerUp() const {
+    return powerUp;
+}
+
+void GameCharacter::setPowerUp(const PowerUp &powerUp) {
+    GameCharacter::powerUp = powerUp;
+}
 
 
 
