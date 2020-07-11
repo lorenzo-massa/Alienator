@@ -118,38 +118,45 @@ void Game::update(int i) {
 
     std::shared_ptr<Collectable> c = getMap()->getCollectable(i);
 
-    std::string typeString = c->getPowerUp().getType();
-
-    if (typeString == "COINS")
-        ptrHero->addCoins(10);
-    else if (typeString == "MUNITIONS")
-        ptrHero->addAmmo(25);
-    else if (typeString == "FIRE_RATE") {
-        ptrHero->removePowerUp();
-        ptrHero->setFireRateBoost(1.5f);//TODO implementare rateo di fuoco con un clock
-        ptrHero->setPowerUpState(true);
-        ptrHero->setTypePowerUp("FIRE_RATE");
-        ptrHero->resetClockPowerUp();
-    } else if (typeString == "SPEED") {
-        ptrHero->removePowerUp();
-        ptrHero->setSpeedBoost(1.5f);
-        ptrHero->setPowerUpState(true);
-        ptrHero->setTypePowerUp("SPEED");
-        ptrHero->resetClockPowerUp();
-    } else if (typeString == "DAMAGE_BOOST") {
-        ptrHero->removePowerUp();
-        ptrHero->setDamageBoost(1.5f);
-        ptrHero->setPowerUpState(true);
-        ptrHero->setTypePowerUp("DAMAGE_BOOST");
-        ptrHero->resetClockPowerUp();
-    } else if (typeString == "INVICIBILITY") {
-        ptrHero->removePowerUp();
-        ptrHero->setInvincibility(true);
-        ptrHero->setPowerUpState(true);
-        ptrHero->setTypePowerUp("INVINCIBILITY");
-        ptrHero->resetClockPowerUp();
-    } else
-        std::cerr << "Error loading power up: undefined string: " << typeString << std::endl;
+    PowerUp powerUp = c->getPowerUp();
+    switch (powerUp.getType()) {
+        case PowerUp::TYPE::COINS:
+            ptrHero->addCoins(10);
+            break;
+        case PowerUp::TYPE::DAMAGE_BOOST:
+            ptrHero->removePowerUp();
+            ptrHero->setDamageBoost(1.5f);
+            ptrHero->setPowerUpState(true);
+            ptrHero->setPowerUp(powerUp);
+            ptrHero->resetClockPowerUp();
+            break;
+        case PowerUp::TYPE::FIRE_RATE:
+            ptrHero->removePowerUp();
+            ptrHero->setFireRateBoost(1.5f);
+            ptrHero->setPowerUpState(true);
+            ptrHero->setPowerUp(powerUp);
+            ptrHero->resetClockPowerUp();
+            break;
+        case PowerUp::TYPE::INVINCIBILITY:
+            ptrHero->removePowerUp();
+            ptrHero->setInvincibility(true);
+            ptrHero->setPowerUpState(true);
+            ptrHero->setPowerUp(powerUp);
+            ptrHero->resetClockPowerUp();
+            break;
+        case PowerUp::TYPE::MUNITIONS:
+            ptrHero->addAmmo(20);
+            break;
+        case PowerUp::TYPE::SPEED:
+            ptrHero->removePowerUp();
+            ptrHero->setSpeedBoost(1.5f);
+            ptrHero->setPowerUpState(true);
+            ptrHero->setPowerUp(powerUp);
+            ptrHero->resetClockPowerUp();
+            break;
+        default:
+            break;
+    }
 
     getMap()->removeCollectable(i);
     removeSubject(i);

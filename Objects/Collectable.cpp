@@ -13,7 +13,7 @@ Collectable::Collectable(sf::Vector2f position) {
 
 }
 
-Collectable::Collectable(sf::Vector2f position, std::string type) {
+Collectable::Collectable(sf::Vector2f position, PowerUp::TYPE type) {
 
     setTextureRect(sf::IntRect(0, 0, width, height));
     setScale(sf::Vector2f(0.075, 0.075));

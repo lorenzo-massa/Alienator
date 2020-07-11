@@ -243,14 +243,14 @@ void Map::loadLevel(int x) {
                             setPortal(p);
                             break;
                         case 'X':
-                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), "COINS");
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), PowerUp::TYPE::COINS);
                             coll->setTexture(AssetManager::textures.at("COINS"));
                             coll->registerObserver(Game::getGame());
                             Game::getGame()->addSubject(coll);
                             addCollectable(coll);
                             break;
                         case 'Y':
-                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), "MUNITIONS");
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), PowerUp::TYPE::MUNITIONS);
                             coll->setTexture(AssetManager::textures.at("MUNITIONS"));
                             coll->registerObserver(Game::getGame());
                             Game::getGame()->addSubject(coll);

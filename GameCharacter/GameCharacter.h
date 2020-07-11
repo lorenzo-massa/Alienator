@@ -10,6 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include "../Weapons/Weapon.h"
+#include "../Objects/PowerUp.h"
 
 
 class GameCharacter : public sf::Sprite {
@@ -88,9 +89,13 @@ public:
 
     void removePowerUp();
 
-    const std::string &getTypePowerUp() const;
+    const std::shared_ptr<sf::Clock> &getFireRateClock() const;
 
-    void setTypePowerUp(const std::string &typePowerUp);
+    void setFireRateClock(const std::shared_ptr<sf::Clock> &fireRateClock);
+
+    const PowerUp getPowerUp() const;
+
+    void setPowerUp(const PowerUp &powerUp);
 
     float getSpeedCoeff() const;
 
@@ -113,18 +118,17 @@ protected:
     std::string strTexture;
     float speedCoeff;
 
-    std::shared_ptr<sf::Clock> fireRateClock;
+
     sf::Clock clockPowerUp;
-    bool powerUpState;
     float speedBoost;
     bool invincibility;
     float fireRateBoost;
     float damageBoost;
-    std::string typePowerUp;
+    bool powerUpState;
+    PowerUp powerUp;
 
     std::shared_ptr<sf::Clock> clockAnimation;
-
-
+    std::shared_ptr<sf::Clock> fireRateClock;
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

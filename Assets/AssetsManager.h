@@ -20,8 +20,6 @@ public:
     //static std::map<std::string, sf::SoundBuffer> sounds;
     static std::shared_ptr<sf::Font> font;
 
-    virtual ~AssetManager() = 0;
-
     static void setBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float xT);
 
     static void initBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float x);
