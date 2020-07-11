@@ -15,8 +15,6 @@ set(SOURCE_FILES
         ../Engine/Game.cpp
         ../Engine/Observer.h
         ../Engine/Subject.h
-        ../Engine/Timer.cpp
-        ../Engine/Timer.h
         ../GameCharacter/GameCharacter.h
         ../GameCharacter/GameCharacter.cpp
         ../GameCharacter/Hero.h

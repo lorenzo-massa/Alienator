@@ -13,6 +13,7 @@ Game::Game() {
     gameWindow = nullptr;
     ptrMap = std::make_shared<Map>();
     clock = std::make_shared<sf::Clock>();
+    achievements = std::make_shared<Achievements>();
 
     for (int i = 0; i < 5; i++)
         levelCompleted.push_back(false);
@@ -191,6 +192,14 @@ void Game::setLevelCompleted(const std::vector<bool> &levelCompleted) {
 void Game::finishLevel(int i) {
     levelCompleted[i - 1] = true;
     ptrStateHandler->removeState();
+}
+
+const std::shared_ptr<Achievements> &Game::getAchievements() const {
+    return achievements;
+}
+
+void Game::setAchievements(const std::shared_ptr<Achievements> &achievements) {
+    Game::achievements = achievements;
 }
 
 

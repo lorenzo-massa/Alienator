@@ -4,12 +4,12 @@ project(Alienator)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCE_FILES
+        Engine/Achievements.cpp
+        Engine/Achievements.h
         Engine/Game.h
         Engine/Game.cpp
         Engine/Observer.h
         Engine/Subject.h
-        Engine/Timer.cpp
-        Engine/Timer.h
         GameCharacter/GameCharacter.h
         GameCharacter/GameCharacter.cpp
         GameCharacter/Hero.h
@@ -48,7 +48,9 @@ set(SOURCE_FILES
         Engine/Loader.h
         Engine/ObserverGame.h
         Engine/SubjectGame.h
-        Engine/Observer.h Engine/Subject.h)
+        Engine/Observer.h
+        Engine/Subject.h
+        Engine/AchievementsEnum.h)
 
 
 link_directories(SFML-2.5.1/bin)

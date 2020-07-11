@@ -5,9 +5,12 @@
 #ifndef ALIENATOR_OBSERVER_H
 #define ALIENATOR_OBSERVER_H
 
+
+#include "AchievementsEnum.h"
+
 class Observer {
 public:
-    virtual void update() = 0;
+    virtual void update(EVENT e, bool &unlocked) = 0;
 
 protected:
     virtual ~Observer() = default;

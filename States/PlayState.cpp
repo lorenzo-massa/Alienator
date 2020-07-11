@@ -11,7 +11,6 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int 
 
     Game::getGame()->getMap()->reset();
 
-
     Game::getGame()->getMap()->loadLevel(level);
 
     action = 0;
@@ -22,6 +21,12 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int 
     targetWindow->setView(tempView);
 
     AssetManager::initBackground(targetWindow, -Game::getGame()->getHero()->sf::Sprite::getPosition().x);
+
+    registerObserver(&(*Game::getGame()->getAchievements()));
+
+    achievementsClock = std::make_shared<sf::Clock>();
+
+    achievementUnlocked = false;
 }
 
 void PlayState::handleInput() {
@@ -42,8 +47,15 @@ void PlayState::handleInput() {
             }
             if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up ||
                 event.key.code == sf::Keyboard::Space) {
-                if (Game::getGame()->getHero()->getSpeed().y == 0.0f)
+                if (Game::getGame()->getHero()->getSpeed().y == 0.0f){
                     Game::getGame()->getHero()->jump();
+                    bool unlocked = false;
+                    EVENT e = EVENT::JUMP;
+                    notifyObservers(e, unlocked);
+                    if(unlocked)
+                        showAchievement(e);
+
+                }
             }
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 Game::getGame()->getHero()->setDirection(-1.0f);
@@ -80,6 +92,12 @@ void PlayState::handleInput() {
                         b->setFriendly(true);
                         if (Game::getGame()->getHero()->getAmmo() >= 0)
                             Game::getGame()->getMap()->addBullet(b);
+                            bool unlocked = false;
+                            EVENT e = EVENT::BULLET_SHOT;
+                            notifyObservers(e, unlocked);
+                            if(unlocked)
+                                showAchievement(e);
+
                         }
                     break;
 
@@ -105,8 +123,15 @@ void PlayState::generateFrame() {
 
     if (move.x != 0 || move.y != 0) {
         Game::getGame()->getHero()->sf::Sprite::move(move);
-        if (Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16 * 64)
+        if (Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16 * 64){
             Game::getGame()->killHero();
+
+            bool unlocked = false;
+            EVENT e = EVENT::FALL;
+            notifyObservers(e, unlocked);
+            if(unlocked)
+                showAchievement(e);
+        }
     }
 
     sf::View tempView = targetWindow->getView();
@@ -227,6 +252,17 @@ void PlayState::generateGUI(float &xT) {
     if (Game::getGame()->getHero()->isPowerUpState()) {
         targetWindow->draw(message);
     }
+
+
+    popUp.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x -
+                      popUp.getLocalBounds().width - 30, 20);
+
+    if(achievementUnlocked){
+        targetWindow->draw(popUp);
+        if(achievementsClock->getElapsedTime().asSeconds() > 7)
+            achievementUnlocked = false;
+    }
+
 
 }
 
@@ -534,6 +570,13 @@ void PlayState::checkBullets() {
                         deleted = true;
                         hp = enemy->receiveDamage(bullet->getDamage()*Game::getGame()->getHero()->getDamageBoost());
                         Game::getGame()->getMap()->removeBullet(i);
+
+                        bool unlocked = false;
+                        EVENT e = EVENT::KILL;
+                        notifyObservers(e, unlocked);
+                        if(unlocked)
+                            showAchievement(e);
+
                         if (hp < 1) {
                             Game::getGame()->getMap()->removeEnemy(cont);
                         }
@@ -555,8 +598,16 @@ void PlayState::checkBullets() {
         i++;
     }
 
-    if (killedHero)
+    if (killedHero){
+
         Game::getGame()->killHero();
+
+        bool unlocked = false;
+        EVENT e = EVENT::DEATH;
+        notifyObservers(e, unlocked);
+        if(unlocked)
+            showAchievement(e);
+    }
 
 
 }
@@ -647,84 +698,54 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
     }
 }
 
+void PlayState::removeObserver(Observer* observer) {
+    observers.remove(observer);
+}
 
-/*
-    // Qui sto provando a fare meno controlli (quindi controllo solo i due blocchi accanto a Hero per renderlo piè efficiente)
-    //da errore perchè non si controlla il massimo indice
-    int x = int(entityPos.x/64);
-    int y = int(entityPos.y/64);
+void PlayState::registerObserver(Observer* observer) {
+    observers.push_back(observer);
+}
 
+void PlayState::notifyObservers(EVENT e, bool &unlocked) const {
+    for (const auto &observer : observers)
+        observer->update(e,unlocked);
+}
 
-    if(y < 8)
-        y = 8;
-    if(x < 8)
-        x = 8;
+PlayState::~PlayState() {
+    removeObserver(&(*Game::getGame()->getAchievements()));
+}
 
-    std::shared_ptr<sf::Sprite> block;
+void PlayState::showAchievement(EVENT e) {
 
-    for(int i = x - 8; i < x + 9; i++){
-        for(int j = y - 8; j < y + 9; j++){
+    achievementUnlocked = true;
 
-            //std::cout<<i * Game::getGame()->getMapHandler()->getMap()->getN() + j<<std::endl;
+    achievementsClock->restart();
 
-            std::cout<<"\n1";
-            block = Game::getGame()->getMapHandler()->getMap()->getFromMatrix(i * Game::getGame()->getMapHandler()->getMap()->getN() + j);
-            std::cout<<"2";
+    std::string message;
 
-            deltaX  = entityPos.x - (block->getPosition().x + block->getTexture()->getSize().x * block->getScale().x /2.0f);
-            intersectionX = fabs(deltaX) - ((entitySize.x*entityScale.x/2) + (block->getTexture()->getSize().x*block->getScale().x/2.0f));
-            deltaY  = entityPos.y - (block->getPosition().y + block->getTexture()->getSize().y * block->getScale().y /2.0f);
-            intersectionY = fabs(deltaY) - ((entitySize.y*entityScale.y/2) + (block->getTexture()->getSize().y*block->getScale().y/2.0f));
-
-
-            if(intersectionY < 0.0f && intersectionX < 0.0f){
-
-                rightCollisionBool = false;
-                leftCollisionBool = false;
-                bottomtCollisionBool = false;
-                topCollisionBool = false;
-
-                if(intersectionX > intersectionY){
-                    if(deltaX > 0.0f){
-                        leftCollision++;
-                        leftCollisionBool = true;
-                    }else{
-                        rightCollision++;
-                        rightCollisionBool = true;
-                    }
-                }
-                else{
-                     if(deltaY < 0.0f){
-                         bottomtCollision++;
-                         bottomtCollisionBool = true;
-                     }else{
-                         topCollision++;
-                         topCollisionBool = true;
-                     }
-                }
-
-                if(leftCollision == 1 && leftCollisionBool){
-                    moving.x -= intersectionX;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
-                }
-
-                if(rightCollision == 1 && rightCollisionBool){
-                    moving.x += intersectionX;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(0,Game::getGame()->getHero()->getSpeed().y));
-                }
-
-                if(topCollision == 1 && topCollisionBool){
-                    moving.y -= intersectionY;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
-                }
-
-                if(bottomtCollision == 1 && bottomtCollisionBool){
-                    moving.y += intersectionY;
-                    Game::getGame()->getHero()->setSpeed(sf::Vector2f(Game::getGame()->getHero()->getSpeed().x,0));
-                }
-
-            }
-        }
+    switch (e) {
+        case EVENT::KILL:
+            message = "You killed " N_KILLS_STR " enemies!";
+            break;
+        case EVENT::JUMP:
+            message = "You jumped " N_JUMPS_STR " time!";
+            break;
+        case EVENT::BULLET_SHOT:
+            message = "You shot " N_BULLETS_STR " bullets!";
+            break;
+        case EVENT::DEATH:
+            message = "You dead " N_DEATHS_STR " time!";
+            break;
+        case EVENT::FALL:
+            message = "You fell " N_FALLS_STR " time!";
+            break;
+        default:
+            break;
     }
 
-*/
+    popUp.setFont(*AssetManager::font);
+    popUp.setString("Achevement unlocked: " + message);
+    popUp.setCharacterSize(30);
+
+
+}

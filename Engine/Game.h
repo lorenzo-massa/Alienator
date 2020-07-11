@@ -17,6 +17,7 @@
 #include <AssetsManager.h>
 #include "Loader.h"
 #include "../Maps/Map.h"
+#include "Achievements.h"
 
 #define GAME_NAME "Alienator"
 #define FPS 60
@@ -69,12 +70,15 @@ public:
 
     void finishLevel(int i);
 
+    const std::shared_ptr<Achievements> &getAchievements() const;
+
+    void setAchievements(const std::shared_ptr<Achievements> &achievements);
+
 private:
     std::shared_ptr<sf::Clock> clock;
 
     std::shared_ptr<Map> ptrMap;
     std::shared_ptr<Hero> ptrHero;
-    std::list<Bullet> bullets;
     std::shared_ptr<StateHandler> ptrStateHandler;
 
     static std::shared_ptr<Game> myGame;
@@ -83,6 +87,8 @@ private:
     std::list<std::shared_ptr<SubjectGame>> subjects;
 
     std::vector<bool> levelCompleted;
+
+    std::shared_ptr<Achievements> achievements;
 
 };
 

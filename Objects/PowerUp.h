@@ -17,7 +17,7 @@ public:
         FIRE_RATE,
         SPEED,
         DAMAGE_BOOST,
-        INVINCIBILITY,
+        INVINCIBILITY
     };
 
     explicit PowerUp(TYPE t);

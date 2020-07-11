@@ -6,7 +6,6 @@
 
 std::map<std::string, sf::Texture> AssetManager::textures = std::map<std::string, sf::Texture>();
 std::map<std::string, std::vector<sf::IntRect>> AssetManager::frames = std::map<std::string, std::vector<sf::IntRect>>();
-//std::map<std::string, sf::SoundBuffer> AssetManager::sounds = std::map<std::string, sf::SoundBuffer>();
 
 std::shared_ptr<sf::Font> AssetManager::font = nullptr;
 
@@ -18,8 +17,6 @@ void AssetManager::load() {
     try {
 
         sf::Texture texture;
-        sf::SoundBuffer sound;
-
 
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
@@ -118,12 +115,6 @@ void AssetManager::load() {
         font = std::make_shared<sf::Font>();
         font->loadFromFile("Assets/Font/youre gone.ttf");
 
-
-
-        /*
-        sound.loadFromFile("./Assets/Audio/heroJump.wav");
-        sounds.insert(std::make_pair("HERO_JUMP", sound));
-        */
 
     } catch (const std::exception &exception) {
         std::cerr << exception.what() << std::endl;

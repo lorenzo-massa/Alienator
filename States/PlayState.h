@@ -12,7 +12,7 @@
 #include "PauseState.h"
 #include "../Objects/Block.h"
 
-class PlayState : public GameState {
+class PlayState : public GameState, public Subject {
 public:
     PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int level);
 
@@ -37,11 +37,25 @@ public:
     void detectCollision(const std::shared_ptr<GameCharacter> &entity, const std::shared_ptr<sf::Sprite> &block,
                          sf::Vector2f &moving);
 
+    void registerObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
+
+    void notifyObservers(EVENT e, bool &unlocked) const override;
+
+    virtual ~PlayState();
+
 private:
 
     int action;
 
-    std::shared_ptr<sf::Clock> fireRateClock;
+    std::list<Observer*> observers;
+
+    std::shared_ptr<sf::Clock> achievementsClock;
+
+    bool achievementUnlocked;
+
+    sf::Text popUp;
 
     void generateMap();
 
@@ -58,6 +72,8 @@ private:
     void checkBullets();
 
     void animateEnemy(std::shared_ptr<Enemy> enemy, std::string color);
+
+    void showAchievement(EVENT e);
 
 };
 
