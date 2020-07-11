@@ -4,12 +4,12 @@ project(Alienator)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCE_FILES
-        Engine/Achievements.cpp
-        Engine/Achievements.h
         Engine/Game.h
         Engine/Game.cpp
         Engine/Observer.h
         Engine/Subject.h
+        Engine/Timer.cpp
+        Engine/Timer.h
         GameCharacter/GameCharacter.h
         GameCharacter/GameCharacter.cpp
         GameCharacter/Hero.h
@@ -50,7 +50,22 @@ set(SOURCE_FILES
         Engine/SubjectGame.h
         Engine/Observer.h
         Engine/Subject.h
-        Engine/AchievementsEnum.h)
+        Engine/AchievementsEnum.h
+        Engine/Achievements.cpp
+        Engine/Achievements.h
+        Behavior/Strategy/Movement.h
+        Behavior/Strategy/ConcreteStrategy/PatrollingMovement.h
+        Behavior/Strategy/ConcreteStrategy/FightingMovement.h
+        Behavior/Strategy/Attack.h Behavior/Strategy/ConcreteStrategy/CloseAttack.h
+        Behavior/Strategy/ConcreteStrategy/DistanceAttack.h
+        Behavior/Strategy/Patrolling.h Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h
+        Behavior/Strategy/Attack.cpp Behavior/Strategy/Movement.cpp
+        Behavior/Strategy/Patrolling.cpp Behavior/Strategy/ConcreteStrategy/CloseAttack.cpp
+        Behavior/Strategy/ConcreteStrategy/DistanceAttack.cpp
+        Behavior/Strategy/ConcreteStrategy/FightingMovement.cpp
+        Behavior/Strategy/ConcreteStrategy/PatrollingMovement.cpp
+        Behavior/Strategy/ConcreteStrategy/GroundPatrolling.cpp
+)
 
 
 link_directories(SFML-2.5.1/bin)
