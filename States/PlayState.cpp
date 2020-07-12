@@ -573,14 +573,14 @@ void PlayState::checkBullets() {
                         hp = enemy->receiveDamage(bullet->getDamage()*Game::getGame()->getHero()->getDamageBoost());
                         Game::getGame()->getMap()->removeBullet(i);
 
-                        bool unlocked = false;
-                        EVENT e = EVENT::KILL;
-                        notifyObservers(e, unlocked);
-                        if(unlocked)
-                            showAchievement(e);
-
                         if (hp < 1) {
                             Game::getGame()->getMap()->removeEnemy(cont);
+
+                            bool unlocked = false;
+                            EVENT e = EVENT::KILL;
+                            notifyObservers(e, unlocked);
+                            if(unlocked)
+                                showAchievement(e);
                         }
                     }
                     cont++;

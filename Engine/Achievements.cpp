@@ -147,3 +147,42 @@ void Achievements::setSubject(const std::shared_ptr<Subject> &subject) {
 Achievements::~Achievements() {
 
 }
+
+std::string Achievements::getAllToString() const {
+
+    std::string app;
+
+    if(totKills)
+        app += "1\n";
+    else
+        app += "0\n";
+
+    if(totJumps)
+        app += "1\n";
+    else
+        app += "0\n";
+
+    if(totBulletsShot)
+        app += "1\n";
+    else
+        app += "0\n";
+
+    if(totDeaths)
+        app += "1\n";
+    else
+        app += "0\n";
+
+    if(totFalls)
+        app += "1\n";
+    else
+        app += "0\n";
+
+    app += std::to_string(countKills) + "\n";
+    app += std::to_string(countJumps) + "\n";
+    app += std::to_string(countBulletsShot) + "\n";
+    app += std::to_string(countDeaths) + "\n";
+    app += std::to_string(countFalls) + "\n";
+
+    return app;
+
+}

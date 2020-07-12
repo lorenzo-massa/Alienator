@@ -63,6 +63,8 @@ public:
 
     void setSubject(const std::shared_ptr<Subject> &subject);
 
+    std::string getAllToString() const;
+
 private:
     bool checkUnlocked();
 

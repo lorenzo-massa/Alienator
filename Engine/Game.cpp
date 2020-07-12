@@ -2,6 +2,7 @@
 // Created by Lorenzo Massa on 25/05/2020.
 //
 
+#include <fstream>
 #include "Game.h"
 #include "../States/PlayState.h"
 
@@ -14,6 +15,7 @@ Game::Game() {
     ptrMap = std::make_shared<Map>();
     clock = std::make_shared<sf::Clock>();
     achievements = std::make_shared<Achievements>();
+    loadAchievements();
 
     for (int i = 0; i < 5; i++)
         levelCompleted.push_back(false);
@@ -38,14 +40,12 @@ void Game::init() {
         gameWindow = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), GAME_NAME);
         gameWindow->setVerticalSyncEnabled(true);
         gameWindow->setFramerateLimit(FPS);
-        std::cout << "All textures are loaded!" << std::endl;
 
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
         AssetManager::load();
         std::cout << "All textures are loaded!" << std::endl;
 
         srand(time(nullptr));
-
 
     }
 }
@@ -76,7 +76,26 @@ std::shared_ptr<Map> Game::getMap() {
 
 void Game::createHero(int x, int y) {
     ptrHero = std::make_shared<Hero>(1, 1000, 1, 50, sf::Vector2f(0, 0), sf::Vector2f(x, y), 0, 10.0f, 0);
-    Loader::loadHero();
+
+    std::basic_ifstream<char> file = std::ifstream("Data/heroFile.txt");
+    if (file.is_open()) {
+        int coins, ammo, armor;
+
+        file >> coins;
+        file >> ammo;
+        file >> armor;
+
+        Game::getGame()->getHero()->setCoins(coins);
+        Game::getGame()->getHero()->setAmmo(ammo);
+        Game::getGame()->getHero()->setArmor(armor);
+
+        file.close();
+
+        std::cout<<"Hero loaded!"<<std::endl;
+
+    } else {
+        std::cout<<"heroFile not found: init stats ..."<<std::endl;
+    }
 }
 
 void Game::setPtrHero(std::shared_ptr<Hero> ptr) {
@@ -92,7 +111,68 @@ std::shared_ptr<sf::Clock> Game::getClock() {
 }
 
 void Game::save() {
-    Loader::saveHero(ptrHero->getCoins(), ptrHero->getAmmo(), ptrHero->getArmor());
+    std::basic_ofstream<char> file = std::ofstream("Data/heroFile.txt");
+    file << std::to_string(ptrHero->getCoins());
+    file << " ";
+    file << std::to_string(ptrHero->getAmmo());
+    file << " ";
+    file << std::to_string(ptrHero->getArmor());
+    file.close();
+
+    file = std::ofstream("Data/achievementsFile.txt");
+
+    file << achievements->getAllToString();
+
+    file.close();
+
+    std::cout<<"Game saved!"<<std::endl;
+}
+
+void Game::loadAchievements(){
+
+    std::basic_ifstream<char> file = std::ifstream("Data/achievementsFile.txt");
+
+    if (file.is_open()) {
+        int input;
+
+        file >> input;
+        achievements->setTotKills(input);
+
+        file >> input;
+        achievements->setTotJumps(input);
+
+        file >> input;
+        achievements->setTotBulletsShot(input);
+
+        file >> input;
+        achievements->setTotDeaths(input);
+
+        file >> input;
+        achievements->setTotFalls(input);
+
+
+        file >> input;
+        achievements->setCountKills(input);
+
+        file >> input;
+        achievements->setCountJumps(input);
+
+        file >> input;
+        achievements->setCountBulletsShot(input);
+
+        file >> input;
+        achievements->setCountDeaths(input);
+
+        file >> input;
+        achievements->setCountFalls(input);
+
+        file.close();
+
+        std::cout<<"Achievements loaded!"<<std::endl;
+
+    } else {
+        std::cout<<"achievementsFile not found: init stats ..."<<std::endl;
+    }
 }
 
 void Game::addSubject(std::shared_ptr<SubjectGame> subject) {

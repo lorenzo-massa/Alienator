@@ -15,7 +15,6 @@
 #include "../Weapons/Bullet.h"
 #include "ObserverGame.h"
 #include <AssetsManager.h>
-#include "Loader.h"
 #include "../Maps/Map.h"
 #include "Achievements.h"
 
@@ -90,6 +89,7 @@ private:
 
     std::shared_ptr<Achievements> achievements;
 
+    void loadAchievements();
 };
 
 

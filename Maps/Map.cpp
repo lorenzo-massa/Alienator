@@ -2,6 +2,7 @@
 // Created by Lorenzo Massa on 30/05/2020.
 //
 
+#include <fstream>
 #include "Map.h"
 #include "../Objects/Block.h"
 #include "../Engine/Game.h"

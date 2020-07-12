@@ -49,8 +49,6 @@ set(SOURCE_FILES
         ../Assets/AssetsManager.h
         ../Objects/Block.cpp
         ../Objects/Block.h
-        ../Engine/Loader.cpp
-        ../Engine/Loader.h
         )
 
 ##
