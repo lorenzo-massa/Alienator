@@ -47,9 +47,7 @@ set(SOURCE_FILES
         ../Objects/PowerUp.h
         ../Assets/AssetsManager.cpp
         ../Assets/AssetsManager.h
-        ../Objects/Block.cpp
-        ../Objects/Block.h
-        )
+        ../Objects/Tile.cpp ../Objects/Tile.h ../Objects/TileEnum.h)
 
 ##
 link_directories(SFML-2.5.1/bin)

@@ -4,18 +4,17 @@
 
 #include <fstream>
 #include "Map.h"
-#include "../Objects/Block.h"
 #include "../Engine/Game.h"
 
 Map::Map() {
     enemies = std::vector<std::shared_ptr<Enemy>>();
     collectables = std::vector<std::shared_ptr<Collectable>>();
-    mapMatrix = std::vector<std::shared_ptr<sf::Sprite>>();
+    mapMatrix = std::vector<std::shared_ptr<Tile>>();
     bullets = std::vector<std::shared_ptr<Bullet>>();
     portal = std::make_shared<sf::Sprite>();
 }
 
-void Map::addToMatrix(const std::shared_ptr<sf::Sprite>& x) {
+void Map::addToMatrix(const std::shared_ptr<Tile>& x) {
     mapMatrix.push_back(x);
 }
 
@@ -40,7 +39,7 @@ std::shared_ptr<Enemy> Map::getEnemy(int i) {
 }
 
 
-std::vector<std::shared_ptr<sf::Sprite>> Map::getMatrix() {
+std::vector<std::shared_ptr<Tile>> Map::getMatrix() {
     return mapMatrix;
 }
 
@@ -130,7 +129,7 @@ void Map::loadLevel(int x) {
 
                 if (c != '\n') {
 
-                    std::shared_ptr<Block> b;
+                    std::shared_ptr<Tile> b;
                     std::shared_ptr<Collectable> coll;
                     std::shared_ptr<Enemy> enemy;
                     std::shared_ptr<sf::Sprite> p;
@@ -138,82 +137,83 @@ void Map::loadLevel(int x) {
 
                     switch (c) {
                         case '1':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("1"));
                             addToMatrix(b);
                             break;
                         case '2':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("2"));
                             addToMatrix(b);
                             break;
                         case '3':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("3"));
                             addToMatrix(b);
                             break;
                         case '4':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("4"));
                             addToMatrix(b);
                             break;
                         case '5':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("5"));
                             addToMatrix(b);
                             break;
                         case '6':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("6"));
                             addToMatrix(b);
                             break;
                         case '7':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("7"));
                             addToMatrix(b);
                             break;
                         case '8':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("8"));
                             addToMatrix(b);
                             break;
                         case '9':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("9"));
                             addToMatrix(b);
                             break;
                         case 'A':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("10"));
                             addToMatrix(b);
                             break;
                         case 'B':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("11"));
                             addToMatrix(b);
                             break;
                         case 'C':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
+
                             b->setTexture(AssetManager::textures.at("12"));
                             addToMatrix(b);
                             break;
                         case 'D':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("13"));
                             addToMatrix(b);
                             break;
                         case 'E':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("14"));
                             addToMatrix(b);
                             break;
                         case 'F':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("15"));
                             addToMatrix(b);
                             break;
                         case 'G':
-                            b = std::make_shared<Block>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE));
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Full);
                             b->setTexture(AssetManager::textures.at("16"));
                             addToMatrix(b);
                             break;

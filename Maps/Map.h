@@ -12,6 +12,8 @@
 
 #include "../GameCharacter/Enemy.h"
 #include "../Objects/Collectable.h"
+#include "../Objects//TileEnum.h"
+#include "../Objects/Tile.h"
 
 class Map {
 public:
@@ -19,13 +21,13 @@ public:
 
     ~Map();
 
-    void addToMatrix(const std::shared_ptr<sf::Sprite>& x);
+    void addToMatrix(const std::shared_ptr<Tile>& x);
 
     void removeFromMatrix(int i);
 
     std::shared_ptr<sf::Sprite> getFromMatrix(int i);
 
-    std::vector<std::shared_ptr<sf::Sprite>> getMatrix();
+    std::vector<std::shared_ptr<Tile>> getMatrix();
 
     void addEnemy(const std::shared_ptr<Enemy>& e);
 
@@ -72,7 +74,7 @@ public:
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;
     std::vector<std::shared_ptr<Collectable>> collectables;
-    std::vector<std::shared_ptr<sf::Sprite>> mapMatrix;
+    std::vector<std::shared_ptr<Tile>> mapMatrix;
     std::vector<std::shared_ptr<Bullet>> bullets;
     std::shared_ptr<sf::Sprite> portal;
     int n{};

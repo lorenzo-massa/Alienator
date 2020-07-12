@@ -40,8 +40,6 @@ set(SOURCE_FILES
         Objects/PowerUp.h
         Assets/AssetsManager.cpp
         Assets/AssetsManager.h
-        Objects/Block.cpp
-        Objects/Block.h
         Engine/ObserverGame.h
         Engine/SubjectGame.h
         Engine/Observer.h
@@ -65,7 +63,7 @@ set(SOURCE_FILES
         Behavior/Strategy/ConcreteStrategy/FightingMovement.cpp
         Behavior/Strategy/ConcreteStrategy/PatrollingMovement.cpp
         Behavior/Strategy/ConcreteStrategy/GroundPatrolling.cpp
-)
+        Objects/Tile.cpp Objects/Tile.h Objects/TileEnum.h)
 
 
 link_directories(SFML-2.5.1/bin)

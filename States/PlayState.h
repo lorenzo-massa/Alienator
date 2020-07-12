@@ -10,7 +10,6 @@
 #include "../GameCharacter/Hero.h"
 #include "../Engine/Game.h"
 #include "PauseState.h"
-#include "../Objects/Block.h"
 
 class PlayState : public GameState, public Subject {
 public:
