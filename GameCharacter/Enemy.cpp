@@ -51,7 +51,6 @@ std::shared_ptr<Bullet> Enemy::shot(sf::Vector2f mousePosition) {
 
 bool Enemy::patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move) {
 
-
     bool found = false;
 
     if (Enemy::getDirection() > 0) {
@@ -67,10 +66,8 @@ bool Enemy::patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move) {
         }
     } else if (Enemy::getDirection() < 0) {
         if (heroPos.x < sf::Sprite::getPosition().x && heroPos.x > sf::Sprite::getPosition().x - patrolDistance.x) {
-            if ((heroPos.y <= sf::Sprite::getPosition().y &&
-                 heroPos.y > sf::Sprite::getPosition().y - patrolDistance.y) ||
-                (heroPos.y >= sf::Sprite::getPosition().y &&
-                 heroPos.y < sf::Sprite::getPosition().y + patrolDistance.y)) {
+            if ((heroPos.y <= sf::Sprite::getPosition().y &&heroPos.y > sf::Sprite::getPosition().y - patrolDistance.y) ||
+                (heroPos.y >= sf::Sprite::getPosition().y &&heroPos.y < sf::Sprite::getPosition().y + patrolDistance.y)) {
                 found = true;
                 return found;
             }
@@ -153,4 +150,12 @@ const std::shared_ptr<sf::Clock> &Enemy::getClockPatrol() const {
 
 void Enemy::setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol) {
     Enemy::clockPatrol = clockPatrol;
+}
+
+void Enemy::patrolling() {
+
+}
+
+void Enemy::fighting() {
+
 }

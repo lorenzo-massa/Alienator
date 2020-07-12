@@ -4,5 +4,8 @@
 
 #ifndef ALIENATOR_ATTACK_H
 #define ALIENATOR_ATTACK_H
-
+class Attack{
+public:
+    virtual void attack();
+};
 #endif //ALIENATOR_ATTACK_H

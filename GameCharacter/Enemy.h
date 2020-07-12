@@ -7,6 +7,10 @@
 
 #include "GameCharacter.h"
 #include <AssetsManager.h>
+#include "../Behavior/Strategy/Patrolling.h"
+#include "../Behavior/Strategy/Movement.h"
+#include "../Behavior/Strategy/Attack.h"
+
 
 class Enemy : virtual public GameCharacter {
 public:
@@ -41,6 +45,10 @@ public:
 
     bool checkJump();
 
+    void patrolling();
+
+    void fighting();
+
 
 private:
     std::string behavior;
@@ -50,6 +58,14 @@ private:
     sf::Vector2f patrolDistance;
 
     std::shared_ptr<sf::Clock> clockPatrol;
+
+    std::shared_ptr<Patrolling> patroller;
+
+    std::shared_ptr<Attack> attacker;
+
+    std::shared_ptr<Movement> mover;
+
+
 };
 
 #endif //ALIENATOR_ENEMY_H

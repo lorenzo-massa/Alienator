@@ -598,15 +598,17 @@ void PlayState::checkBullets() {
         i++;
     }
 
-    if (killedHero){
 
-        Game::getGame()->killHero();
+
+    if (killedHero){
 
         bool unlocked = false;
         EVENT e = EVENT::DEATH;
         notifyObservers(e, unlocked);
         if(unlocked)
             showAchievement(e);
+
+        Game::getGame()->killHero();
     }
 
 
@@ -659,7 +661,7 @@ void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
         moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
 
 
-        if(abs(movmentCollision.x-moveEnemy.x)>eps){
+        if(std::abs(movmentCollision.x-moveEnemy.x)>eps){
             enemy->setDirection(enemy->getDirection()*(-1.0f));
             enemy->sf::Sprite::move(sf::Vector2f(moveEnemy.x*-1.0f,moveEnemy.y));
             enemy->getClockPatrol()->restart();
