@@ -5,7 +5,7 @@
 #ifndef ALIENATOR_DISTANCEATTACK_H
 #define ALIENATOR_DISTANCEATTACK_H
 
-#include "..\Attack.h"
+#include "../Attack.h"
 
 class DistanceAttack:virtual public Attack{
 public:

@@ -4,9 +4,11 @@
 
 #ifndef ALIENATOR_CLOSEATTACK_H
 #define ALIENATOR_CLOSEATTACK_H
-#include "..\Attack.h"
 
-class CloseAttack:virtual public Attack{
+
+#include "../Attack.h"
+
+class CloseAttack: virtual public Attack{
 public:
     void attack()override ;
 

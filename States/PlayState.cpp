@@ -110,9 +110,11 @@ void PlayState::handleInput() {
                     break;
             }
         }*/
-    animationHero(Game::getGame()->getHero()->getDirection(), speed);
 
     }
+
+    animationHero(Game::getGame()->getHero()->getDirection(), speed);
+
 }
 
 void PlayState::generateFrame() {
@@ -243,13 +245,13 @@ void PlayState::generateGUI(float &xT) {
     targetWindow->draw(nCoins);
 
     //Show power up
-    sf::Text message;
-    message.setFont(*AssetManager::font);
-    message.setString(Game::getGame()->getHero()->getPowerUp().typeToString());
-    message.setCharacterSize(25);
-    message.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x / 2 -
-                        message.getLocalBounds().width / 2, nCoins.getPosition().y + 3);
     if (Game::getGame()->getHero()->isPowerUpState()) {
+        sf::Text message;
+        message.setFont(*AssetManager::font);
+        message.setString(Game::getGame()->getHero()->getPowerUp().typeToString());
+        message.setCharacterSize(25);
+        message.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x / 2 -
+                        message.getLocalBounds().width / 2, nCoins.getPosition().y + 3);
         targetWindow->draw(message);
     }
 
@@ -267,7 +269,7 @@ void PlayState::generateGUI(float &xT) {
 }
 
 void PlayState::animationHero(int direction, sf::Vector2f speed) {
-    float speedClock = 0.1;
+    float speedClock = 0.08;
 
     if (Game::getGame()->getHero()->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && direction == 0) {
         if (Game::getGame()->getHero()->getStrTexture().back() == 'd') {

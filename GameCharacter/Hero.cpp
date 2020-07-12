@@ -14,6 +14,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, f
     setScale(sf::Vector2f(0.25f, 0.25f));
     weapon = std::make_shared<Weapon>(110, 5.0f);
     clockPowerUp = sf::Clock();
+    powerUpState = false;
 
 }
 

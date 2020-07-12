@@ -54,11 +54,15 @@ set(SOURCE_FILES
         Behavior/Strategy/Movement.h
         Behavior/Strategy/ConcreteStrategy/PatrollingMovement.h
         Behavior/Strategy/ConcreteStrategy/FightingMovement.h
-        Behavior/Strategy/Attack.h Behavior/Strategy/ConcreteStrategy/CloseAttack.h
+        Behavior/Strategy/Attack.h
+        Behavior/Strategy/ConcreteStrategy/CloseAttack.h
         Behavior/Strategy/ConcreteStrategy/DistanceAttack.h
-        Behavior/Strategy/Patrolling.h Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h
-        Behavior/Strategy/Attack.cpp Behavior/Strategy/Movement.cpp
-        Behavior/Strategy/Patrolling.cpp Behavior/Strategy/ConcreteStrategy/CloseAttack.cpp
+        Behavior/Strategy/Patrolling.h
+        Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h
+        Behavior/Strategy/Attack.cpp
+        Behavior/Strategy/Movement.cpp
+        Behavior/Strategy/Patrolling.cpp
+        Behavior/Strategy/ConcreteStrategy/CloseAttack.cpp
         Behavior/Strategy/ConcreteStrategy/DistanceAttack.cpp
         Behavior/Strategy/ConcreteStrategy/FightingMovement.cpp
         Behavior/Strategy/ConcreteStrategy/PatrollingMovement.cpp

@@ -5,7 +5,7 @@
 #ifndef ALIENATOR_GROUNDPATROLLING_H
 #define ALIENATOR_GROUNDPATROLLING_H
 
-#include "..\Patrolling.h"
+#include "../Patrolling.h"
 
 
 class GroundPatrolling: virtual public Patrolling{
