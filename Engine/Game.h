@@ -90,6 +90,8 @@ private:
     std::shared_ptr<Achievements> achievements;
 
     void loadAchievements();
+
+    std::shared_ptr<AssetManager> assetManager;
 };
 
 

@@ -20,7 +20,7 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int 
                        tempView.getSize().y / 2);
     targetWindow->setView(tempView);
 
-    AssetManager::initBackground(targetWindow, -Game::getGame()->getHero()->sf::Sprite::getPosition().x);
+    AssetManager::getAssetManager()->initBackground(targetWindow, -Game::getGame()->getHero()->sf::Sprite::getPosition().x);
 
     registerObserver(&(*Game::getGame()->getAchievements()));
 
@@ -39,7 +39,7 @@ void PlayState::handleInput() {
         else if (event.type == sf::Event::Resized) {
             sf::Vector2u size = targetWindow->getSize();
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
-            AssetManager::setBackground(targetWindow, 0);
+            AssetManager::getAssetManager()->setBackground(targetWindow, 0);
         } else if (event.type == sf::Event::KeyPressed) {
             if (event.key.code == sf::Keyboard::Escape) {
                 Game::getGame()->save();
@@ -138,11 +138,11 @@ void PlayState::generateFrame() {
 
     sf::View tempView = targetWindow->getView();
 
-    if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getXBackground() < 800 &&
+    if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getAssetManager()->getXBackground() < 800 &&
          (Game::getGame()->getHero()->getDirection() == -1
           || (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))
         ||
-        (AssetManager::getXBackground() + targetWindow->getSize().x - 800 < Game::getGame()->getHero()->getPosition().x
+        (AssetManager::getAssetManager()->getXBackground() + targetWindow->getSize().x - 800 < Game::getGame()->getHero()->getPosition().x
          && (Game::getGame()->getHero()->getDirection() == 1 ||
              (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))) {
         tempView.move(move.x, 0);
@@ -158,7 +158,7 @@ void PlayState::generateFrame() {
 
     targetWindow->clear();
 
-    AssetManager::setBackground(targetWindow, move.x);
+    AssetManager::getAssetManager()->setBackground(targetWindow, move.x);
 
     generateMap();
 
@@ -209,32 +209,32 @@ void PlayState::generateGUI(float &xT) {
     line.setFillColor(sf::Color::Transparent);
     line.setOutlineThickness(2);
     line.setOutlineColor(sf::Color::White);
-    line.setPosition(AssetManager::getXBackground() + 100, 50);
+    line.setPosition(AssetManager::getAssetManager()->getXBackground() + 100, 50);
 
     sf::RectangleShape health(sf::Vector2f(Game::getGame()->getHero()->getHealthPoint()/10, 11));
     health.setFillColor(sf::Color::Red);
-    health.setPosition(AssetManager::getXBackground() + 102, 52);
+    health.setPosition(AssetManager::getAssetManager()->getXBackground() + 102, 52);
 
     //Munitions
     sf::Sprite currentAmmoSprite;
-    currentAmmoSprite.setTexture(AssetManager::textures.at("MUNITIONS"));
+    currentAmmoSprite.setTexture(AssetManager::getAssetManager()->getTextures().at("MUNITIONS"));
     currentAmmoSprite.setPosition(line.getPosition().x + line.getSize().x + 50, line.getPosition().y - 5);
     currentAmmoSprite.setScale(0.05, 0.05);
 
     sf::Text nMunitions;
-    nMunitions.setFont(*AssetManager::font);
+    nMunitions.setFont(*AssetManager::getAssetManager()->getFont());
     nMunitions.setString(std::to_string(Game::getGame()->getHero()->getAmmo()));
     nMunitions.setCharacterSize(20);
     nMunitions.setPosition(currentAmmoSprite.getPosition().x + 35, currentAmmoSprite.getPosition().y);
 
     //Coins
     sf::Sprite currentCoinsSprite;
-    currentCoinsSprite.setTexture(AssetManager::textures.at("COINS"));
+    currentCoinsSprite.setTexture(AssetManager::getAssetManager()->getTextures().at("COINS"));
     currentCoinsSprite.setPosition(currentAmmoSprite.getPosition().x + 80, currentAmmoSprite.getPosition().y - 3);
     currentCoinsSprite.setScale(0.06, 0.06);
 
     sf::Text nCoins;
-    nCoins.setFont(*AssetManager::font);
+    nCoins.setFont(*AssetManager::getAssetManager()->getFont());
     nCoins.setString(std::to_string(Game::getGame()->getHero()->getCoins()));
     nCoins.setCharacterSize(20);
     nCoins.setPosition(currentCoinsSprite.getPosition().x + 35, currentCoinsSprite.getPosition().y + 3);
@@ -249,16 +249,16 @@ void PlayState::generateGUI(float &xT) {
     //Show power up
     if (Game::getGame()->getHero()->isPowerUpState()) {
         sf::Text message;
-        message.setFont(*AssetManager::font);
+        message.setFont(*AssetManager::getAssetManager()->getFont());
         message.setString(Game::getGame()->getHero()->getPowerUp().typeToString());
         message.setCharacterSize(25);
-        message.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x / 2 -
+        message.setPosition(AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x / 2 -
                         message.getLocalBounds().width / 2, nCoins.getPosition().y + 3);
         targetWindow->draw(message);
     }
 
 
-    popUp.setPosition(AssetManager::getXBackground() + targetWindow->getView().getSize().x -
+    popUp.setPosition(AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x -
                       popUp.getLocalBounds().width - 30, 20);
 
     if(achievementUnlocked){
@@ -275,10 +275,10 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
 
     if (Game::getGame()->getHero()->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && direction == 0) {
         if (Game::getGame()->getHero()->getStrTexture().back() == 'd') {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_1_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Idle_1_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Idle_1_Reversed");
         } else {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Idle_1"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Idle_1"));
             Game::getGame()->getHero()->setStrTexture("Idle_1");
         }
 
@@ -288,22 +288,22 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
         if (Game::getGame()->getHero()->getStrTexture() == "Run_6" ||
             Game::getGame()->getHero()->getStrTexture() == "Idle_1"
             || Game::getGame()->getHero()->getStrTexture().back() == 'd') {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_1"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_1"));
             Game::getGame()->getHero()->setStrTexture("Run_1");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_1") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_2"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_2"));
             Game::getGame()->getHero()->setStrTexture("Run_2");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_2") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_3"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_3"));
             Game::getGame()->getHero()->setStrTexture("Run_3");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_3") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_4"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_4"));
             Game::getGame()->getHero()->setStrTexture("Run_4");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_4") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_5"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_5"));
             Game::getGame()->getHero()->setStrTexture("Run_5");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_5") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_6"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_6"));
             Game::getGame()->getHero()->setStrTexture("Run_6");
         }
 
@@ -314,22 +314,22 @@ void PlayState::animationHero(int direction, sf::Vector2f speed) {
             Game::getGame()->getHero()->getStrTexture() == "Idle_1"
             || Game::getGame()->getHero()->getStrTexture() == "Idle_1_Reversed" ||
             Game::getGame()->getHero()->getStrTexture().back() != 'd') {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_1_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_1_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_1_Reversed");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_1_Reversed") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_2_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_2_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_2_Reversed");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_2_Reversed") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_3_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_3_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_3_Reversed");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_3_Reversed") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_4_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_4_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_4_Reversed");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_4_Reversed") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_5_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_5_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_5_Reversed");
         } else if (Game::getGame()->getHero()->getStrTexture() == "Run_5_Reversed") {
-            Game::getGame()->getHero()->setTexture(AssetManager::textures.at("Run_6_Reversed"));
+            Game::getGame()->getHero()->setTexture(AssetManager::getAssetManager()->getTextures().at("Run_6_Reversed"));
             Game::getGame()->getHero()->setStrTexture("Run_6_Reversed");
         }
     }
@@ -364,10 +364,10 @@ void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string col
 
     if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection() == 0) {
         if (enemy->getStrTexture().back() == 'd') {
-            enemy->setTexture(AssetManager::textures.at(color + "_Idle_1_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Idle_1_Reversed"));
             enemy->setStrTexture(color + "_Idle_1_Reversed");
         } else {
-            enemy->setTexture(AssetManager::textures.at(color + "_Idle_1"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Idle_1"));
             enemy->setStrTexture(color + "_Idle_1");
         }
     }
@@ -375,25 +375,25 @@ void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string col
         enemy->getClockAnimation()->restart();
         if (enemy->getStrTexture() == color + "_Run_6" || enemy->getStrTexture() == color + "_Idle_1"
             || enemy->getStrTexture().back() == 'd') {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_1"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_1"));
             enemy->setStrTexture(color + "_Run_1");
         } else if (enemy->getStrTexture() == color + "_Run_1") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_2"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_2"));
             enemy->setStrTexture(color + "_Run_2");
         } else if (enemy->getStrTexture() == color + "_Run_2") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_3"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_3"));
             enemy->setStrTexture(color + "_Run_3");
         } else if (enemy->getStrTexture() == color + "_Run_3") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_4"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_4"));
             enemy->setStrTexture(color + "_Run_4");
         } else if (enemy->getStrTexture() == color + "_Run_4") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_5"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_5"));
             enemy->setStrTexture(color + "_Run_5");
         } else if (enemy->getStrTexture() == color + "_Run_5") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_6"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_6"));
             enemy->setStrTexture(color + "_Run_6");
         } else {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_1"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_1"));
             enemy->setStrTexture(color + "_Run_1");
         }
 
@@ -401,25 +401,25 @@ void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string col
         enemy->getClockAnimation()->restart();
         if (enemy->getStrTexture() == color + "_Run_6_Reversed" || enemy->getStrTexture() == color + "_Idle_1"
             || enemy->getStrTexture() == color + "_Idle_1_Reversed" || enemy->getStrTexture().back() != 'd') {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_1_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_1_Reversed"));
             enemy->setStrTexture(color + "_Run_1_Reversed");
         } else if (enemy->getStrTexture() == color + "_Run_1_Reversed") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_2_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_2_Reversed"));
             enemy->setStrTexture(color + "_Run_2_Reversed");
         } else if (enemy->getStrTexture() == color + "_Run_2_Reversed") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_3_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_3_Reversed"));
             enemy->setStrTexture(color + "_Run_3_Reversed");
         } else if (enemy->getStrTexture() == color + "_Run_3_Reversed") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_4_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_4_Reversed"));
             enemy->setStrTexture(color + "_Run_4_Reversed");
         } else if (enemy->getStrTexture() == color + "_Run_4_Reversed") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_5_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_5_Reversed"));
             enemy->setStrTexture(color + "_Run_5_Reversed");
         } else if (enemy->getStrTexture() == color + "_Run_5_Reversed") {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_6_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_6_Reversed"));
             enemy->setStrTexture(color + "_Run_6_Reversed");
         } else {
-            enemy->setTexture(AssetManager::textures.at(color + "_Run_1_Reversed"));
+            enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Run_1_Reversed"));
             enemy->setStrTexture(color + "_Run_1_Reversed");
         }
     }
@@ -756,7 +756,7 @@ void PlayState::showAchievement(EVENT e) {
             break;
     }
 
-    popUp.setFont(*AssetManager::font);
+    popUp.setFont(*AssetManager::getAssetManager()->getFont());
     popUp.setString("Achevement unlocked: " + message);
     popUp.setCharacterSize(30);
 

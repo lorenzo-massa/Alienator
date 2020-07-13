@@ -12,19 +12,19 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::V
                                                                                                behavior(behavior) {
    float fr,dm;
     if (strBehavior == "Wizard") {
-        setTexture(AssetManager::textures.at("Blue_Idle_1"));
+        setTexture(AssetManager::getAssetManager()->getTextures().at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
         fr=1.0f;
         dm=250.0f;
 
     } else if (strBehavior == "Sentinel") {
-        setTexture(AssetManager::textures.at("Gray_Idle_1"));
+        setTexture(AssetManager::getAssetManager()->getTextures().at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
         fr=0.5f;
         dm=800.0f;
 
     } else {
-        setTexture(AssetManager::textures.at("Red_Idle_1"));
+        setTexture(AssetManager::getAssetManager()->getTextures().at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
         fr=3;
         dm=100.0f;

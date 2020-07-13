@@ -12,7 +12,7 @@ Bullet::Bullet(int dam, float x, float y, sf::Vector2f mousePosition) : damage(d
     maxSpeed = 18.0f;
     currentSpeed = sf::Vector2f(0, 0);
 
-    setTexture(AssetManager::textures.at("Bullet"));
+    setTexture(AssetManager::getAssetManager()->getTextures().at("Bullet"));
     setPosition(x + 32, y + 64);
     posX += 32;
     posY += 64;

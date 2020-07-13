@@ -13,21 +13,44 @@
 
 class AssetManager {
 public:
-    static void load();
 
-    static std::map<std::string, sf::Texture> textures;
-    static std::map<std::string, std::vector<sf::IntRect>> frames;
-    static std::shared_ptr<sf::Font> font;
+    AssetManager();
 
-    static void setBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float xT);
+    virtual ~AssetManager();
 
-    static void initBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float x);
+    static std::shared_ptr<AssetManager> getAssetManager();
 
-    static float getXBackground();
+    const std::map<std::string, sf::Texture> &getTextures() const;
+
+    void setTextures(const std::map<std::string, sf::Texture> &textures);
+
+    const std::map<std::string, std::vector<sf::IntRect>> &getFrames() const;
+
+    void setFrames(const std::map<std::string, std::vector<sf::IntRect>> &frames);
+
+    const std::shared_ptr<sf::Font> &getFont() const;
+
+    void setFont(const std::shared_ptr<sf::Font> &font);
+
+    void setBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float xT);
+
+    void initBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float x);
+
+    float getXBackground() const;
+
 
 
 private:
-    static float xBackground;
+
+    void load();
+
+    static std::shared_ptr<AssetManager> myAssetManager;
+
+    std::map<std::string, sf::Texture> textures;
+    std::map<std::string, std::vector<sf::IntRect>> frames;
+    std::shared_ptr<sf::Font> font;
+
+    float xBackground;
 };
 
 #endif //ALIENATOR_ASSETSMANAGER_H

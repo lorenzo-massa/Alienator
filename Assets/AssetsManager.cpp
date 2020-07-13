@@ -4,15 +4,21 @@
 
 #include "AssetsManager.h"
 
-std::map<std::string, sf::Texture> AssetManager::textures = std::map<std::string, sf::Texture>();
-std::map<std::string, std::vector<sf::IntRect>> AssetManager::frames = std::map<std::string, std::vector<sf::IntRect>>();
+std::shared_ptr<AssetManager> AssetManager::myAssetManager = nullptr;
 
-std::shared_ptr<sf::Font> AssetManager::font = nullptr;
 
-float AssetManager::xBackground = 0;
+AssetManager::AssetManager() {
+    load();
+}
+
+std::shared_ptr<AssetManager> AssetManager::getAssetManager(){
+    if (AssetManager::myAssetManager == nullptr)
+        myAssetManager = std::make_shared<AssetManager>();
+    return myAssetManager;
+}
+
 
 void AssetManager::load() {
-
 
     try {
 
@@ -136,6 +142,35 @@ void AssetManager::initBackground(const std::shared_ptr<sf::RenderWindow>& targe
     targetWindow->draw(background);
 }
 
-float AssetManager::getXBackground() {
+const std::map<std::string, sf::Texture> &AssetManager::getTextures() const {
+    return textures;
+}
+
+void AssetManager::setTextures(const std::map<std::string, sf::Texture> &textures) {
+    AssetManager::textures = textures;
+}
+
+const std::map<std::string, std::vector<sf::IntRect>> &AssetManager::getFrames() const {
+    return frames;
+}
+
+void AssetManager::setFrames(const std::map<std::string, std::vector<sf::IntRect>> &frames) {
+    AssetManager::frames = frames;
+}
+
+const std::shared_ptr<sf::Font> &AssetManager::getFont() const {
+    return font;
+}
+
+void AssetManager::setFont(const std::shared_ptr<sf::Font> &font) {
+    AssetManager::font = font;
+}
+
+float AssetManager::getXBackground() const {
     return xBackground;
 }
+
+AssetManager::~AssetManager() {
+}
+
+

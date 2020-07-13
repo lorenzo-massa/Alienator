@@ -60,7 +60,7 @@ void LevelSelectState::handleInput() {
 
 void LevelSelectState::generateFrame() {
     targetWindow->clear();
-    AssetManager::setBackground(targetWindow, 0);
+    AssetManager::getAssetManager()->setBackground(targetWindow, 0);
 
     mainMenu.draw(targetWindow);
 

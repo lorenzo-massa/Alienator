@@ -3,6 +3,7 @@
 int main() {
 
     auto game = Game::getGame();
+
     game->init();
     game->start();
 

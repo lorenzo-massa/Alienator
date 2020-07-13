@@ -42,7 +42,7 @@ void Game::init() {
         gameWindow->setFramerateLimit(FPS);
 
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
-        AssetManager::load();
+        assetManager = AssetManager::getAssetManager();
         std::cout << "All textures are loaded!" << std::endl;
 
         srand(time(nullptr));

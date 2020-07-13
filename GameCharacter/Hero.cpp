@@ -7,7 +7,7 @@
 
 Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff, int coins)
         : GameCharacter(hp, ar, am, s, pos, dir, speedCoeff), type(type), coins(coins) {
-    setTexture(AssetManager::textures.at("Idle_1"));
+    setTexture(AssetManager::getAssetManager()->getTextures().at("Idle_1"));
     strTexture = "Idle_1";
     setPosition(pos);
     //setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
