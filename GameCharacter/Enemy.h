@@ -8,7 +8,6 @@
 #include "GameCharacter.h"
 #include <AssetsManager.h>
 #include "../Behavior/Strategy/Patrolling.h"
-#include "../Behavior/Strategy/Movement.h"
 #include "../Behavior/Strategy/Attack.h"
 
 
@@ -62,9 +61,6 @@ private:
     std::shared_ptr<Patrolling> patroller;
 
     std::shared_ptr<Attack> attacker;
-
-    std::shared_ptr<Movement> mover;
-
 
 };
 

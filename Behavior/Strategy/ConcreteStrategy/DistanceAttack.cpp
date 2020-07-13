@@ -4,6 +4,11 @@
 
 #include "DistanceAttack.h"
 
-void DistanceAttack::attack() {
-    Attack::attack();
+void DistanceAttack::attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float &enemyDir, float deltaT) {
+
+    enemyDir = heroPos.x < enemyPos.x ? 1.0f : -1.0f;
+
+    if(std::abs(heroPos.x-enemyPos.x)>64.0f*6.0f){
+        move.x=0;
+    }
 }
