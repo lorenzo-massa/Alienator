@@ -31,7 +31,7 @@ public:
 
     void behaviorChanger();
 
-    void enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy);
+    //void enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy);
 
     void detectCollision(const std::shared_ptr<GameCharacter> &entity, const std::shared_ptr<sf::Sprite> &block,
                          sf::Vector2f &moving);
@@ -43,6 +43,8 @@ public:
     void notifyObservers(EVENT e, bool &unlocked) const override;
 
     virtual ~PlayState();
+
+    void enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy);
 
 private:
 

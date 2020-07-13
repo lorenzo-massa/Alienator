@@ -5,7 +5,7 @@
 
 
 
-void CloseAttack::attack(sf::Vector2f heroPos, sf::Vector2f enemyPos,sf::Vector2f &move, float &enemyDir,float deltaT) {
+void CloseAttack::attack(sf::Vector2f heroPos, sf::Vector2f enemyPos,sf::Vector2f &move, float &enemyDir) {
 
 
     enemyDir = heroPos.x < enemyPos.x ? -1.0f : 1.0f;

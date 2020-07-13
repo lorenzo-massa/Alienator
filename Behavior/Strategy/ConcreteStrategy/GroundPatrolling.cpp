@@ -2,12 +2,20 @@
 // Created by leoco on 10/07/2020.
 //
 
-#include <SFML/System/Vector2.hpp>
+
 #include "GroundPatrolling.h"
 
-bool GroundPatrolling::patrol(float deltaT, sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float direction) {
+bool GroundPatrolling::patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float& direction) {
 
     bool found = false;
+
+    if (getPatrolClock()->getElapsedTime().asSeconds() > 3.0f) {
+
+        direction=direction * (-1.0f);
+        getPatrolClock()->restart();
+
+    }
+
 
     if (direction > 0) {
 
@@ -31,4 +39,6 @@ bool GroundPatrolling::patrol(float deltaT, sf::Vector2f enemyPos,sf::Vector2f h
             }
         }
     }
+    return  found;
 }
+

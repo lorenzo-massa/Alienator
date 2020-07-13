@@ -11,7 +11,7 @@
 
 class Attack{
 public:
-    virtual void attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float& enemyDir, float deltaT);
+    virtual void attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float& enemyDir);
 
 
 };

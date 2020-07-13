@@ -4,6 +4,6 @@
 
 #include "Attack.h"
 
-void Attack::attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float& enemyDir, float deltaT) {
+void Attack::attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float& enemyDir) {
 
 }

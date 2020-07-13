@@ -22,9 +22,9 @@ public:
 
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 
-    bool patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move);
+   // bool patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move);
 
-    std::shared_ptr<Bullet> fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT);
+    //std::shared_ptr<Bullet> fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT);
 
     const std::string &getBehavior() const;
 
@@ -36,18 +36,25 @@ public:
 
     const sf::Vector2f &getPatrolDistance() const;
 
-    const std::shared_ptr<sf::Clock> &getClockPatrol() const;
+   //const std::shared_ptr<sf::Clock> &getClockPatrol() const;
 
-    void setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol);
+    //void setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol);
 
     void setPatrolDistance(const sf::Vector2f &patrolDistance);
 
     bool checkJump();
 
-    void patrolling();
+    bool patrolling(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT);
 
-    void fighting();
+    std::shared_ptr<Bullet> fighting(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT);
 
+    const std::shared_ptr<Patrolling> &getPatroller() const;
+
+    void setPatroller(const std::shared_ptr<Patrolling> &patroller);
+
+    const std::shared_ptr<Attack> &getAttacker() const;
+
+    void setAttacker(const std::shared_ptr<Attack> &attacker);
 
 private:
     std::string behavior;
@@ -56,7 +63,7 @@ private:
 
     sf::Vector2f patrolDistance;
 
-    std::shared_ptr<sf::Clock> clockPatrol;
+    //std::shared_ptr<sf::Clock> clockPatrol;
 
     std::shared_ptr<Patrolling> patroller;
 

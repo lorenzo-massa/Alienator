@@ -5,10 +5,22 @@
 #ifndef ALIENATOR_PATROLLING_H
 #define ALIENATOR_PATROLLING_H
 
+
+#include <memory>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/System/Clock.hpp>
 
 class Patrolling{
 public:
-    virtual bool patrol(float deltaT, sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float direction) ;
+    virtual bool patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float &direction) ;
+
+    const std::shared_ptr<sf::Clock> &getPatrolClock() const;
+
+    void setPatrolClock(const std::shared_ptr<sf::Clock> &patrolClock);
+
+    Patrolling();
+private:
+    std::shared_ptr<sf::Clock> patrolClock;
+
 };
 #endif //ALIENATOR_PATROLLING_H
