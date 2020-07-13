@@ -187,8 +187,10 @@ void PlayState::checkFinished() {
 }
 
 void PlayState::generateMap() {
-    for (const auto &blocks : Game::getGame()->getMap()->getMatrix())
-        targetWindow->draw(*blocks);
+    for (const auto &tile : Game::getGame()->getMap()->getMatrix()){
+        if(!tile->isInvisible())
+            targetWindow->draw(*tile);
+    }
     for (const auto &enemy : Game::getGame()->getMap()->getEnemies())
         targetWindow->draw(*enemy);
     for (const auto &collectable : Game::getGame()->getMap()->getCollectables())
@@ -588,11 +590,18 @@ void PlayState::checkBullets() {
                 }
             }
             if (!deleted) {
-                for (const auto &block : Game::getGame()->getMap()->getMatrix()) {
-                    if (checkCollision(bullet, block) && !deleted) {
+                int k = 0;
+                for (const auto &tile : Game::getGame()->getMap()->getMatrix()) {
+                    if (checkCollision(bullet, tile) && !deleted && !tile->isInvisible()) {
                         deleted = true;
                         Game::getGame()->getMap()->removeBullet(i);
+                        if(tile->isBreakable()){
+                            hp = tile->shotted();
+                            if(hp < 1)
+                                Game::getGame()->getMap()->removeFromMatrix(k);
+                        }
                     }
+                    k++;
                 }
             }
 

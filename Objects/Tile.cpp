@@ -5,7 +5,7 @@
 #include "Tile.h"
 
 
-Tile::Tile(sf::Vector2f position, sf::Vector2f size, typeTile type): size(size), type(type), isBroken(false) {
+Tile::Tile(sf::Vector2f position, sf::Vector2f size, typeTile type): size(size), type(type), isBroken(false), hp(3) {
     setTextureRect(sf::IntRect(0, 0, size.x * 2, size.y * 2));
     setScale(sf::Vector2f(0.5, 0.5));
     sf::Sprite::setPosition(position);
@@ -52,7 +52,25 @@ void Tile::setIsBroken(bool isBroken) {
     Tile::isBroken = isBroken;
 }
 
+bool Tile::isBroken2() const {
+    return isBroken;
+}
+
+int Tile::getHp() const {
+    return hp;
+}
+
+void Tile::setHp(int hp) {
+    Tile::hp = hp;
+}
+
 Tile::~Tile() {
+}
+
+int Tile::shotted() {
+    hp -= 1;
+
+    return hp;
 }
 
 

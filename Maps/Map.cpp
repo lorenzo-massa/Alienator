@@ -269,6 +269,16 @@ void Map::loadLevel(int x) {
                             break;
                         default:
                             break;
+                        case 'T':
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Invisible);
+                            b->setTexture(AssetManager::textures.at("5"));
+                            addToMatrix(b);
+                            break;
+                        case 'R':
+                            b = std::make_shared<Tile>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE), typeTile::Breakable);
+                            b->setTexture(AssetManager::textures.at("5"));
+                            addToMatrix(b);
+                            break;
                     }
                     j++;
                 }

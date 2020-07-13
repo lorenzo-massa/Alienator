@@ -36,6 +36,14 @@ public:
 
     bool isMovable();
 
+    bool isBroken2() const;
+
+    int getHp() const;
+
+    void setHp(int hp);
+
+    int shotted();
+
 private:
 
     typeTile type;
@@ -43,6 +51,8 @@ private:
     sf::Vector2f size;
 
     bool isBroken;
+
+    int hp;
 };
 
 
