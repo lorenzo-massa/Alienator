@@ -177,9 +177,9 @@ std::shared_ptr<Bullet> Enemy::fighting(sf::Vector2f heroPos,sf::Vector2f &move,
     std::shared_ptr<Bullet> b;
     float dir=Enemy::getDirection();
 
-    move=Enemy::move(deltaT);
     Enemy::getAttacker()->attack(heroPos,Enemy::getPosition(),move,dir);
     Enemy::setDirection(dir);
+    move=Enemy::move(deltaT);
     b=Enemy::shot(heroPos);
 
     return b;

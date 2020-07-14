@@ -815,5 +815,6 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
                 Game::getGame()->getMap()->addBullet(b);
             }
         }
+        std::cout<<enemy->getDirection()<<std::endl;
     }
 }
