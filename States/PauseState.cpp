@@ -52,4 +52,8 @@ void PauseState::generateFrame() {
     mainMenu.draw(targetWindow);
 }
 
+PauseState::~PauseState() {
+
+}
+
 

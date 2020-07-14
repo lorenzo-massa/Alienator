@@ -14,7 +14,7 @@ public:
 
     explicit Tile(sf::Vector2f position, sf::Vector2f size, typeTile type);
 
-    virtual ~Tile();
+    ~Tile() override;
 
     typeTile getType() const;
 

@@ -11,7 +11,9 @@
 
 class LevelSelectState : public GameState {
 public:
-    LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow);
+    explicit LevelSelectState(std::shared_ptr<sf::RenderWindow> targetWindow);
+
+    ~LevelSelectState() override;
 
     void handleInput() override;
 

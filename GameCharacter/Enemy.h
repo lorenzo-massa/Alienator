@@ -16,15 +16,11 @@ public:
     Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
           sf::Vector2f patrolDistance, std::string behavior);
 
-    ~Enemy();
+    ~Enemy() override;
 
     sf::Vector2f move( float deltaT) override;
 
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
-
-   // bool patrol(float deltaT, sf::Vector2f heroPos, sf::Vector2f *move);
-
-    //std::shared_ptr<Bullet> fight(sf::Vector2f heroPos, sf::Vector2f &move, float deltaT);
 
     const std::string &getBehavior() const;
 
@@ -36,9 +32,6 @@ public:
 
     const sf::Vector2f &getPatrolDistance() const;
 
-   //const std::shared_ptr<sf::Clock> &getClockPatrol() const;
-
-    //void setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol);
 
     void setPatrolDistance(const sf::Vector2f &patrolDistance);
 
@@ -62,8 +55,6 @@ private:
     std::string behaviorType;
 
     sf::Vector2f patrolDistance;
-
-    //std::shared_ptr<sf::Clock> clockPatrol;
 
     std::shared_ptr<Patrolling> patroller;
 

@@ -59,3 +59,7 @@ void MenuState::generateFrame() {
     mainMenu.draw(targetWindow);
 
 }
+
+MenuState::~MenuState() {
+
+}

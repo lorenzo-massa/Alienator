@@ -13,7 +13,7 @@ class GameState {
 public:
     explicit GameState(std::shared_ptr<sf::RenderWindow> targetWindow);
 
-    //TODO Controllare distruttori virtuali classi polimorfiche // sfruttare = default
+    virtual ~GameState() = 0;
 
     virtual void handleInput() = 0;
 

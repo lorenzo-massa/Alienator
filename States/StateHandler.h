@@ -17,6 +17,8 @@ class StateHandler {
 public:
     StateHandler();
 
+    ~StateHandler();
+
     void addState(const std::shared_ptr<GameState> &topState);
 
     void removeState();
