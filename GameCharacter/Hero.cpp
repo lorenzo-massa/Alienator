@@ -5,7 +5,7 @@
 #include <AssetsManager.h>
 #include "Hero.h"
 
-Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff, int coins)
+Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, sf::Vector2f dir, float speedCoeff, int coins)
         : GameCharacter(hp, ar, am, s, pos, dir, speedCoeff), type(type), coins(coins) {
     setTexture(AssetManager::getAssetManager()->getTextures().at("Idle_1"));
     strTexture = "Idle_1";

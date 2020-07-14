@@ -4,7 +4,7 @@
 
 #include "GameCharacter.h"
 
-GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff) :
+GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, sf::Vector2f dir, float speedCoeff) :
         healthPoint(hp), armor(ar), ammo(am), speed(s), pos(pos), direction(dir), speedBoost(1.0f),
         invincibility(false), fireRateBoost(1.0f), damageBoost(1.0f), speedCoeff(speedCoeff) {
 
@@ -23,7 +23,7 @@ sf::Vector2f GameCharacter::move( float deltaT) {
     float yT;
     float xT;
 
-    if (GameCharacter::getDirection() == 0.0f) {   //attrito
+    if (GameCharacter::getDirection().x == 0.0f) {   //attrito
         if (speed.x > 0)
             speed.x -= 30.0f * 64.0f * deltaT;
 
@@ -33,13 +33,18 @@ sf::Vector2f GameCharacter::move( float deltaT) {
         if (speed.x > -3 && speed.x < 3)//settaggio velocità
             speed.x = 0;
     }
-    if (GameCharacter::getDirection() != 0)
-        speed.x = speedCoeff * 64.0f * GameCharacter::getDirection();//velocità costante se tengo premuto
+    if (GameCharacter::getDirection().x != 0)
+        speed.x = speedCoeff * 64.0f * GameCharacter::getDirection().x;//velocità costante se tengo premuto
 
     xT = speed.x * deltaT;
 
     speed.y = speed.y + 98.0f * 64.0f * deltaT; //gravità
     yT = speed.y * deltaT + 0.5f * 98.0f * 64.0f * deltaT * deltaT ;
+
+    if(yT<0)
+        GameCharacter::setDirection(sf::Vector2f(GameCharacter::getDirection().x,-1.0f));
+    else
+        GameCharacter::setDirection(sf::Vector2f(GameCharacter::getDirection().x,1.0f));
 
     xT = xT * speedBoost;
     yT = yT * speedBoost;
@@ -106,11 +111,11 @@ void GameCharacter::setAmmo(int ammo) {
     GameCharacter::ammo = ammo;
 }
 
-float GameCharacter::getDirection() const {
+sf::Vector2f GameCharacter::getDirection() const {
     return direction;
 }
 
-void GameCharacter::setDirection(float direction) {
+void GameCharacter::setDirection(sf::Vector2f direction) {
     GameCharacter::direction = direction;
 }
 

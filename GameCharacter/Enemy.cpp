@@ -11,7 +11,7 @@
 Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
              sf::Vector2f patrolDistance, std::string behavior) : patrolDistance(patrolDistance),
                                                                   GameCharacter::GameCharacter(hp, armor, 100, speed,
-                                                                                               pos, 1.0f, speedCoeff),
+                                                                                               pos, sf::Vector2f(1.0f,1.0f), speedCoeff),
                                                                                                behavior(behavior) {
    float fr,dm;
     if (strBehavior == "Wizard") {
@@ -164,8 +164,8 @@ void Enemy::setClockPatrol(const std::shared_ptr<sf::Clock> &clockPatrol) {
 bool Enemy::patrolling(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 
     bool found;
-    float dir=Enemy::getDirection();
-    found=Enemy::getPatroller()->patrol(Enemy::getPosition(),heroPos,Enemy::getPatrolDistance(),dir);
+    sf::Vector2f dir=Enemy::getDirection();
+    found=Enemy::getPatroller()->patrol(Enemy::getPosition(),heroPos,Enemy::getPatrolDistance(),dir.x);
     Enemy::setDirection(dir);
     move = Enemy::move( deltaT);
 
@@ -175,11 +175,11 @@ bool Enemy::patrolling(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 std::shared_ptr<Bullet> Enemy::fighting(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 
     std::shared_ptr<Bullet> b;
-    float dir=Enemy::getDirection();
+    sf::Vector2f dir=Enemy::getDirection();
 
-    Enemy::getAttacker()->attack(heroPos,Enemy::getPosition(),move,dir);
-    Enemy::setDirection(dir);
     move=Enemy::move(deltaT);
+    Enemy::getAttacker()->attack(heroPos,Enemy::getPosition(),move,dir.x);
+    Enemy::setDirection(dir);
     b=Enemy::shot(heroPos);
 
     return b;

@@ -17,7 +17,7 @@ class GameCharacter : public sf::Sprite {
 public:
     GameCharacter();
 
-    GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, float dir, float speedCoeff);
+    GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, sf::Vector2f dir, float speedCoeff);
 
     virtual ~GameCharacter();
 
@@ -53,9 +53,9 @@ public:
 
     void setAmmo(int ammo);
 
-    float getDirection() const;
+    sf::Vector2f getDirection() const;
 
-    void setDirection(float direction);
+    void setDirection(sf::Vector2f direction);
 
     float getSpeedBoost() const;
 
@@ -114,7 +114,7 @@ protected:
     sf::Vector2f speed;
     int ammo;
     std::shared_ptr<Weapon> weapon;
-    float direction;
+    sf::Vector2f direction;
     std::string strTexture;
     float speedCoeff;
 

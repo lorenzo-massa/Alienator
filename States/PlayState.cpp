@@ -48,7 +48,8 @@ void PlayState::handleInput() {
             if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up ||
                 event.key.code == sf::Keyboard::Space) {
                 if (Game::getGame()->getHero()->getSpeed().y == 0.0f){
-                    Game::getGame()->getHero()->jump();
+                    if(Game::getGame()->getHero()->getDirection().y==1.0f)
+                        Game::getGame()->getHero()->jump();
                     bool unlocked = false;
                     EVENT e = EVENT::JUMP;
                     notifyObservers(e, unlocked);
@@ -58,22 +59,22 @@ void PlayState::handleInput() {
                 }
             }
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(-1.0f);
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(-1.0f,Game::getGame()->getHero()->getDirection().y));
                 speed = Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(1.0f);
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(1.0f,Game::getGame()->getHero()->getDirection().y));
                 speed = Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
         } else if (event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(0);
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(0,Game::getGame()->getHero()->getDirection().y));
 
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(0);
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(0,Game::getGame()->getHero()->getDirection().y));
 
             }
         } else if (event.type == sf::Event::MouseButtonPressed) {
@@ -113,7 +114,7 @@ void PlayState::handleInput() {
 
     }
 
-    animationHero(Game::getGame()->getHero()->getDirection(), speed);
+    animationHero(Game::getGame()->getHero()->getDirection().x, speed);
 
 }
 
@@ -139,12 +140,12 @@ void PlayState::generateFrame() {
     sf::View tempView = targetWindow->getView();
 
     if ((Game::getGame()->getHero()->getPosition().x - AssetManager::getAssetManager()->getXBackground() < 800 &&
-         (Game::getGame()->getHero()->getDirection() == -1
-          || (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))
+         (Game::getGame()->getHero()->getDirection() .x== -1
+          || (Game::getGame()->getHero()->getDirection() .x== 0 && Game::getGame()->getHero()->getSpeed().x != 0)))
         ||
         (AssetManager::getAssetManager()->getXBackground() + targetWindow->getSize().x - 800 < Game::getGame()->getHero()->getPosition().x
-         && (Game::getGame()->getHero()->getDirection() == 1 ||
-             (Game::getGame()->getHero()->getDirection() == 0 && Game::getGame()->getHero()->getSpeed().x != 0)))) {
+         && (Game::getGame()->getHero()->getDirection() .x== 1 ||
+             (Game::getGame()->getHero()->getDirection() .x== 0 && Game::getGame()->getHero()->getSpeed().x != 0)))) {
         tempView.move(move.x, 0);
         targetWindow->setView(tempView);
     } else
@@ -362,7 +363,7 @@ void PlayState::animationEnemies() {
 void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string color) {
     float speedClock = 0.12;
 
-    if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection() == 0) {
+    if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection().x == 0) {
         if (enemy->getStrTexture().back() == 'd') {
             enemy->setTexture(AssetManager::getAssetManager()->getTextures().at(color + "_Idle_1_Reversed"));
             enemy->setStrTexture(color + "_Idle_1_Reversed");
@@ -371,7 +372,7 @@ void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string col
             enemy->setStrTexture(color + "_Idle_1");
         }
     }
-    if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection() > 0) {
+    if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection().x > 0) {
         enemy->getClockAnimation()->restart();
         if (enemy->getStrTexture() == color + "_Run_6" || enemy->getStrTexture() == color + "_Idle_1"
             || enemy->getStrTexture().back() == 'd') {
@@ -397,7 +398,7 @@ void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string col
             enemy->setStrTexture(color + "_Run_1");
         }
 
-    } else if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection() < 0) {
+    } else if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection().x < 0) {
         enemy->getClockAnimation()->restart();
         if (enemy->getStrTexture() == color + "_Run_6_Reversed" || enemy->getStrTexture() == color + "_Idle_1"
             || enemy->getStrTexture() == color + "_Idle_1_Reversed" || enemy->getStrTexture().back() != 'd') {
@@ -803,7 +804,7 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
 
         if (enemy->checkJump() &&
             std::fabs(enemy->sf::Sprite::getPosition().x - Game::getGame()->getHero()->sf::Sprite::getPosition().x) >
-            50) {
+            50 && enemy->getDirection().y==1.0f) {
             enemy->jump();
         }
 
@@ -815,6 +816,6 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
                 Game::getGame()->getMap()->addBullet(b);
             }
         }
-        std::cout<<enemy->getDirection()<<std::endl;
+        std::cout<<enemy->getDirection().x<<std::endl;
     }
 }

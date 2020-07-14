@@ -47,16 +47,16 @@ set(SOURCE_FILES
         Engine/AchievementsEnum.h
         Engine/Achievements.cpp
         Engine/Achievements.h
-        Behavior/Strategy/Attack.h
-        Behavior/Strategy/ConcreteStrategy/CloseAttack.h
-        Behavior/Strategy/ConcreteStrategy/DistanceAttack.h
-        Behavior/Strategy/Patrolling.h
-        Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h
-        Behavior/Strategy/Attack.cpp
-        Behavior/Strategy/Patrolling.cpp
-        Behavior/Strategy/ConcreteStrategy/CloseAttack.cpp
-        Behavior/Strategy/ConcreteStrategy/DistanceAttack.cpp
-        Behavior/Strategy/ConcreteStrategy/GroundPatrolling.cpp
+        Strategy/Attack.h
+        Strategy/ConcreteStrategy/CloseAttack.h
+        Strategy/ConcreteStrategy/DistanceAttack.h
+        Strategy/Patrolling.h
+        Strategy/ConcreteStrategy/GroundPatrolling.h
+        Strategy/Attack.cpp
+        Strategy/Patrolling.cpp
+        Strategy/ConcreteStrategy/CloseAttack.cpp
+        Strategy/ConcreteStrategy/DistanceAttack.cpp
+        Strategy/ConcreteStrategy/GroundPatrolling.cpp
         Objects/Tile.cpp Objects/Tile.h Objects/TileEnum.h)
 
 
