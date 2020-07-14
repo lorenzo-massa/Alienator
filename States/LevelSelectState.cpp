@@ -66,4 +66,8 @@ void LevelSelectState::generateFrame() {
 
 }
 
+LevelSelectState::~LevelSelectState() {
+
+}
+
 

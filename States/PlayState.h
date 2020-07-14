@@ -15,6 +15,8 @@ class PlayState : public GameState, public Subject {
 public:
     PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int level);
 
+    ~PlayState() override;
+
     void handleInput() override;
 
     void generateFrame() override;
@@ -41,8 +43,6 @@ public:
     void removeObserver(Observer *o) override;
 
     void notifyObservers(EVENT e, bool &unlocked) const override;
-
-    virtual ~PlayState();
 
     void enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy);
 

@@ -14,7 +14,7 @@ public:
 
     Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, sf::Vector2f dir, float speedCoeff, int coins);
 
-    ~Hero();
+    ~Hero() override;
 
     int receiveDamage(int points) override;
 

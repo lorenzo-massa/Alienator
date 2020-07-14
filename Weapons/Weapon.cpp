@@ -11,6 +11,10 @@ std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mous
     return b;
 }
 
+Weapon::Weapon() {
+
+}
+
 void Weapon::setDamage(int d) {
     Weapon::damage = d;
 }
@@ -50,4 +54,6 @@ int Weapon::getDirection() const {
 void Weapon::setDirection(int direction) {
     Weapon::direction = direction;
 }
+
+
 

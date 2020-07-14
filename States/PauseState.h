@@ -10,7 +10,9 @@
 
 class PauseState : public GameState {
 public:
-    PauseState(std::shared_ptr<sf::RenderWindow> targetWindow);
+    explicit PauseState(std::shared_ptr<sf::RenderWindow> targetWindow);
+
+    ~PauseState() override;
 
     void handleInput() override;
 

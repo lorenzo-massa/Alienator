@@ -89,3 +89,7 @@ float Bullet::getMaxSpeed() const {
 void Bullet::setMaxSpeed(float maxSpeed) {
     Bullet::maxSpeed = maxSpeed;
 }
+
+Bullet::~Bullet() {
+
+}

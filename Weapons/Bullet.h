@@ -12,7 +12,7 @@ class Bullet : public sf::Sprite {
 public:
     Bullet(int dam, float x, float y, sf::Vector2f mousePosition);
 
-    ~Bullet() {}
+    ~Bullet() override;
 
     void move(float dT);
 

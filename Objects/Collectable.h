@@ -17,7 +17,7 @@ public:
 
     Collectable(sf::Vector2f position, PowerUp::TYPE type);
 
-    ~Collectable();
+    ~Collectable() override;
 
 
     void registerObserver(std::shared_ptr<ObserverGame> observer) override;

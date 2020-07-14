@@ -6,7 +6,7 @@
 #define ALIENATOR_POWERUP_H
 
 #include <cstdlib>
-#include <time.h>
+#include <ctime>
 #include <iostream>
 
 class PowerUp {

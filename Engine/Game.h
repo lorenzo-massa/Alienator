@@ -27,7 +27,7 @@ class Game : public ObserverGame {
 public:
     Game();
 
-    ~Game();
+    ~Game() override;
 
     static std::shared_ptr<Game> getGame();
 

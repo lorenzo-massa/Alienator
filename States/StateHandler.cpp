@@ -23,3 +23,7 @@ void StateHandler::removeState() {
 const std::shared_ptr<GameState> &StateHandler::getState() {
     return stateBuffer.top();
 }
+
+StateHandler::~StateHandler() {
+
+}
