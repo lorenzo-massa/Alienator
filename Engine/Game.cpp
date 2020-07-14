@@ -197,8 +197,6 @@ std::shared_ptr<SubjectGame> Game::getSubject(int i) {
 
 void Game::update(int i) {
 
-    ptrHero->removePowerUp();
-
     std::shared_ptr<Collectable> c = getMap()->getCollectable(i);
 
     PowerUp powerUp = c->getPowerUp();
