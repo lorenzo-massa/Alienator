@@ -18,3 +18,5 @@ void Patrolling::setPatrolClock(const std::shared_ptr<sf::Clock> &patrolClock) {
 Patrolling::Patrolling() {
     patrolClock=std::make_shared<sf::Clock>();
 }
+
+Patrolling::~Patrolling() {}

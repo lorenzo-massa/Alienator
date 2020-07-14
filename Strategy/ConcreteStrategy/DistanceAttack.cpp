@@ -20,5 +20,11 @@ void DistanceAttack::attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vect
     if(std::abs(heroPos.x-enemyPos.x)>64.0f*6.0f-eps && std::abs(heroPos.x-enemyPos.x)<64.0f*6.0f+eps){
         enemyDir=0;
         move.x=0;
+        //move.y=0;
     }
 }
+
+DistanceAttack::~DistanceAttack() {}
+
+DistanceAttack::DistanceAttack() : Attack(){}
+

@@ -107,6 +107,10 @@ public:
 
     bool fireClock(float fireRate);
 
+    bool isLegalJump1() const;
+
+    void setIsLegalJump(bool isLegalJump);
+
 protected:
     sf::Vector2f pos;
     int healthPoint;
@@ -119,6 +123,7 @@ protected:
     float speedCoeff;
 
 
+    bool isLegalJump;
     sf::Clock clockPowerUp;
     float speedBoost;
     bool invincibility;

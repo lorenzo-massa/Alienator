@@ -48,8 +48,10 @@ void PlayState::handleInput() {
             if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up ||
                 event.key.code == sf::Keyboard::Space) {
                 if (Game::getGame()->getHero()->getSpeed().y == 0.0f){
-                    if(Game::getGame()->getHero()->getDirection().y==1.0f)
+                    if(Game::getGame()->getHero()->isLegalJump1()){
                         Game::getGame()->getHero()->jump();
+                        Game::getGame()->getHero()->setIsLegalJump(false);
+                    }
                     bool unlocked = false;
                     EVENT e = EVENT::JUMP;
                     notifyObservers(e, unlocked);
@@ -472,6 +474,7 @@ void PlayState::detectCollision(const std::shared_ptr<GameCharacter> &entity, co
             if (deltaY < 0.0f) {
                 bottomtCollision++;
                 bottomtCollisionBool = true;
+                entity->setIsLegalJump(true);
             } else {
                 topCollision++;
                 topCollisionBool = true;
@@ -804,8 +807,9 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
 
         if (enemy->checkJump() &&
             std::fabs(enemy->sf::Sprite::getPosition().x - Game::getGame()->getHero()->sf::Sprite::getPosition().x) >
-            50 && enemy->getDirection().y==1.0f) {
+            50 && enemy->isLegalJump1()) {
             enemy->jump();
+            enemy->setIsLegalJump(false);
         }
 
         enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));

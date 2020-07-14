@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Map.h"
 #include "../Engine/Game.h"
-#include "../Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h"
+#include "../Strategy/ConcreteStrategy/GroundPatrolling.h"
 
 Map::Map() {
     enemies = std::vector<std::shared_ptr<Enemy>>();

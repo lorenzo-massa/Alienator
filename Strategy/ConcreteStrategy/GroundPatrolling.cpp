@@ -42,3 +42,9 @@ bool GroundPatrolling::patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Ve
     return  found;
 }
 
+GroundPatrolling::~GroundPatrolling() {}
+
+GroundPatrolling::GroundPatrolling() : Patrolling(){}
+
+
+

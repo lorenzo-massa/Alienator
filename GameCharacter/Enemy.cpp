@@ -3,9 +3,9 @@
 //
 
 #include "Enemy.h"
-#include "../Behavior/Strategy/ConcreteStrategy/GroundPatrolling.h"
-#include "../Behavior/Strategy/ConcreteStrategy/CloseAttack.h"
-#include "../Behavior/Strategy/ConcreteStrategy/DistanceAttack.h"
+#include "../Strategy/ConcreteStrategy/GroundPatrolling.h"
+#include "../Strategy/ConcreteStrategy/CloseAttack.h"
+#include "../Strategy/ConcreteStrategy/DistanceAttack.h"
 
 
 Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,

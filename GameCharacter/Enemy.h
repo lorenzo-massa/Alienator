@@ -7,8 +7,8 @@
 
 #include "GameCharacter.h"
 #include <AssetsManager.h>
-#include "../Behavior/Strategy/Patrolling.h"
-#include "../Behavior/Strategy/Attack.h"
+#include "../Strategy/Patrolling.h"
+#include "../Strategy/Attack.h"
 
 
 class Enemy : virtual public GameCharacter {
