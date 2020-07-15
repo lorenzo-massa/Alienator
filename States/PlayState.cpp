@@ -218,7 +218,6 @@ void PlayState::generateMap() {
         targetWindow->draw(*Game::getGame()->getMap()->getPortal());
 }
 
-
 void PlayState::generateGUI(float &xT) {
     //Health
     sf::RectangleShape line(sf::Vector2f(104, 15));
