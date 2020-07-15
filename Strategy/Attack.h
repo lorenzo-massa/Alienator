@@ -7,7 +7,7 @@
 
 #include <SFML/Audio.hpp>
 
-
+#define BLOCK_SIZE 64
 
 class Attack{
 public:

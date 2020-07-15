@@ -10,6 +10,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/System/Clock.hpp>
 
+#define BLOCK_SIZE 64
+
 class Patrolling{
 public:
     virtual bool patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float &direction) =0;

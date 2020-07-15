@@ -9,7 +9,7 @@ void CloseAttack::attack(sf::Vector2f heroPos, sf::Vector2f enemyPos,sf::Vector2
 
     enemyDir = heroPos.x < enemyPos.x ? -1.0f : 1.0f;
 
-    if(std::abs(heroPos.x-enemyPos.x)<128.0f){
+    if(std::abs(heroPos.x-enemyPos.x)<3.0f*BLOCK_SIZE){
         move.x=0;
         enemyDir=0;
     }

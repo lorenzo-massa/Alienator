@@ -12,6 +12,7 @@
 #include "../Weapons/Weapon.h"
 #include "../Objects/PowerUp.h"
 
+#define BLOCK_SIZE 64
 
 class GameCharacter : public sf::Sprite {
 public:

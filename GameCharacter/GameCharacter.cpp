@@ -55,7 +55,7 @@ sf::Vector2f GameCharacter::move( float deltaT) {
 
 
 void GameCharacter::jump() {
-    speed.y -= 25.0f * 64.0f;
+    speed.y -= 25.0f * BLOCK_SIZE;
 }
 
 std::shared_ptr<Bullet> GameCharacter::shot(sf::Vector2f mousePosition) {

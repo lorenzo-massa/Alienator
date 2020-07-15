@@ -128,7 +128,7 @@ void PlayState::generateFrame() {
 
     if (move.x != 0 || move.y != 0) {
         Game::getGame()->getHero()->sf::Sprite::move(move);
-        if (Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16 * 64){
+        if (Game::getGame()->getHero()->sf::Sprite::getPosition().y > 16 * BLOCK_SIZE ){
             Game::getGame()->killHero();
 
             bool unlocked = false;
