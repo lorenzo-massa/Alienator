@@ -55,6 +55,13 @@ void Hero::addAmmo(int ammo) {
     this->ammo += ammo;
 }
 
+void Hero::addHealthPoint(int helathPoint) {
+    this->healthPoint+=helathPoint;
+    if(this->healthPoint>1000)
+        this->healthPoint=1000;
+}
+
+
 int Hero::getType() const {
     return type;
 }
@@ -70,6 +77,7 @@ bool Hero::isWeaponHit() const {
 void Hero::setWeaponHit(bool weaponHit) {
     Hero::weaponHit = weaponHit;
 }
+
 
 
 

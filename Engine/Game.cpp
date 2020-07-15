@@ -204,6 +204,9 @@ void Game::update(int i) {
         case PowerUp::TYPE::COINS:
             ptrHero->addCoins(10);
             break;
+        case PowerUp::TYPE::HEALTH:
+            ptrHero->addHealthPoint(700);
+            break;
         case PowerUp::TYPE::DAMAGE_BOOST:
             ptrHero->removePowerUp();
             ptrHero->setDamageBoost(1.5f);

@@ -50,6 +50,9 @@ std::string PowerUp::typeToString() const {
         case TYPE::SPEED:
             result = "SPEED";
             break;
+        case TYPE::HEALTH:
+            result = "HEALTH";
+            break;
         default:
             break;
     }

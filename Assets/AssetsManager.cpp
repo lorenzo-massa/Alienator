@@ -25,6 +25,9 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images/BG/bg.jpg");
         textures.insert(std::make_pair("BACKGROUND", texture));
 
+        texture.loadFromFile("Assets/Images//Object/heart.png");
+        textures.insert(std::make_pair("HEALTH", texture));
+
         texture.loadFromFile("Assets/Images//Object/coin.png");
         textures.insert(std::make_pair("COINS", texture));
 

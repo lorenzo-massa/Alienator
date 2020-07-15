@@ -266,6 +266,14 @@ void Map::loadLevel(int x) {
                         case 'P':
                             Game::getGame()->createHero(j * BLOCK_SIZE, i * BLOCK_SIZE);
                             break;
+                        case 'W':
+                            coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), PowerUp::TYPE::HEALTH);
+                            coll->setTexture(AssetManager::getAssetManager()->getTextures().at("HEALTH"));
+                            coll->registerObserver(Game::getGame());
+                            coll->setScale(0.25,0.25);
+                            Game::getGame()->addSubject(coll);
+                            addCollectable(coll);
+                            break;
                         default:
                             break;
                         case 'T':
