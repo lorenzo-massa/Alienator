@@ -13,6 +13,14 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
     isLegalJump=false;
 }
 
+GameCharacter::~GameCharacter() {
+
+}
+
+GameCharacter::GameCharacter() {
+
+}
+
 int GameCharacter::receiveDamage(int points) {
     if (invincibility == false)
         healthPoint -= (points / armor);
@@ -53,7 +61,6 @@ sf::Vector2f GameCharacter::move( float deltaT) {
     return sf::Vector2f(xT, yT);
 }
 
-
 void GameCharacter::jump() {
     speed.y -= 25.0f * BLOCK_SIZE;
 }
@@ -61,6 +68,26 @@ void GameCharacter::jump() {
 std::shared_ptr<Bullet> GameCharacter::shot(sf::Vector2f mousePosition) {
     return weapon->fire(sf::Sprite::getPosition().x, sf::Sprite::getPosition().y, weapon->getDamage() * damageBoost,
                         mousePosition);
+}
+
+void GameCharacter::removePowerUp() {
+    invincibility = false;
+    speedBoost = 1.0f;
+    fireRateBoost = 1.0f;
+    damageBoost = 1.0f;
+
+    powerUp.~PowerUp();
+    powerUpState = false;
+
+}
+
+bool GameCharacter::fireClock(float fireRate) {
+    if (fireRateClock->getElapsedTime().asSeconds() > 1.0f / fireRate) {
+        fireRateClock->restart();
+        return true;
+    }
+
+    return false;
 }
 
 //Getter e Setter
@@ -118,14 +145,6 @@ sf::Vector2f GameCharacter::getDirection() const {
 
 void GameCharacter::setDirection(sf::Vector2f direction) {
     GameCharacter::direction = direction;
-}
-
-GameCharacter::~GameCharacter() {
-
-}
-
-GameCharacter::GameCharacter() {
-
 }
 
 const std::string &GameCharacter::getStrTexture() const {
@@ -188,17 +207,6 @@ void GameCharacter::resetClockPowerUp() {
     clockPowerUp.restart();
 }
 
-void GameCharacter::removePowerUp() {
-    invincibility = false;
-    speedBoost = 1.0f;
-    fireRateBoost = 1.0f;
-    damageBoost = 1.0f;
-
-    powerUp.~PowerUp();
-    powerUpState = false;
-
-}
-
 float GameCharacter::getSpeedCoeff() const {
     return speedCoeff;
 }
@@ -213,15 +221,6 @@ const std::shared_ptr<sf::Clock> &GameCharacter::getClockAnimation() const {
 
 void GameCharacter::setClockAnimation(const std::shared_ptr<sf::Clock> &clockAnimation) {
     GameCharacter::clockAnimation = clockAnimation;
-}
-
-bool GameCharacter::fireClock(float fireRate) {
-    if (fireRateClock->getElapsedTime().asSeconds() > 1.0f / fireRate) {
-        fireRateClock->restart();
-        return true;
-    }
-
-    return false;
 }
 
 const std::shared_ptr<sf::Clock> &GameCharacter::getFireRateClock() const {

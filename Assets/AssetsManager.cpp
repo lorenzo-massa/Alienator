@@ -6,7 +6,6 @@
 
 std::shared_ptr<AssetManager> AssetManager::myAssetManager = nullptr;
 
-
 AssetManager::AssetManager() {
     load();
 }
@@ -16,7 +15,6 @@ std::shared_ptr<AssetManager> AssetManager::getAssetManager(){
         myAssetManager = std::make_shared<AssetManager>();
     return myAssetManager;
 }
-
 
 void AssetManager::load() {
 

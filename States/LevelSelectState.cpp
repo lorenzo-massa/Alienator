@@ -30,9 +30,10 @@ void LevelSelectState::handleInput() {
                         Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow, 1));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_2:
-                        Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow, 2));
                         if (!Game::getGame()->getLevelCompleted()[0])
                             std::cout << "You have to complete level 1" << std::endl;
+                        else
+                            Game::getGame()->getStateHandler()->addState(std::make_shared<PlayState>(targetWindow, 2));
                         break;
                     case MainMenu::MenuItem::TYPE::LEVEL_3:
                         if (!Game::getGame()->getLevelCompleted()[1])
@@ -56,7 +57,6 @@ void LevelSelectState::handleInput() {
         }
     }
 }
-
 
 void LevelSelectState::generateFrame() {
     targetWindow->clear();

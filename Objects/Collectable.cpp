@@ -26,7 +26,6 @@ Collectable::Collectable(sf::Vector2f position, PowerUp::TYPE type) {
 Collectable::~Collectable() {
 }
 
-
 const PowerUp &Collectable::getPowerUp() const {
     return powerUp;
 }

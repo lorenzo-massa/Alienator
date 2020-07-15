@@ -5,7 +5,6 @@
 #include <fstream>
 #include "Map.h"
 #include "../Engine/Game.h"
-#include "../Strategy/ConcreteStrategy/GroundPatrolling.h"
 
 Map::Map() {
     enemies = std::vector<std::shared_ptr<Enemy>>();
@@ -38,7 +37,6 @@ void Map::removeEnemy(int i) {
 std::shared_ptr<Enemy> Map::getEnemy(int i) {
     return enemies[i];
 }
-
 
 std::vector<std::shared_ptr<Tile>> Map::getMatrix() {
     return mapMatrix;

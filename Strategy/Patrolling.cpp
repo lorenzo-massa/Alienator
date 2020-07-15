@@ -7,6 +7,7 @@
 bool Patrolling::patrol( sf::Vector2f enemyPos, sf::Vector2f heroPos, sf::Vector2f patrolDistance,float &direction) {
     return false;
 }
+
 const std::shared_ptr<sf::Clock> &Patrolling::getPatrolClock() const {
     return patrolClock;
 }

@@ -73,7 +73,6 @@ std::shared_ptr<Map> Game::getMap() {
     return Game::ptrMap;
 }
 
-
 void Game::createHero(int x, int y) {
     ptrHero = std::make_shared<Hero>(1, 1000, 1, 50, sf::Vector2f(0, 0), sf::Vector2f(x, y), sf::Vector2f(0,1.0f), 10.0f, 0);
 

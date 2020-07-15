@@ -29,6 +29,10 @@ PlayState::PlayState(const std::shared_ptr<sf::RenderWindow> &targetWindow, int 
     achievementUnlocked = false;
 }
 
+PlayState::~PlayState() {
+    removeObserver(&(*Game::getGame()->getAchievements()));
+}
+
 void PlayState::handleInput() {
     sf::Vector2f speed;
 
@@ -664,6 +668,65 @@ void PlayState::behaviorChanger() {
     }
 }
 
+void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
+
+    sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
+    sf::Vector2f movmentCollision;
+    float eps=10.0f;
+    bool found;
+    std::shared_ptr<Bullet> b = nullptr;
+
+    if (enemy->getBehavior() == TypeBehavior::Patrol) {
+
+
+        found = enemy->patrolling(sf::Vector2f(Game::getGame()->getHero()->getPosition()),moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds());
+        movmentCollision=moveEnemy;
+        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+
+
+        if(std::abs(movmentCollision.x-moveEnemy.x)>eps){
+            enemy->setDirection(enemy->getDirection()*(-1.0f));
+            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy.x*-1.0f,moveEnemy.y));
+            enemy->getPatroller()->getPatrolClock()->restart();
+        }
+        else
+            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
+
+        if (found) {
+            enemy->setBehavior(TypeBehavior::Fight);
+        }
+
+
+    } else if (enemy->getBehavior() == TypeBehavior::Fight) {
+
+        bool Jump=true;
+        b = enemy->fighting(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,
+                            Game::getGame()->getClock()->getElapsedTime().asSeconds());
+
+        if(moveEnemy.x==0)
+            Jump=false;
+
+        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
+
+        if (enemy->checkJump() &&
+            std::fabs(enemy->sf::Sprite::getPosition().x - Game::getGame()->getHero()->sf::Sprite::getPosition().x) >
+            50 && enemy->isLegalJump1()&& Jump) {
+            enemy->jump();
+            enemy->setIsLegalJump(false);
+        }
+
+        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
+
+
+        if (b != nullptr) {
+            if (enemy->fireClock(enemy->getWeapon()->getFireRate())) {
+                Game::getGame()->getMap()->addBullet(b);
+            }
+        }
+    }
+}
+
 void PlayState::removeObserver(Observer* observer) {
     observers.remove(observer);
 }
@@ -675,10 +738,6 @@ void PlayState::registerObserver(Observer* observer) {
 void PlayState::notifyObservers(EVENT e, bool &unlocked) const {
     for (const auto &observer : observers)
         observer->update(e,unlocked);
-}
-
-PlayState::~PlayState() {
-    removeObserver(&(*Game::getGame()->getAchievements()));
 }
 
 void PlayState::showAchievement(EVENT e) {
@@ -716,62 +775,3 @@ void PlayState::showAchievement(EVENT e) {
 
 }
 
-void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
-
-    sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
-    sf::Vector2f movmentCollision;
-    float eps=10.0f;
-    bool found;
-    std::shared_ptr<Bullet> b = nullptr;
-
-    if (enemy->getBehavior() == TypeBehavior::Patrol) {
-
-
-        found = enemy->patrolling(sf::Vector2f(Game::getGame()->getHero()->getPosition()),moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds());
-        movmentCollision=moveEnemy;
-        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-
-
-        if(std::abs(movmentCollision.x-moveEnemy.x)>eps){
-            enemy->setDirection(enemy->getDirection()*(-1.0f));
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy.x*-1.0f,moveEnemy.y));
-            enemy->getPatroller()->getPatrolClock()->restart();
-        }
-        else
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-
-
-        if (found) {
-            enemy->setBehavior(TypeBehavior::Fight);
-        }
-
-
-    } else if (enemy->getBehavior() == TypeBehavior::Fight) {
-
-        bool Jump=true;
-        b = enemy->fighting(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,
-                         Game::getGame()->getClock()->getElapsedTime().asSeconds());
-
-        if(moveEnemy.x==0)
-            Jump=false;
-
-        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-
-        if (enemy->checkJump() &&
-            std::fabs(enemy->sf::Sprite::getPosition().x - Game::getGame()->getHero()->sf::Sprite::getPosition().x) >
-            50 && enemy->isLegalJump1()&& Jump) {
-            enemy->jump();
-            enemy->setIsLegalJump(false);
-        }
-
-        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-
-
-        if (b != nullptr) {
-            if (enemy->fireClock(enemy->getWeapon()->getFireRate())) {
-                Game::getGame()->getMap()->addBullet(b);
-            }
-        }
-        std::cout<<enemy->getDirection().x<<std::endl;
-    }
-}

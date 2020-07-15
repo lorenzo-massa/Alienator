@@ -5,7 +5,6 @@
 #ifndef ALIENATOR_ASSETSMANAGER_H
 #define ALIENATOR_ASSETSMANAGER_H
 
-
 #include <iostream>
 #include <memory>
 #include "SFML/Graphics.hpp"
@@ -37,7 +36,6 @@ public:
     void initBackground(const std::shared_ptr<sf::RenderWindow>& targetWindow, float x);
 
     float getXBackground() const;
-
 
 
 private:

@@ -14,8 +14,6 @@ PowerUp::PowerUp() {
 PowerUp::~PowerUp() {
 }
 
-
-
 PowerUp::TYPE PowerUp::generateRandom() {
     int random = rand() % 6 + 1; //da 1 a 6
 
