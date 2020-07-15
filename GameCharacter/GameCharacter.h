@@ -123,8 +123,8 @@ protected:
     std::string strTexture;
     float speedCoeff;
 
-
     bool isLegalJump;
+
     sf::Clock clockPowerUp;
     float speedBoost;
     bool invincibility;

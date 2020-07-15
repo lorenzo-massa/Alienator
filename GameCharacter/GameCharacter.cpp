@@ -11,6 +11,7 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
     clockAnimation = std::make_shared<sf::Clock>();
     fireRateClock = std::make_shared<sf::Clock>();
     isLegalJump=false;
+
 }
 
 GameCharacter::~GameCharacter() {
@@ -246,6 +247,3 @@ bool GameCharacter::isLegalJump1() const {
 void GameCharacter::setIsLegalJump(bool isLegalJump) {
     GameCharacter::isLegalJump = isLegalJump;
 }
-
-
-
