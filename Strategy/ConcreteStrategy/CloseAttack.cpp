@@ -11,6 +11,7 @@ void CloseAttack::attack(sf::Vector2f heroPos, sf::Vector2f enemyPos,sf::Vector2
 
     if(std::abs(heroPos.x-enemyPos.x)<128.0f){
         move.x=0;
+        enemyDir=0;
     }
 
 }
