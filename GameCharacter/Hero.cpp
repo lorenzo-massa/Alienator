@@ -15,7 +15,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, s
     weapon = std::make_shared<Weapon>(120, 5.5f);
     clockPowerUp = sf::Clock();
     powerUpState = false;
-
+    weaponHit=false;
 }
 
 Hero::Hero() {}
@@ -61,6 +61,14 @@ int Hero::getType() const {
 
 void Hero::setType(int type) {
     Hero::type = type;
+}
+
+bool Hero::isWeaponHit() const {
+    return weaponHit;
+}
+
+void Hero::setWeaponHit(bool weaponHit) {
+    Hero::weaponHit = weaponHit;
 }
 
 

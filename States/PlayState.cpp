@@ -40,82 +40,91 @@ void PlayState::handleInput() {
             sf::Vector2u size = targetWindow->getSize();
             targetWindow->setView(sf::View(sf::FloatRect(0, 0, size.x, size.y)));
             AssetManager::getAssetManager()->setBackground(targetWindow, 0);
-        } else if (event.type == sf::Event::KeyPressed) {
+        }
+        else if (event.type == sf::Event::KeyPressed) {
             if (event.key.code == sf::Keyboard::Escape) {
                 Game::getGame()->save();
                 Game::getGame()->getStateHandler()->addState(std::make_shared<PauseState>(targetWindow));
             }
             if (event.key.code == sf::Keyboard::W || event.key.code == sf::Keyboard::Up ||
                 event.key.code == sf::Keyboard::Space) {
-                if (Game::getGame()->getHero()->getSpeed().y == 0.0f){
-                    if(Game::getGame()->getHero()->isLegalJump1()){
+                if (Game::getGame()->getHero()->getSpeed().y == 0.0f) {
+                    if (Game::getGame()->getHero()->isLegalJump1()) {
                         Game::getGame()->getHero()->jump();
                         Game::getGame()->getHero()->setIsLegalJump(false);
                     }
                     bool unlocked = false;
                     EVENT e = EVENT::JUMP;
                     notifyObservers(e, unlocked);
-                    if(unlocked)
+                    if (unlocked)
                         showAchievement(e);
 
                 }
             }
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(sf::Vector2f(-1.0f,Game::getGame()->getHero()->getDirection().y));
+                Game::getGame()->getHero()->setDirection(
+                        sf::Vector2f(-1.0f, Game::getGame()->getHero()->getDirection().y));
                 speed = Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(sf::Vector2f(1.0f,Game::getGame()->getHero()->getDirection().y));
+                Game::getGame()->getHero()->setDirection(
+                        sf::Vector2f(1.0f, Game::getGame()->getHero()->getDirection().y));
                 speed = Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
-        } else if (event.type == sf::Event::KeyReleased) {
+        }
+        else if (event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
-                Game::getGame()->getHero()->setDirection(sf::Vector2f(0,Game::getGame()->getHero()->getDirection().y));
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(0, Game::getGame()->getHero()->getDirection().y));
 
             }
             if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
-                Game::getGame()->getHero()->setDirection(sf::Vector2f(0,Game::getGame()->getHero()->getDirection().y));
-
-            }
-        } else if (event.type == sf::Event::MouseButtonPressed) {
-            switch (event.key.code) {
-                case sf::Mouse::Left:
-                    sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*targetWindow));
-                    sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
-
-                    mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x *
-                                            Game::getGame()->getHero()->getScale().x / 2.0f;
-                    mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y *
-                                            Game::getGame()->getHero()->getScale().y / 2.0f;
-
-                    if (Game::getGame()->getHero()->fireClock(Game::getGame()->getHero()->getWeapon()->getFireRate()*(Game::getGame()->getHero()->getFireRateBoost()))){
-                        std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
-                        b->setFriendly(true);
-                        if (Game::getGame()->getHero()->getAmmo() >= 0)
-                            Game::getGame()->getMap()->addBullet(b);
-                            bool unlocked = false;
-                            EVENT e = EVENT::BULLET_SHOT;
-                            notifyObservers(e, unlocked);
-                            if(unlocked)
-                                showAchievement(e);
-
-                        }
-                    break;
+                Game::getGame()->getHero()->setDirection(sf::Vector2f(0, Game::getGame()->getHero()->getDirection().y));
 
             }
         }
-        /*}else if (event.type == sf::Event::MouseButtonReleased) {
+        else if (event.type == sf::Event::MouseButtonPressed) {
+            switch (event.key.code) {
+                case sf::Mouse::Left:
+                    Game::getGame()->getHero()->setWeaponHit(true);
+
+                    break;
+            }
+        }
+        else if (event.type == sf::Event::MouseButtonReleased) {
             switch (event.key.code) {
                 case sf::Mouse::Left:
                     Game::getGame()->getHero()->setWeaponHit(false);
+
                     break;
             }
-        }*/
+        }
+
 
     }
+    if(Game::getGame()->getHero()->isWeaponHit()) {
+        sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*targetWindow));
+        sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
 
+        mouseWorldPosition.x -= Game::getGame()->getHero()->getTexture()->getSize().x *
+                                Game::getGame()->getHero()->getScale().x / 2.0f;
+        mouseWorldPosition.y -= Game::getGame()->getHero()->getTexture()->getSize().y *
+                                Game::getGame()->getHero()->getScale().y / 2.0f;
+
+        if (Game::getGame()->getHero()->fireClock(Game::getGame()->getHero()->getWeapon()->getFireRate() *
+                                                  (Game::getGame()->getHero()->getFireRateBoost()))) {
+            std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
+            b->setFriendly(true);
+            if (Game::getGame()->getHero()->getAmmo() >= 0)
+                Game::getGame()->getMap()->addBullet(b);
+            bool unlocked = false;
+            EVENT e = EVENT::BULLET_SHOT;
+            notifyObservers(e, unlocked);
+            if (unlocked)
+                showAchievement(e);
+        }
+    }
     animationHero(Game::getGame()->getHero()->getDirection().x, speed);
 
 }
@@ -650,70 +659,10 @@ void PlayState::setAction(int action) {
 void PlayState::behaviorChanger() {
     int i = 1;
     for (const auto &enemy : Game::getGame()->getMap()->getEnemies()) {
-        enemyBehaviorChanger2(enemy);
+        enemyBehaviorChanger(enemy);
         i++;
     }
 }
-
-/*void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
-    sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
-    sf::Vector2f movmentCollision;
-    float eps=10.0f;
-    bool found;
-    std::shared_ptr<Bullet> b = nullptr;
-
-    if (enemy->getBehavior() == "patrol") {
-        if (enemy->getClockPatrol()->getElapsedTime().asSeconds() > 3.0f) {
-
-            enemy->setDirection(enemy->getDirection() * (-1.0f));
-            enemy->getClockPatrol()->restart();
-
-        }
-
-        found = enemy->patrol(Game::getGame()->getClock()->getElapsedTime().asSeconds(),
-                sf::Vector2f(Game::getGame()->getHero()->getPosition()), &moveEnemy);
-        movmentCollision=moveEnemy;
-        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-
-
-        if(std::abs(movmentCollision.x-moveEnemy.x)>eps){
-            enemy->setDirection(enemy->getDirection()*(-1.0f));
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy.x*-1.0f,moveEnemy.y));
-            enemy->getClockPatrol()->restart();
-        }
-        else
-            enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-
-
-        if (found) {
-            enemy->setBehavior("fight");
-        }
-
-
-    } else if (enemy->getBehavior() == "fight") {
-
-        b = enemy->fight(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,
-                         Game::getGame()->getClock()->getElapsedTime().asSeconds());
-
-
-        moveEnemy = isLegalMovement(enemy, sf::Vector2f(moveEnemy));
-
-        if (enemy->checkJump() &&
-            std::fabs(enemy->sf::Sprite::getPosition().x - Game::getGame()->getHero()->sf::Sprite::getPosition().x) >
-            50) {
-            enemy->jump();
-        }
-
-        enemy->sf::Sprite::move(sf::Vector2f(moveEnemy));
-
-
-        if (b != nullptr) {
-            if (enemy->fireClock(enemy->getWeapon()->getFireRate())) {
-                Game::getGame()->getMap()->addBullet(b);
-            }
-        }
-    }
-}*/
 
 void PlayState::removeObserver(Observer* observer) {
     observers.remove(observer);
@@ -767,7 +716,7 @@ void PlayState::showAchievement(EVENT e) {
 
 }
 
-void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
+void PlayState::enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy) {
 
     sf::Vector2f moveEnemy = sf::Vector2f(0, 0);
     sf::Vector2f movmentCollision;

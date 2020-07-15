@@ -36,8 +36,13 @@ public:
 
     void addAmmo(int ammo);
 
+    bool isWeaponHit() const;
+
+    void setWeaponHit(bool weaponHit);
+
 private:
 
+    bool weaponHit;
     int coins;
     int type; //enum? Archer, Boxer, Mage...
 };
