@@ -8,13 +8,13 @@
 #include "../Strategy/ConcreteStrategy/DistanceAttack.h"
 
 
-Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
-             sf::Vector2f patrolDistance, std::string behavior) : patrolDistance(patrolDistance),
+Enemy::Enemy(EnemyType typeBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
+             sf::Vector2f patrolDistance, TypeBehavior behavior) : patrolDistance(patrolDistance),
                                                                   GameCharacter::GameCharacter(hp, armor, 100, speed,
                                                                                                pos, sf::Vector2f(1.0f,1.0f), speedCoeff),
                                                                                                behavior(behavior) {
    float fr,dm;
-    if (strBehavior == "Wizard") {
+    if (typeBehavior == EnemyType::Wizard) {
         setTexture(AssetManager::getAssetManager()->getTextures().at("Blue_Idle_1"));
         strTexture = "Blue_Idle_1";
         fr=1.0f;
@@ -22,7 +22,7 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::V
        patroller=std::make_shared<GroundPatrolling>();
        attacker=std::make_shared<CloseAttack>();
 
-    } else if (strBehavior == "Sentinel") {
+    } else if (typeBehavior == EnemyType::Sentinel) {
         setTexture(AssetManager::getAssetManager()->getTextures().at("Gray_Idle_1"));
         strTexture = "Gray_Idle_1";
         fr=0.5f;
@@ -30,7 +30,7 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::V
         patroller=std::make_shared<GroundPatrolling>();
         attacker=std::make_shared<DistanceAttack>();
 
-    } else {
+    } else if (typeBehavior == EnemyType::Guard){
         setTexture(AssetManager::getAssetManager()->getTextures().at("Red_Idle_1"));
         strTexture = "Red_Idle_1";
         fr=3;
@@ -40,7 +40,7 @@ Enemy::Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::V
 
     }
     weapon = std::make_shared<Weapon>(dm, fr);
-    behaviorType = strBehavior;
+    behaviorType = typeBehavior;
     setPosition(pos);
     setTextureRect(sf::IntRect(0, 0, 213.0f, 428.0f));
     setScale(sf::Vector2f(0.25f, 0.25f));
@@ -129,19 +129,19 @@ bool Enemy::checkJump() {
     return getSpeed() == sf::Vector2f(0, 0);
 }
 
-const std::string &Enemy::getBehavior() const {
+const TypeBehavior &Enemy::getBehavior() const {
     return behavior;
 }
 
-void Enemy::setBehavior(const std::string &behavior) {
+void Enemy::setBehavior(const TypeBehavior &behavior) {
     Enemy::behavior = behavior;
 }
 
-const std::string &Enemy::getBehaviorType() const {
+const EnemyType &Enemy::getBehaviorType() const {
     return behaviorType;
 }
 
-void Enemy::setBehaviorType(const std::string &behaviorType) {
+void Enemy::setBehaviorType(const EnemyType &behaviorType) {
     Enemy::behaviorType = behaviorType;
 }
 

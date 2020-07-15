@@ -344,15 +344,15 @@ void PlayState::animationEnemies() {
 
     for (const auto &enemy : Game::getGame()->getMap()->getEnemies()) {
 
-        if (enemy->getBehaviorType() == "Wizard") {
+        if (enemy->getBehaviorType() == EnemyType::Wizard) {
 
             color = "Blue";
 
-        } else if (enemy->getBehaviorType() == "Sentinel") {
+        } else if (enemy->getBehaviorType() == EnemyType::Sentinel) {
 
             color = "Gray";
 
-        } else {
+        } else if (enemy->getBehaviorType() == EnemyType::Guard){
 
             color = "Red";
 
@@ -775,7 +775,7 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
     bool found;
     std::shared_ptr<Bullet> b = nullptr;
 
-    if (enemy->getBehavior() == "patrol") {
+    if (enemy->getBehavior() == TypeBehavior::Patrol) {
 
 
         found = enemy->patrolling(sf::Vector2f(Game::getGame()->getHero()->getPosition()),moveEnemy,Game::getGame()->getClock()->getElapsedTime().asSeconds());
@@ -793,11 +793,11 @@ void PlayState::enemyBehaviorChanger2(const std::shared_ptr<Enemy> &enemy) {
 
 
         if (found) {
-            enemy->setBehavior("fight");
+            enemy->setBehavior(TypeBehavior::Fight);
         }
 
 
-    } else if (enemy->getBehavior() == "fight") {
+    } else if (enemy->getBehavior() == TypeBehavior::Fight) {
 
         bool Jump=true;
         b = enemy->fighting(sf::Vector2f(Game::getGame()->getHero()->sf::Sprite::getPosition()), moveEnemy,

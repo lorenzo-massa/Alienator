@@ -6,15 +6,17 @@
 #define ALIENATOR_ENEMY_H
 
 #include "GameCharacter.h"
+#include "EnemyTypeEnum.h"
 #include <AssetsManager.h>
 #include "../Strategy/Patrolling.h"
 #include "../Strategy/Attack.h"
+#include "../Strategy/BehaviorEnum.h"
 
 
 class Enemy : virtual public GameCharacter {
 public:
-    Enemy(std::string strBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
-          sf::Vector2f patrolDistance, std::string behavior);
+    Enemy(EnemyType typeBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
+          sf::Vector2f patrolDistance, TypeBehavior behavior);
 
     ~Enemy() override;
 
@@ -22,13 +24,13 @@ public:
 
     std::shared_ptr<Bullet> shot(sf::Vector2f mousePosition) override;
 
-    const std::string &getBehavior() const;
+    const TypeBehavior &getBehavior() const;
 
-    void setBehavior(const std::string &behavior);
+    void setBehavior(const TypeBehavior &behavior);
 
-    const std::string &getBehaviorType() const;
+    const EnemyType &getBehaviorType() const;
 
-    void setBehaviorType(const std::string &behaviorType);
+    void setBehaviorType(const EnemyType &behaviorType);
 
     const sf::Vector2f &getPatrolDistance() const;
 
@@ -50,9 +52,9 @@ public:
     void setAttacker(const std::shared_ptr<Attack> &attacker);
 
 private:
-    std::string behavior;
+    TypeBehavior behavior;
 
-    std::string behaviorType;
+    EnemyType behaviorType;
 
     sf::Vector2f patrolDistance;
 

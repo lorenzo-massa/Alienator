@@ -219,21 +219,21 @@ void Map::loadLevel(int x) {
                             addToMatrix(b);
                             break;
                         case 'M':
-                            enemy = std::make_shared<Enemy>("Guard", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 1000, 1,
+                            enemy = std::make_shared<Enemy>(EnemyType ::Guard, sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 1000, 1,
                                                             sf::Vector2f(8.0f * BLOCK_SIZE, 0), 7.0f,
-                                                            sf::Vector2f(BLOCK_SIZE * 5.0f, BLOCK_SIZE * 4.0f), "patrol");
+                                                            sf::Vector2f(BLOCK_SIZE * 5.0f, BLOCK_SIZE * 4.0f), TypeBehavior::Patrol);
                             addEnemy(enemy);
                             break;
                         case 'N':
-                            enemy = std::make_shared<Enemy>("Sentinel", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 600, 1,
+                            enemy = std::make_shared<Enemy>(EnemyType ::Sentinel, sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 600, 1,
                                                             sf::Vector2f(5.0f * BLOCK_SIZE, 0), 3.0f,
-                                                            sf::Vector2f(BLOCK_SIZE * 8.0f, BLOCK_SIZE * 5.0f), "patrol");
+                                                            sf::Vector2f(BLOCK_SIZE * 8.0f, BLOCK_SIZE * 5.0f), TypeBehavior::Patrol);
                             addEnemy(enemy);
                             break;
                         case 'O':
-                            enemy = std::make_shared<Enemy>("Wizard", sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 800, 1,
+                            enemy = std::make_shared<Enemy>(EnemyType ::Wizard, sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), 800, 1,
                                                             sf::Vector2f(6.5f * BLOCK_SIZE, 0), 5.0f,
-                                                            sf::Vector2f(BLOCK_SIZE * 6.0f, BLOCK_SIZE * 3.0f), "patrol");
+                                                            sf::Vector2f(BLOCK_SIZE * 6.0f, BLOCK_SIZE * 3.0f), TypeBehavior::Patrol);
                             addEnemy(enemy);
                             break;
                         case 'Q':
