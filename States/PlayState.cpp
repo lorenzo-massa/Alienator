@@ -375,7 +375,7 @@ void PlayState::animationEnemies() {
 }
 
 void PlayState::animateEnemy(const std::shared_ptr<Enemy> enemy, std::string color) {
-    float speedClock = 0.12;
+    float speedClock = 0.7/enemy->getSpeedCoeff();
 
     if (enemy->getClockAnimation()->getElapsedTime().asSeconds() > speedClock && enemy->getDirection().x == 0) {
         if (enemy->getStrTexture().back() == 'd') {

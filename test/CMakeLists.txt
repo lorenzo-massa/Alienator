@@ -54,7 +54,7 @@ link_directories(SFML-2.5.1/bin)
 
 set (SFML_DIR SFML-2.5.1/lib/cmake/SFML)
 
-find_package(SFML 2.5 COMPONENTS audio graphics window system)
+find_package(SFML 2.5.1 COMPONENTS audio graphics window system)
 include_directories(SFML-2.5.1/include)
 include_directories(Assets)
 ##
