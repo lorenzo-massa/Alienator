@@ -752,16 +752,16 @@ void PlayState::showAchievement(EVENT e) {
             message = "You killed " N_KILLS_STR " enemies!";
             break;
         case EVENT::JUMP:
-            message = "You jumped " N_JUMPS_STR " time!";
+            message = "You jumped " N_JUMPS_STR " times!";
             break;
         case EVENT::BULLET_SHOT:
             message = "You shot " N_BULLETS_STR " bullets!";
             break;
         case EVENT::DEATH:
-            message = "You dead " N_DEATHS_STR " time!";
+            message = "You dead " N_DEATHS_STR " times!";
             break;
         case EVENT::FALL:
-            message = "You fell " N_FALLS_STR " time!";
+            message = "You fell " N_FALLS_STR " times!";
             break;
         default:
             break;

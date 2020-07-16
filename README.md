@@ -15,10 +15,10 @@ Attento, potresti incontrare nemici con diverse strategie di attacco!<br>
 
 ### Achievements
 - Kill 10 enemies! <br><br>
-- Jump 20 time! <br><br>
+- Jump 20 times! <br><br>
 - Shot 100 bullets! <br><br>
-- Dead 10 time! <br><br>
-- Fall 5 time! <br><br>
+- Dead 10 times! <br><br>
+- Fall 5 times! <br><br>
 
 
 
