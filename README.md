@@ -1,6 +1,6 @@
 # Alienator
 Alienator è un video-game platform bidimensionale che ha come protagonista un eroe alieno.<br>
-Il suo obbiettivo è quello di sconfiggere tutti i nemici, raccogliere power up e raggiungendo tutti gli achievements.<br>
+Il suo obbiettivo è quello di sconfiggere tutti i nemici, raccogliendo power up e raggiungendo tutti gli achievements.<br>
 Attento, potresti incontrare nemici con diverse strategie di attacco!<br>
 <br>
 
