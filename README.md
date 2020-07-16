@@ -5,9 +5,9 @@ Attento, potresti incontrare nemici con diverse strategie di attacco!<br>
 <br>
 
 ### Comandi
-- `A` -> Muovi a sinistra<br><br>
-- `D` -> Muovi a destra<br><br>
-- `W` -> Salta<br><br>
+- `A e FRECCIA SINISTRA` -> Muovi a sinistra<br><br> :
+- `D e FRECCIA DESTRA` -> Muovi a destra<br><br>
+- `W, FRECCIA IN SU e SPAZIO` -> Salta<br><br>
 - `Click sinistro` -> Spara<br><br>
 - `ESC` -> pausa<br><br>
 - La navigazione dei menù è affidata alle `FRECCE DIREZIONALI e INVIO`
