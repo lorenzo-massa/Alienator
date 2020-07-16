@@ -1,3 +1,36 @@
-D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/edit_cache.dir
-D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/Alienator.dir
-D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/install/strip.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/install/local.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/install.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/list_install_components.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/Alienator.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/install/strip.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/install/local.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/runTests.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/edit_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/rebuild_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/install.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/CMakeFiles/list_install_components.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/install/strip.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/install/local.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/edit_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/rebuild_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/list_install_components.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/CMakeFiles/install.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/install/strip.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/install/local.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/install.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/list_install_components.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/gmock_main.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/gmock.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/edit_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googlemock/CMakeFiles/rebuild_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/install/strip.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/install/local.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/install.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/list_install_components.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/gtest_main.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/edit_cache.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/gtest.dir
+/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/rebuild_cache.dir

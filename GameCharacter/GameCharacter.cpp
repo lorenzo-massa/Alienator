@@ -17,7 +17,6 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
 int GameCharacter::receiveDamage(int points) {
     if (!invincibility){
         healthPoint -= (points / armor);
-        setColor(sf::Color::Red);
     }
 
     return healthPoint;

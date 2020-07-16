@@ -4,12 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/test/lib/googletest/googletest/src/gtest-all.cc" "D:/Documenti/UniFi/2019-20 2 semestre/Programmazione/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+  "/home/lorenzo/CLionProjects/Alienator/test/lib/googletest/googletest/src/gtest-all.cc" "/home/lorenzo/CLionProjects/Alienator/cmake-build-release/test/lib/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../SFML-2.5.1/include"
+  "../Assets"
   "../test/lib/googletest/googletest/include"
   "../test/lib/googletest/googletest"
   )
