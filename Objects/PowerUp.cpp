@@ -11,9 +11,6 @@ PowerUp::PowerUp() {
     type = generateRandom();
 }
 
-PowerUp::~PowerUp() {
-}
-
 PowerUp::TYPE PowerUp::generateRandom() {
     int random = rand() % 6 + 1; //da 1 a 6
 
@@ -58,5 +55,7 @@ std::string PowerUp::typeToString() const {
     }
     return result;
 }
+
+PowerUp::~PowerUp() = default;
 
 

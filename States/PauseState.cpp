@@ -52,8 +52,5 @@ void PauseState::generateFrame() {
     mainMenu.draw(targetWindow);
 }
 
-PauseState::~PauseState() {
-
-}
-
+PauseState::~PauseState() = default;
 

@@ -36,7 +36,7 @@ public:
 
     void addAmmo(int ammo);
 
-    void addHealthPoint(int helathPoint);
+    void addHealthPoint(int healthPoint);
 
     bool isWeaponHit() const;
 

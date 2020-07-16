@@ -771,6 +771,5 @@ void PlayState::showAchievement(EVENT e) {
     popUp.setString("Achevement unlocked: " + message);
     popUp.setCharacterSize(30);
 
-
 }
 

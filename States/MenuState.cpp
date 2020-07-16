@@ -3,11 +3,12 @@
 //
 
 #include <iostream>
+#include <utility>
 #include "MenuState.h"
 #include "../Engine/Game.h"
 #include "LevelSelectState.h"
 
-MenuState::MenuState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(targetWindow),
+MenuState::MenuState(std::shared_ptr<sf::RenderWindow> targetWindow) : GameState(std::move(targetWindow)),
                                                                        mainMenu(MainMenu(MainMenu::STYLE::MAIN)) {
 }
 
@@ -36,19 +37,8 @@ void MenuState::handleInput() {
                         std::cerr << "Error handling input" << std::endl;
                 }
             }
-        } else if (event.type == sf::Event::MouseButtonPressed) {
-            switch (event.key.code) {
-                case sf::Mouse::Left:
-                    std::cout << "LEFT CLICK ";
-                    break;
-            }
         }
     }
-    /*if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-        std::cout<<"LEFT CLICK ";
-        std::cout<< "X: " << sf::Mouse::getPosition(targetWindow).x;
-        std::cout<< "Y: " << sf::Mouse::getPosition().y <<std::endl;
-    }*/
 }
 
 void MenuState::generateFrame() {
@@ -60,6 +50,4 @@ void MenuState::generateFrame() {
 
 }
 
-MenuState::~MenuState() {
-
-}
+MenuState::~MenuState() = default;

@@ -18,10 +18,6 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, s
     weaponHit=false;
 }
 
-Hero::Hero() {}
-
-Hero::~Hero() {}
-
 int Hero::getCoins() const {
     return coins;
 }
@@ -55,8 +51,8 @@ void Hero::addAmmo(int ammo) {
     this->ammo += ammo;
 }
 
-void Hero::addHealthPoint(int helathPoint) {
-    this->healthPoint+=helathPoint;
+void Hero::addHealthPoint(int healthPoint) {
+    this->healthPoint+=healthPoint;
     if(this->healthPoint>1000)
         this->healthPoint=1000;
 }
@@ -78,6 +74,7 @@ void Hero::setWeaponHit(bool weaponHit) {
     Hero::weaponHit = weaponHit;
 }
 
+Hero::~Hero() = default;
 
 
 

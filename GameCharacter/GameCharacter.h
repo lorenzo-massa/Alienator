@@ -16,7 +16,6 @@
 
 class GameCharacter : public sf::Sprite {
 public:
-    GameCharacter();
 
     GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, sf::Vector2f dir, float speedCoeff);
 
@@ -94,7 +93,7 @@ public:
 
     void setFireRateClock(const std::shared_ptr<sf::Clock> &fireRateClock);
 
-    const PowerUp getPowerUp() const;
+    PowerUp getPowerUp() const;
 
     void setPowerUp(const PowerUp &powerUp);
 
@@ -114,23 +113,23 @@ public:
 
 protected:
     sf::Vector2f pos;
-    int healthPoint;
-    int armor;
+    int healthPoint{};
+    int armor{};
     sf::Vector2f speed;
-    int ammo;
+    int ammo{};
     std::shared_ptr<Weapon> weapon;
     sf::Vector2f direction;
     std::string strTexture;
-    float speedCoeff;
+    float speedCoeff{};
 
-    bool isLegalJump;
+    bool isLegalJump{};
 
     sf::Clock clockPowerUp;
-    float speedBoost;
-    bool invincibility;
-    float fireRateBoost;
-    float damageBoost;
-    bool powerUpState;
+    float speedBoost{};
+    bool invincibility{};
+    float fireRateBoost{};
+    float damageBoost{};
+    bool powerUpState{};
     PowerUp powerUp;
 
     std::shared_ptr<sf::Clock> clockAnimation;

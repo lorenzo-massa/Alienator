@@ -72,8 +72,6 @@ void LevelSelectState::generateFrame() {
 
 }
 
-LevelSelectState::~LevelSelectState() {
-
-}
+LevelSelectState::~LevelSelectState() = default;
 
 

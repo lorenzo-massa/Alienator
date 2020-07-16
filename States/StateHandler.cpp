@@ -24,6 +24,4 @@ const std::shared_ptr<GameState> &StateHandler::getState() {
     return stateBuffer.top();
 }
 
-StateHandler::~StateHandler() {
-
-}
+StateHandler::~StateHandler() = default;

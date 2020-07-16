@@ -21,8 +21,6 @@ Game::Game() {
         levelCompleted.push_back(false);
 }
 
-Game::~Game() = default;
-
 std::shared_ptr<Game> Game::getGame() {
     if (Game::myGame == nullptr)
         myGame = std::make_shared<Game>();
@@ -249,7 +247,7 @@ void Game::update(int i) {
 
 void Game::killHero() {
 
-    ptrHero->~Hero();
+    ptrHero.reset();
 
     int level = ptrStateHandler->getState()->getLevel();
 
@@ -259,8 +257,6 @@ void Game::killHero() {
         ptrStateHandler->addState(std::make_shared<PlayState>(gameWindow, level));
     else
         std::cerr << "Error loading level" << std::endl;
-
-    std::cout<<"KILLED"<<std::endl;
 
 }
 
@@ -285,4 +281,5 @@ void Game::setAchievements(const std::shared_ptr<Achievements> &achievements) {
     Game::achievements = achievements;
 }
 
+Game::~Game() = default;
 

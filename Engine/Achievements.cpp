@@ -144,10 +144,6 @@ void Achievements::setSubject(const std::shared_ptr<Subject> &subject) {
     Achievements::subject = subject;
 }
 
-Achievements::~Achievements() {
-
-}
-
 std::string Achievements::getAllToString() const {
 
     std::string app;
@@ -186,3 +182,5 @@ std::string Achievements::getAllToString() const {
     return app;
 
 }
+
+Achievements::~Achievements() = default;

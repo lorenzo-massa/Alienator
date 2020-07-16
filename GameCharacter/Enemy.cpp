@@ -47,7 +47,7 @@ Enemy::Enemy(EnemyType typeBehavior, sf::Vector2f pos, int hp, int armor, sf::Ve
 
 }
 
-Enemy::~Enemy() {}
+Enemy::~Enemy() = default;
 
 sf::Vector2f Enemy::move( float deltaT) {
     return GameCharacter::move( deltaT);

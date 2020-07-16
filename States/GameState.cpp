@@ -22,6 +22,4 @@ void GameState::setLevel(int level) {
     GameState::level = level;
 }
 
-GameState::~GameState() {
-
-}
+GameState::~GameState() = default;

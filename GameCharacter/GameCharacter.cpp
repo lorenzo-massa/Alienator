@@ -14,17 +14,11 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
 
 }
 
-GameCharacter::~GameCharacter() {
-
-}
-
-GameCharacter::GameCharacter() {
-
-}
-
 int GameCharacter::receiveDamage(int points) {
-    if (invincibility == false)
+    if (!invincibility){
         healthPoint -= (points / armor);
+        setColor(sf::Color::Red);
+    }
 
     return healthPoint;
 }
@@ -59,7 +53,7 @@ sf::Vector2f GameCharacter::move( float deltaT) {
     xT = xT * speedBoost;
     yT = yT * speedBoost;
 
-    return sf::Vector2f(xT, yT);
+    return {xT, yT};
 }
 
 void GameCharacter::jump() {
@@ -77,7 +71,6 @@ void GameCharacter::removePowerUp() {
     fireRateBoost = 1.0f;
     damageBoost = 1.0f;
 
-    powerUp.~PowerUp();
     powerUpState = false;
 
 }
@@ -87,11 +80,9 @@ bool GameCharacter::fireClock(float fireRate) {
         fireRateClock->restart();
         return true;
     }
-
     return false;
 }
 
-//Getter e Setter
 sf::Vector2f GameCharacter::getPos() const {
     return GameCharacter::pos;
 }
@@ -232,7 +223,7 @@ void GameCharacter::setFireRateClock(const std::shared_ptr<sf::Clock> &fireRateC
     GameCharacter::fireRateClock = fireRateClock;
 }
 
-const PowerUp GameCharacter::getPowerUp() const {
+PowerUp GameCharacter::getPowerUp() const {
     return powerUp;
 }
 
@@ -247,3 +238,5 @@ bool GameCharacter::isLegalJump1() const {
 void GameCharacter::setIsLegalJump(bool isLegalJump) {
     GameCharacter::isLegalJump = isLegalJump;
 }
+
+GameCharacter::~GameCharacter() = default;

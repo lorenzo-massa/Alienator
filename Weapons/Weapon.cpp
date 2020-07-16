@@ -55,5 +55,7 @@ void Weapon::setDirection(int direction) {
     Weapon::direction = direction;
 }
 
+Weapon::~Weapon() = default;
+
 
 

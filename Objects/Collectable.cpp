@@ -23,9 +23,6 @@ Collectable::Collectable(sf::Vector2f position, PowerUp::TYPE type) {
 
 }
 
-Collectable::~Collectable() {
-}
-
 const PowerUp &Collectable::getPowerUp() const {
     return powerUp;
 }
@@ -46,3 +43,5 @@ void Collectable::notifyObservers(int i) const {
     for (const auto &observer : observers)
         observer->update(i);
 }
+
+Collectable::~Collectable() = default;

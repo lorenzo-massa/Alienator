@@ -171,7 +171,6 @@ float AssetManager::getXBackground() const {
     return xBackground;
 }
 
-AssetManager::~AssetManager() {
-}
+AssetManager::~AssetManager() = default;
 
 
