@@ -4,7 +4,9 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(int d, float fR) : damage(d), fireRate(fR) {}
+Weapon::Weapon(int d, float fR) : damage(d), fireRate(fR) {
+    currentAmmo=16;
+}
 
 std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mousePosition) const {
     std::shared_ptr<Bullet> b = std::make_shared<Bullet>(damage, x, y, mousePosition);
@@ -53,6 +55,14 @@ int Weapon::getDirection() const {
 
 void Weapon::setDirection(int direction) {
     Weapon::direction = direction;
+}
+
+int Weapon::getCurrentAmmo() const {
+    return currentAmmo;
+}
+
+void Weapon::setCurrentAmmo(int currentAmmo) {
+    Weapon::currentAmmo = currentAmmo;
 }
 
 Weapon::~Weapon() = default;

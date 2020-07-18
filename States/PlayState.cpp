@@ -35,7 +35,7 @@ PlayState::~PlayState() {
 
 void PlayState::handleInput() {
     sf::Vector2f speed;
-
+    bool reloading;
     sf::Event event{};
     while (targetWindow->pollEvent(event)) {
         if (event.type == sf::Event::Closed)
@@ -77,7 +77,12 @@ void PlayState::handleInput() {
                 speed = Game::getGame()->getHero()->getSpeed();
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
+            if (event.key.code == sf::Keyboard::R){
+                if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()<16)
+                    Game::getGame()->getHero()->reload();
+            }
         }
+
         else if (event.type == sf::Event::KeyReleased) {
             if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                 Game::getGame()->getHero()->setDirection(sf::Vector2f(0, Game::getGame()->getHero()->getDirection().y));
@@ -105,8 +110,8 @@ void PlayState::handleInput() {
             }
         }
 
-
     }
+
     if(Game::getGame()->getHero()->isWeaponHit()) {
         sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*targetWindow));
         sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
@@ -120,13 +125,22 @@ void PlayState::handleInput() {
                                                   (Game::getGame()->getHero()->getFireRateBoost()))) {
             std::shared_ptr<Bullet> b = Game::getGame()->getHero()->shot(mouseWorldPosition);
             b->setFriendly(true);
-            if (Game::getGame()->getHero()->getAmmo() >= 0)
+            if (Game::getGame()->getHero()->getWeapon()->getCurrentAmmo() > 0) {
+
+                Game::getGame()->getHero()->getWeapon()->setCurrentAmmo(
+                        Game::getGame()->getHero()->getWeapon()->getCurrentAmmo() - 1);
                 Game::getGame()->getMap()->addBullet(b);
-            bool unlocked = false;
-            EVENT e = EVENT::BULLET_SHOT;
-            notifyObservers(e, unlocked);
-            if (unlocked)
-                showAchievement(e);
+
+                /*}else if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()==0  &&  Game::getGame()->getHero()->getAmmo() > 0){
+
+                    Game::getGame()->getHero()->reload();
+                }*/
+                bool unlocked = false;
+                EVENT e = EVENT::BULLET_SHOT;
+                notifyObservers(e, unlocked);
+                if (unlocked)
+                    showAchievement(e);
+            }
         }
     }
     animationHero(Game::getGame()->getHero()->getDirection().x, speed);

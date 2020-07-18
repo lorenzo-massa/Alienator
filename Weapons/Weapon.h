@@ -38,9 +38,14 @@ public:
 
     void setDirection(int direction);
 
+    int getCurrentAmmo() const;
+
+    void setCurrentAmmo(int currentAmmo);
+
 protected:
     int damage;
     float fireRate;
+    int currentAmmo;
     int posX;
     int posY;
     int direction;

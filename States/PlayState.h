@@ -44,6 +44,8 @@ public:
 
     void enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy);
 
+    bool reloading();
+
 private:
 
     int action;

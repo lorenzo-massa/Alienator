@@ -107,9 +107,13 @@ public:
 
     bool fireClock(float fireRate);
 
+    bool reloadingTimer();
+
     bool isLegalJump1() const;
 
     void setIsLegalJump(bool isLegalJump);
+
+    void reload();
 
 protected:
     sf::Vector2f pos;
@@ -134,6 +138,7 @@ protected:
 
     std::shared_ptr<sf::Clock> clockAnimation;
     std::shared_ptr<sf::Clock> fireRateClock;
+    std::shared_ptr<sf::Clock> reloadingClock;
 };
 
 #endif //ALIENATOR_GAMECHARACTER_H

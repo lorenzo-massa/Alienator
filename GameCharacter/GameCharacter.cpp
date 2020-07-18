@@ -238,4 +238,18 @@ void GameCharacter::setIsLegalJump(bool isLegalJump) {
     GameCharacter::isLegalJump = isLegalJump;
 }
 
+void GameCharacter::reload() {
+    if(ammo>=16-weapon->getCurrentAmmo()){
+        ammo-=16-weapon->getCurrentAmmo();
+        weapon->setCurrentAmmo(16);
+    }else if(ammo<16-weapon->getCurrentAmmo())
+    {
+        weapon->setCurrentAmmo(ammo);
+        ammo=0;
+    }
+}
+
+bool GameCharacter::reloadingTimer() {}
+
+
 GameCharacter::~GameCharacter() = default;
