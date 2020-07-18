@@ -247,19 +247,19 @@ void PlayState::generateGUI(float &xT) {
     //Munitions
     sf::Sprite currentAmmoSprite;
     currentAmmoSprite.setTexture(AssetManager::getAssetManager()->getTextures().at("MUNITIONS"));
-    currentAmmoSprite.setPosition(line.getPosition().x + line.getSize().x + 50, line.getPosition().y - 5);
+    currentAmmoSprite.setPosition(line.getPosition().x + line.getSize().x+15 , line.getPosition().y - 20);
     currentAmmoSprite.setScale(0.05, 0.05);
 
     sf::Text nMunitions;
     nMunitions.setFont(*AssetManager::getAssetManager()->getFont());
     nMunitions.setString(std::to_string(Game::getGame()->getHero()->getAmmo()));
     nMunitions.setCharacterSize(20);
-    nMunitions.setPosition(currentAmmoSprite.getPosition().x + 35, currentAmmoSprite.getPosition().y);
+    nMunitions.setPosition(currentAmmoSprite.getPosition().x + 60, currentAmmoSprite.getPosition().y+15);
 
     //Coins
     sf::Sprite currentCoinsSprite;
     currentCoinsSprite.setTexture(AssetManager::getAssetManager()->getTextures().at("COINS"));
-    currentCoinsSprite.setPosition(currentAmmoSprite.getPosition().x + 80, currentAmmoSprite.getPosition().y - 3);
+    currentCoinsSprite.setPosition(currentAmmoSprite.getPosition().x + 120, currentAmmoSprite.getPosition().y + 12);
     currentCoinsSprite.setScale(0.06, 0.06);
 
     sf::Text nCoins;

@@ -31,7 +31,7 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images//Object/coin.png");
         textures.insert(std::make_pair("COINS", texture));
 
-        texture.loadFromFile("Assets/Images//Object/munitions.png");
+        texture.loadFromFile("Assets/Images//Object/munitionsReload.png");
         textures.insert(std::make_pair("MUNITIONS", texture));
 
         texture.loadFromFile("Assets/Images//Object/firerate.png");
@@ -56,6 +56,7 @@ void AssetManager::load() {
         textures.insert(std::make_pair("PORTAL", texture));
 
         const int nTiles = 16;
+
         for (int i = 1; i < nTiles + 1; ++i) {
             texture.loadFromFile("Assets/Images/Tiles/" + std::to_string(i) + ".png");
             textures.insert(std::make_pair(std::to_string(i), texture));
