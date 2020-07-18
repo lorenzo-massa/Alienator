@@ -343,6 +343,84 @@ test/CMakeFiles/runTests.dir/__/Objects/Tile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Objects/Tile.cpp.s"
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Objects/Tile.cpp -o CMakeFiles/runTests.dir/__/Objects/Tile.cpp.s
 
+test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o: ../Strategy/Attack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp
+
+test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp > CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp -o CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.s
+
+test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o: ../Strategy/Patrolling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp
+
+test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp > CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp -o CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.s
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o: ../Strategy/ConcreteStrategy/CloseAttack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.cpp
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.cpp > CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.cpp -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.s
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o: ../Strategy/ConcreteStrategy/DistanceAttack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.cpp
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.cpp > CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.cpp -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.s
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o: ../Strategy/ConcreteStrategy/GroundPatrolling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.cpp
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.cpp > CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.cpp -o CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
+
+test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o: test/CMakeFiles/runTests.dir/flags.make
+test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o: ../Engine/Achievements.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Engine/Achievements.cpp
+
+test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.i"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Engine/Achievements.cpp > CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.i
+
+test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.s"
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Engine/Achievements.cpp -o CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.s
+
 # Object files for target runTests
 runTests_OBJECTS = \
 "CMakeFiles/runTests.dir/mainTests.cpp.o" \
@@ -366,7 +444,13 @@ runTests_OBJECTS = \
 "CMakeFiles/runTests.dir/__/Objects/Collectable.cpp.o" \
 "CMakeFiles/runTests.dir/__/Objects/PowerUp.cpp.o" \
 "CMakeFiles/runTests.dir/__/Assets/AssetsManager.cpp.o" \
-"CMakeFiles/runTests.dir/__/Objects/Tile.cpp.o"
+"CMakeFiles/runTests.dir/__/Objects/Tile.cpp.o" \
+"CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o" \
+"CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o" \
+"CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o" \
+"CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o" \
+"CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o" \
+"CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o"
 
 # External object files for target runTests
 runTests_EXTERNAL_OBJECTS =
@@ -393,6 +477,12 @@ test/runTests: test/CMakeFiles/runTests.dir/__/Objects/Collectable.cpp.o
 test/runTests: test/CMakeFiles/runTests.dir/__/Objects/PowerUp.cpp.o
 test/runTests: test/CMakeFiles/runTests.dir/__/Assets/AssetsManager.cpp.o
 test/runTests: test/CMakeFiles/runTests.dir/__/Objects/Tile.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o
+test/runTests: test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o
 test/runTests: test/CMakeFiles/runTests.dir/build.make
 test/runTests: lib/libgtest.a
 test/runTests: lib/libgtest_main.a
@@ -402,7 +492,7 @@ test/runTests: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 test/runTests: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 test/runTests: lib/libgtest.a
 test/runTests: test/CMakeFiles/runTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable runTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable runTests"
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -31,8 +31,8 @@ public:
     void setPowerUp(const PowerUp &powerUp);
 
 private:
-    const float height{512};
-    const float width{512};
+    const float height{1080};
+    const float width{1080};
 
     PowerUp powerUp;
     std::list<std::shared_ptr<ObserverGame>> observers;

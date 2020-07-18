@@ -12,7 +12,7 @@ class Weapon {
 public:
     Weapon();
 
-    explicit Weapon(int d = 10, float fR = 1.0);
+    explicit Weapon(int d = 10, float fR = 1.0, int ammoSize = 16);
 
     virtual ~Weapon();
 
@@ -42,6 +42,10 @@ public:
 
     void setCurrentAmmo(int currentAmmo);
 
+    int getAmmoSize() const;
+
+    void setAmmoSize(int ammoSize);
+
 protected:
     int damage;
     float fireRate;
@@ -49,6 +53,7 @@ protected:
     int posX;
     int posY;
     int direction;
+    int ammoSize;
 };
 
 #endif //ALIENATOR_WEAPON_H

@@ -297,6 +297,24 @@ void PlayState::generateGUI(float &xT) {
     }
 
 
+    //Current ammo
+    for (int i = 0; i < Game::getGame()->getHero()->getWeapon()->getAmmoSize(); ++i) {
+        sf::Sprite currentAmmo;
+
+        if(i < Game::getGame()->getHero()->getWeapon()->getCurrentAmmo())
+            currentAmmo.setTexture(AssetManager::getAssetManager()->getTextures().at("BulletGUI"));
+        else
+            currentAmmo.setTexture(AssetManager::getAssetManager()->getTextures().at("BulletGUIEmpty"));
+
+        currentAmmo.setScale(0.1,0.1);
+        currentAmmo.setPosition(AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x / 2 -
+                                currentAmmo.getLocalBounds().width * Game::getGame()->getHero()->getWeapon()->getAmmoSize()/4 * currentAmmo.getScale().x / 2 + 20*i, targetWindow->getView().getSize().y - 100);
+        targetWindow->draw(currentAmmo);
+    }
+
+
+
+
 }
 
 void PlayState::animationHero(int direction, sf::Vector2f speed) {

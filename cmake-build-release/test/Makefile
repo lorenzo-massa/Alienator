@@ -279,6 +279,33 @@ __/Assets/AssetsManager.cpp.s:
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Assets/AssetsManager.cpp.s
 .PHONY : __/Assets/AssetsManager.cpp.s
 
+__/Engine/Achievements.o: __/Engine/Achievements.cpp.o
+
+.PHONY : __/Engine/Achievements.o
+
+# target to build an object file
+__/Engine/Achievements.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.o
+.PHONY : __/Engine/Achievements.cpp.o
+
+__/Engine/Achievements.i: __/Engine/Achievements.cpp.i
+
+.PHONY : __/Engine/Achievements.i
+
+# target to preprocess a source file
+__/Engine/Achievements.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.i
+.PHONY : __/Engine/Achievements.cpp.i
+
+__/Engine/Achievements.s: __/Engine/Achievements.cpp.s
+
+.PHONY : __/Engine/Achievements.s
+
+# target to generate assembly for a file
+__/Engine/Achievements.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Engine/Achievements.cpp.s
+.PHONY : __/Engine/Achievements.cpp.s
+
 __/Engine/Game.o: __/Engine/Game.cpp.o
 
 .PHONY : __/Engine/Game.o
@@ -684,6 +711,141 @@ __/States/StateHandler.cpp.s:
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/States/StateHandler.cpp.s
 .PHONY : __/States/StateHandler.cpp.s
 
+__/Strategy/Attack.o: __/Strategy/Attack.cpp.o
+
+.PHONY : __/Strategy/Attack.o
+
+# target to build an object file
+__/Strategy/Attack.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o
+.PHONY : __/Strategy/Attack.cpp.o
+
+__/Strategy/Attack.i: __/Strategy/Attack.cpp.i
+
+.PHONY : __/Strategy/Attack.i
+
+# target to preprocess a source file
+__/Strategy/Attack.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.i
+.PHONY : __/Strategy/Attack.cpp.i
+
+__/Strategy/Attack.s: __/Strategy/Attack.cpp.s
+
+.PHONY : __/Strategy/Attack.s
+
+# target to generate assembly for a file
+__/Strategy/Attack.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.s
+.PHONY : __/Strategy/Attack.cpp.s
+
+__/Strategy/ConcreteStrategy/CloseAttack.o: __/Strategy/ConcreteStrategy/CloseAttack.cpp.o
+
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.o
+
+# target to build an object file
+__/Strategy/ConcreteStrategy/CloseAttack.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.o
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.cpp.o
+
+__/Strategy/ConcreteStrategy/CloseAttack.i: __/Strategy/ConcreteStrategy/CloseAttack.cpp.i
+
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.i
+
+# target to preprocess a source file
+__/Strategy/ConcreteStrategy/CloseAttack.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.i
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.cpp.i
+
+__/Strategy/ConcreteStrategy/CloseAttack.s: __/Strategy/ConcreteStrategy/CloseAttack.cpp.s
+
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.s
+
+# target to generate assembly for a file
+__/Strategy/ConcreteStrategy/CloseAttack.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/CloseAttack.cpp.s
+.PHONY : __/Strategy/ConcreteStrategy/CloseAttack.cpp.s
+
+__/Strategy/ConcreteStrategy/DistanceAttack.o: __/Strategy/ConcreteStrategy/DistanceAttack.cpp.o
+
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.o
+
+# target to build an object file
+__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.o
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.cpp.o
+
+__/Strategy/ConcreteStrategy/DistanceAttack.i: __/Strategy/ConcreteStrategy/DistanceAttack.cpp.i
+
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.i
+
+# target to preprocess a source file
+__/Strategy/ConcreteStrategy/DistanceAttack.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.i
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.cpp.i
+
+__/Strategy/ConcreteStrategy/DistanceAttack.s: __/Strategy/ConcreteStrategy/DistanceAttack.cpp.s
+
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.s
+
+# target to generate assembly for a file
+__/Strategy/ConcreteStrategy/DistanceAttack.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/DistanceAttack.cpp.s
+.PHONY : __/Strategy/ConcreteStrategy/DistanceAttack.cpp.s
+
+__/Strategy/ConcreteStrategy/GroundPatrolling.o: __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o
+
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.o
+
+# target to build an object file
+__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o
+
+__/Strategy/ConcreteStrategy/GroundPatrolling.i: __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i
+
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.i
+
+# target to preprocess a source file
+__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.i
+
+__/Strategy/ConcreteStrategy/GroundPatrolling.s: __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
+
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.s
+
+# target to generate assembly for a file
+__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
+.PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
+
+__/Strategy/Patrolling.o: __/Strategy/Patrolling.cpp.o
+
+.PHONY : __/Strategy/Patrolling.o
+
+# target to build an object file
+__/Strategy/Patrolling.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o
+.PHONY : __/Strategy/Patrolling.cpp.o
+
+__/Strategy/Patrolling.i: __/Strategy/Patrolling.cpp.i
+
+.PHONY : __/Strategy/Patrolling.i
+
+# target to preprocess a source file
+__/Strategy/Patrolling.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.i
+.PHONY : __/Strategy/Patrolling.cpp.i
+
+__/Strategy/Patrolling.s: __/Strategy/Patrolling.cpp.s
+
+.PHONY : __/Strategy/Patrolling.s
+
+# target to generate assembly for a file
+__/Strategy/Patrolling.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.s
+.PHONY : __/Strategy/Patrolling.cpp.s
+
 __/Weapons/Bullet.o: __/Weapons/Bullet.cpp.o
 
 .PHONY : __/Weapons/Bullet.o
@@ -790,6 +952,9 @@ help:
 	@echo "... __/Assets/AssetsManager.o"
 	@echo "... __/Assets/AssetsManager.i"
 	@echo "... __/Assets/AssetsManager.s"
+	@echo "... __/Engine/Achievements.o"
+	@echo "... __/Engine/Achievements.i"
+	@echo "... __/Engine/Achievements.s"
 	@echo "... __/Engine/Game.o"
 	@echo "... __/Engine/Game.i"
 	@echo "... __/Engine/Game.s"
@@ -835,6 +1000,21 @@ help:
 	@echo "... __/States/StateHandler.o"
 	@echo "... __/States/StateHandler.i"
 	@echo "... __/States/StateHandler.s"
+	@echo "... __/Strategy/Attack.o"
+	@echo "... __/Strategy/Attack.i"
+	@echo "... __/Strategy/Attack.s"
+	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.o"
+	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.i"
+	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.s"
+	@echo "... __/Strategy/ConcreteStrategy/DistanceAttack.o"
+	@echo "... __/Strategy/ConcreteStrategy/DistanceAttack.i"
+	@echo "... __/Strategy/ConcreteStrategy/DistanceAttack.s"
+	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.o"
+	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.i"
+	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.s"
+	@echo "... __/Strategy/Patrolling.o"
+	@echo "... __/Strategy/Patrolling.i"
+	@echo "... __/Strategy/Patrolling.s"
 	@echo "... __/Weapons/Bullet.o"
 	@echo "... __/Weapons/Bullet.i"
 	@echo "... __/Weapons/Bullet.s"

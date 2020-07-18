@@ -23,17 +23,17 @@ protected:
         game = Game::getGame();
         game->init();
         game->getStateHandler()->addState(std::make_shared<LevelSelectState>(game->getWindow()));
-        game->getMapHandler()->loadLevel(1);
+        game->getMap()->loadLevel(1);
         playState = std::make_shared<PlayState>(game->getWindow(), 1);
         game->getStateHandler()->addState(playState);
 
         game->createHero(0, 0);
 
-        e1 = std::make_shared<GameCharacter>(100, 100, 100, sf::Vector2f(0, 0), sf::Vector2f(5, 5), 0, 1);
-        e1->setTexture(AssetManager::textures.at("PORTAL"));
+        e1 = std::make_shared<GameCharacter>(100, 100, 100, sf::Vector2f(0, 0), sf::Vector2f(5, 5), sf::Vector2f(0, 0), 1);
+        e1->setTexture(AssetManager::getAssetManager()->getTextures().at("PORTAL"));
         e1->setScale(0.15f, 0.17f);
-        e2 = std::make_shared<GameCharacter>(100, 100, 100, sf::Vector2f(0, 0), sf::Vector2f(5, 6), 0, 1);
-        e2->setTexture(AssetManager::textures.at("PORTAL"));
+        e2 = std::make_shared<GameCharacter>(100, 100, 100, sf::Vector2f(0, 0), sf::Vector2f(5, 6), sf::Vector2f(0, 0), 1);
+        e2->setTexture(AssetManager::getAssetManager()->getTextures().at("PORTAL"));
         e2->setScale(0.15f, 0.17f);
         e2->setColor(sf::Color::Red);
 

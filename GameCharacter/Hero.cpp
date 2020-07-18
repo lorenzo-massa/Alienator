@@ -12,7 +12,7 @@ Hero::Hero(int type, int hp, int ar, int am, sf::Vector2f s, sf::Vector2f pos, s
     setPosition(pos);
     //setTextureRect(sf::IntRect(0,0,213.0f,428.0f));
     setScale(sf::Vector2f(0.25f, 0.25f));
-    weapon = std::make_shared<Weapon>(120, 3.0f);
+    weapon = std::make_shared<Weapon>(120, 3.0f, 16);
     clockPowerUp = sf::Clock();
     powerUpState = false;
     weaponHit=false;

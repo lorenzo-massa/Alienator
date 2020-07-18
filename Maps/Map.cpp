@@ -253,6 +253,7 @@ void Map::loadLevel(int x) {
                             coll = std::make_shared<Collectable>(sf::Vector2f(j * BLOCK_SIZE, i * BLOCK_SIZE), PowerUp::TYPE::MUNITIONS);
                             coll->setTexture(AssetManager::getAssetManager()->getTextures().at("MUNITIONS"));
                             coll->registerObserver(Game::getGame());
+                            coll->setScale(0.05,0.05);
                             Game::getGame()->addSubject(coll);
                             addCollectable(coll);
                             break;

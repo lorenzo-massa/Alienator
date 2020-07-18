@@ -410,12 +410,15 @@
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Engine/Achievements.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Engine/Achievements.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Engine/AchievementsEnum.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Engine/Game.cpp">
 			<Option target="Alienator"/>
@@ -560,36 +563,47 @@
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/BehaviorEnum.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.h">
 			<Option target="Alienator"/>
+			<Option target="runTests"/>
 		</Unit>
 		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Weapons/Bullet.cpp">
 			<Option target="Alienator"/>

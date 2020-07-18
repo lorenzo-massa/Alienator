@@ -57,7 +57,10 @@ set(SOURCE_FILES
         Strategy/ConcreteStrategy/CloseAttack.cpp
         Strategy/ConcreteStrategy/DistanceAttack.cpp
         Strategy/ConcreteStrategy/GroundPatrolling.cpp
-        Objects/Tile.cpp Objects/Tile.h Objects/TileEnum.h Strategy/BehaviorEnum.h GameCharacter/EnemyTypeEnum.h)
+        Objects/Tile.cpp Objects/Tile.h
+        Objects/TileEnum.h
+        Strategy/BehaviorEnum.h
+        GameCharacter/EnemyTypeEnum.h)
 
 
 link_directories(SFML-2.5.1/bin)

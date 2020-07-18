@@ -47,7 +47,24 @@ set(SOURCE_FILES
         ../Objects/PowerUp.h
         ../Assets/AssetsManager.cpp
         ../Assets/AssetsManager.h
-        ../Objects/Tile.cpp ../Objects/Tile.h ../Objects/TileEnum.h)
+        ../Objects/Tile.cpp
+        ../Objects/Tile.h
+        ../Objects/TileEnum.h
+        ../Strategy/Attack.h
+        ../Strategy/ConcreteStrategy/CloseAttack.h
+        ../Strategy/ConcreteStrategy/DistanceAttack.h
+        ../Strategy/Patrolling.h
+        ../Strategy/ConcreteStrategy/GroundPatrolling.h
+        ../Strategy/Attack.cpp
+        ../Strategy/Patrolling.cpp
+        ../Strategy/ConcreteStrategy/CloseAttack.cpp
+        ../Strategy/ConcreteStrategy/DistanceAttack.cpp
+        ../Strategy/ConcreteStrategy/GroundPatrolling.cpp
+        ../Strategy/BehaviorEnum.h
+        ../Engine/AchievementsEnum.h
+        ../Engine/Achievements.cpp
+        ../Engine/Achievements.h
+        )
 
 ##
 link_directories(SFML-2.5.1/bin)

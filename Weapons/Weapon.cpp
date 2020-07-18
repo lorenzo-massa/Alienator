@@ -4,8 +4,7 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(int d, float fR) : damage(d), fireRate(fR) {
-    currentAmmo=16;
+Weapon::Weapon(int d, float fR,int ammoSize) : damage(d), fireRate(fR), ammoSize(ammoSize), currentAmmo(ammoSize) {
 }
 
 std::shared_ptr<Bullet> Weapon::fire(int x, int y, int damage, sf::Vector2f mousePosition) const {
@@ -63,6 +62,14 @@ int Weapon::getCurrentAmmo() const {
 
 void Weapon::setCurrentAmmo(int currentAmmo) {
     Weapon::currentAmmo = currentAmmo;
+}
+
+int Weapon::getAmmoSize() const {
+    return ammoSize;
+}
+
+void Weapon::setAmmoSize(int ammoSize) {
+    Weapon::ammoSize = ammoSize;
 }
 
 Weapon::~Weapon() = default;

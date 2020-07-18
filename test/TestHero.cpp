@@ -14,10 +14,11 @@ protected:
     Hero *hero;
 
     virtual void SetUp() {
-        AssetManager::load();
+        AssetManager::getAssetManager()->load();
         auto s = sf::Vector2f(0, 0);
         auto pos = sf::Vector2f(0, 0);
-        hero = new Hero(1, 100, 50, 50, s, pos, 0, 1, 0);
+        auto dir = sf::Vector2f(0, 0);
+        hero = new Hero(1, 100, 5, 50, s, pos, dir, 1, 0);
     }
 
     virtual void TearDown() {
@@ -37,8 +38,8 @@ TEST_F(TestHero, jumpTest) {
 
 TEST_F(TestHero, gravityTest) {
     float deltaT = 1.0f / 60;
-    auto direction = sf::Vector2f(0, 0);
-    auto moving = hero->move(direction, deltaT);
+    auto direction = sf::Vector2f(0, 1);
+    auto moving = hero->move(deltaT);
 
     hero->sf::Sprite::move(moving);
 

@@ -38,9 +38,9 @@ public:
     float getXBackground() const;
 
 
-private:
-
     void load();
+
+private:
 
     static std::shared_ptr<AssetManager> myAssetManager;
 

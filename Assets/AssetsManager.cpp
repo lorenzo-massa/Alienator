@@ -34,18 +34,6 @@ void AssetManager::load() {
         texture.loadFromFile("Assets/Images//Object/munitionsReload.png");
         textures.insert(std::make_pair("MUNITIONS", texture));
 
-        texture.loadFromFile("Assets/Images//Object/firerate.png");
-        textures.insert(std::make_pair("FIRE_RATE", texture));
-
-        texture.loadFromFile("Assets/Images//Object/speed.png");
-        textures.insert(std::make_pair("SPEED", texture));
-
-        texture.loadFromFile("Assets/Images//Object/damageboost.png");
-        textures.insert(std::make_pair("DAMAGE_BOOST", texture));
-
-        texture.loadFromFile("Assets/Images//Object/invincibility.png");
-        textures.insert(std::make_pair("INVICIBILITY", texture));
-
         texture.loadFromFile("Assets/Images//Object/mystery.png");
         textures.insert(std::make_pair("MYSTERY", texture));
 
@@ -54,6 +42,12 @@ void AssetManager::load() {
 
         texture.loadFromFile("Assets/Images//Object/portal.png");
         textures.insert(std::make_pair("PORTAL", texture));
+
+        texture.loadFromFile("Assets/Images//Object/BulletGUI.png");
+        textures.insert(std::make_pair("BulletGUI", texture));
+
+        texture.loadFromFile("Assets/Images//Object/BulletGUIEmpty.png");
+        textures.insert(std::make_pair("BulletGUIEmpty", texture));
 
         const int nTiles = 16;
 

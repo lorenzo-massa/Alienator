@@ -8,7 +8,7 @@ Collectable::Collectable(sf::Vector2f position) {
     powerUp = PowerUp();
 
     setScale(sf::Vector2f(0.05, 0.05));
-    setTextureRect(sf::IntRect(0, 0, 1184, 1184));
+    setTextureRect(sf::IntRect(0, 0, width, height));
     sf::Sprite::setPosition(position);
 
 }
