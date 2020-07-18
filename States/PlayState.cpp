@@ -78,8 +78,8 @@ void PlayState::handleInput() {
                 Game::getGame()->getHero()->setSpeed(sf::Vector2f(speed.x, speed.y));
             }
             if (event.key.code == sf::Keyboard::R){
-                if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()<16)
-                    Game::getGame()->getHero()->reload();
+                Game::getGame()->getHero()->getReloadingClock()->restart();
+                Game::getGame()->getHero()->setReloading(true);
             }
         }
 
@@ -112,7 +112,16 @@ void PlayState::handleInput() {
 
     }
 
-    if(Game::getGame()->getHero()->isWeaponHit()) {
+    if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()<Game::getGame()->getHero()->getWeapon()->getAmmoSize()&& Game::getGame()->getHero()->isReloading()){
+
+
+        if(Game::getGame()->getHero()->reloadingTimer()) {
+            Game::getGame()->getHero()->reload();
+            Game::getGame()->getHero()->setReloading(false);
+        }
+    }
+
+    if(Game::getGame()->getHero()->isWeaponHit()&& !Game::getGame()->getHero()->isReloading()) {
         sf::Vector2i mousePosition = sf::Vector2i(sf::Mouse::getPosition(*targetWindow));
         sf::Vector2f mouseWorldPosition = targetWindow->mapPixelToCoords(mousePosition);
 
@@ -131,10 +140,6 @@ void PlayState::handleInput() {
                         Game::getGame()->getHero()->getWeapon()->getCurrentAmmo() - 1);
                 Game::getGame()->getMap()->addBullet(b);
 
-                /*}else if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()==0  &&  Game::getGame()->getHero()->getAmmo() > 0){
-
-                    Game::getGame()->getHero()->reload();
-                }*/
                 bool unlocked = false;
                 EVENT e = EVENT::BULLET_SHOT;
                 notifyObservers(e, unlocked);
@@ -313,7 +318,29 @@ void PlayState::generateGUI(float &xT) {
     }
 
 
+    if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()==0 && !Game::getGame()->getHero()->isReloading())
+    {
+        sf::Text message;
+        message.setFont(*AssetManager::getAssetManager()->getFont());
+        message.setString("Reload");
+        message.setFillColor(sf::Color::Red);
+        message.setCharacterSize(25);
+        message.setPosition(AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x / 2 -
+                            message.getLocalBounds().width / 2, nCoins.getPosition().y + 100);
+        targetWindow->draw(message);
+    }
 
+    if(Game::getGame()->getHero()->getWeapon()->getCurrentAmmo()<Game::getGame()->getHero()->getWeapon()->getAmmoSize()&& Game::getGame()->getHero()->isReloading()) {
+        sf::Text message;
+        message.setFont(*AssetManager::getAssetManager()->getFont());
+        message.setString("Reloading...");
+        message.setFillColor(sf::Color::White);
+        message.setCharacterSize(25);
+        message.setPosition(
+                AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x / 2 -
+                message.getLocalBounds().width / 2, nCoins.getPosition().y + 100);
+        targetWindow->draw(message);
+    }
 
 }
 

@@ -10,7 +10,11 @@ GameCharacter::GameCharacter(int hp, int ar, int am, sf::Vector2f s, sf::Vector2
 
     clockAnimation = std::make_shared<sf::Clock>();
     fireRateClock = std::make_shared<sf::Clock>();
+    reloadingClock = std::make_shared<sf::Clock>();
+
     isLegalJump=false;
+    reloading= false;
+
 
 }
 
@@ -249,7 +253,31 @@ void GameCharacter::reload() {
     }
 }
 
-bool GameCharacter::reloadingTimer() {}
+bool GameCharacter::reloadingTimer() {
+    if(reloadingClock->getElapsedTime().asSeconds()<2)
+        return false;
+    else
+    {
+        reloadingClock->restart();
+        return true;
+    }
+}
+
+const std::shared_ptr<sf::Clock> &GameCharacter::getReloadingClock() const {
+    return reloadingClock;
+}
+
+void GameCharacter::setReloadingClock(const std::shared_ptr<sf::Clock> &reloadingClock) {
+    GameCharacter::reloadingClock = reloadingClock;
+}
+
+bool GameCharacter::isReloading() const {
+    return reloading;
+}
+
+void GameCharacter::setReloading(bool reloading) {
+    GameCharacter::reloading = reloading;
+}
 
 
 GameCharacter::~GameCharacter() = default;

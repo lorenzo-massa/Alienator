@@ -115,6 +115,10 @@ public:
 
     void reload();
 
+    const std::shared_ptr<sf::Clock> &getReloadingClock() const;
+
+    void setReloadingClock(const std::shared_ptr<sf::Clock> &reloadingClock);
+
 protected:
     sf::Vector2f pos;
     int healthPoint{};
@@ -125,7 +129,13 @@ protected:
     sf::Vector2f direction;
     std::string strTexture;
     float speedCoeff{};
+    bool reloading;
+public:
+    bool isReloading() const;
 
+    void setReloading(bool reloading);
+
+protected:
     bool isLegalJump{};
 
     sf::Clock clockPowerUp;
