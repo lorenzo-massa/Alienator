@@ -561,11 +561,11 @@
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>
-		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp">
+		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/AttackBehavior.cpp">
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>
-		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.h">
+		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/AttackBehavior.h">
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>
@@ -597,11 +597,11 @@
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>
-		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp">
+		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/PatrolBehavior.cpp">
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>
-		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.h">
+		<Unit filename="/home/lorenzo/CLionProjects/Alienator/Strategy/PatrolBehavior.h">
 			<Option target="Alienator"/>
 			<Option target="runTests"/>
 		</Unit>

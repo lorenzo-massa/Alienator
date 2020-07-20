@@ -304,31 +304,31 @@ CMakeFiles/Alienator.dir/Engine/Achievements.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Engine/Achievements.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Engine/Achievements.cpp -o CMakeFiles/Alienator.dir/Engine/Achievements.cpp.s
 
-CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o: CMakeFiles/Alienator.dir/flags.make
-CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o: ../Strategy/Attack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp
+CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o: ../Strategy/AttackBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/AttackBehavior.cpp
 
-CMakeFiles/Alienator.dir/Strategy/Attack.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Strategy/Attack.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp > CMakeFiles/Alienator.dir/Strategy/Attack.cpp.i
+CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/AttackBehavior.cpp > CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.i
 
-CMakeFiles/Alienator.dir/Strategy/Attack.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Strategy/Attack.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/Attack.cpp -o CMakeFiles/Alienator.dir/Strategy/Attack.cpp.s
+CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/AttackBehavior.cpp -o CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.s
 
-CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o: CMakeFiles/Alienator.dir/flags.make
-CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o: ../Strategy/Patrolling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp
+CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o: CMakeFiles/Alienator.dir/flags.make
+CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o: ../Strategy/PatrolBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lorenzo/CLionProjects/Alienator/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o -c /home/lorenzo/CLionProjects/Alienator/Strategy/PatrolBehavior.cpp
 
-CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp > CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.i
+CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lorenzo/CLionProjects/Alienator/Strategy/PatrolBehavior.cpp > CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.i
 
-CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.cpp -o CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.s
+CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lorenzo/CLionProjects/Alienator/Strategy/PatrolBehavior.cpp -o CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.s
 
 CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/CloseAttack.cpp.o: CMakeFiles/Alienator.dir/flags.make
 CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/CloseAttack.cpp.o: ../Strategy/ConcreteStrategy/CloseAttack.cpp
@@ -403,8 +403,8 @@ Alienator_OBJECTS = \
 "CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.o" \
 "CMakeFiles/Alienator.dir/Assets/AssetsManager.cpp.o" \
 "CMakeFiles/Alienator.dir/Engine/Achievements.cpp.o" \
-"CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o" \
-"CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o" \
+"CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o" \
+"CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o" \
 "CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/CloseAttack.cpp.o" \
 "CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/DistanceAttack.cpp.o" \
 "CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o" \
@@ -432,8 +432,8 @@ Alienator: CMakeFiles/Alienator.dir/Objects/Collectable.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Objects/PowerUp.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Assets/AssetsManager.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Engine/Achievements.cpp.o
-Alienator: CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o
-Alienator: CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o
+Alienator: CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o
+Alienator: CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/CloseAttack.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/DistanceAttack.cpp.o
 Alienator: CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/GroundPatrolling.cpp.o

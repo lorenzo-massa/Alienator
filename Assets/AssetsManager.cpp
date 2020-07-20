@@ -4,15 +4,15 @@
 
 #include "AssetsManager.h"
 
-std::shared_ptr<AssetManager> AssetManager::myAssetManager = nullptr;
+AssetManager* AssetManager::myAssetManager = nullptr;
 
 AssetManager::AssetManager() {
     load();
 }
 
-std::shared_ptr<AssetManager> AssetManager::getAssetManager(){
-    if (AssetManager::myAssetManager == nullptr)
-        myAssetManager = std::make_shared<AssetManager>();
+AssetManager* AssetManager::getAssetManager(){
+    if (myAssetManager == nullptr)
+        myAssetManager = new AssetManager();
     return myAssetManager;
 }
 

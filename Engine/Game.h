@@ -25,11 +25,8 @@
 
 class Game : public ObserverGame {
 public:
-    Game();
 
-    ~Game() override;
-
-    static std::shared_ptr<Game> getGame();
+    static Game* getGame();
 
     void init();
 
@@ -74,13 +71,17 @@ public:
     void setAchievements(const std::shared_ptr<Achievements> &achievements);
 
 private:
+    Game();
+
+    ~Game() override;
+
     std::shared_ptr<sf::Clock> clock;
 
     std::shared_ptr<Map> ptrMap;
     std::shared_ptr<Hero> ptrHero;
     std::shared_ptr<StateHandler> ptrStateHandler;
 
-    static std::shared_ptr<Game> myGame;
+    static Game* myGame;
     std::shared_ptr<sf::RenderWindow> gameWindow;
 
     std::list<std::shared_ptr<SubjectGame>> subjects;
@@ -90,8 +91,6 @@ private:
     std::shared_ptr<Achievements> achievements;
 
     void loadAchievements();
-
-    std::shared_ptr<AssetManager> assetManager;
 };
 
 

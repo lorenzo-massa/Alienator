@@ -66,7 +66,7 @@ void Tile::setHp(int hp) {
 
 Tile::~Tile() = default;
 
-int Tile::shotted() {
+int Tile::shot() {
     hp -= 1;
 
     return hp;

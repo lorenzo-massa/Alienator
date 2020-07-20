@@ -2,8 +2,8 @@
 // Created by leoco on 10/07/2020.
 //
 
-#ifndef ALIENATOR_PATROLLING_H
-#define ALIENATOR_PATROLLING_H
+#ifndef ALIENATOR_PATROLBEHAVIOR_H
+#define ALIENATOR_PATROLBEHAVIOR_H
 
 
 #include <memory>
@@ -12,7 +12,7 @@
 
 #define BLOCK_SIZE 64
 
-class Patrolling{
+class PatrolBehavior{
 public:
     virtual bool patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float &direction) =0;
 
@@ -20,11 +20,11 @@ public:
 
     void setPatrolClock(const std::shared_ptr<sf::Clock> &patrolClock);
 
-    Patrolling();
+    PatrolBehavior();
 
-    virtual ~Patrolling();
+    virtual ~PatrolBehavior();
 private:
     std::shared_ptr<sf::Clock> patrolClock;
 
 };
-#endif //ALIENATOR_PATROLLING_H
+#endif //ALIENATOR_PATROLBEHAVIOR_H

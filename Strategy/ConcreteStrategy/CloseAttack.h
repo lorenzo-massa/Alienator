@@ -6,9 +6,9 @@
 #define ALIENATOR_CLOSEATTACK_H
 
 
-#include "../Attack.h"
+#include "../AttackBehavior.h"
 
-class CloseAttack: virtual public Attack{
+class CloseAttack: virtual public AttackBehavior{
 public:
     void attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vector2f &move,float& enemyDir)override ;
 

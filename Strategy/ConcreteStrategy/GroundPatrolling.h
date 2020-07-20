@@ -7,10 +7,10 @@
 
 
 
-#include "../Patrolling.h"
+#include "../PatrolBehavior.h"
 
 
-class GroundPatrolling: virtual public Patrolling{
+class GroundPatrolling: virtual public PatrolBehavior{
 public:
     bool patrol( sf::Vector2f enemyPos,sf::Vector2f heroPos,sf::Vector2f patrolDistance, float& direction) override;
 

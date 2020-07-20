@@ -670,7 +670,7 @@ void PlayState::checkBullets() {
                         deleted = true;
                         Game::getGame()->getMap()->removeBullet(i);
                         if(tile->isBreakable()){
-                            hp = tile->shotted();
+                            hp = tile->shot();
                             if(hp < 1)
                                 Game::getGame()->getMap()->removeFromMatrix(k);
                         }

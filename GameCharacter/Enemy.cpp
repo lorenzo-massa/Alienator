@@ -88,10 +88,10 @@ void Enemy::setPatrolDistance(const sf::Vector2f &patrolDistance) {
 bool Enemy::patrolling(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 
     bool found;
-    sf::Vector2f dir=Enemy::getDirection();
-    found=Enemy::getPatroller()->patrol(Enemy::getPosition(),heroPos,Enemy::getPatrolDistance(),dir.x);
-    Enemy::setDirection(dir);
-    move = Enemy::move( deltaT);
+    sf::Vector2f dir=direction;
+    found=patroller->patrol(getPosition(),heroPos,patrolDistance,dir.x);
+    direction = dir;
+    move = Enemy::move(deltaT);
 
     return found;
 }
@@ -99,29 +99,29 @@ bool Enemy::patrolling(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 std::shared_ptr<Bullet> Enemy::fighting(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT) {
 
     std::shared_ptr<Bullet> b;
-    sf::Vector2f dir=Enemy::getDirection();
+    sf::Vector2f dir=direction;
 
     move=Enemy::move(deltaT);
-    Enemy::getAttacker()->attack(heroPos,Enemy::getPosition(),move,dir.x);
-    Enemy::setDirection(dir);
-    b=Enemy::shot(heroPos);
+    attacker->attack(heroPos,Enemy::getPosition(),move,dir.x);
+    direction = dir;
+    b=shot(heroPos);
 
     return b;
 
 }
 
-const std::shared_ptr<Patrolling> &Enemy::getPatroller() const {
+const std::shared_ptr<PatrolBehavior> &Enemy::getPatroller() const {
     return patroller;
 }
 
-void Enemy::setPatroller(const std::shared_ptr<Patrolling> &patroller) {
+void Enemy::setPatroller(const std::shared_ptr<PatrolBehavior> &patroller) {
     Enemy::patroller = patroller;
 }
 
-const std::shared_ptr<Attack> &Enemy::getAttacker() const {
+const std::shared_ptr<AttackBehavior> &Enemy::getAttacker() const {
     return attacker;
 }
 
-void Enemy::setAttacker(const std::shared_ptr<Attack> &attacker) {
+void Enemy::setAttacker(const std::shared_ptr<AttackBehavior> &attacker) {
     Enemy::attacker = attacker;
 }

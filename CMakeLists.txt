@@ -47,13 +47,13 @@ set(SOURCE_FILES
         Engine/AchievementsEnum.h
         Engine/Achievements.cpp
         Engine/Achievements.h
-        Strategy/Attack.h
+        Strategy/AttackBehavior.h
         Strategy/ConcreteStrategy/CloseAttack.h
         Strategy/ConcreteStrategy/DistanceAttack.h
-        Strategy/Patrolling.h
+        Strategy/PatrolBehavior.h
         Strategy/ConcreteStrategy/GroundPatrolling.h
-        Strategy/Attack.cpp
-        Strategy/Patrolling.cpp
+        Strategy/AttackBehavior.cpp
+        Strategy/PatrolBehavior.cpp
         Strategy/ConcreteStrategy/CloseAttack.cpp
         Strategy/ConcreteStrategy/DistanceAttack.cpp
         Strategy/ConcreteStrategy/GroundPatrolling.cpp

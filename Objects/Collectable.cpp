@@ -31,11 +31,11 @@ void Collectable::setPowerUp(const PowerUp &powerUp) {
     Collectable::powerUp = powerUp;
 }
 
-void Collectable::removeObserver(std::shared_ptr<ObserverGame> observer) {
+void Collectable::removeObserver(ObserverGame* observer) {
     observers.remove(observer);
 }
 
-void Collectable::registerObserver(std::shared_ptr<ObserverGame> observer) {
+void Collectable::registerObserver(ObserverGame* observer) {
     observers.push_back(observer);
 }
 

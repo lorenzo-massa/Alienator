@@ -860,6 +860,20 @@ SFML/Config.hpp
 
 ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp
 
+/home/lorenzo/CLionProjects/Alienator/Assets/AssetsManager.cpp
+AssetsManager.h
+/home/lorenzo/CLionProjects/Alienator/Assets/AssetsManager.h
+
+/home/lorenzo/CLionProjects/Alienator/Assets/AssetsManager.h
+iostream
+-
+memory
+-
+SFML/Graphics.hpp
+/home/lorenzo/CLionProjects/Alienator/Assets/SFML/Graphics.hpp
+SFML/Audio.hpp
+/home/lorenzo/CLionProjects/Alienator/Assets/SFML/Audio.hpp
+
 /home/lorenzo/CLionProjects/Alienator/Engine/Achievements.h
 Subject.h
 /home/lorenzo/CLionProjects/Alienator/Engine/Subject.h
@@ -871,6 +885,14 @@ AchievementsEnum.h
 /home/lorenzo/CLionProjects/Alienator/Engine/AchievementsEnum.h
 
 /home/lorenzo/CLionProjects/Alienator/Engine/AchievementsEnum.h
+
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.cpp
+fstream
+-
+Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
+../States/PlayState.h
+/home/lorenzo/CLionProjects/Alienator/States/PlayState.h
 
 /home/lorenzo/CLionProjects/Alienator/Engine/Game.h
 list
@@ -916,6 +938,16 @@ list
 ObserverGame.h
 /home/lorenzo/CLionProjects/Alienator/Engine/ObserverGame.h
 
+/home/lorenzo/CLionProjects/Alienator/GameCharacter/Enemy.cpp
+Enemy.h
+/home/lorenzo/CLionProjects/Alienator/GameCharacter/Enemy.h
+../Strategy/ConcreteStrategy/GroundPatrolling.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.h
+../Strategy/ConcreteStrategy/CloseAttack.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.h
+../Strategy/ConcreteStrategy/DistanceAttack.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.h
+
 /home/lorenzo/CLionProjects/Alienator/GameCharacter/Enemy.h
 GameCharacter.h
 /home/lorenzo/CLionProjects/Alienator/GameCharacter/GameCharacter.h
@@ -956,6 +988,14 @@ Hero.h
 GameCharacter.h
 /home/lorenzo/CLionProjects/Alienator/GameCharacter/GameCharacter.h
 
+/home/lorenzo/CLionProjects/Alienator/Maps/Map.cpp
+fstream
+-
+Map.h
+/home/lorenzo/CLionProjects/Alienator/Maps/Map.h
+../Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
+
 /home/lorenzo/CLionProjects/Alienator/Maps/Map.h
 list
 -
@@ -971,6 +1011,14 @@ vector
 /home/lorenzo/CLionProjects/Alienator/Objects/TileEnum.h
 ../Objects/Tile.h
 /home/lorenzo/CLionProjects/Alienator/Objects/Tile.h
+
+/home/lorenzo/CLionProjects/Alienator/Menu/MainMenu.cpp
+iostream
+-
+MainMenu.h
+/home/lorenzo/CLionProjects/Alienator/Menu/MainMenu.h
+../Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
 
 /home/lorenzo/CLionProjects/Alienator/Menu/MainMenu.h
 SFML/Graphics.hpp
@@ -1010,11 +1058,47 @@ memory
 SFML/Graphics.hpp
 /home/lorenzo/CLionProjects/Alienator/States/SFML/Graphics.hpp
 
+/home/lorenzo/CLionProjects/Alienator/States/LevelSelectState.cpp
+iostream
+-
+LevelSelectState.h
+/home/lorenzo/CLionProjects/Alienator/States/LevelSelectState.h
+../Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
+PlayState.h
+/home/lorenzo/CLionProjects/Alienator/States/PlayState.h
+
+/home/lorenzo/CLionProjects/Alienator/States/LevelSelectState.h
+GameState.h
+/home/lorenzo/CLionProjects/Alienator/States/GameState.h
+../Menu/MainMenu.h
+/home/lorenzo/CLionProjects/Alienator/Menu/MainMenu.h
+
+/home/lorenzo/CLionProjects/Alienator/States/MenuState.cpp
+iostream
+-
+utility
+-
+MenuState.h
+/home/lorenzo/CLionProjects/Alienator/States/MenuState.h
+../Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
+LevelSelectState.h
+/home/lorenzo/CLionProjects/Alienator/States/LevelSelectState.h
+
 /home/lorenzo/CLionProjects/Alienator/States/MenuState.h
 GameState.h
 /home/lorenzo/CLionProjects/Alienator/States/GameState.h
 ../Menu/MainMenu.h
 /home/lorenzo/CLionProjects/Alienator/Menu/MainMenu.h
+
+/home/lorenzo/CLionProjects/Alienator/States/PauseState.cpp
+iostream
+-
+PauseState.h
+/home/lorenzo/CLionProjects/Alienator/States/PauseState.h
+../Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
 
 /home/lorenzo/CLionProjects/Alienator/States/PauseState.h
 GameState.h
@@ -1054,6 +1138,18 @@ SFML/Audio.hpp
 
 /home/lorenzo/CLionProjects/Alienator/Strategy/BehaviorEnum.h
 
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/CloseAttack.h
+../Attack.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.h
+
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/DistanceAttack.h
+../Attack.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/Attack.h
+
+/home/lorenzo/CLionProjects/Alienator/Strategy/ConcreteStrategy/GroundPatrolling.h
+../Patrolling.h
+/home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.h
+
 /home/lorenzo/CLionProjects/Alienator/Strategy/Patrolling.h
 memory
 -
@@ -1061,6 +1157,14 @@ SFML/System/Vector2.hpp
 -
 SFML/System/Clock.hpp
 -
+
+/home/lorenzo/CLionProjects/Alienator/Weapons/Bullet.cpp
+AssetsManager.h
+-
+cmath
+-
+Bullet.h
+/home/lorenzo/CLionProjects/Alienator/Weapons/Bullet.h
 
 /home/lorenzo/CLionProjects/Alienator/Weapons/Bullet.h
 SFML/Graphics/Sprite.hpp
@@ -1071,4 +1175,8 @@ Bullet.h
 /home/lorenzo/CLionProjects/Alienator/Weapons/Bullet.h
 memory
 -
+
+/home/lorenzo/CLionProjects/Alienator/main.cpp
+Engine/Game.h
+/home/lorenzo/CLionProjects/Alienator/Engine/Game.h
 

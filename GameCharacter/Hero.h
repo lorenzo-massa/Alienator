@@ -8,7 +8,7 @@
 
 #include "GameCharacter.h"
 
-class Hero : virtual public GameCharacter {
+class Hero : public GameCharacter {
 public:
     Hero();
 

@@ -42,7 +42,7 @@ public:
 
     void setHp(int hp);
 
-    int shotted();
+    int shot();
 
 private:
 

@@ -20,9 +20,9 @@ public:
     ~Collectable() override;
 
 
-    void registerObserver(std::shared_ptr<ObserverGame> observer) override;
+    void registerObserver(ObserverGame* observer) override;
 
-    void removeObserver(std::shared_ptr<ObserverGame> observer) override;
+    void removeObserver(ObserverGame* observer) override;
 
     void notifyObservers(int i) const override;
 
@@ -35,7 +35,7 @@ private:
     const float width{1080};
 
     PowerUp powerUp;
-    std::list<std::shared_ptr<ObserverGame>> observers;
+    std::list<ObserverGame*> observers;
 
 };
 

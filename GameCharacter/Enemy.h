@@ -8,12 +8,12 @@
 #include "GameCharacter.h"
 #include "EnemyTypeEnum.h"
 #include <AssetsManager.h>
-#include "../Strategy/Patrolling.h"
-#include "../Strategy/Attack.h"
+#include "../Strategy/PatrolBehavior.h"
+#include "../Strategy/AttackBehavior.h"
 #include "../Strategy/BehaviorEnum.h"
 
 
-class Enemy : virtual public GameCharacter {
+class Enemy : public GameCharacter {
 public:
     Enemy(EnemyType typeBehavior, sf::Vector2f pos, int hp, int armor, sf::Vector2f(speed), float speedCoeff,
           sf::Vector2f patrolDistance, TypeBehavior behavior);
@@ -43,13 +43,13 @@ public:
 
     std::shared_ptr<Bullet> fighting(sf::Vector2f heroPos,sf::Vector2f &move,float deltaT);
 
-    const std::shared_ptr<Patrolling> &getPatroller() const;
+    const std::shared_ptr<PatrolBehavior> &getPatroller() const;
 
-    void setPatroller(const std::shared_ptr<Patrolling> &patroller);
+    void setPatroller(const std::shared_ptr<PatrolBehavior> &patroller);
 
-    const std::shared_ptr<Attack> &getAttacker() const;
+    const std::shared_ptr<AttackBehavior> &getAttacker() const;
 
-    void setAttacker(const std::shared_ptr<Attack> &attacker);
+    void setAttacker(const std::shared_ptr<AttackBehavior> &attacker);
 
 private:
     TypeBehavior behavior;
@@ -58,9 +58,9 @@ private:
 
     sf::Vector2f patrolDistance;
 
-    std::shared_ptr<Patrolling> patroller;
+    std::shared_ptr<PatrolBehavior> patroller;
 
-    std::shared_ptr<Attack> attacker;
+    std::shared_ptr<AttackBehavior> attacker;
 
 };
 

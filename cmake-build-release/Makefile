@@ -693,32 +693,32 @@ States/StateHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/States/StateHandler.cpp.s
 .PHONY : States/StateHandler.cpp.s
 
-Strategy/Attack.o: Strategy/Attack.cpp.o
+Strategy/AttackBehavior.o: Strategy/AttackBehavior.cpp.o
 
-.PHONY : Strategy/Attack.o
+.PHONY : Strategy/AttackBehavior.o
 
 # target to build an object file
-Strategy/Attack.cpp.o:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Attack.cpp.o
-.PHONY : Strategy/Attack.cpp.o
+Strategy/AttackBehavior.cpp.o:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.o
+.PHONY : Strategy/AttackBehavior.cpp.o
 
-Strategy/Attack.i: Strategy/Attack.cpp.i
+Strategy/AttackBehavior.i: Strategy/AttackBehavior.cpp.i
 
-.PHONY : Strategy/Attack.i
+.PHONY : Strategy/AttackBehavior.i
 
 # target to preprocess a source file
-Strategy/Attack.cpp.i:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Attack.cpp.i
-.PHONY : Strategy/Attack.cpp.i
+Strategy/AttackBehavior.cpp.i:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.i
+.PHONY : Strategy/AttackBehavior.cpp.i
 
-Strategy/Attack.s: Strategy/Attack.cpp.s
+Strategy/AttackBehavior.s: Strategy/AttackBehavior.cpp.s
 
-.PHONY : Strategy/Attack.s
+.PHONY : Strategy/AttackBehavior.s
 
 # target to generate assembly for a file
-Strategy/Attack.cpp.s:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Attack.cpp.s
-.PHONY : Strategy/Attack.cpp.s
+Strategy/AttackBehavior.cpp.s:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/AttackBehavior.cpp.s
+.PHONY : Strategy/AttackBehavior.cpp.s
 
 Strategy/ConcreteStrategy/CloseAttack.o: Strategy/ConcreteStrategy/CloseAttack.cpp.o
 
@@ -801,32 +801,32 @@ Strategy/ConcreteStrategy/GroundPatrolling.cpp.s:
 	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
 .PHONY : Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
 
-Strategy/Patrolling.o: Strategy/Patrolling.cpp.o
+Strategy/PatrolBehavior.o: Strategy/PatrolBehavior.cpp.o
 
-.PHONY : Strategy/Patrolling.o
+.PHONY : Strategy/PatrolBehavior.o
 
 # target to build an object file
-Strategy/Patrolling.cpp.o:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.o
-.PHONY : Strategy/Patrolling.cpp.o
+Strategy/PatrolBehavior.cpp.o:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.o
+.PHONY : Strategy/PatrolBehavior.cpp.o
 
-Strategy/Patrolling.i: Strategy/Patrolling.cpp.i
+Strategy/PatrolBehavior.i: Strategy/PatrolBehavior.cpp.i
 
-.PHONY : Strategy/Patrolling.i
+.PHONY : Strategy/PatrolBehavior.i
 
 # target to preprocess a source file
-Strategy/Patrolling.cpp.i:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.i
-.PHONY : Strategy/Patrolling.cpp.i
+Strategy/PatrolBehavior.cpp.i:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.i
+.PHONY : Strategy/PatrolBehavior.cpp.i
 
-Strategy/Patrolling.s: Strategy/Patrolling.cpp.s
+Strategy/PatrolBehavior.s: Strategy/PatrolBehavior.cpp.s
 
-.PHONY : Strategy/Patrolling.s
+.PHONY : Strategy/PatrolBehavior.s
 
 # target to generate assembly for a file
-Strategy/Patrolling.cpp.s:
-	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/Patrolling.cpp.s
-.PHONY : Strategy/Patrolling.cpp.s
+Strategy/PatrolBehavior.cpp.s:
+	$(MAKE) -f CMakeFiles/Alienator.dir/build.make CMakeFiles/Alienator.dir/Strategy/PatrolBehavior.cpp.s
+.PHONY : Strategy/PatrolBehavior.cpp.s
 
 Weapons/Bullet.o: Weapons/Bullet.cpp.o
 
@@ -978,9 +978,9 @@ help:
 	@echo "... States/StateHandler.o"
 	@echo "... States/StateHandler.i"
 	@echo "... States/StateHandler.s"
-	@echo "... Strategy/Attack.o"
-	@echo "... Strategy/Attack.i"
-	@echo "... Strategy/Attack.s"
+	@echo "... Strategy/AttackBehavior.o"
+	@echo "... Strategy/AttackBehavior.i"
+	@echo "... Strategy/AttackBehavior.s"
 	@echo "... Strategy/ConcreteStrategy/CloseAttack.o"
 	@echo "... Strategy/ConcreteStrategy/CloseAttack.i"
 	@echo "... Strategy/ConcreteStrategy/CloseAttack.s"
@@ -990,9 +990,9 @@ help:
 	@echo "... Strategy/ConcreteStrategy/GroundPatrolling.o"
 	@echo "... Strategy/ConcreteStrategy/GroundPatrolling.i"
 	@echo "... Strategy/ConcreteStrategy/GroundPatrolling.s"
-	@echo "... Strategy/Patrolling.o"
-	@echo "... Strategy/Patrolling.i"
-	@echo "... Strategy/Patrolling.s"
+	@echo "... Strategy/PatrolBehavior.o"
+	@echo "... Strategy/PatrolBehavior.i"
+	@echo "... Strategy/PatrolBehavior.s"
 	@echo "... Weapons/Bullet.o"
 	@echo "... Weapons/Bullet.i"
 	@echo "... Weapons/Bullet.s"

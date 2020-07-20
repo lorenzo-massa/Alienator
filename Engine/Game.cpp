@@ -6,8 +6,7 @@
 #include "Game.h"
 #include "../States/PlayState.h"
 
-
-std::shared_ptr<Game> Game::myGame = nullptr;
+Game* Game::myGame = nullptr;
 
 Game::Game() {
     ptrStateHandler = std::make_shared<StateHandler>();
@@ -21,9 +20,9 @@ Game::Game() {
         levelCompleted.push_back(false);
 }
 
-std::shared_ptr<Game> Game::getGame() {
+Game* Game::getGame() {
     if (Game::myGame == nullptr)
-        myGame = std::make_shared<Game>();
+        myGame = new Game();
     return myGame;
 }
 
@@ -40,7 +39,6 @@ void Game::init() {
         gameWindow->setFramerateLimit(FPS);
 
         ptrStateHandler->addState(std::make_shared<MenuState>(gameWindow));
-        assetManager = AssetManager::getAssetManager();
         std::cout << "All textures are loaded!" << std::endl;
 
         srand(time(nullptr));

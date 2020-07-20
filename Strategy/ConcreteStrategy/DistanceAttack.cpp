@@ -24,5 +24,5 @@ void DistanceAttack::attack(sf::Vector2f heroPos,sf::Vector2f enemyPos, sf::Vect
 
 DistanceAttack::~DistanceAttack() = default;
 
-DistanceAttack::DistanceAttack() : Attack(){}
+DistanceAttack::DistanceAttack() : AttackBehavior(){}
 

@@ -711,32 +711,32 @@ __/States/StateHandler.cpp.s:
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/States/StateHandler.cpp.s
 .PHONY : __/States/StateHandler.cpp.s
 
-__/Strategy/Attack.o: __/Strategy/Attack.cpp.o
+__/Strategy/AttackBehavior.o: __/Strategy/AttackBehavior.cpp.o
 
-.PHONY : __/Strategy/Attack.o
+.PHONY : __/Strategy/AttackBehavior.o
 
 # target to build an object file
-__/Strategy/Attack.cpp.o:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.o
-.PHONY : __/Strategy/Attack.cpp.o
+__/Strategy/AttackBehavior.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/AttackBehavior.cpp.o
+.PHONY : __/Strategy/AttackBehavior.cpp.o
 
-__/Strategy/Attack.i: __/Strategy/Attack.cpp.i
+__/Strategy/AttackBehavior.i: __/Strategy/AttackBehavior.cpp.i
 
-.PHONY : __/Strategy/Attack.i
+.PHONY : __/Strategy/AttackBehavior.i
 
 # target to preprocess a source file
-__/Strategy/Attack.cpp.i:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.i
-.PHONY : __/Strategy/Attack.cpp.i
+__/Strategy/AttackBehavior.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/AttackBehavior.cpp.i
+.PHONY : __/Strategy/AttackBehavior.cpp.i
 
-__/Strategy/Attack.s: __/Strategy/Attack.cpp.s
+__/Strategy/AttackBehavior.s: __/Strategy/AttackBehavior.cpp.s
 
-.PHONY : __/Strategy/Attack.s
+.PHONY : __/Strategy/AttackBehavior.s
 
 # target to generate assembly for a file
-__/Strategy/Attack.cpp.s:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Attack.cpp.s
-.PHONY : __/Strategy/Attack.cpp.s
+__/Strategy/AttackBehavior.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/AttackBehavior.cpp.s
+.PHONY : __/Strategy/AttackBehavior.cpp.s
 
 __/Strategy/ConcreteStrategy/CloseAttack.o: __/Strategy/ConcreteStrategy/CloseAttack.cpp.o
 
@@ -819,32 +819,32 @@ __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s:
 	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
 .PHONY : __/Strategy/ConcreteStrategy/GroundPatrolling.cpp.s
 
-__/Strategy/Patrolling.o: __/Strategy/Patrolling.cpp.o
+__/Strategy/PatrolBehavior.o: __/Strategy/PatrolBehavior.cpp.o
 
-.PHONY : __/Strategy/Patrolling.o
+.PHONY : __/Strategy/PatrolBehavior.o
 
 # target to build an object file
-__/Strategy/Patrolling.cpp.o:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.o
-.PHONY : __/Strategy/Patrolling.cpp.o
+__/Strategy/PatrolBehavior.cpp.o:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/PatrolBehavior.cpp.o
+.PHONY : __/Strategy/PatrolBehavior.cpp.o
 
-__/Strategy/Patrolling.i: __/Strategy/Patrolling.cpp.i
+__/Strategy/PatrolBehavior.i: __/Strategy/PatrolBehavior.cpp.i
 
-.PHONY : __/Strategy/Patrolling.i
+.PHONY : __/Strategy/PatrolBehavior.i
 
 # target to preprocess a source file
-__/Strategy/Patrolling.cpp.i:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.i
-.PHONY : __/Strategy/Patrolling.cpp.i
+__/Strategy/PatrolBehavior.cpp.i:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/PatrolBehavior.cpp.i
+.PHONY : __/Strategy/PatrolBehavior.cpp.i
 
-__/Strategy/Patrolling.s: __/Strategy/Patrolling.cpp.s
+__/Strategy/PatrolBehavior.s: __/Strategy/PatrolBehavior.cpp.s
 
-.PHONY : __/Strategy/Patrolling.s
+.PHONY : __/Strategy/PatrolBehavior.s
 
 # target to generate assembly for a file
-__/Strategy/Patrolling.cpp.s:
-	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/Patrolling.cpp.s
-.PHONY : __/Strategy/Patrolling.cpp.s
+__/Strategy/PatrolBehavior.cpp.s:
+	cd /home/lorenzo/CLionProjects/Alienator/cmake-build-release && $(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/__/Strategy/PatrolBehavior.cpp.s
+.PHONY : __/Strategy/PatrolBehavior.cpp.s
 
 __/Weapons/Bullet.o: __/Weapons/Bullet.cpp.o
 
@@ -1000,9 +1000,9 @@ help:
 	@echo "... __/States/StateHandler.o"
 	@echo "... __/States/StateHandler.i"
 	@echo "... __/States/StateHandler.s"
-	@echo "... __/Strategy/Attack.o"
-	@echo "... __/Strategy/Attack.i"
-	@echo "... __/Strategy/Attack.s"
+	@echo "... __/Strategy/AttackBehavior.o"
+	@echo "... __/Strategy/AttackBehavior.i"
+	@echo "... __/Strategy/AttackBehavior.s"
 	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.o"
 	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.i"
 	@echo "... __/Strategy/ConcreteStrategy/CloseAttack.s"
@@ -1012,9 +1012,9 @@ help:
 	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.o"
 	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.i"
 	@echo "... __/Strategy/ConcreteStrategy/GroundPatrolling.s"
-	@echo "... __/Strategy/Patrolling.o"
-	@echo "... __/Strategy/Patrolling.i"
-	@echo "... __/Strategy/Patrolling.s"
+	@echo "... __/Strategy/PatrolBehavior.o"
+	@echo "... __/Strategy/PatrolBehavior.i"
+	@echo "... __/Strategy/PatrolBehavior.s"
 	@echo "... __/Weapons/Bullet.o"
 	@echo "... __/Weapons/Bullet.i"
 	@echo "... __/Weapons/Bullet.s"

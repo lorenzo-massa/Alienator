@@ -13,11 +13,9 @@
 class AssetManager {
 public:
 
-    AssetManager();
-
     virtual ~AssetManager();
 
-    static std::shared_ptr<AssetManager> getAssetManager();
+    static AssetManager* getAssetManager();
 
     const std::map<std::string, sf::Texture> &getTextures() const;
 
@@ -42,7 +40,9 @@ public:
 
 private:
 
-    static std::shared_ptr<AssetManager> myAssetManager;
+    AssetManager();
+
+    static AssetManager *myAssetManager;
 
     std::map<std::string, sf::Texture> textures;
     std::map<std::string, std::vector<sf::IntRect>> frames;
