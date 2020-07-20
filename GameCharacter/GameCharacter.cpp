@@ -32,21 +32,21 @@ sf::Vector2f GameCharacter::move( float deltaT) {
 
     if (GameCharacter::getDirection().x == 0.0f) {   //attrito
         if (speed.x > 0)
-            speed.x -= 30.0f * 64.0f * deltaT;
+            speed.x -= 30.0f * BLOCK_SIZE * deltaT;
 
         else if (speed.x < 0)
-            speed.x += 30.0f * 64.0f * deltaT;
+            speed.x += 30.0f * BLOCK_SIZE * deltaT;
 
         if (speed.x > -3 && speed.x < 3)//settaggio velocità
             speed.x = 0;
     }
     if (GameCharacter::getDirection().x != 0)
-        speed.x = speedCoeff * 64.0f * GameCharacter::getDirection().x;//velocità costante se tengo premuto
+        speed.x = speedCoeff * BLOCK_SIZE * GameCharacter::getDirection().x;//velocità costante se tengo premuto
 
     xT = speed.x * deltaT;
 
-    speed.y = speed.y + 98.0f * 64.0f * deltaT; //gravità
-    yT = speed.y * deltaT + 0.5f * 98.0f * 64.0f * deltaT * deltaT ;
+    speed.y = speed.y + 98.0f * BLOCK_SIZE * deltaT; //gravità
+    yT = speed.y * deltaT + 0.5f * 98.0f * BLOCK_SIZE * deltaT * deltaT ;
 
     if(yT<0)
         GameCharacter::setDirection(sf::Vector2f(GameCharacter::getDirection().x,-1.0f));
@@ -243,10 +243,10 @@ void GameCharacter::setIsLegalJump(bool isLegalJump) {
 }
 
 void GameCharacter::reload() {
-    if(ammo>=16-weapon->getCurrentAmmo()){
-        ammo-=16-weapon->getCurrentAmmo();
-        weapon->setCurrentAmmo(16);
-    }else if(ammo<16-weapon->getCurrentAmmo())
+    if(ammo>=weapon->getAmmoSize()-weapon->getCurrentAmmo()){
+        ammo-=weapon->getAmmoSize()-weapon->getCurrentAmmo();
+        weapon->setCurrentAmmo(weapon->getAmmoSize());
+    }else if(ammo<weapon->getAmmoSize()-weapon->getCurrentAmmo())
     {
         weapon->setCurrentAmmo(ammo);
         ammo=0;

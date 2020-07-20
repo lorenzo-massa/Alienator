@@ -23,10 +23,6 @@ public:
 
     sf::Vector2f isLegalMovement(const std::shared_ptr<GameCharacter> &entity, sf::Vector2f move);
 
-    int getAction() const;
-
-    void setAction(int action);
-
     bool checkCollision(const std::shared_ptr<sf::Sprite> &entity1, const std::shared_ptr<sf::Sprite> &entity2);
 
     void checkFinished();
@@ -43,8 +39,6 @@ public:
     void notifyObservers(EVENT e, bool &unlocked) const override;
 
     void enemyBehaviorChanger(const std::shared_ptr<Enemy> &enemy);
-
-    bool reloading();
 
 private:
 

@@ -9,6 +9,7 @@ Attento, potresti incontrare nemici con diverse strategie di attacco!<br>
 - `D e FRECCIA DESTRA` -> Muovi a destra<br><br>
 - `W, FRECCIA IN SU e SPAZIO` -> Salta<br><br>
 - `Click sinistro` -> Spara<br><br>
+- `R` -> Ricarica<br><br>
 - `ESC` -> pausa<br><br>
 - La navigazione dei menù è affidata alle `FRECCE DIREZIONALI e INVIO`
 <br>

@@ -16,6 +16,6 @@ void CloseAttack::attack(sf::Vector2f heroPos, sf::Vector2f enemyPos,sf::Vector2
 
 }
 
-CloseAttack::~CloseAttack() {}
+CloseAttack::~CloseAttack() = default;
 
 CloseAttack::CloseAttack(): Attack() {}

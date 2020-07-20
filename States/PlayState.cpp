@@ -35,7 +35,6 @@ PlayState::~PlayState() {
 
 void PlayState::handleInput() {
     sf::Vector2f speed;
-    bool reloading;
     sf::Event event{};
     while (targetWindow->pollEvent(event)) {
         if (event.type == sf::Event::Closed)
@@ -291,7 +290,7 @@ void PlayState::generateGUI(float &xT) {
         targetWindow->draw(message);
     }
 
-
+    //Achievement
     popUp.setPosition(AssetManager::getAssetManager()->getXBackground() + targetWindow->getView().getSize().x -
                       popUp.getLocalBounds().width - 30, 20);
 
@@ -708,14 +707,6 @@ bool PlayState::spriteInView(const sf::Sprite &sprite) {
 
     return !(std::fabs(spritePosition.x - viewCenter.x) > viewSize.x / 2 ||
              std::fabs(spritePosition.y - viewCenter.y) > viewSize.y / 2);
-}
-
-int PlayState::getAction() const {
-    return action;
-}
-
-void PlayState::setAction(int action) {
-    PlayState::action = action;
 }
 
 void PlayState::behaviorChanger() {

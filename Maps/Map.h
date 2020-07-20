@@ -70,11 +70,6 @@ public:
 
     void reset();
 
-    bool operator==(const Map &rhs) const;
-
-    bool operator!=(const Map &rhs) const;
-
-
 private:
     std::vector<std::shared_ptr<Enemy>> enemies;
     std::vector<std::shared_ptr<Collectable>> collectables;
